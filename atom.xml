@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://baiwenhui.com/"/>
-  <updated>2017-01-22T13:01:03.192Z</updated>
+  <updated>2017-01-22T13:05:46.627Z</updated>
   <id>http://baiwenhui.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>Hello World</title>
     <link href="http://baiwenhui.com/2017/01/22/hello-world/"/>
     <id>http://baiwenhui.com/2017/01/22/hello-world/</id>
-    <published>2017-01-22T13:01:03.192Z</published>
-    <updated>2017-01-22T13:01:03.192Z</updated>
+    <published>2017-01-22T13:05:46.627Z</published>
+    <updated>2017-01-22T13:05:46.627Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -47,7 +47,7 @@
     <link href="http://baiwenhui.com/2017/01/21/%E5%A6%82%E4%BD%95%E5%9C%A8%E6%8A%80%E6%9C%AF%E4%B8%8A%E7%B2%BE%E8%BF%9B/"/>
     <id>http://baiwenhui.com/2017/01/21/如何在技术上精进/</id>
     <published>2017-01-21T14:30:29.000Z</published>
-    <updated>2017-01-22T13:01:03.192Z</updated>
+    <updated>2017-01-22T13:05:46.627Z</updated>
     
     <content type="html"><![CDATA[<p>首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址:<br><a href="http://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;tempkey=4s4RIGPKLlSI%2B%2B8VH3wx8KIrdHvnQSOEPLJ0k8joKaEA72cqJ41X6s0s0IzuDdKlkgLNIIrz1xkrL7lYcnIjCxGh6G%2BTC55MKR%2FWqW%2FbglQTt0aCB0A%2FFg4qN5SA%2B175n%2BIZz9ly%2BsRC5o4zHaD2Og%3D%3D&amp;chksm=1b4b2ba22c3ca2b41c5ffa577f24f378a13bd46665cd09a844d0b88bf733666a1900900694a8#rd" target="_blank" rel="external">http://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;tempkey=4s4RIGPKLlSI%2B%2B8VH3wx8KIrdHvnQSOEPLJ0k8joKaEA72cqJ41X6s0s0IzuDdKlkgLNIIrz1xkrL7lYcnIjCxGh6G%2BTC55MKR%2FWqW%2FbglQTt0aCB0A%2FFg4qN5SA%2B175n%2BIZz9ly%2BsRC5o4zHaD2Og%3D%3D&amp;chksm=1b4b2ba22c3ca2b41c5ffa577f24f378a13bd46665cd09a844d0b88bf733666a1900900694a8#rd</a>，<br>几个错误点修改如下：</p>
 <ol>
@@ -73,7 +73,7 @@
     <link href="http://baiwenhui.com/2017/01/19/hexo%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/"/>
     <id>http://baiwenhui.com/2017/01/19/hexo搭建成功/</id>
     <published>2017-01-19T15:20:52.000Z</published>
-    <updated>2017-01-22T13:01:03.192Z</updated>
+    <updated>2017-01-22T13:05:46.627Z</updated>
     
     <content type="html"><![CDATA[<p>终于折腾完了，搭建好我的hexo，的确挺方便的！感谢前人的贡献！</p>
 ]]></content>
