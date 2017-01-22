@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>strongant的个人博客</title>
+  <subtitle>一个正在成长的码农</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://baiwenhui.com/"/>
+  <updated>2017-01-22T12:48:22.501Z</updated>
+  <id>http://baiwenhui.com/</id>
+  
+  <author>
+    <name>strongant</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://baiwenhui.com/2017/01/22/hello-world/"/>
+    <id>http://baiwenhui.com/2017/01/22/hello-world/</id>
+    <published>2017-01-22T12:48:22.501Z</published>
+    <updated>2017-01-22T12:48:22.501Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《放弃F5，拥抱browser-sync》公众号文章错误说明</title>
+    <link href="http://baiwenhui.com/2017/01/21/%E5%A6%82%E4%BD%95%E5%9C%A8%E6%8A%80%E6%9C%AF%E4%B8%8A%E7%B2%BE%E8%BF%9B/"/>
+    <id>http://baiwenhui.com/2017/01/21/如何在技术上精进/</id>
+    <published>2017-01-21T14:30:29.000Z</published>
+    <updated>2017-01-22T12:48:22.501Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址:<br><a href="http://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;tempkey=4s4RIGPKLlSI%2B%2B8VH3wx8KIrdHvnQSOEPLJ0k8joKaEA72cqJ41X6s0s0IzuDdKlkgLNIIrz1xkrL7lYcnIjCxGh6G%2BTC55MKR%2FWqW%2FbglQTt0aCB0A%2FFg4qN5SA%2B175n%2BIZz9ly%2BsRC5o4zHaD2Og%3D%3D&amp;chksm=1b4b2ba22c3ca2b41c5ffa577f24f378a13bd46665cd09a844d0b88bf733666a1900900694a8#rd" target="_blank" rel="external">http://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;tempkey=4s4RIGPKLlSI%2B%2B8VH3wx8KIrdHvnQSOEPLJ0k8joKaEA72cqJ41X6s0s0IzuDdKlkgLNIIrz1xkrL7lYcnIjCxGh6G%2BTC55MKR%2FWqW%2FbglQTt0aCB0A%2FFg4qN5SA%2B175n%2BIZz9ly%2BsRC5o4zHaD2Og%3D%3D&amp;chksm=1b4b2ba22c3ca2b41c5ffa577f24f378a13bd46665cd09a844d0b88bf733666a1900900694a8#rd</a>，<br>几个错误点修改如下：</p>
+<ol>
+<li>文章中的：<br><em>……更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试…</em><br>将“进项调试”修改为“进行调试”<br>2.　最后的代码有一个目录错误，因为我的粗心，给大家带来的不变，请见谅！在以后的文章中我会更加小心<br>发表文章，力求保证没有错误！<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">var gulp        = require(&apos;gulp&apos;);</div><div class="line">var browserSync = require(&apos;browser-sync&apos;).create();</div><div class="line">var browserify = require(&apos;gulp-browserify&apos;);</div><div class="line">var sass        = require(&apos;gulp-sass&apos;);</div><div class="line">var uglify = require(&apos;gulp-uglify&apos;);</div><div class="line">// Compile sass into CSS &amp; auto-inject into browsers</div><div class="line">gulp.task(&apos;sass&apos;, function() &#123;</div><div class="line">    return gulp.src(&quot;app/scss/*.scss&quot;)</div><div class="line">        .pipe(sass())</div><div class="line">        .pipe(gulp.dest(&quot;dist/css&quot;))</div><div class="line">        .pipe(browserSync.stream());</div><div class="line">&#125;);</div><div class="line">// process JS files and return the stream.</div><div class="line">gulp.task(&apos;js&apos;, function () &#123;</div><div class="line">    return gulp.src(&apos;app/js/*.js&apos;)</div><div class="line">        .pipe(browserify())</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(&apos;dist/js&apos;));</div><div class="line">&#125;);</div><div class="line">// Static Server + watching scss/js/html files</div><div class="line">gulp.task(&apos;serve&apos;, [&apos;sass&apos;,&apos;js&apos;], function() &#123;</div><div class="line">    browserSync.init(&#123;</div><div class="line">        server: &quot;./app&quot;</div><div class="line">    &#125;);</div><div class="line">    gulp.watch(&quot;app/scss/*.scss&quot;, [&apos;sass&apos;]);</div><div class="line">        gulp.watch(&quot;app/js/*.js&quot;, [&apos;js&apos;]);</div><div class="line">    gulp.watch(&quot;app/*.html&quot;).on(&apos;change&apos;, browserSync.reload);</div><div class="line">&#125;);</div><div class="line">gulp.task(&apos;default&apos;, [&apos;serve&apos;]);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>修改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">var gulp        = require(&apos;gulp&apos;);</div><div class="line">var browserSync = require(&apos;browser-sync&apos;).create();</div><div class="line">var browserify = require(&apos;gulp-browserify&apos;);</div><div class="line">var sass        = require(&apos;gulp-sass&apos;);</div><div class="line">var uglify = require(&apos;gulp-uglify&apos;);</div><div class="line">// Compile sass into CSS &amp; auto-inject into browsers</div><div class="line">gulp.task(&apos;sass&apos;, function() &#123;</div><div class="line">    return gulp.src(&quot;app/scss/*.scss&quot;)</div><div class="line">        .pipe(sass())</div><div class="line">        .pipe(gulp.dest(&quot;.app/dist/css&quot;))</div><div class="line">        .pipe(browserSync.stream());</div><div class="line">&#125;);</div><div class="line">// process JS files and return the stream.</div><div class="line">gulp.task(&apos;js&apos;, function () &#123;</div><div class="line">    return gulp.src(&apos;app/js/*.js&apos;)</div><div class="line">        .pipe(browserify())</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(&apos;.app/dist/js&apos;));</div><div class="line">&#125;);</div><div class="line">// Static Server + watching scss/js/html files</div><div class="line">gulp.task(&apos;serve&apos;, [&apos;sass&apos;,&apos;js&apos;], function() &#123;</div><div class="line">    browserSync.init(&#123;</div><div class="line">        server: &quot;./app&quot;</div><div class="line">    &#125;);</div><div class="line">    gulp.watch(&quot;app/scss/*.scss&quot;, [&apos;sass&apos;]);</div><div class="line">        gulp.watch(&quot;app/js/*.js&quot;, [&apos;js&apos;]);</div><div class="line">    gulp.watch(&quot;app/*.html&quot;).on(&apos;change&apos;, browserSync.reload);</div><div class="line">&#125;);</div><div class="line">gulp.task(&apos;default&apos;, [&apos;serve&apos;]);</div></pre></td></tr></table></figure></p>
+<p>参照对比原文地址：<br><a href="http://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;tempkey=4s4RIGPKLlSI%2B%2B8VH3wx8KIrdHvnQSOEPLJ0k8joKaEA72cqJ41X6s0s0IzuDdKlkgLNIIrz1xkrL7lYcnIjCxGh6G%2BTC55MKR%2FWqW%2FbglQTt0aCB0A%2FFg4qN5SA%2B175n%2BIZz9ly%2BsRC5o4zHaD2Og%3D%3D&amp;chksm=1b4b2ba22c3ca2b41c5ffa577f24f378a13bd46665cd09a844d0b88bf733666a1900900694a8#rd" target="_blank" rel="external">http://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;tempkey=4s4RIGPKLlSI%2B%2B8VH3wx8KIrdHvnQSOEPLJ0k8joKaEA72cqJ41X6s0s0IzuDdKlkgLNIIrz1xkrL7lYcnIjCxGh6G%2BTC55MKR%2FWqW%2FbglQTt0aCB0A%2FFg4qN5SA%2B175n%2BIZz9ly%2BsRC5o4zHaD2Og%3D%3D&amp;chksm=1b4b2ba22c3ca2b41c5ffa577f24f378a13bd46665cd09a844d0b88bf733666a1900900694a8#rd</a></p>
+<p>目前内容已经修改！欢迎反馈，欢迎交流：<br><img src="http://mmbiz.qpic.cn/mmbiz_png/bLPd4tHRLu6MfYBKkZ6Rkk5E2H92YaZN1JO92ub5SEVFEPxCHY8PCRHTLUHXiaghl4p7hRnxT8yySSdl7ZV7epA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="个人公众号"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址:&lt;br&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;amp;tempkey=4s4RIGPK
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo搭建成功</title>
+    <link href="http://baiwenhui.com/2017/01/19/hexo%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/"/>
+    <id>http://baiwenhui.com/2017/01/19/hexo搭建成功/</id>
+    <published>2017-01-19T15:20:52.000Z</published>
+    <updated>2017-01-22T12:48:22.501Z</updated>
+    
+    <content type="html"><![CDATA[<p>终于折腾完了，搭建好我的hexo，的确挺方便的！感谢前人的贡献！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;终于折腾完了，搭建好我的hexo，的确挺方便的！感谢前人的贡献！&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
