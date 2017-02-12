@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://baiwenhui.com/"/>
-  <updated>2017-02-12T05:50:16.768Z</updated>
+  <updated>2017-02-12T05:54:29.515Z</updated>
   <id>http://baiwenhui.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title></title>
     <link href="http://baiwenhui.com/2017/02/12/%E7%99%BD%E6%96%87%E8%BE%89-%E5%BA%94%E8%81%98Java%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88/"/>
     <id>http://baiwenhui.com/2017/02/12/白文辉-应聘Java开发工程师/</id>
-    <published>2017-02-12T05:50:16.768Z</published>
-    <updated>2017-02-12T05:50:16.768Z</updated>
+    <published>2017-02-12T05:54:29.515Z</published>
+    <updated>2017-02-12T05:54:29.515Z</updated>
     
     <content type="html"><![CDATA[<h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><ul>
 <li>手机：18215361994</li>
@@ -32,10 +32,8 @@
 <li>专科/兰州大学网络教育计算机技术与应用 </li>
 <li>工作年限：2年半</li>
 <li>技术博客：strongant.github.io</li>
-<li><p>Github：<a href="https://github.com/strongant" target="_blank" rel="external">https://github.com/strongant</a></p>
-</li>
-<li><p>期望职位：Java程序员</p>
-</li>
+<li>Github：<a href="https://github.com/strongant" target="_blank" rel="external">https://github.com/strongant</a></li>
+<li>期望职位：Java程序员</li>
 <li>期望薪资：税后月薪14k~18k</li>
 <li>期望城市：上海</li>
 </ul>
@@ -83,7 +81,7 @@
     <link href="http://baiwenhui.com/2017/02/05/2017%E5%BC%80%E5%B7%A5%E5%BF%AB%E4%B9%90/"/>
     <id>http://baiwenhui.com/2017/02/05/2017开工快乐/</id>
     <published>2017-02-05T13:43:05.000Z</published>
-    <updated>2017-02-12T05:50:16.768Z</updated>
+    <updated>2017-02-12T05:54:29.515Z</updated>
     
     <content type="html"><![CDATA[<center><img src="http://i1.piimg.com/4851/ce0a3e1ef63844b1.jpg" alt="2017开工快乐"></center>
 
@@ -109,7 +107,7 @@
     <link href="http://baiwenhui.com/2017/01/23/%E6%98%A5%E8%8A%82%E5%9B%9E%E5%AE%B6/"/>
     <id>http://baiwenhui.com/2017/01/23/春节回家/</id>
     <published>2017-01-23T13:20:53.000Z</published>
-    <updated>2017-02-12T05:50:16.768Z</updated>
+    <updated>2017-02-12T05:54:29.515Z</updated>
     
     <content type="html"><![CDATA[<center><img src="http://i1.piimg.com/4851/b70e6f5b8f4e2ba5.jpg" alt="plane"></center>
 
@@ -140,7 +138,7 @@
     <link href="http://baiwenhui.com/2017/01/22/rxjs%E7%BF%BB%E8%AF%91-rxjs%E4%BB%8B%E7%BB%8D/"/>
     <id>http://baiwenhui.com/2017/01/22/rxjs翻译-rxjs介绍/</id>
     <published>2017-01-22T13:26:40.000Z</published>
-    <updated>2017-02-12T05:50:16.768Z</updated>
+    <updated>2017-02-12T05:54:29.515Z</updated>
     
     <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，<a href="&#39;./overview.html#observable&#39;">Observable</a> ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.6" target="_blank" rel="external">Array#extras</a> (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。</p>
 <p><span class="informal">可以将RxJS想象成是用于处理事件的Lodash.</span></p>
@@ -202,7 +200,7 @@
     <link href="http://baiwenhui.com/2017/01/21/%E5%A6%82%E4%BD%95%E5%9C%A8%E6%8A%80%E6%9C%AF%E4%B8%8A%E7%B2%BE%E8%BF%9B/"/>
     <id>http://baiwenhui.com/2017/01/21/如何在技术上精进/</id>
     <published>2017-01-21T14:30:29.000Z</published>
-    <updated>2017-02-12T05:50:16.768Z</updated>
+    <updated>2017-02-12T05:54:29.515Z</updated>
     
     <content type="html"><![CDATA[<p>首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址:<br><a href="http://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;tempkey=4s4RIGPKLlSI%2B%2B8VH3wx8KIrdHvnQSOEPLJ0k8joKaEA72cqJ41X6s0s0IzuDdKlkgLNIIrz1xkrL7lYcnIjCxGh6G%2BTC55MKR%2FWqW%2FbglQTt0aCB0A%2FFg4qN5SA%2B175n%2BIZz9ly%2BsRC5o4zHaD2Og%3D%3D&amp;chksm=1b4b2ba22c3ca2b41c5ffa577f24f378a13bd46665cd09a844d0b88bf733666a1900900694a8#rd" target="_blank" rel="external">http://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;tempkey=4s4RIGPKLlSI%2B%2B8VH3wx8KIrdHvnQSOEPLJ0k8joKaEA72cqJ41X6s0s0IzuDdKlkgLNIIrz1xkrL7lYcnIjCxGh6G%2BTC55MKR%2FWqW%2FbglQTt0aCB0A%2FFg4qN5SA%2B175n%2BIZz9ly%2BsRC5o4zHaD2Og%3D%3D&amp;chksm=1b4b2ba22c3ca2b41c5ffa577f24f378a13bd46665cd09a844d0b88bf733666a1900900694a8#rd</a>，<br>几个错误点修改如下：</p>
 <ol>
@@ -228,7 +226,7 @@
     <link href="http://baiwenhui.com/2017/01/19/hexo%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/"/>
     <id>http://baiwenhui.com/2017/01/19/hexo搭建成功/</id>
     <published>2017-01-19T15:20:52.000Z</published>
-    <updated>2017-02-12T05:50:16.768Z</updated>
+    <updated>2017-02-12T05:54:29.515Z</updated>
     
     <content type="html"><![CDATA[<p>终于折腾完了，搭建好我的hexo，的确挺方便的！感谢前人的贡献！</p>
 ]]></content>
