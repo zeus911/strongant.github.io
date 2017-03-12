@@ -7,42 +7,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://baiwenhui.com">
-  <title>Java面试(一) | strongant的个人博客</title>
+  <title>SpringBoot学习1.md | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java基础抽象类和接口的区别？
-抽象类中可以包含抽象方法和非抽象方法，接口只能包含公开的抽象方法；
-抽象类中的变量是各种类型的，而接口只能包含public abstract final 类型；
-接口中不能含有静态代码块和静态方法，而抽象类中可以包含；
-一个类只能继承一个抽象类，但是可以实现多个接口；
-抽象类可以有构造方法，接口不能有；
-
-HashMap和HashTable的区别？
-HashTab">
+  <meta name="description" content="SpringBoot
+Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面试(一)">
-<meta property="og:url" content="http://baiwenhui.com/2017/03/04/Java面试-一/index.html">
+<meta property="og:title" content="SpringBoot学习1.md">
+<meta property="og:url" content="http://baiwenhui.com/2017/03/12/SpringBoot学习1-md/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
-<meta property="og:description" content="Java基础抽象类和接口的区别？
-抽象类中可以包含抽象方法和非抽象方法，接口只能包含公开的抽象方法；
-抽象类中的变量是各种类型的，而接口只能包含public abstract final 类型；
-接口中不能含有静态代码块和静态方法，而抽象类中可以包含；
-一个类只能继承一个抽象类，但是可以实现多个接口；
-抽象类可以有构造方法，接口不能有；
-
-HashMap和HashTable的区别？
-HashTab">
+<meta property="og:description" content="SpringBoot
+Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible">
 <meta property="og:updated_time" content="2017-03-12T15:46:02.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java面试(一)">
-<meta name="twitter:description" content="Java基础抽象类和接口的区别？
-抽象类中可以包含抽象方法和非抽象方法，接口只能包含公开的抽象方法；
-抽象类中的变量是各种类型的，而接口只能包含public abstract final 类型；
-接口中不能含有静态代码块和静态方法，而抽象类中可以包含；
-一个类只能继承一个抽象类，但是可以实现多个接口；
-抽象类可以有构造方法，接口不能有；
-
-HashMap和HashTable的区别？
-HashTab">
+<meta name="twitter:title" content="SpringBoot学习1.md">
+<meta name="twitter:description" content="SpringBoot
+Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible">
   
     <link rel="alternative" href="/atom.xml" title="strongant的个人博客" type="application/atom+xml">
   
@@ -219,59 +198,61 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java面试-一" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SpringBoot学习1-md" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java面试(一)
+      SpringBoot学习1.md
     </h1>
   
 
         
-        <a href="/2017/03/04/Java面试-一/" class="archive-article-date">
-  	<time datetime="2017-03-04T16:04:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-05</time>
+        <a href="/2017/03/12/SpringBoot学习1-md/" class="archive-article-date">
+  	<time datetime="2017-03-12T15:42:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类和接口的区别？"><a href="#抽象类和接口的区别？" class="headerlink" title="抽象类和接口的区别？"></a>抽象类和接口的区别？</h3><ol>
-<li>抽象类中可以包含抽象方法和非抽象方法，接口只能包含公开的抽象方法；</li>
-<li>抽象类中的变量是各种类型的，而接口只能包含public abstract final 类型；</li>
-<li>接口中不能含有静态代码块和静态方法，而抽象类中可以包含；</li>
-<li>一个类只能继承一个抽象类，但是可以实现多个接口；</li>
-<li>抽象类可以有构造方法，接口不能有；</li>
-</ol>
-<h3 id="HashMap和HashTable的区别？"><a href="#HashMap和HashTable的区别？" class="headerlink" title="HashMap和HashTable的区别？"></a>HashMap和HashTable的区别？</h3><ul>
-<li>HashTable是基于陈旧的Dictionary的Map接口的实现，而HashMap是基于哈希表的Map接口的实现</li>
-<li>从方法上看，HashMap去掉了HashTable的contains方法</li>
-<li>HashTable是同步的（线程安全），而HashMap是线程不安全的，效率上HashMap更快</li>
-<li><p>HashMap允许空键值，HashTable不允许，可以查看HashTable的实现源码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">public synchronized V put(K key, V value) &#123;</div><div class="line">    // Make sure the value is not null</div><div class="line">    if (value == null) &#123;</div><div class="line">        throw new NullPointerException();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // Makes sure the key is not already in the hashtable.</div><div class="line">    Entry&lt;?,?&gt; tab[] = table;</div><div class="line">    int hash = key.hashCode();</div><div class="line">    int index = (hash &amp; 0x7FFFFFFF) % tab.length;</div><div class="line">    @SuppressWarnings(&quot;unchecked&quot;)</div><div class="line">    Entry&lt;K,V&gt; entry = (Entry&lt;K,V&gt;)tab[index];</div><div class="line">    for(; entry != null ; entry = entry.next) &#123;</div><div class="line">        if ((entry.hash == hash) &amp;&amp; entry.key.equals(key)) &#123;</div><div class="line">            V old = entry.value;</div><div class="line">            entry.value = value;</div><div class="line">            return old;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    addEntry(hash, key, value, index);</div><div class="line">    return null;</div><div class="line">&#125;</div><div class="line">...</div></pre></td></tr></table></figure>
-</li>
-<li><p>HashMap的iterator迭代器执行快速失败机制，也就是说在迭代过程中修改集合结构，除非调用迭代器自身的remove方法，否则以其他任何方式的修改都将抛出并发修改异常。而Hashtable返回的Enumeration不是快速失败的。</p>
-</li>
+        <h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><blockquote>
+<p>Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.</p>
+</blockquote>
+<p><strong>遵循建立生产就绪Spring应用程序的观点。SpringBoot支持约定优于配置的惯例，旨在让您尽快启动和运行。</strong></p>
+<blockquote>
+<p>Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can “just run”. We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.</p>
+</blockquote>
+<p><strong>SpringBoot可以轻松的创建单独的，生产级的基于Spring的应用，您可以“直接运行”。我们为Spring平台和第三方库提供了开箱即用的设置，这样你就可以有条不斋的开始。大多数的SpringBoot程序只需要很少的Spring配置。 </strong></p>
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
+<li>Create stand-alone Spring applications</li>
+<li>Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)</li>
+<li>Provide opinionated ‘starter’ POMs to simplify your Maven configuration</li>
+<li>Automatically configure Spring whenever possible</li>
+<li>Provide production-ready features such as metrics, health checks and externalized configuration</li>
+<li>Absolutely no code generation and no requirement for XML configuration</li>
 </ul>
-<h3 id="Java中如何创建一个新线程？"><a href="#Java中如何创建一个新线程？" class="headerlink" title="Java中如何创建一个新线程？"></a>Java中如何创建一个新线程？</h3><ol>
-<li>实现runable接口并重写run方法；</li>
-<li>继承Thread类重写run方法；</li>
-<li>实现Callable接口，重写call()方法；使用FutureTask类包装Callable对象，该FutureTask对象封装了该Callable对象的call()方法的返回值；<br>使用FutureTask对象作为Thread对象的target创建并启动线程，调用FutureTask对象的get()方法获得子线程执行结束后的返回值；</li>
-</ol>
-<h3 id="什么是AIDL？"><a href="#什么是AIDL？" class="headerlink" title="什么是AIDL？"></a>什么是AIDL？</h3><ul>
-<li>AIDL全称Android Interface Definition Language（AndRoid接口描述语言）是一种借口描述语言;</li>
-<li>编译器可以通过aidl文件生成一段代码，通过预先定义的接口达到两个进程内部通信进程跨界对象访问的目的.AIDL的IPC的机制和COM或CORBA类似, 是基于接口的，但它是轻量级的。</li>
-<li>AIDL支持的数据类型有Stirng，list，map，All native java datatype</li>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>创建标准独立的Spring应用程序</li>
+<li>直接嵌入Tomcat、Jetty或者Undertow（不需要部署WAR文件）</li>
+<li>提供建议的‘starter’POM模板以简化您的Maven配置</li>
+<li>每当可能时自动配置Spring</li>
+<li>提供生产就绪的功能，如指标，运行状况检查和外部化配置</li>
+<li>绝对没有代码生成和不需要XML配置</li>
 </ul>
-<h3 id="求计算1-2-3-4-5-6…的方法，n很大，考虑性能？"><a href="#求计算1-2-3-4-5-6…的方法，n很大，考虑性能？" class="headerlink" title="求计算1-2+3-4+5-6…的方法，n很大，考虑性能？"></a>求计算1-2+3-4+5-6…的方法，n很大，考虑性能？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public static  long fn(long n)</div><div class="line">    &#123;</div><div class="line">        if(n&lt;=0)</div><div class="line">        &#123;</div><div class="line">            //1-2+3-4+5-6   当n为负数时，结果肯定为负数,使用加法结合律得出当n为偶数时,结果为(1-2)+(3-4)...(-1)+(-1),规律</div><div class="line">            //当n为2时，结果为一个-1和，当n为4时，结果为2个-1的和,由此得出此结果的规律为(-1)*(n/2)</div><div class="line"></div><div class="line">            //当n为奇数的时候，当n为1时，结果为1，当n为3时候,结果为2,当n为5时候,结果为3...</div><div class="line">            //由此得出规律应该为：(-1)*(n/2)+n =-n/2+n   或者 (n+1)/2</div><div class="line">            //&gt;&gt;(右移)</div><div class="line">            //操作数每右移一位，相当于该数除以2</div><div class="line"></div><div class="line">            System.out.println(&quot;error&quot;);</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        if(0==n%2)</div><div class="line">            return (n&gt;&gt;1)*(-1);</div><div class="line">        else&#123;</div><div class="line">            System.out.println(&quot;aaa&quot;);</div><div class="line">            return (n&gt;&gt;1)*(-1)+n;   //或者可以替换为(n+1)&gt;&gt;1;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="char类型的取值范围："><a href="#char类型的取值范围：" class="headerlink" title="char类型的取值范围："></a>char类型的取值范围：</h3><p>0-2<sup>16</sup>-1</p>
-<h3 id="Java中如何在线程中返回一个值？"><a href="#Java中如何在线程中返回一个值？" class="headerlink" title="Java中如何在线程中返回一个值？"></a>Java中如何在线程中返回一个值？</h3><p>答案：可以让这个类去实现Callable接口，然后定义私有变量进行传递即可：如，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">package com.pff;</div><div class="line"></div><div class="line">import java.util.concurrent.Callable;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Created by strongant on 16-6-16.</div><div class="line"> */</div><div class="line">public class MutiThread implements Callable&lt;String&gt; &#123;</div><div class="line">    private String str;</div><div class="line">    private int count = 1;</div><div class="line"></div><div class="line">    public MutiThread(String str) &#123;</div><div class="line">        this.str = str;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //需要实现的CallAble的Call方法</div><div class="line">    public String call() throws Exception &#123;</div><div class="line">        for (int i = 0; i &lt; this.count; i++) &#123;</div><div class="line">            System.out.println(&quot;Callable的call()方法打印:&quot; + this.str + &quot; &quot; + i);</div><div class="line">        &#125;</div><div class="line">        return this.str;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>测试调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">package com.pff;</div><div class="line"></div><div class="line">import java.util.ArrayList;</div><div class="line">import java.util.concurrent.ExecutorService;</div><div class="line">import java.util.concurrent.Executors;</div><div class="line">import java.util.concurrent.Future;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Created by strongant on 16-6-16.</div><div class="line"> */</div><div class="line">public class CallableTest &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        //创建一个线程池</div><div class="line">        ExecutorService exs = Executors.newCachedThreadPool();</div><div class="line">        ArrayList&lt;Future&lt;String&gt;&gt; al = new ArrayList&lt;&gt;();</div><div class="line">        al.add(exs.submit(new MutiThread(&quot;String0&quot;)));</div><div class="line">        for (Future&lt;String&gt; fs : al) &#123;</div><div class="line">            try &#123;</div><div class="line">                System.out.println(fs.get());</div><div class="line">            &#125; catch (Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        exs.shutdown();</div><div class="line">        /*第二种方式，使用FutureTask来接收线程的返回值</div><div class="line">        MutiThread task = new MutiThread(&quot;test&quot;);</div><div class="line">        FutureTask&lt;String&gt; futureTask = new FutureTask&lt;&gt;(task);</div><div class="line">        Thread thread = new Thread(futureTask);</div><div class="line">        thread.start();</div><div class="line">        */</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>具体流程就是实现Callable<object>  泛型接口，然后线程类定义私有变量，重写call()方法，并且返回Callable接口声明的泛型类型值即可；</object></p>
-<p>获取的时候使用Future<object>泛型类去使用Future类的get()方法就可以获取到；</object></p>
+<p>The reference guide includes detailed descriptions of all the features, plus an extensive howto for common use cases.<br>该<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle" target="_blank" rel="external">参考指南</a>包含所有功能的详细说明，以及广泛的<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto" target="_blank" rel="external">如何使用</a>共同使用情况。</p>
+<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>If you are Java developer you can use start.spring.io to generate a basic project, follow the “Quick Start” example below, or read the reference documentation getting started guide.</p>
+<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><p>如果你是一名Java程序员，你可以通过<a href="https://start.spring.io/" target="_blank" rel="external">start.spring.io</a>生成基本项目，按照下面的“快速开始”示例或者阅读参考文档的<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started" target="_blank" rel="external">入门指南</a>。</p>
+<p>The recommended way to get started using spring-boot in your project is with a dependency management system – the snippet below can be copied and pasted into your build. Need help? See our getting started guides on building with Maven and Gradle.</p>
+<p>spring-boot在项目中开始使用的推荐方法是使用依赖关系管理系统 - 下面的代码段可以复制并粘贴到您的构建中。需要帮忙？请参阅我们使用<a href="https://spring.io/guides/gs/maven/" target="_blank" rel="external">Maven</a>和 <a href="https://spring.io/guides/gs/gradle/" target="_blank" rel="external">Gradle</a>构建的入门指南。</p>
+<p>Maven<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;parent&gt;</div><div class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;</div><div class="line">&lt;/parent&gt;</div><div class="line">&lt;dependencies&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">&lt;/dependencies&gt;</div></pre></td></tr></table></figure></p>
+<p>Gradle<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    compile(&quot;org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello/SampleController.java</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">package hello;</div><div class="line"></div><div class="line">import org.springframework.boot.*;</div><div class="line">import org.springframework.boot.autoconfigure.*;</div><div class="line">import org.springframework.stereotype.*;</div><div class="line">import org.springframework.web.bind.annotation.*;</div><div class="line"></div><div class="line">@Controller</div><div class="line">@EnableAutoConfiguration</div><div class="line">public class SampleController &#123;</div><div class="line"></div><div class="line">    @RequestMapping(&quot;/&quot;)</div><div class="line">    @ResponseBody</div><div class="line">    String home() &#123;</div><div class="line">        return &quot;Hello World!&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args) throws Exception &#123;</div><div class="line">        SpringApplication.run(SampleController.class, args);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Spring-Boot-CLI"><a href="#Spring-Boot-CLI" class="headerlink" title="Spring Boot CLI"></a>Spring Boot CLI</h3><p>Spring Boot ships with a command line tool that can be used if you want to quickly prototype with Spring. It allows you to run Groovy scripts, which means that you have a familiar Java-like syntax, without so much boilerplate code. Follow the instructions in our main documentation if you want to install the Spring Boot CLI.</p>
+<h3 id="Spring-Boot-命令行工具"><a href="#Spring-Boot-命令行工具" class="headerlink" title="Spring Boot 命令行工具"></a>Spring Boot 命令行工具</h3><p>Spring Boot附带一个命令行工具，如果你想快速使用Spring原型，可以使用它。它允许你运行Groovy脚本，这意味着你有一个熟悉的类似Java的语法，没有那么多的样板代码。如果要<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="external">安装Spring Boot CLI</a>，请按照我们的主要文档中的说明进行<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="external">操作</a>。</p>
 
       
 
@@ -285,7 +266,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
         		</li>
       		
 		</ul>
@@ -341,7 +322,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/03/04/Java面试-一/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/03/12/SpringBoot学习1-md/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -355,18 +336,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/03/12/SpringBoot学习1-md/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SpringBoot学习1.md
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/05/2017开工快乐/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2017开工快乐</div>
+    <a href="/2017/03/04/Java面试-一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java面试(一)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -380,7 +352,7 @@ var _hmt = _hmt || [];
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Java面试-一" data-title="Java面试(一)" data-url="http://baiwenhui.com/2017/03/04/Java面试-一/"></div>
+	<div class="ds-thread" data-thread-key="SpringBoot学习1-md" data-title="SpringBoot学习1.md" data-url="http://baiwenhui.com/2017/03/12/SpringBoot学习1-md/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
