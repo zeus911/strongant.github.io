@@ -6,7 +6,8 @@
     <entry>
       <title><![CDATA[递归原理解析]]></title>
       <url>http://baiwenhui.com/2017/05/28/%E9%80%92%E5%BD%92%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h2 id="递归的执行原理浅析"><a href="#递归的执行原理浅析" class="headerlink" title="递归的执行原理浅析"></a>递归的执行原理浅析</h2><ol>
+      <content type="html"><![CDATA[<p>title: 递归的执行原理浅析<br>date: 2017-05-29 23:48:17</p>
+<h2 id="tags-DataStructureAndAlgorithm"><a href="#tags-DataStructureAndAlgorithm" class="headerlink" title="tags: DataStructureAndAlgorithm"></a>tags: DataStructureAndAlgorithm</h2><ol>
 <li>首先使用递归输出经典的阶乘，描述如下：</li>
 </ol>
 <ul>
