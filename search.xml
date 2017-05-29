@@ -4,10 +4,9 @@
   
     
     <entry>
-      <title><![CDATA[递归原理解析]]></title>
-      <url>http://baiwenhui.com/2017/05/28/%E9%80%92%E5%BD%92%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<p>title: 递归的执行原理浅析<br>date: 2017-05-29 23:48:17</p>
-<h2 id="tags-DataStructureAndAlgorithm"><a href="#tags-DataStructureAndAlgorithm" class="headerlink" title="tags: DataStructureAndAlgorithm"></a>tags: DataStructureAndAlgorithm</h2><ol>
+      <title><![CDATA[递归的执行原理浅析]]></title>
+      <url>http://baiwenhui.com/2017/05/29/%E9%80%92%E5%BD%92%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<ol>
 <li>首先使用递归输出经典的阶乘，描述如下：</li>
 </ol>
 <ul>
@@ -25,6 +24,18 @@
 <p>最后我们开始使用递归遍历某个目录下的所有子目录和文件进行加深理解和运用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printDirectoriesAndFilesByPath</span><span class="params">(String path)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            File file = <span class="keyword">new</span> File(path);</div><div class="line">            <span class="keyword">if</span> (file.exists()) &#123;</div><div class="line">                File[] files = file.listFiles();</div><div class="line">                <span class="keyword">for</span> (File f :</div><div class="line">                        files) &#123;</div><div class="line">                    <span class="keyword">if</span> (f.isDirectory() &amp;&amp; f.listFiles().length &gt;= <span class="number">0</span>) &#123;</div><div class="line">                        <span class="keyword">if</span> (f.isDirectory()) &#123;</div><div class="line">                            String directory = f.getAbsolutePath();</div><div class="line">                            System.out.println(<span class="string">"-------目录名称:"</span> + f.getAbsolutePath());</div><div class="line">                            printDirectoriesAndFilesByPath(directory);</div><div class="line">                        &#125;</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        System.out.println(<span class="string">"-------目录名称:"</span>+f.getParent()+<span class="string">"---&gt;文件名称："</span> + f.getAbsolutePath());</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                System.out.println(<span class="string">"对不起，文件路径不存在"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 ]]></content>
       
+        <categories>
+            
+            <category> DataStructureAndAlgorithm </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> DataStructureAndAlgorithm </tag>
+            
+        </tags>
         
     </entry>
     
