@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="strongant的个人博客">
 <meta property="og:description" content="春节已经结束了，祝愿大家在新的一年多挣钱！在这里给大家分享一份简历模板：http://resume.f-tm.net/ 简历开源地址:https://github.com/googlerobot/resume">
 <meta property="og:image" content="http://i1.piimg.com/4851/ce0a3e1ef63844b1.jpg">
-<meta property="og:updated_time" content="2017-05-29T17:30:27.681Z">
+<meta property="og:updated_time" content="2017-05-30T02:03:09.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017开工快乐">
 <meta name="twitter:description" content="春节已经结束了，祝愿大家在新的一年多挣钱！在这里给大家分享一份简历模板：http://resume.f-tm.net/ 简历开源地址:https://github.com/googlerobot/resume">
@@ -328,7 +328,44 @@ var _hmt = _hmt || [];
 
 
   
-    <div class="duoshuo"></div>
+  (function () {
+    var appid = 'cysHzQGmj';  //你的appid
+    var conf = 'c80d06598fb5083e77cfe47e7adcfdcf'; //你的CONF
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+        window.document.write('<script id="changyan_mobile_js" charset="utf-8"
+type="text/javascript"
+src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='
++ appid + '&conf=' + conf + '"><\/script>');
+    } else {
+        var loadJs = function (d, a) {
+            var c = document.getElementsByTagName("head")[0] || document.head ||
+document.documentElement;
+            var b = document.createElement("script");
+            b.setAttribute("type", "text/javascript");
+            b.setAttribute("charset", "UTF-8");
+            b.setAttribute("src", d);
+            if (typeof a === "function") {
+                if (window.attachEvent) {
+                    b.onreadystatechange = function () {
+                        var e = b.readyState;
+                        if (e === "loaded" || e === "complete") {
+                            b.onreadystatechange = null;
+                            a()
+                        }
+                    }
+                } else {
+                    b.onload = a
+                }
+            }
+            c.appendChild(b)
+        };
+        loadJs("http://changyan.sohu.com/upload/changyan.js", function () {
+            window.changyan.api.config({appid: appid, conf: conf})
+        });
+    }
+})();>)})
+
   
 
 
