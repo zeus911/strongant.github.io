@@ -4,49 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[hexo将多说替换为畅言]]></title>
-      <url>http://baiwenhui.com/2017/05/30/hexo%E5%B0%86%E5%A4%9A%E8%AF%B4%E6%9B%BF%E6%8D%A2%E4%B8%BA%E7%95%85%E8%A8%80/</url>
-      <content type="html"><![CDATA[<p><strong> 由于多说团队在2017年6月1号停止了对多说的运营，因此需要将博客中使用的多说替换为畅言。 </strong></p>
-<h3 id="具体替换办法如下："><a href="#具体替换办法如下：" class="headerlink" title="具体替换办法如下："></a>具体替换办法如下：</h3><ol>
-<li>如果你没有畅言的账号，则首先去畅言的官网进行注册账号：<br>畅言网址: <a href="http://changyan.kuaizhan.com/" target="_blank" rel="external">http://changyan.kuaizhan.com/</a></li>
-</ol>
-<p><img src="/images/reg_changyan.png" alt=""></p>
-<ol>
-<li>如果你已经注册过畅言的账号了，那么请直接登录即可；</li>
-<li>注册登录成功之后，点击进入后台，如图,可以看到已经有APP ID和APP KEY，这两个字符串，等会在配置的时候需要：</li>
-</ol>
-<p><img src="/images/login-changyan.png" alt=""></p>
-<ol>
-<li>由于我使用的是hexo的Yilia主题，这里以Yilia主题为主，进行下面的配置，其他主题类似。<br>在畅言后台找到<strong> 安装畅言 </strong> 点击展开之后，点击 <strong> 通用代码安装 </strong>，然后点击右边的复制代码，如图：</li>
-</ol>
-<p><img src="/images/copy-config.png" alt=""></p>
-<ol>
-<li><p>然后编辑你hexo目录下的themes/yilia/layout/_partial/post/duoshuo.ejs文件，将duoshuo.ejs中原来的内容全部删除，使用刚才拷贝的代码替换，替换后的样例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 畅言评论框 start --&gt;</div><div class="line">&lt;div id=&quot;SOHUCS&quot; sid=&quot;&lt;%=title %&gt;&quot; style=&quot;padding: 0px 30px 0px 46px;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;!-- 畅言评论框 end --&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">(function()&#123; </div><div class="line">var appid = &apos;你的appid&apos;; </div><div class="line">var conf = &apos;你的app key&apos;; </div><div class="line">var width = window.innerWidth || document.documentElement.clientWidth; </div><div class="line">if (width &lt; 960) &#123; </div><div class="line">window.document.write(&apos;&lt;script id=&quot;changyan_mobile_js&quot; charset=&quot;utf-8&quot; type=&quot;text/javascript&quot; src=&quot;https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=&apos; + appid + &apos;&amp;conf=&apos; + conf + &apos;&quot;&gt;&lt;\/script&gt;&apos;); &#125; else &#123; var loadJs=function(d,a)&#123;var c=document.getElementsByTagName(&quot;head&quot;)[0]||document.head||document.documentElement;var b=document.createElement(&quot;script&quot;);b.setAttribute(&quot;type&quot;,&quot;text/javascript&quot;);b.setAttribute(&quot;charset&quot;,&quot;UTF-8&quot;);b.setAttribute(&quot;src&quot;,d);if(typeof a===&quot;function&quot;)&#123;if(window.attachEvent)&#123;b.onreadystatechange=function()&#123;var e=b.readyState;if(e===&quot;loaded&quot;||e===&quot;complete&quot;)&#123;b.onreadystatechange=null;a()&#125;&#125;&#125;else&#123;b.onload=a&#125;&#125;c.appendChild(b)&#125;;loadJs(&quot;https://changyan.sohu.com/upload/changyan.js&quot;,function()&#123;window.changyan.api.config(&#123;appid:appid,conf:conf&#125;)&#125;); &#125; &#125;)(); &lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>然后就可以使用畅言了</p>
-</li>
-<li>由于我的域名已经备案，没有遇到网上说的不能正常加载畅言的方式，如果你的域名没有备案，具体Hacker方法，请参考：<a href="http://ev1l.cn/2017/05/13/changyancrack/" target="_blank" rel="external">http://ev1l.cn/2017/05/13/changyancrack/</a></li>
-</ol>
-<p><strong> 注意： </strong> 如果你在配置中还有其他问题，欢迎打赏提问，我收到之后会快速帮你解决！</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Tools </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Tools </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[递归的执行原理浅析]]></title>
       <url>http://baiwenhui.com/2017/05/29/%E9%80%92%E5%BD%92%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</url>
       <content type="html"><![CDATA[<ol>
