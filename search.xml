@@ -38,7 +38,7 @@
 <li>对bool参数值进行转换，则可以对定义的bool变量选中然后使用<em>control+T</em>，输入<em>invert</em>，找到<em>invert boolean</em>，便可以对变量的值进行反转；</li>
 <li>如果想对项目进行版本控制管理，使用<em>Command+K</em>或者使用<em>Ctrl+V</em>；</li>
 <li>使用<em>control+tab</em>可以进行对不同的文件进行选择显示打开；</li>
-<li>如果你想查看你目前使用快捷键的情况，则可以在idea的<em>help</em>菜单找到<em>Poductivity Guide</em>查看；<br><strong>注意：以上快捷键主要是Mac系统下的操作，如果你使用的是非Mac系统，那么你只需要安装Presentation Assistant便可以显示Linux和Windows上的快捷键</strong></li>
+<li>如果你想查看你目前使用快捷键的情况，则可以在idea的<em>help</em>菜单找到<em>Poductivity Guide</em>查看；<br><strong>注意：以上快捷键主要是Mac系统下的操作，如果你使用的是非Mac系统，那么你只需要安装Presentation Assistant便可以显示Linux和Windows上的快捷键</strong><br>如果想深入学习，可以参考该视频连接：<br><a href="https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2" target="_blank" rel="external">https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2</a></li>
 </ul>
 ]]></content>
       
