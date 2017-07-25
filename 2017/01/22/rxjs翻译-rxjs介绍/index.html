@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="strongant的个人博客">
 <meta property="og:description" content="介绍RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，Observable ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由Array#extras (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。 可以将RxJS想象成是用">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2017-07-25T02:24:24.019Z">
+<meta property="og:updated_time" content="2017-07-25T03:56:30.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rxjs翻译-rxjs介绍">
 <meta name="twitter:description" content="介绍RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，Observable ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由Array#extras (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。 可以将RxJS想象成是用">
@@ -197,7 +197,8 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-rxjs翻译-rxjs介绍" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-rxjs翻译-rxjs介绍" class="article article-type-post "
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -208,16 +209,20 @@ var _hmt = _hmt || [];
     </h1>
   
 
-        
-        <a href="/2017/01/22/rxjs翻译-rxjs介绍/" class="archive-article-date">
+          
+            <a href="/2017/01/22/rxjs翻译-rxjs介绍/" class="archive-article-date">
   	<time datetime="2017-01-22T13:26:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-22</time>
 </a>
-        
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，<a href="&#39;./overview.html#observable&#39;">Observable</a> ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.6" target="_blank" rel="external">Array#extras</a> (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。</p>
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，<a href="&#39;./overview.html#observable&#39;">Observable</a> ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.6" target="_blank" rel="external">Array#extras</a> (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。</p>
 <p><span class="informal">可以将RxJS想象成是用于处理事件的Lodash.</span></p>
 <p>ReactiveX将<a href="https://en.wikipedia.org/wiki/Observer_pattern" target="_blank" rel="external">Observer模式</a>和<a href="https://en.wikipedia.org/wiki/Iterator_pattern" target="_blank" rel="external">Iterator模式</a>和对集合进行函数式编程结合起来，从而满足了对事件序列进行管理的需求。</p>
 <p>RxJS用于解决异步事件的管理问题，它的核心概念如下：</p>
@@ -260,16 +265,16 @@ var _hmt = _hmt || [];
 <p>译者注：这里map可以将事件里的值取出来，如果不进行map，clientX里的值就是事件本身。<br>这里要注意的是每次变换，其实对象是发生变化的。subscribe一次之后就不能再subscribe了。</p>
 </blockquote>
 
-      
+                      
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
+                        
+                          <div class="page-reward">
+                            <a href="javascript:;" class="page-reward-btn tooltip-top">
+                              <div class="tooltip tooltip-east">
+                                <span class="tooltip-item">
               赏
             </span>
-            <span class="tooltip-content">
+                                <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
@@ -278,26 +283,26 @@ var _hmt = _hmt || [];
                     <div class="reward-box-item">
                       <img class="reward-img" src="/img/alipay.jpg">
                       <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wechatpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
+                              </div>
+                              
+                                
+                                  <div class="reward-box-item">
+                                    <img class="reward-img" src="/img/wechatpay.jpg">
+                                    <span class="reward-type">微信</span>
+                                  </div>
+                                  
+                          </div>
+                          </span>
+                          </span>
+                          </span>
         </div>
-      
+        </a>
+  </div>
+  
     </div>
     <div class="article-info article-info-index">
       
-      
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -309,12 +314,12 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-      
+            
 
-      
+              
 
-      
-        
+                  
+                    
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -364,10 +369,10 @@ var _hmt = _hmt || [];
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
+                      
+                        <div class="clearfix"></div>
     </div>
-  </div>
+    </div>
 </article>
 
   
@@ -390,13 +395,13 @@ var _hmt = _hmt || [];
   
 </nav>
 
+    
 
+      
 
-
-
-
-  
-  <!-- 畅言评论框 start -->
+            
+              
+                <!-- 畅言评论框 start -->
 <div id="SOHUCS" sid="rxjs翻译-rxjs介绍" style="padding: 0px 30px 0px 46px;"></div>
 <script type="text/javascript"> 
 (function(){ 
@@ -405,23 +410,23 @@ var conf = 'prod_25363bfe21a9a09909208a01135582ea';
 var width = window.innerWidth || document.documentElement.clientWidth; 
 if (width < 960) { 
 window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-  
+                  
+                      
+
+                        
+                          <script>
+                            (function () {
+                              var bp = document.createElement('script');
+                              bp.src = '//push.zhanzhang.baidu.com/push.js';
+                              var s = document.getElementsByTagName("script")[0];
+                              s.parentNode.insertBefore(bp, s);
+                            })();
+
+                          </script>
+                          
 
 
-
-<script>
-(function(){
-    var bp = document.createElement('script');
-    bp.src = '//push.zhanzhang.baidu.com/push.js';
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>     
-
-
-
-
-
+                            
           </div>
         </div>
       </div>
@@ -526,15 +531,15 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
               </li>
              
               <li class="article-tag-list-item">
