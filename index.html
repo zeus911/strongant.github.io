@@ -197,6 +197,94 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Mac通过brew安装redis" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/26/Mac通过brew安装redis/">Mac通过brew安装redis</a>
+    </h1>
+  
+
+          
+            <a href="/2017/07/26/Mac通过brew安装redis/" class="archive-article-date">
+  	<time datetime="2017-07-26T13:41:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-26</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <h2 id="MacOS下通过brew安装redis"><a href="#MacOS下通过brew安装redis" class="headerlink" title="MacOS下通过brew安装redis"></a>MacOS下通过brew安装redis</h2><h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis:"></a>安装redis:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install redis</div></pre></td></tr></table></figure>
+<p>安装后的地址为:/usr/local/Cellar/redis/3.2.9</p>
+<h3 id="链接redis的launch开机启动配置文件"><a href="#链接redis的launch开机启动配置文件" class="headerlink" title="链接redis的launch开机启动配置文件"></a>链接redis的launch开机启动配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents</div></pre></td></tr></table></figure>
+<h3 id="使用launchctl启动redis，每次开机启动"><a href="#使用launchctl启动redis，每次开机启动" class="headerlink" title="使用launchctl启动redis，每次开机启动"></a>使用launchctl启动redis，每次开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</div></pre></td></tr></table></figure>
+<h3 id="通过redis的配置文件进行启动"><a href="#通过redis的配置文件进行启动" class="headerlink" title="通过redis的配置文件进行启动"></a>通过redis的配置文件进行启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-server /usr/local/etc/redis.conf</div></pre></td></tr></table></figure>
+<h3 id="停止开机启动redis"><a href="#停止开机启动redis" class="headerlink" title="停止开机启动redis"></a>停止开机启动redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</div></pre></td></tr></table></figure>
+<h3 id="安装后的redis默认配置文件地址："><a href="#安装后的redis默认配置文件地址：" class="headerlink" title="安装后的redis默认配置文件地址："></a>安装后的redis默认配置文件地址：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/etc/redis.conf</div></pre></td></tr></table></figure>
+<h3 id="卸载redis"><a href="#卸载redis" class="headerlink" title="卸载redis"></a>卸载redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew uninstall redis</div><div class="line">rm ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</div></pre></td></tr></table></figure>
+<h3 id="获取redis的安装信息"><a href="#获取redis的安装信息" class="headerlink" title="获取redis的安装信息"></a>获取redis的安装信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew info redis</div></pre></td></tr></table></figure>
+<h3 id="测试redis是否启动"><a href="#测试redis是否启动" class="headerlink" title="测试redis是否启动"></a>测试redis是否启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli ping</div></pre></td></tr></table></figure>
+<p>如果redis返回“PONG”，那么说明连接成功</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mac</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">brew</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/07/26/Mac通过brew安装redis/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-Ubuntu安装Java8环境" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1051,83 +1139,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-春节回家" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/23/春节回家/">春节回家</a>
-    </h1>
-  
-
-          
-            <a href="/2017/01/23/春节回家/" class="archive-article-date">
-  	<time datetime="2017-01-23T13:20:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-23</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <center><img src="http://i1.piimg.com/4851/b70e6f5b8f4e2ba5.jpg" alt="plane"></center>
-
-
-<p><strong>对于刚过去不远的2016年，有欢乐，有辛酸，有失望，有快乐！还记得自己2016年年初的时候计划通过自己的努力买一台MakBook Pro（非正式工资的钱买），可到头来并没有完成我的这个愿望！</strong></p>
-<p><strong>远在他乡的我，随着年龄的增长，感到些许压抑、彷徨和不安，在新的2017年我决定奋力冲刺，早日实现自己的梦想！</strong></p>
-<p><strong>远在他乡，来到陌生的城市，看着天天上涨的房价，买房这件事情也只能想想。自己长大了，父母却老了，他们需要我们的照顾，在一线城市上几年班，攒个首付去二三线城市买一套房子然后打拼事业，这也是我的打算！乘着二三线城市的房价还没有大幅上涨，还是早下手为强！</strong></p>
-<p><strong>在一线城市上班，别人听起来工资很高，经常听到隔壁阿姨说：谁谁家的儿子在哪哪呢，一个月挣1W多呢，可是花销完，房租缴完，也剩不下多少钱了。要想拿到更多的薪水，就得从自身开始做起。我已经为自己制定好了2017年的计划，你呢？</strong></p>
-<p><strong>在这里，提前祝大家新年快乐！以上是我的一点生活感触，博客地址：<a href="http://baiwenhui.com">http://baiwenhui.com</a>，欢迎交流、分享：</strong></p>
-<center> <img src="http://i1.piimg.com/4851/71f2c239602d5025.jpg" alt="qrcode"></center>
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">生活感悟</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/01/23/春节回家/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1235,11 +1246,23 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">IDEA,Mac快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">brew</a>
               </li>
              
               <li class="article-tag-list-item">

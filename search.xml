@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title><![CDATA[Mac通过brew安装redis]]></title>
+      <url>http://baiwenhui.com/2017/07/26/Mac%E9%80%9A%E8%BF%87brew%E5%AE%89%E8%A3%85redis/</url>
+      <content type="html"><![CDATA[<h2 id="MacOS下通过brew安装redis"><a href="#MacOS下通过brew安装redis" class="headerlink" title="MacOS下通过brew安装redis"></a>MacOS下通过brew安装redis</h2><h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis:"></a>安装redis:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install redis</div></pre></td></tr></table></figure>
+<p>安装后的地址为:/usr/local/Cellar/redis/3.2.9</p>
+<h3 id="链接redis的launch开机启动配置文件"><a href="#链接redis的launch开机启动配置文件" class="headerlink" title="链接redis的launch开机启动配置文件"></a>链接redis的launch开机启动配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents</div></pre></td></tr></table></figure>
+<h3 id="使用launchctl启动redis，每次开机启动"><a href="#使用launchctl启动redis，每次开机启动" class="headerlink" title="使用launchctl启动redis，每次开机启动"></a>使用launchctl启动redis，每次开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</div></pre></td></tr></table></figure>
+<h3 id="通过redis的配置文件进行启动"><a href="#通过redis的配置文件进行启动" class="headerlink" title="通过redis的配置文件进行启动"></a>通过redis的配置文件进行启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-server /usr/local/etc/redis.conf</div></pre></td></tr></table></figure>
+<h3 id="停止开机启动redis"><a href="#停止开机启动redis" class="headerlink" title="停止开机启动redis"></a>停止开机启动redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</div></pre></td></tr></table></figure>
+<h3 id="安装后的redis默认配置文件地址："><a href="#安装后的redis默认配置文件地址：" class="headerlink" title="安装后的redis默认配置文件地址："></a>安装后的redis默认配置文件地址：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/etc/redis.conf</div></pre></td></tr></table></figure>
+<h3 id="卸载redis"><a href="#卸载redis" class="headerlink" title="卸载redis"></a>卸载redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew uninstall redis</div><div class="line">rm ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</div></pre></td></tr></table></figure>
+<h3 id="获取redis的安装信息"><a href="#获取redis的安装信息" class="headerlink" title="获取redis的安装信息"></a>获取redis的安装信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew info redis</div></pre></td></tr></table></figure>
+<h3 id="测试redis是否启动"><a href="#测试redis是否启动" class="headerlink" title="测试redis是否启动"></a>测试redis是否启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli ping</div></pre></td></tr></table></figure>
+<p>如果redis返回“PONG”，那么说明连接成功</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> mac </tag>
+            
+            <tag> redis </tag>
+            
+            <tag> brew </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ubuntu安装Java8环境]]></title>
       <url>http://baiwenhui.com/2017/07/26/Ubuntu%E5%AE%89%E8%A3%85Java8%E7%8E%AF%E5%A2%83/</url>
       <content type="html"><![CDATA[<h2 id="Ubuntu-系统安装Java8-JDK"><a href="#Ubuntu-系统安装Java8-JDK" class="headerlink" title="Ubuntu 系统安装Java8 JDK"></a>Ubuntu 系统安装Java8 JDK</h2><p>1.添加ppa<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/java</div></pre></td></tr></table></figure></p>
