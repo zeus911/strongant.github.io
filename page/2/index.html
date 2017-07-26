@@ -197,6 +197,117 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-rxjs翻译-rxjs介绍" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/22/rxjs翻译-rxjs介绍/">rxjs翻译-rxjs介绍</a>
+    </h1>
+  
+
+          
+            <a href="/2017/01/22/rxjs翻译-rxjs介绍/" class="archive-article-date">
+  	<time datetime="2017-01-22T13:26:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-22</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，<a href="&#39;./overview.html#observable&#39;">Observable</a> ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.6" target="_blank" rel="external">Array#extras</a> (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。</p>
+<p><span class="informal">可以将RxJS想象成是用于处理事件的Lodash.</span></p>
+<p>ReactiveX将<a href="https://en.wikipedia.org/wiki/Observer_pattern" target="_blank" rel="external">Observer模式</a>和<a href="https://en.wikipedia.org/wiki/Iterator_pattern" target="_blank" rel="external">Iterator模式</a>和对集合进行函数式编程结合起来，从而满足了对事件序列进行管理的需求。</p>
+<p>RxJS用于解决异步事件的管理问题，它的核心概念如下：</p>
+<ul>
+<li><strong>Observable:</strong> 代表数据与事件的集合，这个集合可以被调用，从而可以生成数据和事件。</li>
+<li><strong>Observer:</strong> 回调函数的集合，用于获取想要数据。这些数据来自于Observable。</li>
+<li><strong>Subscription:</strong> 用于表示Observable的执行状态，主要用于执行的取消。</li>
+<li><strong>Operator:</strong> 函数式风格的纯函数，通过<code>map</code>, <code>filter</code>, <code>concat</code>, <code>flatMap</code>等操作对集合进行处理。</li>
+<li><strong>Subject:</strong> 与EventEmitter等价，唯一可以将一个值或者事件向个多个Observer进行广播的办法。</li>
+<li><strong>Schedulers:</strong> 一个中心化的、控制并发的分发器，允许我们可以在象<code>setTimeout</code>、<code>requestAnimationFrame</code>或者其它类似的计算中可以进行调整。</li>
+</ul>
+<h2 id="第一个例子"><a href="#第一个例子" class="headerlink" title="第一个例子"></a>第一个例子</h2><p>通常你是这样注册事件的侦听器(listener)的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">'Clicked!'</span>));</div></pre></td></tr></table></figure></p>
+<p>使用RxJS的话，你要创建一个Observable来替换。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">Rx.Observable.fromEvent(button, <span class="string">'click'</span>)</div><div class="line">  .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Clicked!'</span>));</div></pre></td></tr></table></figure>
+<h3 id="纯粹-Purity"><a href="#纯粹-Purity" class="headerlink" title="纯粹(Purity)"></a>纯粹(Purity)</h3><p>让RxJS强大的是它能完全通过函数来生成数值，这也就意味着可以减少代码出错的机会。</p>
+<p>通常你会创建比较不纯粹的函数，在这样的函数里，其它的代码片段会让你的状态变的混乱。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">`Clicked <span class="subst">$&#123;++count&#125;</span> times`</span>));</div></pre></td></tr></table></figure>
+<p>而使用RxJS可以将你的状态进行隔离。</p>
+<blockquote>
+<p>译者注： 指count不再需要定义在外面。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">Rx.Observable.fromEvent(button, <span class="string">'click'</span>)</div><div class="line">  .scan(<span class="function"><span class="params">count</span> =&gt;</span> count + <span class="number">1</span>, <span class="number">0</span>)</div><div class="line">  .subscribe(<span class="function"><span class="params">count</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Clicked <span class="subst">$&#123;count&#125;</span> times`</span>));</div></pre></td></tr></table></figure>
+<p>这里<strong>scan</strong>运算子的工作方式与<strong>reduce</strong>在数组里的工作方式是一样的。它从传给回调函数的值中获取值。返回的值将会作为下一次的传入值。</p>
+<blockquote>
+<p>译者注：scan第二个参数0是初始值。对于上面的函数来说就可以用来侦听被点击的次数了，非常的方便。</p>
+</blockquote>
+<h3 id="流转（Flow）"><a href="#流转（Flow）" class="headerlink" title="流转（Flow）"></a>流转（Flow）</h3><p>RxJS有一堆的运算子可以帮助你控制事件如何在你的可观察对象里流转。</p>
+<p>下面是你在纯JavaScript下允许一分钟最多一次点击的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> rate = <span class="number">1000</span>;</div><div class="line"><span class="keyword">var</span> lastClick = <span class="built_in">Date</span>.now() - rate;</div><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (<span class="built_in">Date</span>.now() - lastClick &gt;= rate) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`Clicked <span class="subst">$&#123;++count&#125;</span> times`</span>);</div><div class="line">    lastClick = <span class="built_in">Date</span>.now();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>使用RxJS后:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">Rx.Observable.fromEvent(button, <span class="string">'click'</span>)</div><div class="line">  .throttleTime(<span class="number">1000</span>)</div><div class="line">  .scan(<span class="function"><span class="params">count</span> =&gt;</span> count + <span class="number">1</span>, <span class="number">0</span>)</div><div class="line">  .subscribe(<span class="function"><span class="params">count</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Clicked <span class="subst">$&#123;count&#125;</span> times`</span>));</div></pre></td></tr></table></figure>
+<p>其实的流转控制运算子还有<a href="../class/es6/Observable.js~Observable.html#instance-method-filter"><strong>filter</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-delay"><strong>delay</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-debounceTime"><strong>debounceTime</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-take"><strong>take</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-takeUntil"><strong>takeUntil</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-distinct"><strong>distinct</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-distinctUntilChanged"><strong>distinctUntilChanged</strong></a>等。</p>
+<h3 id="值-Values"><a href="#值-Values" class="headerlink" title="值(Values)"></a>值(Values)</h3><p>你可以转化赋给你的观察者的值。</p>
+<p>下面是你在纯JavaScript下添加当前鼠标的每个点击事件的x轴位置的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> rate = <span class="number">1000</span>;</div><div class="line"><span class="keyword">var</span> lastClick = <span class="built_in">Date</span>.now() - rate;</div><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">button.addEventListener(<span class="string">'click'</span>, (event) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (<span class="built_in">Date</span>.now() - lastClick &gt;= rate) &#123;</div><div class="line">    count += event.clientX;</div><div class="line">    <span class="built_in">console</span>.log(count)</div><div class="line">    lastClick = <span class="built_in">Date</span>.now();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>使用RxJS后:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">Rx.Observable.fromEvent(button, <span class="string">'click'</span>)</div><div class="line">  .throttleTime(<span class="number">1000</span>)</div><div class="line">  .map(<span class="function"><span class="params">event</span> =&gt;</span> event.clientX)</div><div class="line">  .scan(<span class="function">(<span class="params">count, clientX</span>) =&gt;</span> count + clientX, <span class="number">0</span>)</div><div class="line">  .subscribe(<span class="function"><span class="params">count</span> =&gt;</span> <span class="built_in">console</span>.log(count));</div></pre></td></tr></table></figure>
+<p>另外几个用于生成值的运算子有<a href="../class/es6/Observable.js~Observable.html#instance-method-pluck"><strong>pluck</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-pairwise"><strong>pairwise</strong></a>,<br><a href="../class/es6/Observable.js~Observable.html#instance-method-sample"><strong>sample</strong></a>等。</p>
+<blockquote>
+<p>译者注：这里map可以将事件里的值取出来，如果不进行map，clientX里的值就是事件本身。<br>这里要注意的是每次变换，其实对象是发生变化的。subscribe一次之后就不能再subscribe了。</p>
+</blockquote>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">rxjs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/01/22/rxjs翻译-rxjs介绍/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-修正browser-sync公众号文章的错误" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">

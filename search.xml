@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title><![CDATA[Ubuntu安装Java8环境]]></title>
+      <url>http://baiwenhui.com/2017/07/26/Ubuntu%E5%AE%89%E8%A3%85Java8%E7%8E%AF%E5%A2%83/</url>
+      <content type="html"><![CDATA[<h2 id="Ubuntu-系统安装Java8-JDK"><a href="#Ubuntu-系统安装Java8-JDK" class="headerlink" title="Ubuntu 系统安装Java8 JDK"></a>Ubuntu 系统安装Java8 JDK</h2><p>1.添加ppa<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/java</div></pre></td></tr></table></figure></p>
+<p>2.更新系统<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p>3.开始安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install oracle-java8-installer -y</div></pre></td></tr></table></figure></p>
+<p>4.验证是否安装成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure></p>
+<p>5.安装脚本gist地址(执行脚本时记得回车继续，其中弹出确认安装提示选择是即可，脚本执行完毕后就已经成功安装Java8了，安装大约得等待一段时间，请耐心等待！):<br><a href="https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95" target="_blank" rel="external">https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[终端录制神器-showterm]]></title>
       <url>http://baiwenhui.com/2017/07/26/%E7%BB%88%E7%AB%AF%E5%BD%95%E5%88%B6%E7%A5%9E%E5%99%A8/</url>
       <content type="html"><![CDATA[<h2 id="使用showterm对终端脚本进行录制"><a href="#使用showterm对终端脚本进行录制" class="headerlink" title="使用showterm对终端脚本进行录制"></a>使用showterm对终端脚本进行录制</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
