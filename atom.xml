@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://baiwenhui.com/"/>
-  <updated>2017-07-26T13:34:45.047Z</updated>
+  <updated>2017-07-26T13:41:02.352Z</updated>
   <id>http://baiwenhui.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>Ubuntu安装Java8环境</title>
     <link href="http://baiwenhui.com/2017/07/26/Ubuntu%E5%AE%89%E8%A3%85Java8%E7%8E%AF%E5%A2%83/"/>
     <id>http://baiwenhui.com/2017/07/26/Ubuntu安装Java8环境/</id>
-    <published>2017-07-26T13:32:41.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <published>2017-07-26T13:32:00.000Z</published>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Ubuntu-系统安装Java8-JDK"><a href="#Ubuntu-系统安装Java8-JDK" class="headerlink" title="Ubuntu 系统安装Java8 JDK"></a>Ubuntu 系统安装Java8 JDK</h2><p>1.添加ppa<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/java</div></pre></td></tr></table></figure></p>
 <p>2.更新系统<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
@@ -36,6 +36,12 @@
     </summary>
     
     
+      <category term="jdk" scheme="http://baiwenhui.com/tags/jdk/"/>
+    
+      <category term="java8" scheme="http://baiwenhui.com/tags/java8/"/>
+    
+      <category term="sh" scheme="http://baiwenhui.com/tags/sh/"/>
+    
   </entry>
   
   <entry>
@@ -43,7 +49,7 @@
     <link href="http://baiwenhui.com/2017/07/26/%E7%BB%88%E7%AB%AF%E5%BD%95%E5%88%B6%E7%A5%9E%E5%99%A8/"/>
     <id>http://baiwenhui.com/2017/07/26/终端录制神器/</id>
     <published>2017-07-26T12:21:00.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<h2 id="使用showterm对终端脚本进行录制"><a href="#使用showterm对终端脚本进行录制" class="headerlink" title="使用showterm对终端脚本进行录制"></a>使用showterm对终端脚本进行录制</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
 <li>如果是Mac用户，直接使用如下命令即可安装(默认情况下，Mac OS X 系统已经安装好 Ruby):</li>
@@ -91,7 +97,7 @@
     <link href="http://baiwenhui.com/2017/07/22/IDEA-Mac%E4%B8%8B%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
     <id>http://baiwenhui.com/2017/07/22/IDEA-Mac下快捷键奇淫技巧/</id>
     <published>2017-07-22T13:59:00.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>为你的ide设置背景图片；<br>只需要双击enter键，然后输入<em>set back</em>， 找到<em>Set Background Image</em> 选择你想要添加的背景图片即可。如果不需要设置图片，再次打开单击<em>clear</em>按钮即可清除。</li>
@@ -146,7 +152,7 @@
     <link href="http://baiwenhui.com/2017/07/21/%E4%BD%BF%E7%94%A8springdata%E6%93%8D%E4%BD%9Ces%E5%87%BA%E9%94%99org-elasticsearch-client-transport-NoNodeAvailableException/"/>
     <id>http://baiwenhui.com/2017/07/21/使用springdata操作es出错org-elasticsearch-client-transport-NoNodeAvailableException/</id>
     <published>2017-07-21T01:48:10.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<p>  之前的项目中使用的是http-client操作es，比较轻量级。目前为了学习下springdata，使用Java API 的方式来操作ES，但是在引入SpringData的es模块依赖后，操作es并未成功，出现以下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [&#123;#transport#-1&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125;]</div></pre></td></tr></table></figure></p>
 <p><strong>注意：</strong>如果你下载elasticsearch的压缩包安装的话，可能不会出现该问题！因为es默认的配置文件cluster.name是elasticsearch。但是奇葩的是使用brew安装es之后，默认的elasticsearch.yml的配置项成了这样：cluster.name: elasticsearch_bwh，就是这个原因导致了这个问题的产生，项目启动后控制台一直抛这个错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transport#-1&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125; not part of the cluster Cluster [Assassin], ignoring...</div></pre></td></tr></table></figure></p>
@@ -176,7 +182,7 @@
     <link href="http://baiwenhui.com/2017/05/30/hexo%E5%B0%86%E5%A4%9A%E8%AF%B4%E6%9B%BF%E6%8D%A2%E4%B8%BA%E7%95%85%E8%A8%80/"/>
     <id>http://baiwenhui.com/2017/05/30/hexo将多说替换为畅言/</id>
     <published>2017-05-30T02:46:11.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 由于多说团队在2017年6月1号停止了对多说的运营，因此需要将博客中使用的多说替换为畅言。 </strong></p>
 <h3 id="具体替换办法如下："><a href="#具体替换办法如下：" class="headerlink" title="具体替换办法如下："></a>具体替换办法如下：</h3><ol>
@@ -222,7 +228,7 @@
     <link href="http://baiwenhui.com/2017/05/29/%E9%80%92%E5%BD%92%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/"/>
     <id>http://baiwenhui.com/2017/05/29/递归原理解析/</id>
     <published>2017-05-29T15:48:17.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>首先使用递归输出经典的阶乘，描述如下：</li>
@@ -268,7 +274,7 @@
     <link href="http://baiwenhui.com/2017/03/12/SpringBoot%E5%AD%A6%E4%B9%A0%E4%B8%80/"/>
     <id>http://baiwenhui.com/2017/03/12/SpringBoot学习一/</id>
     <published>2017-03-12T15:42:17.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><blockquote>
 <p>Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.</p>
@@ -324,7 +330,7 @@
     <link href="http://baiwenhui.com/2017/03/04/Java%E9%9D%A2%E8%AF%95-%E4%B8%80/"/>
     <id>http://baiwenhui.com/2017/03/04/Java面试-一/</id>
     <published>2017-03-04T16:04:28.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类和接口的区别？"><a href="#抽象类和接口的区别？" class="headerlink" title="抽象类和接口的区别？"></a>抽象类和接口的区别？</h3><ol>
 <li>抽象类中可以包含抽象方法和非抽象方法，接口只能包含公开的抽象方法；</li>
@@ -377,7 +383,7 @@
     <link href="http://baiwenhui.com/2017/02/05/2017%E5%BC%80%E5%B7%A5%E5%BF%AB%E4%B9%90/"/>
     <id>http://baiwenhui.com/2017/02/05/2017开工快乐/</id>
     <published>2017-02-05T13:43:05.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<center><img src="http://i1.piimg.com/4851/ce0a3e1ef63844b1.jpg" alt="2017开工快乐"></center>
 
@@ -403,7 +409,7 @@
     <link href="http://baiwenhui.com/2017/01/23/%E6%98%A5%E8%8A%82%E5%9B%9E%E5%AE%B6/"/>
     <id>http://baiwenhui.com/2017/01/23/春节回家/</id>
     <published>2017-01-23T13:20:53.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<center><img src="http://i1.piimg.com/4851/b70e6f5b8f4e2ba5.jpg" alt="plane"></center>
 
@@ -434,7 +440,7 @@
     <link href="http://baiwenhui.com/2017/01/22/rxjs%E7%BF%BB%E8%AF%91-rxjs%E4%BB%8B%E7%BB%8D/"/>
     <id>http://baiwenhui.com/2017/01/22/rxjs翻译-rxjs介绍/</id>
     <published>2017-01-22T13:26:40.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，<a href="&#39;./overview.html#observable&#39;">Observable</a> ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.6" target="_blank" rel="external">Array#extras</a> (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。</p>
 <p><span class="informal">可以将RxJS想象成是用于处理事件的Lodash.</span></p>
@@ -496,7 +502,7 @@
     <link href="http://baiwenhui.com/2017/01/21/%E4%BF%AE%E6%AD%A3browser-sync%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0%E7%9A%84%E9%94%99%E8%AF%AF/"/>
     <id>http://baiwenhui.com/2017/01/21/修正browser-sync公众号文章的错误/</id>
     <published>2017-01-21T14:30:29.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<p>首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址:</p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z</a></p>
@@ -527,7 +533,7 @@
     <link href="http://baiwenhui.com/2017/01/19/hexo%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/"/>
     <id>http://baiwenhui.com/2017/01/19/hexo搭建成功/</id>
     <published>2017-01-19T15:20:52.000Z</published>
-    <updated>2017-07-26T13:34:45.047Z</updated>
+    <updated>2017-07-26T13:41:02.352Z</updated>
     
     <content type="html"><![CDATA[<p>终于折腾完了，搭建好我的hexo，的确挺方便的！感谢前人的贡献！</p>
 ]]></content>
