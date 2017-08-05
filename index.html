@@ -203,6 +203,97 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-监听chrome-extension-popup页面消失" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/05/监听chrome-extension-popup页面消失/">监听chrome extension popup页面消失</a>
+    </h1>
+  
+
+          
+            <a href="/2017/08/05/监听chrome-extension-popup页面消失/" class="archive-article-date">
+  	<time datetime="2017-08-05T08:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
+<li>当用户不小心点击了鼠标或者离开了扩展的popup页面，此时需要对一些数据进行清空或者删除一些不必要的数据.</li>
+</ul>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ul>
+<li>然而chrome 扩展官方并没有对popup或者browserAction提供相关页面消失时的监听事件</li>
+</ul>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ul>
+<li>通过不断的查找资料和查阅chrome扩展开发文档，我们可以使用消息通信连接的方式解决了这个问题<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤:"></a>具体步骤:</h3></li>
+<li><p>首先在你需要监听页面消失事件的js文件中与background建立连接，相关代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//这里主要是为了与background建立连接，当页面关闭的时候连接就会断开，此时background中你注册的连接关闭函数此时会执行，因为background环境一直存在，除非你关闭了电脑</div><div class="line"> var port = chrome.runtime.connect();</div></pre></td></tr></table></figure>
+</li>
+<li><p>在background环境注册断开连接时需要处理的方法，相关代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  chrome.runtime.onConnect.addListener(function (externalPort) &#123;</div><div class="line">        externalPort.onDisconnect.addListener(function() &#123;</div><div class="line">        var ignoreError = chrome.runtime.lastError;</div><div class="line">        console.log(&quot;onDisconnect&quot;);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>通过以上的方式便实现了类似对popup页面消失时做一些事情的需求。感谢StackOverFlow，神一样的解决问题社区，致敬！</li>
+</ul>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">chrome扩展</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/08/05/监听chrome-extension-popup页面消失/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-生活感慨" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1029,110 +1120,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-SpringBoot学习一" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/12/SpringBoot学习一/">SpringBoot学习一</a>
-    </h1>
-  
-
-          
-            <a href="/2017/03/12/SpringBoot学习一/" class="archive-article-date">
-  	<time datetime="2017-03-12T15:42:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><blockquote>
-<p>Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.</p>
-</blockquote>
-<p><strong>遵循建立生产就绪Spring应用程序的观点。SpringBoot支持约定优于配置的惯例，旨在让您尽快启动和运行。</strong></p>
-<blockquote>
-<p>Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can “just run”. We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.</p>
-</blockquote>
-<p><strong>SpringBoot可以轻松的创建单独的，生产级的基于Spring的应用，您可以“直接运行”。我们为Spring平台和第三方库提供了开箱即用的设置，这样你就可以有条不斋的开始。大多数的SpringBoot程序只需要很少的Spring配置。 </strong></p>
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
-<li>Create stand-alone Spring applications</li>
-<li>Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)</li>
-<li>Provide opinionated ‘starter’ POMs to simplify your Maven configuration</li>
-<li>Automatically configure Spring whenever possible</li>
-<li>Provide production-ready features such as metrics, health checks and externalized configuration</li>
-<li>Absolutely no code generation and no requirement for XML configuration</li>
-</ul>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
-<li>创建标准独立的Spring应用程序</li>
-<li>直接嵌入Tomcat、Jetty或者Undertow（不需要部署WAR文件）</li>
-<li>提供建议的‘starter’POM模板以简化您的Maven配置</li>
-<li>每当可能时自动配置Spring</li>
-<li>提供生产就绪的功能，如指标，运行状况检查和外部化配置</li>
-<li>绝对没有代码生成和不需要XML配置</li>
-</ul>
-<p>The reference guide includes detailed descriptions of all the features, plus an extensive howto for common use cases.<br>该<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle" target="_blank" rel="external">参考指南</a>包含所有功能的详细说明，以及广泛的<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto" target="_blank" rel="external">如何使用</a>共同使用情况。</p>
-<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>If you are Java developer you can use start.spring.io to generate a basic project, follow the “Quick Start” example below, or read the reference documentation getting started guide.</p>
-<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><p>如果你是一名Java程序员，你可以通过<a href="https://start.spring.io/" target="_blank" rel="external">start.spring.io</a>生成基本项目，按照下面的“快速开始”示例或者阅读参考文档的<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started" target="_blank" rel="external">入门指南</a>。</p>
-<p>The recommended way to get started using spring-boot in your project is with a dependency management system – the snippet below can be copied and pasted into your build. Need help? See our getting started guides on building with Maven and Gradle.</p>
-<p>spring-boot在项目中开始使用的推荐方法是使用依赖关系管理系统 - 下面的代码段可以复制并粘贴到您的构建中。需要帮忙？请参阅我们使用<a href="https://spring.io/guides/gs/maven/" target="_blank" rel="external">Maven</a>和 <a href="https://spring.io/guides/gs/gradle/" target="_blank" rel="external">Gradle</a>构建的入门指南。</p>
-<p>Maven<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;parent&gt;</div><div class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;</div><div class="line">&lt;/parent&gt;</div><div class="line">&lt;dependencies&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">&lt;/dependencies&gt;</div></pre></td></tr></table></figure></p>
-<p>Gradle<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    compile(&quot;org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello/SampleController.java</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">package hello;</div><div class="line"></div><div class="line">import org.springframework.boot.*;</div><div class="line">import org.springframework.boot.autoconfigure.*;</div><div class="line">import org.springframework.stereotype.*;</div><div class="line">import org.springframework.web.bind.annotation.*;</div><div class="line"></div><div class="line">@Controller</div><div class="line">@EnableAutoConfiguration</div><div class="line">public class SampleController &#123;</div><div class="line"></div><div class="line">    @RequestMapping(&quot;/&quot;)</div><div class="line">    @ResponseBody</div><div class="line">    String home() &#123;</div><div class="line">        return &quot;Hello World!&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args) throws Exception &#123;</div><div class="line">        SpringApplication.run(SampleController.class, args);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Spring-Boot-CLI"><a href="#Spring-Boot-CLI" class="headerlink" title="Spring Boot CLI"></a>Spring Boot CLI</h3><p>Spring Boot ships with a command line tool that can be used if you want to quickly prototype with Spring. It allows you to run Groovy scripts, which means that you have a familiar Java-like syntax, without so much boilerplate code. Follow the instructions in our main documentation if you want to install the Spring Boot CLI.</p>
-<h3 id="Spring-Boot-命令行工具"><a href="#Spring-Boot-命令行工具" class="headerlink" title="Spring Boot 命令行工具"></a>Spring Boot 命令行工具</h3><p>Spring Boot附带一个命令行工具，如果你想快速使用Spring原型，可以使用它。它允许你运行Groovy脚本，这意味着你有一个熟悉的类似Java的语法，没有那么多的样板代码。如果要<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="external">安装Spring Boot CLI</a>，请按照我们的主要文档中的说明进行<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="external">操作</a>。</p>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/03/12/SpringBoot学习一/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1272,6 +1259,10 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
@@ -1281,10 +1272,6 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1305,6 +1292,14 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">生活感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">chrome扩展</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">

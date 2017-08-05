@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://baiwenhui.com/"/>
-  <updated>2017-08-05T08:33:45.093Z</updated>
+  <updated>2017-08-05T08:49:24.734Z</updated>
   <id>http://baiwenhui.com/</id>
   
   <author>
@@ -16,11 +16,53 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>监听chrome extension popup页面消失</title>
+    <link href="http://baiwenhui.com/2017/08/05/%E7%9B%91%E5%90%ACchrome-extension-popup%E9%A1%B5%E9%9D%A2%E6%B6%88%E5%A4%B1/"/>
+    <id>http://baiwenhui.com/2017/08/05/监听chrome-extension-popup页面消失/</id>
+    <published>2017-08-05T08:46:00.000Z</published>
+    <updated>2017-08-05T08:49:24.734Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
+<li>当用户不小心点击了鼠标或者离开了扩展的popup页面，此时需要对一些数据进行清空或者删除一些不必要的数据.</li>
+</ul>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ul>
+<li>然而chrome 扩展官方并没有对popup或者browserAction提供相关页面消失时的监听事件</li>
+</ul>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ul>
+<li>通过不断的查找资料和查阅chrome扩展开发文档，我们可以使用消息通信连接的方式解决了这个问题<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤:"></a>具体步骤:</h3></li>
+<li><p>首先在你需要监听页面消失事件的js文件中与background建立连接，相关代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//这里主要是为了与background建立连接，当页面关闭的时候连接就会断开，此时background中你注册的连接关闭函数此时会执行，因为background环境一直存在，除非你关闭了电脑</div><div class="line"> var port = chrome.runtime.connect();</div></pre></td></tr></table></figure>
+</li>
+<li><p>在background环境注册断开连接时需要处理的方法，相关代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  chrome.runtime.onConnect.addListener(function (externalPort) &#123;</div><div class="line">        externalPort.onDisconnect.addListener(function() &#123;</div><div class="line">        var ignoreError = chrome.runtime.lastError;</div><div class="line">        console.log(&quot;onDisconnect&quot;);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>通过以上的方式便实现了类似对popup页面消失时做一些事情的需求。感谢StackOverFlow，神一样的解决问题社区，致敬！</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;当用户不小心点击了鼠标或者离开了扩展的popup页面，此时需要对一些数据进行清空或者删除一些不必要的数据.&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="chrome扩展" scheme="http://baiwenhui.com/tags/chrome%E6%89%A9%E5%B1%95/"/>
+    
+      <category term="JavaScript" scheme="http://baiwenhui.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>上班路上的琐事</title>
     <link href="http://baiwenhui.com/2017/08/05/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%85%A8/"/>
     <id>http://baiwenhui.com/2017/08/05/生活感慨/</id>
     <published>2017-08-05T06:59:00.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<h3 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h3><p>  骑着电动车上班也有4个月了，总体感觉还是很不错的！由之前坐地铁上班花费1个半小时减少到现在的半个小时，还是很不错的一笔投资！其实后悔电瓶车买的有点迟了，如果早点买的话起码可以在出行方面带来很多方便，虽然现在有很多的共享单车可以骑，但是对于上海这么大的地方和上班距离遥远的情况，对于骑自行车来上班肯定是来不及的，速度也跟不上，根本无法满足自己的需求！可就在昨天下午2017年8月5号18点20分左右，当我插上电动车钥匙，死活就是启动不了电瓶车，而且电瓶车很明显没有一丁点儿电了，大灯不亮，喇叭不响，心里一下难过了，到底什么鬼导致这个问题的发生呢？然后想了想，我靠，中午的时候貌似下很大的雨，不会是雨漏到电瓶或者控制器里面，导致短路了吧？这个只是当时的猜测，后面接着开始用百度进行搜索一下，看网上有没有类似的网友遇到此问题，网上扫了一圈，基本上都说是可能是电瓶进水了，把电瓶晾干就可以骑了，其实当时想给卖车的师傅打电话的，又相信了网上的答案，于是便将车放到车棚里面坐地铁回家了，晚上可是要看《战狼2》的，不然时间来不及了，于是便放下电动车，匆忙往电影院赶！</p>
 <h3 id="事件经过"><a href="#事件经过" class="headerlink" title="事件经过"></a>事件经过</h3><p>  晚上看完电影，天气湿热湿热，难受至极，晚上浑浑噩噩的睡了一晚上。大清早9点多就起来了，起来便开始准备去公司看看电瓶车是不是像网上说的那样，等到电瓶晾干了，就可以骑了！于是乎开始骑单车、等公交、坐公交、等地铁、坐地铁，从出发到到达公司，大概花费了我2个小时，在这里我不得不吐槽交通问题，其实住的地方离公司只有20公里，有一次我起迟了害怕迟到，就打了个车到公司，花了40块钱。但是花费时间让我很惊讶，只用了10分钟，我就纳闷了，为什么这么快呢？原来是因为坐地铁比较绕，而且也没有直达的公交，如果坐公交的话也是特别绕，所以就浪费了不应该浪费的2个小时时间。这一点可能是因为个人住的地方偏远原因吧，不过我想很多人应该也有类似的愤怒，明明不是很远，却要绕很多路花很多时间才能到目的地。抱怨没用，只能自己想办法解决！到了公司之后去找到电瓶车，幸亏公司的安保措施做得不错，车子没有被偷，谢天谢地！当我插上钥匙，和昨天下午一个样，还是没有电，顿时想：糟糕，肯定是电瓶进水太严重，导致车子彻底没电了，这时候我想打电话找个修车师傅帮我看看，可卖车的地方离公司太远了，就想着要不要找个距离我比较近的修车师傅过来看看，又顾虑这是新车，如果让别人拆开修，人家不给我保修了怎么办，买下车骑了也没有多长时间，不划算！还是打电话问一下原卖车的师傅，我把情况给人家说了一下：昨天中午下了会大雨，车子没有用雨衣盖住，昨天下班后钥匙插上之后，启动不了，纯粹没电！然后又经验的师傅说了下：你检查一下座子下面那个开关是不是把电瓶的电源关闭了。于是我便按照他说的，打开后座，把开关切换了一些，然后用钥匙插上，发现奇迹产生了，电动车一切正常，心里窃喜，不用修了，感谢有经验的老司机！</p>
@@ -44,7 +86,7 @@
     <link href="http://baiwenhui.com/2017/08/02/Grails%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%97%A5%E6%9C%9F%E5%B7%AE%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/"/>
     <id>http://baiwenhui.com/2017/08/02/Grails中一个日期差引起的思考/</id>
     <published>2017-08-02T14:02:00.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<h3 id="需求如下"><a href="#需求如下" class="headerlink" title="需求如下"></a>需求如下</h3><p><strong> 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。 </strong></p>
 <h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>根据当前需求进行编码，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">class ExampleController &#123;</div><div class="line">    def test() &#123;</div><div class="line">        ...</div><div class="line">        def obj = XXX.findByName(&apos;xxx&apos;)</div><div class="line">        def limitDays = 7</div><div class="line">        if(obj &amp;&amp; daysBetween(obj.queryTime,new Date())&lt;=7)&#123;</div><div class="line">                            render([code: 10101, msg: &quot;查询失败，7天内不允许重复查询&quot;, data: []] as grails.converters.JSON)</div><div class="line">                            return</div><div class="line"> </div><div class="line">        &#125;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    //TODO: 将此处判断移动至service或者util类</div><div class="line">    static def daysBetween(def startDate, def endDate) &#123;</div><div class="line">        use(groovy.time.TimeCategory) &#123;</div><div class="line">            def duration = endDate - startDate</div><div class="line">            return duration.days</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -81,7 +123,7 @@
     <link href="http://baiwenhui.com/2017/07/26/Mac%E9%80%9A%E8%BF%87brew%E5%AE%89%E8%A3%85redis/"/>
     <id>http://baiwenhui.com/2017/07/26/Mac通过brew安装redis/</id>
     <published>2017-07-26T13:41:00.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<h2 id="MacOS下通过brew安装redis"><a href="#MacOS下通过brew安装redis" class="headerlink" title="MacOS下通过brew安装redis"></a>MacOS下通过brew安装redis</h2><h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis:"></a>安装redis:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install redis</div></pre></td></tr></table></figure>
 <p>安装后的地址为:/usr/local/Cellar/redis/3.2.9</p>
@@ -116,7 +158,7 @@
     <link href="http://baiwenhui.com/2017/07/26/Ubuntu%E5%AE%89%E8%A3%85Java8%E7%8E%AF%E5%A2%83/"/>
     <id>http://baiwenhui.com/2017/07/26/Ubuntu安装Java8环境/</id>
     <published>2017-07-26T13:32:00.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Ubuntu-系统安装Java8-JDK"><a href="#Ubuntu-系统安装Java8-JDK" class="headerlink" title="Ubuntu 系统安装Java8 JDK"></a>Ubuntu 系统安装Java8 JDK</h2><p>1.添加ppa<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/java</div></pre></td></tr></table></figure></p>
 <p>2.更新系统<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
@@ -145,7 +187,7 @@
     <link href="http://baiwenhui.com/2017/07/26/%E7%BB%88%E7%AB%AF%E5%BD%95%E5%88%B6%E7%A5%9E%E5%99%A8/"/>
     <id>http://baiwenhui.com/2017/07/26/终端录制神器/</id>
     <published>2017-07-26T12:21:00.000Z</published>
-    <updated>2017-08-05T08:33:45.097Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<h2 id="使用showterm对终端脚本进行录制"><a href="#使用showterm对终端脚本进行录制" class="headerlink" title="使用showterm对终端脚本进行录制"></a>使用showterm对终端脚本进行录制</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
 <li>如果是Mac用户，直接使用如下命令即可安装(默认情况下，Mac OS X 系统已经安装好 Ruby):</li>
@@ -193,7 +235,7 @@
     <link href="http://baiwenhui.com/2017/07/22/IDEA-Mac%E4%B8%8B%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
     <id>http://baiwenhui.com/2017/07/22/IDEA-Mac下快捷键奇淫技巧/</id>
     <published>2017-07-22T13:59:00.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>为你的ide设置背景图片；<br>只需要双击enter键，然后输入<em>set back</em>， 找到<em>Set Background Image</em> 选择你想要添加的背景图片即可。如果不需要设置图片，再次打开单击<em>clear</em>按钮即可清除。</li>
@@ -248,7 +290,7 @@
     <link href="http://baiwenhui.com/2017/07/21/%E4%BD%BF%E7%94%A8springdata%E6%93%8D%E4%BD%9Ces%E5%87%BA%E9%94%99org-elasticsearch-client-transport-NoNodeAvailableException/"/>
     <id>http://baiwenhui.com/2017/07/21/使用springdata操作es出错org-elasticsearch-client-transport-NoNodeAvailableException/</id>
     <published>2017-07-21T01:48:10.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<p>  之前的项目中使用的是http-client操作es，比较轻量级。目前为了学习下springdata，使用Java API 的方式来操作ES，但是在引入SpringData的es模块依赖后，操作es并未成功，出现以下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [&#123;#transport#-1&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125;]</div></pre></td></tr></table></figure></p>
 <p><strong>注意：</strong>如果你下载elasticsearch的压缩包安装的话，可能不会出现该问题！因为es默认的配置文件cluster.name是elasticsearch。但是奇葩的是使用brew安装es之后，默认的elasticsearch.yml的配置项成了这样：cluster.name: elasticsearch_bwh，就是这个原因导致了这个问题的产生，项目启动后控制台一直抛这个错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transport#-1&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125; not part of the cluster Cluster [Assassin], ignoring...</div></pre></td></tr></table></figure></p>
@@ -278,7 +320,7 @@
     <link href="http://baiwenhui.com/2017/05/30/hexo%E5%B0%86%E5%A4%9A%E8%AF%B4%E6%9B%BF%E6%8D%A2%E4%B8%BA%E7%95%85%E8%A8%80/"/>
     <id>http://baiwenhui.com/2017/05/30/hexo将多说替换为畅言/</id>
     <published>2017-05-30T02:46:11.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 由于多说团队在2017年6月1号停止了对多说的运营，因此需要将博客中使用的多说替换为畅言。 </strong></p>
 <h3 id="具体替换办法如下："><a href="#具体替换办法如下：" class="headerlink" title="具体替换办法如下："></a>具体替换办法如下：</h3><ol>
@@ -324,7 +366,7 @@
     <link href="http://baiwenhui.com/2017/05/29/%E9%80%92%E5%BD%92%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/"/>
     <id>http://baiwenhui.com/2017/05/29/递归原理解析/</id>
     <published>2017-05-29T15:48:17.000Z</published>
-    <updated>2017-08-05T08:33:45.097Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>首先使用递归输出经典的阶乘，描述如下：</li>
@@ -370,7 +412,7 @@
     <link href="http://baiwenhui.com/2017/03/12/SpringBoot%E5%AD%A6%E4%B9%A0%E4%B8%80/"/>
     <id>http://baiwenhui.com/2017/03/12/SpringBoot学习一/</id>
     <published>2017-03-12T15:42:17.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><blockquote>
 <p>Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.</p>
@@ -426,7 +468,7 @@
     <link href="http://baiwenhui.com/2017/03/04/Java%E9%9D%A2%E8%AF%95-%E4%B8%80/"/>
     <id>http://baiwenhui.com/2017/03/04/Java面试-一/</id>
     <published>2017-03-04T16:04:28.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类和接口的区别？"><a href="#抽象类和接口的区别？" class="headerlink" title="抽象类和接口的区别？"></a>抽象类和接口的区别？</h3><ol>
 <li>抽象类中可以包含抽象方法和非抽象方法，接口只能包含公开的抽象方法；</li>
@@ -479,7 +521,7 @@
     <link href="http://baiwenhui.com/2017/02/05/2017%E5%BC%80%E5%B7%A5%E5%BF%AB%E4%B9%90/"/>
     <id>http://baiwenhui.com/2017/02/05/2017开工快乐/</id>
     <published>2017-02-05T13:43:05.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<center><img src="http://i1.piimg.com/4851/ce0a3e1ef63844b1.jpg" alt="2017开工快乐"></center>
 
@@ -505,7 +547,7 @@
     <link href="http://baiwenhui.com/2017/01/23/%E6%98%A5%E8%8A%82%E5%9B%9E%E5%AE%B6/"/>
     <id>http://baiwenhui.com/2017/01/23/春节回家/</id>
     <published>2017-01-23T13:20:53.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<center><img src="http://i1.piimg.com/4851/b70e6f5b8f4e2ba5.jpg" alt="plane"></center>
 
@@ -536,7 +578,7 @@
     <link href="http://baiwenhui.com/2017/01/22/rxjs%E7%BF%BB%E8%AF%91-rxjs%E4%BB%8B%E7%BB%8D/"/>
     <id>http://baiwenhui.com/2017/01/22/rxjs翻译-rxjs介绍/</id>
     <published>2017-01-22T13:26:40.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，<a href="&#39;./overview.html#observable&#39;">Observable</a> ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.6" target="_blank" rel="external">Array#extras</a> (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。</p>
 <p><span class="informal">可以将RxJS想象成是用于处理事件的Lodash.</span></p>
@@ -598,7 +640,7 @@
     <link href="http://baiwenhui.com/2017/01/21/%E4%BF%AE%E6%AD%A3browser-sync%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0%E7%9A%84%E9%94%99%E8%AF%AF/"/>
     <id>http://baiwenhui.com/2017/01/21/修正browser-sync公众号文章的错误/</id>
     <published>2017-01-21T14:30:29.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<p>首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址:</p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z</a></p>
@@ -629,7 +671,7 @@
     <link href="http://baiwenhui.com/2017/01/19/hexo%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/"/>
     <id>http://baiwenhui.com/2017/01/19/hexo搭建成功/</id>
     <published>2017-01-19T15:20:52.000Z</published>
-    <updated>2017-08-05T08:33:45.093Z</updated>
+    <updated>2017-08-05T08:49:24.734Z</updated>
     
     <content type="html"><![CDATA[<p>终于折腾完了，搭建好我的hexo，的确挺方便的！感谢前人的贡献！</p>
 ]]></content>

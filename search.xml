@@ -4,6 +4,40 @@
   
     
     <entry>
+      <title><![CDATA[监听chrome extension popup页面消失]]></title>
+      <url>http://baiwenhui.com/2017/08/05/%E7%9B%91%E5%90%ACchrome-extension-popup%E9%A1%B5%E9%9D%A2%E6%B6%88%E5%A4%B1/</url>
+      <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
+<li>当用户不小心点击了鼠标或者离开了扩展的popup页面，此时需要对一些数据进行清空或者删除一些不必要的数据.</li>
+</ul>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ul>
+<li>然而chrome 扩展官方并没有对popup或者browserAction提供相关页面消失时的监听事件</li>
+</ul>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ul>
+<li>通过不断的查找资料和查阅chrome扩展开发文档，我们可以使用消息通信连接的方式解决了这个问题<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤:"></a>具体步骤:</h3></li>
+<li><p>首先在你需要监听页面消失事件的js文件中与background建立连接，相关代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//这里主要是为了与background建立连接，当页面关闭的时候连接就会断开，此时background中你注册的连接关闭函数此时会执行，因为background环境一直存在，除非你关闭了电脑</div><div class="line"> var port = chrome.runtime.connect();</div></pre></td></tr></table></figure>
+</li>
+<li><p>在background环境注册断开连接时需要处理的方法，相关代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  chrome.runtime.onConnect.addListener(function (externalPort) &#123;</div><div class="line">        externalPort.onDisconnect.addListener(function() &#123;</div><div class="line">        var ignoreError = chrome.runtime.lastError;</div><div class="line">        console.log(&quot;onDisconnect&quot;);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>通过以上的方式便实现了类似对popup页面消失时做一些事情的需求。感谢StackOverFlow，神一样的解决问题社区，致敬！</li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> chrome扩展 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[上班路上的琐事]]></title>
       <url>http://baiwenhui.com/2017/08/05/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%85%A8/</url>
       <content type="html"><![CDATA[<h3 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h3><p>  骑着电动车上班也有4个月了，总体感觉还是很不错的！由之前坐地铁上班花费1个半小时减少到现在的半个小时，还是很不错的一笔投资！其实后悔电瓶车买的有点迟了，如果早点买的话起码可以在出行方面带来很多方便，虽然现在有很多的共享单车可以骑，但是对于上海这么大的地方和上班距离遥远的情况，对于骑自行车来上班肯定是来不及的，速度也跟不上，根本无法满足自己的需求！可就在昨天下午2017年8月5号18点20分左右，当我插上电动车钥匙，死活就是启动不了电瓶车，而且电瓶车很明显没有一丁点儿电了，大灯不亮，喇叭不响，心里一下难过了，到底什么鬼导致这个问题的发生呢？然后想了想，我靠，中午的时候貌似下很大的雨，不会是雨漏到电瓶或者控制器里面，导致短路了吧？这个只是当时的猜测，后面接着开始用百度进行搜索一下，看网上有没有类似的网友遇到此问题，网上扫了一圈，基本上都说是可能是电瓶进水了，把电瓶晾干就可以骑了，其实当时想给卖车的师傅打电话的，又相信了网上的答案，于是便将车放到车棚里面坐地铁回家了，晚上可是要看《战狼2》的，不然时间来不及了，于是便放下电动车，匆忙往电影院赶！</p>
