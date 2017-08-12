@@ -7,20 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://baiwenhui.com">
-  <title>Grails中一个日期差引起的思考 | strongant的个人博客</title>
+  <title>Git常用命令记录 | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="需求如下 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。  编码根据当前需求进行编码，代码如下：1234567891011121314151617181920class ExampleController &amp;#123;    def test() &amp;#123;        ...">
-<meta name="keywords" content="groovy,grails,gorm">
+  <meta name="description" content="Git常用命令记录">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Grails中一个日期差引起的思考">
-<meta property="og:url" content="http://baiwenhui.com/2017/08/02/Grails中一个日期差引起的思考/index.html">
+<meta property="og:title" content="Git常用命令记录">
+<meta property="og:url" content="http://baiwenhui.com/2017/08/11/Git常用命令记录/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
-<meta property="og:description" content="需求如下 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。  编码根据当前需求进行编码，代码如下：1234567891011121314151617181920class ExampleController &amp;#123;    def test() &amp;#123;        ...">
+<meta property="og:description" content="Git常用命令记录">
 <meta property="og:locale" content="Chinese">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1figsf17eayj31h00yc44g.jpg">
 <meta property="og:updated_time" content="2017-08-12T03:46:55.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grails中一个日期差引起的思考">
-<meta name="twitter:description" content="需求如下 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。  编码根据当前需求进行编码，代码如下：1234567891011121314151617181920class ExampleController &amp;#123;    def test() &amp;#123;        ...">
+<meta name="twitter:title" content="Git常用命令记录">
+<meta name="twitter:description" content="Git常用命令记录">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1figsf17eayj31h00yc44g.jpg">
   
     <link rel="alternative" href="/atom.xml" title="strongant的个人博客" type="application/atom+xml">
   
@@ -203,7 +205,7 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Grails中一个日期差引起的思考" class="article article-type-post "
+            <article id="post-Git常用命令记录" class="article article-type-post "
   itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -211,13 +213,13 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Grails中一个日期差引起的思考
+      Git常用命令记录
     </h1>
   
 
           
-            <a href="/2017/08/02/Grails中一个日期差引起的思考/" class="archive-article-date">
-  	<time datetime="2017-08-02T14:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
+            <a href="/2017/08/11/Git常用命令记录/" class="archive-article-date">
+  	<time datetime="2017-08-11T15:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-11</time>
 </a>
               
                 <!-- 目录内容 -->
@@ -228,19 +230,7 @@ var _hmt = _hmt || [];
 
         <div class="article-entry" itemprop="articleBody">
           
-                    <h3 id="需求如下"><a href="#需求如下" class="headerlink" title="需求如下"></a>需求如下</h3><p><strong> 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。 </strong></p>
-<h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>根据当前需求进行编码，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">class ExampleController &#123;</div><div class="line">    def test() &#123;</div><div class="line">        ...</div><div class="line">        def obj = XXX.findByName(&apos;xxx&apos;)</div><div class="line">        def limitDays = 7</div><div class="line">        if(obj &amp;&amp; daysBetween(obj.queryTime,new Date())&lt;=7)&#123;</div><div class="line">                            render([code: 10101, msg: &quot;查询失败，7天内不允许重复查询&quot;, data: []] as grails.converters.JSON)</div><div class="line">                            return</div><div class="line"> </div><div class="line">        &#125;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    //TODO: 将此处判断移动至service或者util类</div><div class="line">    static def daysBetween(def startDate, def endDate) &#123;</div><div class="line">        use(groovy.time.TimeCategory) &#123;</div><div class="line">            def duration = endDate - startDate</div><div class="line">            return duration.days</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>出现bug:<br><strong>本地测试程序可以正常执行，但是发现在生产环境下并没有正常执行</strong></p>
-<p>错误解决：<br><strong>以为是groovy.time.TimeCategory原生类有bug，将比较日期间隔天数的方法修改为如下:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//TODO: 将此处判断移动至service或者util类</div><div class="line">static boolean keep7Days(endDate)&#123;</div><div class="line">     return (System.currentTimeMillis()-endDate.getTime())&lt;3600*1000*24*7</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>修改结果：<br>问题依然存在。</p>
-<p>进行分析：</p>
-<p><strong> 当我们从某张表中根据某个条件查询一条记录，如果该条件对一个多条重复记录，那数据库将按照表中的记录插入顺序返回最初插入的一条记录。因此，当根据某条件进行匹配查询时，应该按照id降序排列后取得第一条即可。 </strong></p>
-<p>解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">def obj = XXX.find(&quot;from XXX as b where b.xxx=:xxx order by b.id desc&quot;,[xxx:xxx])</div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>通过以上方式，我们便可以得到最后插入的记录，此时再使用时间差进行判断就不会出现匹配不正确问题。</p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>当项目中遇到bug时应该找到问题的根源再进行解决。在测试的过程中数据应该保持和生产环境数据一致！</p>
-<h4 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h4><p>推荐两个不错的播客平台：</p>
-<p> <a href="https://ipn.li/kernelpanic/" target="_blank" rel="external">内核恐慌</a><br> <a href="http://banlan.show/bitvoice" target="_blank" rel="external">比特新声</a></p>
+                    <h3 id="Git常用命令记录"><a href="#Git常用命令记录" class="headerlink" title="Git常用命令记录"></a>Git常用命令记录</h3><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1figsf17eayj31h00yc44g.jpg" alt="GIT常用命令图片"></p>
 
                       
 
@@ -254,15 +244,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">grails</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gorm</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -318,7 +300,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/08/02/Grails中一个日期差引起的思考/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/08/11/Git常用命令记录/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,18 +314,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/08/05/生活感慨/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          上班路上的琐事
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/26/Mac通过brew安装redis/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mac通过brew安装redis</div>
+    <a href="/2017/08/05/使用angular中的service和filter编写组件树/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用angular中的service和filter编写组件树</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -356,7 +329,7 @@ var _hmt = _hmt || [];
             
               
                 <!-- 畅言评论框 start -->
-<div id="SOHUCS" sid="Grails中一个日期差引起的思考" style="padding: 0px 30px 0px 46px;"></div>
+<div id="SOHUCS" sid="Git常用命令记录" style="padding: 0px 30px 0px 46px;"></div>
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cysHzQGmj'; 
