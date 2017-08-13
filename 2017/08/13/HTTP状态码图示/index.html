@@ -7,21 +7,68 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://baiwenhui.com">
-  <title>修正browser-sync公众号文章的错误 | strongant的个人博客</title>
+  <title>HTTP状态码图示 | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址: https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;amp;mid=2247483709&amp;amp;idx=1&amp;amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;amp;chksm=9b4b2ba3ac3ca2b">
+  <meta name="description" content="这里总结下我们日常开发中常用的HTTP状态码，分享一个老外对HTTP状态码形象化用图片表示的网站：https://http.cat/ 总结如下： 表示服务器已经接收到了请求头，并且客户端应该继续发送请求体。表示请求方已经要求服务器切换协议，并且服务器已经接受并会进行处理。HTTP 请求成功的标准应答。实际的应答内容由请求使用的方法来决定。请求已经被接受，并且请求所对应的资源已经被创建。请求已被接受">
+<meta name="keywords" content="http">
 <meta property="og:type" content="article">
-<meta property="og:title" content="修正browser-sync公众号文章的错误">
-<meta property="og:url" content="http://baiwenhui.com/2017/01/21/修正browser-sync公众号文章的错误/index.html">
+<meta property="og:title" content="HTTP状态码图示">
+<meta property="og:url" content="http://baiwenhui.com/2017/08/13/HTTP状态码图示/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
-<meta property="og:description" content="首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址: https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;amp;mid=2247483709&amp;amp;idx=1&amp;amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;amp;chksm=9b4b2ba3ac3ca2b">
+<meta property="og:description" content="这里总结下我们日常开发中常用的HTTP状态码，分享一个老外对HTTP状态码形象化用图片表示的网站：https://http.cat/ 总结如下： 表示服务器已经接收到了请求头，并且客户端应该继续发送请求体。表示请求方已经要求服务器切换协议，并且服务器已经接受并会进行处理。HTTP 请求成功的标准应答。实际的应答内容由请求使用的方法来决定。请求已经被接受，并且请求所对应的资源已经被创建。请求已被接受">
 <meta property="og:locale" content="Chinese">
-<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/bLPd4tHRLu6MfYBKkZ6Rkk5E2H92YaZN1JO92ub5SEVFEPxCHY8PCRHTLUHXiaghl4p7hRnxT8yySSdl7ZV7epA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a1juo9j30ee0bj3zw.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a0xeytj30dw0b40t4.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii4a0l292j30dk0b4wfc.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a01i3rj30do0b4gmt.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49zt676j30dw0b4q3l.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49zmp71j30dw0b474u.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49zfw3vj30dw0b4aak.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49z28hnj30b40dwjs1.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii49yvwcaj30dw0b4t9b.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49yrg7qj30dl0b40u3.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49yl9uuj30dw0b4q3h.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49yc066j30b40dwwfb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii49y6afmj30dw0b4mxp.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49y3ty9j30b40dwq3l.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45xt3cpj30dw0b43zb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45xk04fj30df0b43zy.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45xd1i2j30dw0b4aav.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45x75byj30dr0b4aaw.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45wzw3qj30dt0b4q4o.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45wvyv0j30dm0b4aaz.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45wlh8kj30de0b475n.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45w9496j30dr0b4t9z.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45vuqk7j30dr0b4t9z.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45vcm96j30dw0b4mxq.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45uwpztj30dw0b4gma.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ug6rkj30dk0b40tl.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45u41r2j309h0dw0tq.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45tomc8j30dw0b4dgb.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45tgczyj30di0b4jse.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45t9fuzj30dw0b4t93.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45t5bqvj30b40dw0ta.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45szla3j30dw0b4758.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ssuddj30dw0b4mxx.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45sob45j30dw0b43za.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45sg74yj30dk0b4wfm.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45s8zp7j30dh0b4gn4.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45s1jgbj30dm0b4jss.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45rv5zjj30ds0b4wfo.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ropewj30dw0b4gm5.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45ri7x7j30dd0b4abj.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45rd75fj30da0b4wff.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45r4qr0j30dw0b4mxs.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45qt3zuj30dw0b40tg.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45qnic4j30da0b40tl.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45qi54qj30de0b43za.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45qbsaoj30b40dwgm6.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45q4f5qj30df0b4t9r.jpg">
 <meta property="og:updated_time" content="2017-08-13T08:07:43.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="修正browser-sync公众号文章的错误">
-<meta name="twitter:description" content="首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址: https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;amp;mid=2247483709&amp;amp;idx=1&amp;amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;amp;chksm=9b4b2ba3ac3ca2b">
-<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz_png/bLPd4tHRLu6MfYBKkZ6Rkk5E2H92YaZN1JO92ub5SEVFEPxCHY8PCRHTLUHXiaghl4p7hRnxT8yySSdl7ZV7epA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
+<meta name="twitter:title" content="HTTP状态码图示">
+<meta name="twitter:description" content="这里总结下我们日常开发中常用的HTTP状态码，分享一个老外对HTTP状态码形象化用图片表示的网站：https://http.cat/ 总结如下： 表示服务器已经接收到了请求头，并且客户端应该继续发送请求体。表示请求方已经要求服务器切换协议，并且服务器已经接受并会进行处理。HTTP 请求成功的标准应答。实际的应答内容由请求使用的方法来决定。请求已经被接受，并且请求所对应的资源已经被创建。请求已被接受">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a1juo9j30ee0bj3zw.jpg">
   
     <link rel="alternative" href="/atom.xml" title="strongant的个人博客" type="application/atom+xml">
   
@@ -204,7 +251,7 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-修正browser-sync公众号文章的错误" class="article article-type-post "
+            <article id="post-HTTP状态码图示" class="article article-type-post "
   itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -212,13 +259,13 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      修正browser-sync公众号文章的错误
+      HTTP状态码图示
     </h1>
   
 
           
-            <a href="/2017/01/21/修正browser-sync公众号文章的错误/" class="archive-article-date">
-  	<time datetime="2017-01-21T14:30:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-21</time>
+            <a href="/2017/08/13/HTTP状态码图示/" class="archive-article-date">
+  	<time datetime="2017-08-13T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
 </a>
               
                 <!-- 目录内容 -->
@@ -229,26 +276,58 @@ var _hmt = _hmt || [];
 
         <div class="article-entry" itemprop="articleBody">
           
-                    <p>首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址:</p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z</a></p>
-<p>几个错误点修改如下：</p>
-<ol>
-<li>文章中的：<br><em>……更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试…</em><br>将“进项调试”修改为“进行调试”<br>2.　最后的代码有一个目录错误，因为我的粗心，给大家带来的不变，请见谅！在以后的文章中我会更加小心<br>发表文章，力求保证没有错误！<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">var gulp        = require(&apos;gulp&apos;);</div><div class="line">var browserSync = require(&apos;browser-sync&apos;).create();</div><div class="line">var browserify = require(&apos;gulp-browserify&apos;);</div><div class="line">var sass        = require(&apos;gulp-sass&apos;);</div><div class="line">var uglify = require(&apos;gulp-uglify&apos;);</div><div class="line">// Compile sass into CSS &amp; auto-inject into browsers</div><div class="line">gulp.task(&apos;sass&apos;, function() &#123;</div><div class="line">    return gulp.src(&quot;app/scss/*.scss&quot;)</div><div class="line">        .pipe(sass())</div><div class="line">        .pipe(gulp.dest(&quot;dist/css&quot;))</div><div class="line">        .pipe(browserSync.stream());</div><div class="line">&#125;);</div><div class="line">// process JS files and return the stream.</div><div class="line">gulp.task(&apos;js&apos;, function () &#123;</div><div class="line">    return gulp.src(&apos;app/js/*.js&apos;)</div><div class="line">        .pipe(browserify())</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(&apos;dist/js&apos;));</div><div class="line">&#125;);</div><div class="line">// Static Server + watching scss/js/html files</div><div class="line">gulp.task(&apos;serve&apos;, [&apos;sass&apos;,&apos;js&apos;], function() &#123;</div><div class="line">    browserSync.init(&#123;</div><div class="line">        server: &quot;./app&quot;</div><div class="line">    &#125;);</div><div class="line">    gulp.watch(&quot;app/scss/*.scss&quot;, [&apos;sass&apos;]);</div><div class="line">        gulp.watch(&quot;app/js/*.js&quot;, [&apos;js&apos;]);</div><div class="line">    gulp.watch(&quot;app/*.html&quot;).on(&apos;change&apos;, browserSync.reload);</div><div class="line">&#125;);</div><div class="line">gulp.task(&apos;default&apos;, [&apos;serve&apos;]);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>修改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">var gulp        = require(&apos;gulp&apos;);</div><div class="line">var browserSync = require(&apos;browser-sync&apos;).create();</div><div class="line">var browserify = require(&apos;gulp-browserify&apos;);</div><div class="line">var sass        = require(&apos;gulp-sass&apos;);</div><div class="line">var uglify = require(&apos;gulp-uglify&apos;);</div><div class="line">// Compile sass into CSS &amp; auto-inject into browsers</div><div class="line">gulp.task(&apos;sass&apos;, function() &#123;</div><div class="line">    return gulp.src(&quot;app/scss/*.scss&quot;)</div><div class="line">        .pipe(sass())</div><div class="line">        .pipe(gulp.dest(&quot;.app/dist/css&quot;))</div><div class="line">        .pipe(browserSync.stream());</div><div class="line">&#125;);</div><div class="line">// process JS files and return the stream.</div><div class="line">gulp.task(&apos;js&apos;, function () &#123;</div><div class="line">    return gulp.src(&apos;app/js/*.js&apos;)</div><div class="line">        .pipe(browserify())</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(&apos;.app/dist/js&apos;));</div><div class="line">&#125;);</div><div class="line">// Static Server + watching scss/js/html files</div><div class="line">gulp.task(&apos;serve&apos;, [&apos;sass&apos;,&apos;js&apos;], function() &#123;</div><div class="line">    browserSync.init(&#123;</div><div class="line">        server: &quot;./app&quot;</div><div class="line">    &#125;);</div><div class="line">    gulp.watch(&quot;app/scss/*.scss&quot;, [&apos;sass&apos;]);</div><div class="line">        gulp.watch(&quot;app/js/*.js&quot;, [&apos;js&apos;]);</div><div class="line">    gulp.watch(&quot;app/*.html&quot;).on(&apos;change&apos;, browserSync.reload);</div><div class="line">&#125;);</div><div class="line">gulp.task(&apos;default&apos;, [&apos;serve&apos;]);</div></pre></td></tr></table></figure></p>
-<p>参照对比原文地址：</p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z</a></p>
-<p>目前内容已经修改！欢迎反馈，欢迎交流：</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/bLPd4tHRLu6MfYBKkZ6Rkk5E2H92YaZN1JO92ub5SEVFEPxCHY8PCRHTLUHXiaghl4p7hRnxT8yySSdl7ZV7epA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="strongant公众号二维码"></p>
-
+                    <p>这里总结下我们日常开发中常用的HTTP状态码，分享一个老外对HTTP状态码形象化用图片表示的网站：<a href="https://http.cat/" target="_blank" rel="external">https://http.cat/</a></p>
+<p>总结如下：</p>
+<center><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a1juo9j30ee0bj3zw.jpg" alt=""><br><strong>表示服务器已经接收到了请求头，并且客户端应该继续发送请求体。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a0xeytj30dw0b40t4.jpg" alt=""><br><strong>表示请求方已经要求服务器切换协议，并且服务器已经接受并会进行处理。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii4a0l292j30dk0b4wfc.jpg" alt=""><br><strong>HTTP 请求成功的标准应答。实际的应答内容由请求使用的方法来决定。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a01i3rj30do0b4gmt.jpg" alt=""><br><strong>请求已经被接受，并且请求所对应的资源已经被创建。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49zt676j30dw0b4q3l.jpg" alt=""><br><strong>请求已被接受，尚未完成处理，也有可能会被拒绝。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49zmp71j30dw0b474u.jpg" alt=""><br><strong>在成功处理请求后服务器并没有返回任何实体内容。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49zfw3vj30dw0b4aak.jpg" alt=""><br><strong>依照子请求的数量的不同，消息体包含不同的响应代码。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49z28hnj30b40dwjs1.jpg" alt=""><br><strong>表示被请求的资源可以提供多种选项让客户端进行选择</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii49yvwcaj30dw0b4t9b.jpg" alt=""><br><strong>该请求应当被定向到给定的URI（统一资源定位符）</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49yrg7qj30dl0b40u3.jpg" alt=""><br><strong>这是一个工业实践和标准相互矛盾的例子。一些Web应用和框架会使用302状态码</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49yl9uuj30dw0b4q3h.jpg" alt=""><br><strong>对应当前请求的响应可以使用GET方法从另一个URI获取</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49yc066j30b40dwwfb.jpg" alt=""><br><strong>表示资源自上次请求以来没有被改变。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii49y6afmj30dw0b4mxp.jpg" alt=""><br><strong>（译注：被请求的资源必须通过指定的代理才能被访问） 大多数HTTP客户端不会正确响应这个状态码，主要是出于安全性的原因</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49y3ty9j30b40dwq3l.jpg" alt=""><br><strong>在这种情况下，请求会从另外的URI响应但是未来的请求仍会使用原始的URI</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45xt3cpj30dw0b43zb.jpg" alt=""><br><strong>因为错误的语法，请求不能完成</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45xk04fj30df0b43zy.jpg" alt=""><br><strong>当需要授权，但授权失败或还没有授权时返回的状态码</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45xd1i2j30dw0b4aav.jpg" alt=""><br><strong>该状态码是为了将来可能的需求而预留的。这个代码通常不使用，但是其最初的意图是可以被某种电子货币所使用。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45x75byj30dr0b4aaw.jpg" alt=""><br><strong>请求有效，但是服务器拒绝响应它。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45wzw3qj30dt0b4q4o.jpg" alt=""><br><strong>请求的资源不能找到，但是将来也许可用。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45wvyv0j30dm0b4aaz.jpg" alt=""><br><strong>请求某资源时使用的请求方法不能被该资源所支持。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45wlh8kj30de0b475n.jpg" alt=""><br><strong>被请求资源能够产生的内容不满足请求头中指定的类型。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45w9496j30dr0b4t9z.jpg" alt=""><br><strong>服务器等待请求超时</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45vuqk7j30dr0b4t9z.jpg" alt=""><br><strong>因为请求中存在冲突导致请求无法被处理</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45vcm96j30dw0b4mxq.jpg" alt=""><br><strong>被请求的资源已不可用，同时后续也不再可用。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45uwpztj30dw0b4gma.jpg" alt=""><br><strong>请求所对应的资源需要指明长度，但请求中并没有包含长度。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ug6rkj30dk0b40tl.jpg" alt=""><br><strong>其请求数据实体过大，超过服务器处理能力。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45u41r2j309h0dw0tq.jpg" alt=""><br><strong>URI过长，服务器不能处理</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45tomc8j30dw0b4dgb.jpg" alt=""><br><strong>客户端请求部分文件，但是服务器并不能提供这个范围值。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45tgczyj30di0b4jse.jpg" alt=""><br><strong>服务器不能满足请求头重指定的要求。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45t9fuzj30dw0b4t93.jpg" alt=""><br><strong>在实际HTTP服务器中不会实现该状态码</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45t5bqvj30b40dw0ta.jpg" alt=""><br><strong>请求格式正确但是因为存在语意错误无法响应。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45szla3j30dw0b4758.jpg" alt=""><br><strong>当前资源被上锁</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ssuddj30dw0b4mxx.jpg" alt=""><br><strong>因为之前的请求失败而导致了本次请求失败</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45sob45j30dw0b43za.jpg" alt=""><br><strong>在WebDav Advanced Collections 草案中定义</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45sg74yj30dk0b4wfm.jpg" alt=""><br><strong>客户端应该切换到不同的协议</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45s8zp7j30dh0b4gn4.jpg" alt=""><br><strong>用户在指定时间内发送的请求过多。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45s1jgbj30dm0b4jss.jpg" alt=""><br><strong>因为请求中的单个域过大、或者全部域全加起来过大。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45rv5zjj30ds0b4wfo.jpg" alt=""><br><strong>在Nginx记录中使用，表示服务器没有向客户端返回信息并且已经关闭了连接</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ropewj30dw0b4gm5.jpg" alt=""><br><strong>微软所扩展的一个状态码</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45ri7x7j30dd0b4abj.jpg" alt=""><br><strong>当没有其他更加确切的信息可以给出时，给出的一个一般性错误信息。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45rd75fj30da0b4wff.jpg" alt=""><br><strong>作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45r4qr0j30dw0b4mxs.jpg" alt=""><br><strong>服务器当前不可用。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45qt3zuj30dw0b40tg.jpg" alt=""><br><strong>请求的透明内容协商导致循环引用</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45qnic4j30da0b40tl.jpg" alt=""><br><strong>服务器无法存储完成请求所必须的内容。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45qi54qj30de0b43za.jpg" alt=""><br><strong>服务器在处理请求时发现一个无限循环</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45qbsaoj30b40dwgm6.jpg" alt=""><br><strong>尽管很多服务器使用该协议，但其并没有在任何RFC中说明</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45q4f5qj30df0b4t9r.jpg" alt=""><br><strong>这个状态码没有在任何RFC中说明，但微软公司在用。</strong><br></center>
                       
 
                         
+                          <div class="page-reward">
+                            <a href="javascript:;" class="page-reward-btn tooltip-top">
+                              <div class="tooltip tooltip-east">
+                                <span class="tooltip-item">
+              赏
+            </span>
+                                <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                              </div>
+                              
+                                
+                                  <div class="reward-box-item">
+                                    <img class="reward-img" src="/img/wechatpay.jpg">
+                                    <span class="reward-type">微信</span>
+                                  </div>
+                                  
+                          </div>
+                          </span>
+                          </span>
+                          </span>
+        </div>
+        </a>
+  </div>
+  
     </div>
     <div class="article-info article-info-index">
       
           
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
             
 
               
@@ -299,7 +378,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/01/21/修正browser-sync公众号文章的错误/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/08/13/HTTP状态码图示/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -313,18 +392,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/01/22/rxjs翻译-rxjs介绍/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          rxjs翻译-rxjs介绍
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/19/hexo搭建成功/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo搭建成功</div>
+    <a href="/2017/08/13/Groovy入门-变量与变量类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Groovy入门-变量与变量类型</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -337,7 +407,7 @@ var _hmt = _hmt || [];
             
               
                 <!-- 畅言评论框 start -->
-<div id="SOHUCS" sid="修正browser-sync公众号文章的错误" style="padding: 0px 30px 0px 46px;"></div>
+<div id="SOHUCS" sid="HTTP状态码图示" style="padding: 0px 30px 0px 46px;"></div>
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cysHzQGmj'; 
