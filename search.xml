@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title><![CDATA[Groovy入门-安装]]></title>
+      <url>http://baiwenhui.com/2017/08/13/Groovy%E5%85%A5%E9%97%A8/</url>
+      <content type="html"><![CDATA[<p><strong>使用groovy开发差不多已经四个多月了，这里分享一些自己在groovy方面的一些总结。</strong></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>Groovy 是一种新兴的运行于 Java™ 平台之上的编程语言</li>
+<li>它提供与已有 Java 代码的无缝集成，并引入了一些强大的新特性，比如闭包和元编程</li>
+<li>简单来讲，Groovy 就是在 21 世纪 Java 语言的的效果</li>
+<li>Groovy是Java平台上脚本语言，抽象程度更高，可以更简单快速的开发，可以编写更少的代码</li>
+<li>与Java语言无缝集成，可以称为“超级Java”</li>
+<li>使用“类JAVA语法”，Java程序员可以快速过度</li>
+<li>Groovy与Java二进制兼容，都生成字节码，所以可以与使用Java语言所编写的框架和组件完美集成，并且效率安全方面比其他脚本语言要高</li>
+<li>Groovy对象就是Java对象，使用JDK相同的API</li>
+<li>可以保护整个Java产业在Java上巨大的投资</li>
+<li>在中小型项目中可以替代Java，在大型Java项目中可以嵌入Groovy应用</li>
+</ul>
+<h2 id="安装，使用官网推荐的安装方法"><a href="#安装，使用官网推荐的安装方法" class="headerlink" title="安装，使用官网推荐的安装方法"></a>安装，使用官网推荐的安装方法</h2><p>首先安装SDKMAN! (一个软件开发工具包管理工具)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -s get.sdkman.io | bash</div></pre></td></tr></table></figure></p>
+<p>使其SDKMAN工具生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ source &quot;$HOME/.sdkman/bin/sdkman-init.sh&quot;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>安装最新版本的Groovy:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sdk install groovy</div></pre></td></tr></table></figure>
+</li>
+<li><p>等待一会儿之后，显示安装完毕，此时我们可以使用此命令验证groovy是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ groovy -version</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="安装2"><a href="#安装2" class="headerlink" title="安装2"></a>安装2</h2><ol>
+<li>在官网下载groovy sdk<br>下载地址:<br><a href="https://akamai.bintray.com/9a/9a20d8868edbbc82a8edd03b6ae6f7dfbe406e42a468f2c44d5285493f679676?__gda__=exp=1466580235~hmac=4c1a4086a45aca9a522aac513d022d04f90eec437163110a69a441bf823143a2&amp;response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-sdk-2.4.7.zip%22&amp;response-content-type=application%2Fx-www-form-urlencoded" target="_blank" rel="external">https://akamai.bintray.com/9a/9a20d8868edbbc82a8edd03b6ae6f7dfbe406e42a468f2c44d5285493f679676?__gda__=exp=1466580235~hmac=4c1a4086a45aca9a522aac513d022d04f90eec437163110a69a441bf823143a2&amp;response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-sdk-2.4.7.zip%22&amp;response-content-type=application%2Fx-www-form-urlencoded</a></li>
+<li><p>进行解压：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ unzip apache-groovy-sdk-2.4.7.zip</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置到全局变量或者用户所在的变量环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/profile</div><div class="line">//添加groovy解压目录所在的位置</div><div class="line">//我当前安装目录为：/home/devbwh/groovy-2.4.7，在/etc/profile文件末尾添加一下配置：</div><div class="line">export GROOVY_HOME=/home/devbwh/groovy-2.4.7</div><div class="line">export PATH=GROOVY_HOME/bin:$PATH</div></pre></td></tr></table></figure>
+</li>
+<li><p>使其生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="安装3-Mac安装"><a href="#安装3-Mac安装" class="headerlink" title="安装3(Mac安装)"></a>安装3(Mac安装)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install groovy</div></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> groovy </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[跟小马哥学习SpringBoot]]></title>
       <url>http://baiwenhui.com/2017/08/12/%E8%B7%9F%E5%B0%8F%E9%A9%AC%E5%93%A5%E5%AD%A6%E4%B9%A0SpringBoot/</url>
       <content type="html"><![CDATA[<p><strong>这里推荐一个不错的Spring Boot系列讲座，讲师简介如下：</strong></p>
