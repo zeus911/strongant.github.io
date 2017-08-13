@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://baiwenhui.com/"/>
-  <updated>2017-08-13T03:14:20.638Z</updated>
+  <updated>2017-08-13T06:48:22.438Z</updated>
   <id>http://baiwenhui.com/</id>
   
   <author>
@@ -16,11 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Groovy入门-变量与变量类型</title>
+    <link href="http://baiwenhui.com/2017/08/13/Groovy%E5%85%A5%E9%97%A8-%E5%8F%98%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://baiwenhui.com/2017/08/13/Groovy入门-变量与变量类型/</id>
+    <published>2017-08-13T06:34:00.000Z</published>
+    <updated>2017-08-13T06:48:22.438Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Groovy的变量与变量类型"><a href="#Groovy的变量与变量类型" class="headerlink" title="Groovy的变量与变量类型"></a>Groovy的变量与变量类型</h2><h3 id="变量与常量的定义，维基百科对其定义如下"><a href="#变量与常量的定义，维基百科对其定义如下" class="headerlink" title="变量与常量的定义，维基百科对其定义如下"></a>变量与常量的定义，维基百科对其定义如下</h3><p>变量：变量通常是可被修改的，即可以用来表示可变的状态。<br>常量：指一个数值固定不变的常量，例如圆周率、自然对数的底。与之相反的是变量。</p>
+<h3 id="动态变量与静态变量"><a href="#动态变量与静态变量" class="headerlink" title="动态变量与静态变量"></a>动态变量与静态变量</h3><p>动态变量：动态变量在程序执行过程中建立，随函数的调用需要动态的分配存储空间，调用结束释放所占用存储空间。<br>静态变量：静态变量（Static Variable）在计算机编程领域指在程序执行前系统就为之静态分配（也即在运行时中不再改变分配情况）存储空间的一类变量。</p>
+<h3 id="Groovy中的变量类型"><a href="#Groovy中的变量类型" class="headerlink" title="Groovy中的变量类型"></a>Groovy中的变量类型</h3><p>Groovy中可以使用的变量类型有数字（Number）类型、字符串（String）类型、布尔（Boolean）类型以及引用（Reference）类型。</p>
+<p>1.数字（Number）类型：包括整数类型和浮点数类型。</p>
+<ul>
+<li>其中，整数包含正数、负数和零，都是Integer类的实例，比如1、-1和0都属于整数类型。</li>
+<li>浮点数包含小数部分，都是BigDecimal类的实例，比如1.11、-3.11都属于常见的浮点数类型。在数字字面值加上可显示指定变量的类型，整数Long型（Long）、整数BigInteger型（BigInteger）、浮点型Float（Float）、浮点数Double（Double）。</li>
+</ul>
+<p>2.字符串（String）类型：通过使用引号将文本值组织起来，如’Hello’、”Hello”、”””Hello”””，其中使用单引号（‘）、双引号(“”)、三双引号（”””）都是允许的。</p>
+<p>3.布尔（Boolean）类型： 包含true和false。如def judge = true,def 在groovy中表示任意类型，在程序运行期动态推到其最终类型。</p>
+<p>4.引用（Reference）类型：用于表示指向一个对象。比如：def user = new User(name:”张三”)。其中user表示的就是User对象的实例。</p>
+<h3 id="Groovy中变量的声明和使用"><a href="#Groovy中变量的声明和使用" class="headerlink" title="Groovy中变量的声明和使用"></a>Groovy中变量的声明和使用</h3><p>  声明的变量名称通常被称为标识符。在Groovy中，标识符的命名规则如下：</p>
+<ul>
+<li>标识符必须由字母和数字组成，大小写敏感，标识符的首字符必须是字母。下划线(_)允许出现在标识符中，以字母看待。标识符绝对不允许是 Groovy关键词。<br>声明变量时需要引入变量名称，可以为变量指定初始值，也可以确定变量能被引用的作用域或者作用范围。当在程序中首次使用某个变量时，需要使用Groovy关键<code>def</code>关键字声明，不能在同一个作用域内声明两次相同的变量名。</li>
+</ul>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Groovy中对不同类型变量的定义和使用</div><div class="line"> * @author strongant</div><div class="line"> * Contact me at &lt;a href=&quot;mailto:strongant1994@gmail.com&quot;&gt;strongant1994@gmail.com&lt;/a&gt;</div><div class="line"> * @see</div><div class="line"> * @since 2017/8/13</div><div class="line"> */</div><div class="line">class DefineUseVariable &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        // 声明一个值为admin，类型为String的变量</div><div class="line">        def name = &apos;admin&apos;</div><div class="line">        // 声明一个值为10的数字，类型为Integer</div><div class="line">        def age = 10</div><div class="line">        // 声明一个值为20.0的数字，类型为BigDecimal</div><div class="line">        def money = 20.0</div><div class="line">        // 声明一个值为true的布尔变量，类型为Boolean</div><div class="line">        def isMale = true</div><div class="line">        // 再次声明一个值为admin，类型为String的变量，下面代码将运行错误。</div><div class="line">        //def name = &quot;Bob&quot;</div><div class="line">        // 输出变量的值和类型。</div><div class="line">        //注意，在输出的时候，如果要使用&apos;$&apos;符号进行输出变量，则字符串必须使用双引号的三双引号的情况下，才可以正常输出变量值。</div><div class="line">        // 如果是单引号，则不会输出变量值，原样输出</div><div class="line">        println &quot;name is $&#123;name&#125;. I&apos;m $&#123;age&#125; years old. I hava $&#123;money&#125; dollars.&quot;</div><div class="line">        println &quot;name type: $&#123;name.class&#125;&quot;</div><div class="line">        println &quot;age type: $&#123;age.class&#125;&quot;</div><div class="line">        println &quot;money type: $&#123;money.class&#125;&quot;</div><div class="line">        println &quot;isMale type: $&#123;isMale.class&#125;&quot;</div><div class="line">        // 声明一个值为10.0的浮点型的变量，类型为Float</div><div class="line">        def floatTypeVariable = 10.0F</div><div class="line">        println &quot;floatTypeVariable type: $&#123;floatTypeVariable.class&#125;&quot;</div><div class="line">        // 声明一个值为10.0的浮点型的变量，类型为Double</div><div class="line">        def doubleTypeVariable = 10.0D</div><div class="line">        println &quot;doubleTypeVariable type: $&#123;doubleTypeVariable.class&#125;&quot;</div><div class="line">        // 声明一个值为10000的长整型的变量，类型为Long</div><div class="line">        def longTypeVariable = 10000L</div><div class="line">        println &quot;longTypeVariable type: $&#123;longTypeVariable.class&#125;&quot;</div><div class="line">        // 声明一个值为10000的长整型的变量，类型为大长整型BigInteger</div><div class="line">        def bigIntegerTypeVariable = 10000G</div><div class="line">        println &quot;bigIntegerTypeVariable type: $&#123;bigIntegerTypeVariable.class&#125;&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>示例的代码也可以在此地址找到：<a href="https://gist.github.com/strongant/22c489f5a51f416d1bf3e97d86f031dd" target="_blank" rel="external">https://gist.github.com/strongant/22c489f5a51f416d1bf3e97d86f031dd</a></p>
+<h3 id="Groovy变量自动转换和强制转换示意图"><a href="#Groovy变量自动转换和强制转换示意图" class="headerlink" title="Groovy变量自动转换和强制转换示意图"></a>Groovy变量自动转换和强制转换示意图</h3><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii2v2bh27j31by0y6wl6.jpg" alt="Groovy变量自动转换和强制转换示意图"></p>
+<h3 id="Groovy中关键字"><a href="#Groovy中关键字" class="headerlink" title="Groovy中关键字"></a>Groovy中关键字</h3><p><strong>abstract</strong> <strong>case</strong> <strong>do</strong> <strong>finally</strong> <strong>instanceof</strong> <strong>package</strong> <strong>strictfp</strong> <strong>throws</strong> <strong>with</strong> <strong>any</strong> <strong>catch</strong> <strong>double</strong> <strong>float</strong> <strong>int</strong> <strong>private</strong> <strong>super</strong> <strong>transient</strong> <strong>as</strong> <strong>assert</strong> <strong>char</strong> <strong>class</strong> <strong>else</strong> <strong>enum</strong> <strong>for</strong> <strong>if</strong> <strong>interface</strong> <strong>long</strong> <strong>protected</strong> <strong>public</strong> <strong>switch</strong> <strong>synchronized</strong> <strong>true</strong> <strong>try</strong> <strong>boolean</strong> <strong>continue</strong> <strong>extends</strong> <strong>implements</strong> <strong>native</strong> <strong>return</strong> <strong>this</strong> <strong>void</strong> <strong>break</strong> <strong>def</strong> <strong>false</strong> <strong>import</strong> <strong>new</strong> <strong>short</strong> <strong>threadsafe</strong> <strong>volatile</strong> <strong>byte</strong> <strong>default</strong> <strong>final</strong> <strong>in</strong> <strong>null</strong> <strong>static</strong> <strong>throw</strong> <strong>while</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Groovy的变量与变量类型&quot;&gt;&lt;a href=&quot;#Groovy的变量与变量类型&quot; class=&quot;headerlink&quot; title=&quot;Groovy的变量与变量类型&quot;&gt;&lt;/a&gt;Groovy的变量与变量类型&lt;/h2&gt;&lt;h3 id=&quot;变量与常量的定义，维基百科对其定义
+    
+    </summary>
+    
+    
+      <category term="groovy" scheme="http://baiwenhui.com/tags/groovy/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Groovy入门-安装</title>
     <link href="http://baiwenhui.com/2017/08/13/Groovy%E5%85%A5%E9%97%A8/"/>
     <id>http://baiwenhui.com/2017/08/13/Groovy入门/</id>
     <published>2017-08-13T03:03:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<p><strong>使用groovy开发差不多已经四个多月了，这里分享一些自己在groovy方面的一些总结。</strong></p>
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
@@ -77,7 +116,7 @@
     <link href="http://baiwenhui.com/2017/08/12/%E8%B7%9F%E5%B0%8F%E9%A9%AC%E5%93%A5%E5%AD%A6%E4%B9%A0SpringBoot/"/>
     <id>http://baiwenhui.com/2017/08/12/跟小马哥学习SpringBoot/</id>
     <published>2017-08-12T06:36:23.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.442Z</updated>
     
     <content type="html"><![CDATA[<p><strong>这里推荐一个不错的Spring Boot系列讲座，讲师简介如下：</strong></p>
 <blockquote>
@@ -125,7 +164,7 @@
     <link href="http://baiwenhui.com/2017/08/12/Mac%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E8%87%B3%E5%9B%BE%E5%BA%8A%E7%A5%9E%E5%99%A8/"/>
     <id>http://baiwenhui.com/2017/08/12/Mac上传图片至图床神器/</id>
     <published>2017-08-12T03:47:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<h4 id="推荐一款Mac上上传图片到图床的神器：IPic"><a href="#推荐一款Mac上上传图片到图床的神器：IPic" class="headerlink" title="推荐一款Mac上上传图片到图床的神器：IPic"></a>推荐一款Mac上上传图片到图床的神器：IPic</h4><h5 id="具体的下载和使用方法可以戳这儿"><a href="#具体的下载和使用方法可以戳这儿" class="headerlink" title="具体的下载和使用方法可以戳这儿"></a>具体的下载和使用方法可以戳这儿</h5><p><a href="https://toolinbox.net/iPic/" target="_blank" rel="external">https://toolinbox.net/iPic/</a></p>
 ]]></content>
@@ -150,7 +189,7 @@
     <link href="http://baiwenhui.com/2017/08/11/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/"/>
     <id>http://baiwenhui.com/2017/08/11/Git常用命令记录/</id>
     <published>2017-08-11T15:13:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Git常用命令记录"><a href="#Git常用命令记录" class="headerlink" title="Git常用命令记录"></a>Git常用命令记录</h3><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1figsf17eayj31h00yc44g.jpg" alt="GIT常用命令图片"></p>
 ]]></content>
@@ -171,7 +210,7 @@
     <link href="http://baiwenhui.com/2017/08/05/%E4%BD%BF%E7%94%A8angular%E4%B8%AD%E7%9A%84service%E5%92%8Cfilter%E7%BC%96%E5%86%99%E7%BB%84%E4%BB%B6%E6%A0%91/"/>
     <id>http://baiwenhui.com/2017/08/05/使用angular中的service和filter编写组件树/</id>
     <published>2017-08-05T08:49:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>学习《AngularJS深度剖析与实践》总结</p>
@@ -220,7 +259,7 @@
     <link href="http://baiwenhui.com/2017/08/05/%E7%9B%91%E5%90%ACchrome-extension-popup%E9%A1%B5%E9%9D%A2%E6%B6%88%E5%A4%B1/"/>
     <id>http://baiwenhui.com/2017/08/05/监听chrome-extension-popup页面消失/</id>
     <published>2017-08-05T08:46:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.442Z</updated>
     
     <content type="html"><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
 <li>当用户不小心点击了鼠标或者离开了扩展的popup页面，此时需要对一些数据进行清空或者删除一些不必要的数据.</li>
@@ -262,7 +301,7 @@
     <link href="http://baiwenhui.com/2017/08/05/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%85%A8/"/>
     <id>http://baiwenhui.com/2017/08/05/生活感慨/</id>
     <published>2017-08-05T06:59:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<h3 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h3><p>  骑着电动车上班也有4个月了，总体感觉还是很不错的！由之前坐地铁上班花费1个半小时减少到现在的半个小时，还是很不错的一笔投资！其实后悔电瓶车买的有点迟了，如果早点买的话起码可以在出行方面带来很多方便，虽然现在有很多的共享单车可以骑，但是对于上海这么大的地方和上班距离遥远的情况，对于骑自行车来上班肯定是来不及的，速度也跟不上，根本无法满足自己的需求！可就在昨天下午2017年8月5号18点20分左右，当我插上电动车钥匙，死活就是启动不了电瓶车，而且电瓶车很明显没有一丁点儿电了，大灯不亮，喇叭不响，心里一下难过了，到底什么鬼导致这个问题的发生呢？然后想了想，我靠，中午的时候貌似下很大的雨，不会是雨漏到电瓶或者控制器里面，导致短路了吧？这个只是当时的猜测，后面接着开始用百度进行搜索一下，看网上有没有类似的网友遇到此问题，网上扫了一圈，基本上都说是可能是电瓶进水了，把电瓶晾干就可以骑了，其实当时想给卖车的师傅打电话的，又相信了网上的答案，于是便将车放到车棚里面坐地铁回家了，晚上可是要看《战狼2》的，不然时间来不及了，于是便放下电动车，匆忙往电影院赶！</p>
 <h3 id="事件经过"><a href="#事件经过" class="headerlink" title="事件经过"></a>事件经过</h3><p>  晚上看完电影，天气湿热湿热，难受至极，晚上浑浑噩噩的睡了一晚上。大清早9点多就起来了，起来便开始准备去公司看看电瓶车是不是像网上说的那样，等到电瓶晾干了，就可以骑了！于是乎开始骑单车、等公交、坐公交、等地铁、坐地铁，从出发到到达公司，大概花费了我2个小时，在这里我不得不吐槽交通问题，其实住的地方离公司只有20公里，有一次我起迟了害怕迟到，就打了个车到公司，花了40块钱。但是花费时间让我很惊讶，只用了10分钟，我就纳闷了，为什么这么快呢？原来是因为坐地铁比较绕，而且也没有直达的公交，如果坐公交的话也是特别绕，所以就浪费了不应该浪费的2个小时时间。这一点可能是因为个人住的地方偏远原因吧，不过我想很多人应该也有类似的愤怒，明明不是很远，却要绕很多路花很多时间才能到目的地。抱怨没用，只能自己想办法解决！到了公司之后去找到电瓶车，幸亏公司的安保措施做得不错，车子没有被偷，谢天谢地！当我插上钥匙，和昨天下午一个样，还是没有电，顿时想：糟糕，肯定是电瓶进水太严重，导致车子彻底没电了，这时候我想打电话找个修车师傅帮我看看，可卖车的地方离公司太远了，就想着要不要找个距离我比较近的修车师傅过来看看，又顾虑这是新车，如果让别人拆开修，人家不给我保修了怎么办，买下车骑了也没有多长时间，不划算！还是打电话问一下原卖车的师傅，我把情况给人家说了一下：昨天中午下了会大雨，车子没有用雨衣盖住，昨天下班后钥匙插上之后，启动不了，纯粹没电！然后又经验的师傅说了下：你检查一下座子下面那个开关是不是把电瓶的电源关闭了。于是我便按照他说的，打开后座，把开关切换了一些，然后用钥匙插上，发现奇迹产生了，电动车一切正常，心里窃喜，不用修了，感谢有经验的老司机！</p>
@@ -286,7 +325,7 @@
     <link href="http://baiwenhui.com/2017/08/02/Grails%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%97%A5%E6%9C%9F%E5%B7%AE%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/"/>
     <id>http://baiwenhui.com/2017/08/02/Grails中一个日期差引起的思考/</id>
     <published>2017-08-02T14:02:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<h3 id="需求如下"><a href="#需求如下" class="headerlink" title="需求如下"></a>需求如下</h3><p><strong> 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。 </strong></p>
 <h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>根据当前需求进行编码，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">class ExampleController &#123;</div><div class="line">    def test() &#123;</div><div class="line">        ...</div><div class="line">        def obj = XXX.findByName(&apos;xxx&apos;)</div><div class="line">        def limitDays = 7</div><div class="line">        if(obj &amp;&amp; daysBetween(obj.queryTime,new Date())&lt;=7)&#123;</div><div class="line">                            render([code: 10101, msg: &quot;查询失败，7天内不允许重复查询&quot;, data: []] as grails.converters.JSON)</div><div class="line">                            return</div><div class="line"> </div><div class="line">        &#125;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    //TODO: 将此处判断移动至service或者util类</div><div class="line">    static def daysBetween(def startDate, def endDate) &#123;</div><div class="line">        use(groovy.time.TimeCategory) &#123;</div><div class="line">            def duration = endDate - startDate</div><div class="line">            return duration.days</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -323,7 +362,7 @@
     <link href="http://baiwenhui.com/2017/07/26/Mac%E9%80%9A%E8%BF%87brew%E5%AE%89%E8%A3%85redis/"/>
     <id>http://baiwenhui.com/2017/07/26/Mac通过brew安装redis/</id>
     <published>2017-07-26T13:41:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<h2 id="MacOS下通过brew安装redis"><a href="#MacOS下通过brew安装redis" class="headerlink" title="MacOS下通过brew安装redis"></a>MacOS下通过brew安装redis</h2><h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis:"></a>安装redis:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install redis</div></pre></td></tr></table></figure>
 <p>安装后的地址为:/usr/local/Cellar/redis/3.2.9</p>
@@ -358,7 +397,7 @@
     <link href="http://baiwenhui.com/2017/07/26/Ubuntu%E5%AE%89%E8%A3%85Java8%E7%8E%AF%E5%A2%83/"/>
     <id>http://baiwenhui.com/2017/07/26/Ubuntu安装Java8环境/</id>
     <published>2017-07-26T13:32:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Ubuntu-系统安装Java8-JDK"><a href="#Ubuntu-系统安装Java8-JDK" class="headerlink" title="Ubuntu 系统安装Java8 JDK"></a>Ubuntu 系统安装Java8 JDK</h2><p>1.添加ppa<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/java</div></pre></td></tr></table></figure></p>
 <p>2.更新系统<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
@@ -387,7 +426,7 @@
     <link href="http://baiwenhui.com/2017/07/26/%E7%BB%88%E7%AB%AF%E5%BD%95%E5%88%B6%E7%A5%9E%E5%99%A8/"/>
     <id>http://baiwenhui.com/2017/07/26/终端录制神器/</id>
     <published>2017-07-26T12:21:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.442Z</updated>
     
     <content type="html"><![CDATA[<h2 id="使用showterm对终端脚本进行录制"><a href="#使用showterm对终端脚本进行录制" class="headerlink" title="使用showterm对终端脚本进行录制"></a>使用showterm对终端脚本进行录制</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
 <li>如果是Mac用户，直接使用如下命令即可安装(默认情况下，Mac OS X 系统已经安装好 Ruby):</li>
@@ -435,7 +474,7 @@
     <link href="http://baiwenhui.com/2017/07/22/IDEA-Mac%E4%B8%8B%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
     <id>http://baiwenhui.com/2017/07/22/IDEA-Mac下快捷键奇淫技巧/</id>
     <published>2017-07-22T13:59:00.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>为你的ide设置背景图片；<br>只需要双击enter键，然后输入<em>set back</em>， 找到<em>Set Background Image</em> 选择你想要添加的背景图片即可。如果不需要设置图片，再次打开单击<em>clear</em>按钮即可清除。</li>
@@ -490,7 +529,7 @@
     <link href="http://baiwenhui.com/2017/07/21/%E4%BD%BF%E7%94%A8springdata%E6%93%8D%E4%BD%9Ces%E5%87%BA%E9%94%99org-elasticsearch-client-transport-NoNodeAvailableException/"/>
     <id>http://baiwenhui.com/2017/07/21/使用springdata操作es出错org-elasticsearch-client-transport-NoNodeAvailableException/</id>
     <published>2017-07-21T01:48:10.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<p>  之前的项目中使用的是http-client操作es，比较轻量级。目前为了学习下springdata，使用Java API 的方式来操作ES，但是在引入SpringData的es模块依赖后，操作es并未成功，出现以下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [&#123;#transport#-1&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125;]</div></pre></td></tr></table></figure></p>
 <p><strong>注意：</strong>如果你下载elasticsearch的压缩包安装的话，可能不会出现该问题！因为es默认的配置文件cluster.name是elasticsearch。但是奇葩的是使用brew安装es之后，默认的elasticsearch.yml的配置项成了这样：cluster.name: elasticsearch_bwh，就是这个原因导致了这个问题的产生，项目启动后控制台一直抛这个错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transport#-1&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125; not part of the cluster Cluster [Assassin], ignoring...</div></pre></td></tr></table></figure></p>
@@ -520,7 +559,7 @@
     <link href="http://baiwenhui.com/2017/05/30/hexo%E5%B0%86%E5%A4%9A%E8%AF%B4%E6%9B%BF%E6%8D%A2%E4%B8%BA%E7%95%85%E8%A8%80/"/>
     <id>http://baiwenhui.com/2017/05/30/hexo将多说替换为畅言/</id>
     <published>2017-05-30T02:46:11.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 由于多说团队在2017年6月1号停止了对多说的运营，因此需要将博客中使用的多说替换为畅言。 </strong></p>
 <h3 id="具体替换办法如下："><a href="#具体替换办法如下：" class="headerlink" title="具体替换办法如下："></a>具体替换办法如下：</h3><ol>
@@ -566,7 +605,7 @@
     <link href="http://baiwenhui.com/2017/05/29/%E9%80%92%E5%BD%92%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/"/>
     <id>http://baiwenhui.com/2017/05/29/递归原理解析/</id>
     <published>2017-05-29T15:48:17.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.442Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>首先使用递归输出经典的阶乘，描述如下：</li>
@@ -612,7 +651,7 @@
     <link href="http://baiwenhui.com/2017/03/12/SpringBoot%E5%AD%A6%E4%B9%A0%E4%B8%80/"/>
     <id>http://baiwenhui.com/2017/03/12/SpringBoot学习一/</id>
     <published>2017-03-12T15:42:17.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><blockquote>
 <p>Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.</p>
@@ -668,7 +707,7 @@
     <link href="http://baiwenhui.com/2017/03/04/Java%E9%9D%A2%E8%AF%95-%E4%B8%80/"/>
     <id>http://baiwenhui.com/2017/03/04/Java面试-一/</id>
     <published>2017-03-04T16:04:28.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类和接口的区别？"><a href="#抽象类和接口的区别？" class="headerlink" title="抽象类和接口的区别？"></a>抽象类和接口的区别？</h3><ol>
 <li>抽象类中可以包含抽象方法和非抽象方法，接口只能包含公开的抽象方法；</li>
@@ -721,7 +760,7 @@
     <link href="http://baiwenhui.com/2017/02/05/2017%E5%BC%80%E5%B7%A5%E5%BF%AB%E4%B9%90/"/>
     <id>http://baiwenhui.com/2017/02/05/2017开工快乐/</id>
     <published>2017-02-05T13:43:05.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<center><img src="http://i1.piimg.com/4851/ce0a3e1ef63844b1.jpg" alt="2017开工快乐"></center>
 
@@ -747,7 +786,7 @@
     <link href="http://baiwenhui.com/2017/01/23/%E6%98%A5%E8%8A%82%E5%9B%9E%E5%AE%B6/"/>
     <id>http://baiwenhui.com/2017/01/23/春节回家/</id>
     <published>2017-01-23T13:20:53.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
+    <updated>2017-08-13T06:48:22.438Z</updated>
     
     <content type="html"><![CDATA[<center><img src="http://i1.piimg.com/4851/b70e6f5b8f4e2ba5.jpg" alt="plane"></center>
 
@@ -770,68 +809,6 @@
     
     
       <category term="生活感悟" scheme="http://baiwenhui.com/tags/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>rxjs翻译-rxjs介绍</title>
-    <link href="http://baiwenhui.com/2017/01/22/rxjs%E7%BF%BB%E8%AF%91-rxjs%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://baiwenhui.com/2017/01/22/rxjs翻译-rxjs介绍/</id>
-    <published>2017-01-22T13:26:40.000Z</published>
-    <updated>2017-08-13T03:14:20.638Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，<a href="&#39;./overview.html#observable&#39;">Observable</a> ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.6" target="_blank" rel="external">Array#extras</a> (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。</p>
-<p><span class="informal">可以将RxJS想象成是用于处理事件的Lodash.</span></p>
-<p>ReactiveX将<a href="https://en.wikipedia.org/wiki/Observer_pattern" target="_blank" rel="external">Observer模式</a>和<a href="https://en.wikipedia.org/wiki/Iterator_pattern" target="_blank" rel="external">Iterator模式</a>和对集合进行函数式编程结合起来，从而满足了对事件序列进行管理的需求。</p>
-<p>RxJS用于解决异步事件的管理问题，它的核心概念如下：</p>
-<ul>
-<li><strong>Observable:</strong> 代表数据与事件的集合，这个集合可以被调用，从而可以生成数据和事件。</li>
-<li><strong>Observer:</strong> 回调函数的集合，用于获取想要数据。这些数据来自于Observable。</li>
-<li><strong>Subscription:</strong> 用于表示Observable的执行状态，主要用于执行的取消。</li>
-<li><strong>Operator:</strong> 函数式风格的纯函数，通过<code>map</code>, <code>filter</code>, <code>concat</code>, <code>flatMap</code>等操作对集合进行处理。</li>
-<li><strong>Subject:</strong> 与EventEmitter等价，唯一可以将一个值或者事件向个多个Observer进行广播的办法。</li>
-<li><strong>Schedulers:</strong> 一个中心化的、控制并发的分发器，允许我们可以在象<code>setTimeout</code>、<code>requestAnimationFrame</code>或者其它类似的计算中可以进行调整。</li>
-</ul>
-<h2 id="第一个例子"><a href="#第一个例子" class="headerlink" title="第一个例子"></a>第一个例子</h2><p>通常你是这样注册事件的侦听器(listener)的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">'Clicked!'</span>));</div></pre></td></tr></table></figure></p>
-<p>使用RxJS的话，你要创建一个Observable来替换。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">Rx.Observable.fromEvent(button, <span class="string">'click'</span>)</div><div class="line">  .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Clicked!'</span>));</div></pre></td></tr></table></figure>
-<h3 id="纯粹-Purity"><a href="#纯粹-Purity" class="headerlink" title="纯粹(Purity)"></a>纯粹(Purity)</h3><p>让RxJS强大的是它能完全通过函数来生成数值，这也就意味着可以减少代码出错的机会。</p>
-<p>通常你会创建比较不纯粹的函数，在这样的函数里，其它的代码片段会让你的状态变的混乱。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">`Clicked <span class="subst">$&#123;++count&#125;</span> times`</span>));</div></pre></td></tr></table></figure>
-<p>而使用RxJS可以将你的状态进行隔离。</p>
-<blockquote>
-<p>译者注： 指count不再需要定义在外面。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">Rx.Observable.fromEvent(button, <span class="string">'click'</span>)</div><div class="line">  .scan(<span class="function"><span class="params">count</span> =&gt;</span> count + <span class="number">1</span>, <span class="number">0</span>)</div><div class="line">  .subscribe(<span class="function"><span class="params">count</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Clicked <span class="subst">$&#123;count&#125;</span> times`</span>));</div></pre></td></tr></table></figure>
-<p>这里<strong>scan</strong>运算子的工作方式与<strong>reduce</strong>在数组里的工作方式是一样的。它从传给回调函数的值中获取值。返回的值将会作为下一次的传入值。</p>
-<blockquote>
-<p>译者注：scan第二个参数0是初始值。对于上面的函数来说就可以用来侦听被点击的次数了，非常的方便。</p>
-</blockquote>
-<h3 id="流转（Flow）"><a href="#流转（Flow）" class="headerlink" title="流转（Flow）"></a>流转（Flow）</h3><p>RxJS有一堆的运算子可以帮助你控制事件如何在你的可观察对象里流转。</p>
-<p>下面是你在纯JavaScript下允许一分钟最多一次点击的代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> rate = <span class="number">1000</span>;</div><div class="line"><span class="keyword">var</span> lastClick = <span class="built_in">Date</span>.now() - rate;</div><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (<span class="built_in">Date</span>.now() - lastClick &gt;= rate) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`Clicked <span class="subst">$&#123;++count&#125;</span> times`</span>);</div><div class="line">    lastClick = <span class="built_in">Date</span>.now();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>使用RxJS后:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">Rx.Observable.fromEvent(button, <span class="string">'click'</span>)</div><div class="line">  .throttleTime(<span class="number">1000</span>)</div><div class="line">  .scan(<span class="function"><span class="params">count</span> =&gt;</span> count + <span class="number">1</span>, <span class="number">0</span>)</div><div class="line">  .subscribe(<span class="function"><span class="params">count</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Clicked <span class="subst">$&#123;count&#125;</span> times`</span>));</div></pre></td></tr></table></figure>
-<p>其实的流转控制运算子还有<a href="../class/es6/Observable.js~Observable.html#instance-method-filter"><strong>filter</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-delay"><strong>delay</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-debounceTime"><strong>debounceTime</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-take"><strong>take</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-takeUntil"><strong>takeUntil</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-distinct"><strong>distinct</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-distinctUntilChanged"><strong>distinctUntilChanged</strong></a>等。</p>
-<h3 id="值-Values"><a href="#值-Values" class="headerlink" title="值(Values)"></a>值(Values)</h3><p>你可以转化赋给你的观察者的值。</p>
-<p>下面是你在纯JavaScript下添加当前鼠标的每个点击事件的x轴位置的代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> rate = <span class="number">1000</span>;</div><div class="line"><span class="keyword">var</span> lastClick = <span class="built_in">Date</span>.now() - rate;</div><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">button.addEventListener(<span class="string">'click'</span>, (event) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span> (<span class="built_in">Date</span>.now() - lastClick &gt;= rate) &#123;</div><div class="line">    count += event.clientX;</div><div class="line">    <span class="built_in">console</span>.log(count)</div><div class="line">    lastClick = <span class="built_in">Date</span>.now();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>使用RxJS后:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</div><div class="line">Rx.Observable.fromEvent(button, <span class="string">'click'</span>)</div><div class="line">  .throttleTime(<span class="number">1000</span>)</div><div class="line">  .map(<span class="function"><span class="params">event</span> =&gt;</span> event.clientX)</div><div class="line">  .scan(<span class="function">(<span class="params">count, clientX</span>) =&gt;</span> count + clientX, <span class="number">0</span>)</div><div class="line">  .subscribe(<span class="function"><span class="params">count</span> =&gt;</span> <span class="built_in">console</span>.log(count));</div></pre></td></tr></table></figure>
-<p>另外几个用于生成值的运算子有<a href="../class/es6/Observable.js~Observable.html#instance-method-pluck"><strong>pluck</strong></a>, <a href="../class/es6/Observable.js~Observable.html#instance-method-pairwise"><strong>pairwise</strong></a>,<br><a href="../class/es6/Observable.js~Observable.html#instance-method-sample"><strong>sample</strong></a>等。</p>
-<blockquote>
-<p>译者注：这里map可以将事件里的值取出来，如果不进行map，clientX里的值就是事件本身。<br>这里要注意的是每次变换，其实对象是发生变化的。subscribe一次之后就不能再subscribe了。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h1&gt;&lt;p&gt;RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，&lt;a href=&quot;&amp;#39;./ov
-    
-    </summary>
-    
-    
-      <category term="rxjs" scheme="http://baiwenhui.com/tags/rxjs/"/>
     
   </entry>
   
