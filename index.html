@@ -203,110 +203,6 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/">Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记</a>
-    </h1>
-  
-
-          
-            <a href="/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/" class="archive-article-date">
-  	<time datetime="2017-08-21T14:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <p>写在前面的话，之前曾在项目中使用过Webservices，记得当时使用过Apache的CXF，Apache CXF = Celtix + XFire。 随着RESTful服务的越来越流行，渐渐地WebService技术已经渐渐被人们所淘汰。下面主要为了技术的温习，跟上小马哥一起再次复习下那些年我们使用过的WebService。</p>
-<ul>
-<li><p>Web Services    定义：<br>又称之为 Web Service，是一种设计通过网络来支持相互协作的机器间交互的软件系统。它拥有被机器可处理的格式所描述的接口（如：WSDL），规定使用 SOAP消息的方式与其他系统交互，典型地以HTTP传输、XML序列化以及联合其他Web 相关标准。<br>— W3C, Web Services Glossary</p>
-</li>
-<li><p>标准整合方式<br>&emsp;XML（可扩展标记语言）<br>&emsp;SOAP（对象访问）<br>&emsp;WSDL（网络服务描述语言）<br>&emsp;UDDI（通用描述、发现与集成服务）</p>
-</li>
-<li><p>什么是 SOAP？</p>
-<blockquote>
-<p>SOAP 指简易对象访问协议<br>SOAP 是一种通信协议<br>SOAP 用于应用程序之间的通信<br>SOAP 是一种用于发送消息的格式<br>SOAP 被设计用来通过因特网进行通信<br>SOAP 独立于平台<br>SOAP 独立于语言<br>SOAP 基于 XML<br>SOAP 很简单并可扩展<br>SOAP 允许您绕过防火墙<br>SOAP 将被作为 W3C 标准来发展</p>
-</blockquote>
-</li>
-<li><p>SOAP 数据封装</p>
-<blockquote>
-<p>SOAP 消息：在SOAP节点之间表达交换的信息<br>SOAP 信封：鉴定SOAP 消息的XML封装元素<br>SOAP 头块：SOAP 头的基本单元<br>SOAP 头：一个或多个SOAP 头块集合<br>SOAP 主体：交给接收端包含消息的主体<br>SOAP 故障：SOAP 节点故障时处理消息<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fiqkb2bp47j305205ejrh.jpg" alt=" SOAP 数据封装"></p>
-</blockquote>
-</li>
-<li><p>什么是WSDL?</p>
-<blockquote>
-<p>WSDL 指网络服务描述语言<br>WSDL 使用 XML 编写<br>WSDL 是一种 XML 文档<br>WSDL 用于描述网络服务<br>WSDL 也可用于定位网络服务<br>WSDL 还不是 W3C 标准</p>
-</blockquote>
-</li>
-<li><p>什么是 UDDI？</p>
-<blockquote>
-<p>UDDI 是一个独立于平台的框架，用于通过使用 Internet 来描述服务，发现企业，并对企业服务进行集成。<br>UDDI 指的是通用描述、发现与集成服务<br>UDDI 是一种用于存储有关 web services 的信息的目录。<br>UDDI 是一种由 WSDL 描述的 web services 界面的目录。<br>UDDI 经由 SOAP 进行通信<br>UDDI 被构建入了微软的 .NET 平台</p>
-</blockquote>
-</li>
-</ul>
-<p>以上概念定义解释来自<a href="http://www.w3school.com.cn/" target="_blank" rel="external">w3cschool</a></p>
-<p>其中需要注意的有使用Java6以后自带的xjc工具根据xsd生成webservices相关实体代码命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xjc -d src/main/java -p com.example.springbootwebservices.domain src/main/resources/META-INF/schemas/user.xsd</div></pre></td></tr></table></figure></p>
-<p>-d表示指定java包路径的相对目录</p>
-<p>具体SpringBoot中使用webservices案例请参考：<a href="https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14" target="_blank" rel="external">https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14</a></p>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webservices</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
     <article id="post-HTTP状态码图示" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1063,6 +959,96 @@ var _hmt = _hmt || [];
 
                             
   
+    <article id="post-Grails中一个日期差引起的思考" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/02/Grails中一个日期差引起的思考/">Grails中一个日期差引起的思考</a>
+    </h1>
+  
+
+          
+            <a href="/2017/08/02/Grails中一个日期差引起的思考/" class="archive-article-date">
+  	<time datetime="2017-08-02T14:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <h3 id="需求如下"><a href="#需求如下" class="headerlink" title="需求如下"></a>需求如下</h3><p><strong> 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。 </strong></p>
+<h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>根据当前需求进行编码，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">class ExampleController &#123;</div><div class="line">    def test() &#123;</div><div class="line">        ...</div><div class="line">        def obj = XXX.findByName(&apos;xxx&apos;)</div><div class="line">        def limitDays = 7</div><div class="line">        if(obj &amp;&amp; daysBetween(obj.queryTime,new Date())&lt;=7)&#123;</div><div class="line">                            render([code: 10101, msg: &quot;查询失败，7天内不允许重复查询&quot;, data: []] as grails.converters.JSON)</div><div class="line">                            return</div><div class="line"> </div><div class="line">        &#125;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    //TODO: 将此处判断移动至service或者util类</div><div class="line">    static def daysBetween(def startDate, def endDate) &#123;</div><div class="line">        use(groovy.time.TimeCategory) &#123;</div><div class="line">            def duration = endDate - startDate</div><div class="line">            return duration.days</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>出现bug:<br><strong>本地测试程序可以正常执行，但是发现在生产环境下并没有正常执行</strong></p>
+<p>错误解决：<br><strong>以为是groovy.time.TimeCategory原生类有bug，将比较日期间隔天数的方法修改为如下:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//TODO: 将此处判断移动至service或者util类</div><div class="line">static boolean keep7Days(endDate)&#123;</div><div class="line">     return (System.currentTimeMillis()-endDate.getTime())&lt;3600*1000*24*7</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>修改结果：<br>问题依然存在。</p>
+<p>进行分析：</p>
+<p><strong> 当我们从某张表中根据某个条件查询一条记录，如果该条件对一个多条重复记录，那数据库将按照表中的记录插入顺序返回最初插入的一条记录。因此，当根据某条件进行匹配查询时，应该按照id降序排列后取得第一条即可。 </strong></p>
+<p>解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">def obj = XXX.find(&quot;from XXX as b where b.xxx=:xxx order by b.id desc&quot;,[xxx:xxx])</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>通过以上方式，我们便可以得到最后插入的记录，此时再使用时间差进行判断就不会出现匹配不正确问题。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>当项目中遇到bug时应该找到问题的根源再进行解决。在测试的过程中数据应该保持和生产环境数据一致！</p>
+<h4 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h4><p>推荐两个不错的播客平台：</p>
+<p> <a href="https://ipn.li/kernelpanic/" target="_blank" rel="external">内核恐慌</a><br> <a href="http://banlan.show/bitvoice" target="_blank" rel="external">比特新声</a></p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">grails</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gorm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/08/02/Grails中一个日期差引起的思考/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1194,14 +1180,6 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webservices</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
               </li>
              
@@ -1258,15 +1236,15 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">生活感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringData</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Elasticsearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">生活感悟</a>
               </li>
              
               <li class="article-tag-list-item">

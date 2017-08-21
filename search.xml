@@ -4,53 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记]]></title>
-      <url>http://baiwenhui.com/2017/08/21/Java-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%9E%E8%B7%B5-Spring-Boot-%E7%B3%BB%E5%88%97%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89WebService-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-      <content type="html"><![CDATA[<p>写在前面的话，之前曾在项目中使用过Webservices，记得当时使用过Apache的CXF，Apache CXF = Celtix + XFire。 随着RESTful服务的越来越流行，渐渐地WebService技术已经渐渐被人们所淘汰。下面主要为了技术的温习，跟上小马哥一起再次复习下那些年我们使用过的WebService。</p>
-<ul>
-<li><p>Web Services    定义：<br>又称之为 Web Service，是一种设计通过网络来支持相互协作的机器间交互的软件系统。它拥有被机器可处理的格式所描述的接口（如：WSDL），规定使用 SOAP消息的方式与其他系统交互，典型地以HTTP传输、XML序列化以及联合其他Web 相关标准。<br>— W3C, Web Services Glossary</p>
-</li>
-<li><p>标准整合方式<br>&emsp;XML（可扩展标记语言）<br>&emsp;SOAP（对象访问）<br>&emsp;WSDL（网络服务描述语言）<br>&emsp;UDDI（通用描述、发现与集成服务）</p>
-</li>
-<li><p>什么是 SOAP？</p>
-<blockquote>
-<p>SOAP 指简易对象访问协议<br>SOAP 是一种通信协议<br>SOAP 用于应用程序之间的通信<br>SOAP 是一种用于发送消息的格式<br>SOAP 被设计用来通过因特网进行通信<br>SOAP 独立于平台<br>SOAP 独立于语言<br>SOAP 基于 XML<br>SOAP 很简单并可扩展<br>SOAP 允许您绕过防火墙<br>SOAP 将被作为 W3C 标准来发展</p>
-</blockquote>
-</li>
-<li><p>SOAP 数据封装</p>
-<blockquote>
-<p>SOAP 消息：在SOAP节点之间表达交换的信息<br>SOAP 信封：鉴定SOAP 消息的XML封装元素<br>SOAP 头块：SOAP 头的基本单元<br>SOAP 头：一个或多个SOAP 头块集合<br>SOAP 主体：交给接收端包含消息的主体<br>SOAP 故障：SOAP 节点故障时处理消息<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fiqkb2bp47j305205ejrh.jpg" alt=" SOAP 数据封装"></p>
-</blockquote>
-</li>
-<li><p>什么是WSDL?</p>
-<blockquote>
-<p>WSDL 指网络服务描述语言<br>WSDL 使用 XML 编写<br>WSDL 是一种 XML 文档<br>WSDL 用于描述网络服务<br>WSDL 也可用于定位网络服务<br>WSDL 还不是 W3C 标准</p>
-</blockquote>
-</li>
-<li><p>什么是 UDDI？</p>
-<blockquote>
-<p>UDDI 是一个独立于平台的框架，用于通过使用 Internet 来描述服务，发现企业，并对企业服务进行集成。<br>UDDI 指的是通用描述、发现与集成服务<br>UDDI 是一种用于存储有关 web services 的信息的目录。<br>UDDI 是一种由 WSDL 描述的 web services 界面的目录。<br>UDDI 经由 SOAP 进行通信<br>UDDI 被构建入了微软的 .NET 平台</p>
-</blockquote>
-</li>
-</ul>
-<p>以上概念定义解释来自<a href="http://www.w3school.com.cn/" target="_blank" rel="external">w3cschool</a></p>
-<p>其中需要注意的有使用Java6以后自带的xjc工具根据xsd生成webservices相关实体代码命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xjc -d src/main/java -p com.example.springbootwebservices.domain src/main/resources/META-INF/schemas/user.xsd</div></pre></td></tr></table></figure></p>
-<p>-d表示指定java包路径的相对目录</p>
-<p>具体SpringBoot中使用webservices案例请参考：<a href="https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14" target="_blank" rel="external">https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14</a></p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> springboot </tag>
-            
-            <tag> webservices </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[HTTP状态码图示]]></title>
       <url>http://baiwenhui.com/2017/08/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%9B%BE%E7%A4%BA/</url>
       <content type="html"><![CDATA[<p>这里总结下我们日常开发中常用的HTTP状态码，分享一个老外对HTTP状态码形象化用图片表示的网站：<a href="https://http.cat/" target="_blank" rel="external">https://http.cat/</a></p>
