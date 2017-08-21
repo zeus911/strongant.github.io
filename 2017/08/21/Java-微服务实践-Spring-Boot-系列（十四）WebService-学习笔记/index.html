@@ -7,18 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://baiwenhui.com">
-  <title>Archives: 2017/2 | strongant的个人博客</title>
+  <title>Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记 | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="strongant的个人博客，积累技术，记录自己的成长！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="strongant的个人博客">
-<meta property="og:url" content="http://baiwenhui.com/archives/2017/02/index.html">
+  <meta name="description" content="写在前面的话，之前曾在项目中使用过Webservices，记得当时使用过Apache的CXF，Apache CXF = Celtix + XFire。 随着RESTful服务的越来越流行，渐渐地WebService技术已经渐渐被人们所淘汰。下面主要为了技术的温习，跟上小马哥一起再次复习下那些年我们使用过的WebService。  Web Services    定义：又称之为 Web Servic">
+<meta name="keywords" content="webservices,springboot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记">
+<meta property="og:url" content="http://baiwenhui.com/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
-<meta property="og:description" content="strongant的个人博客，积累技术，记录自己的成长！">
+<meta property="og:description" content="写在前面的话，之前曾在项目中使用过Webservices，记得当时使用过Apache的CXF，Apache CXF = Celtix + XFire。 随着RESTful服务的越来越流行，渐渐地WebService技术已经渐渐被人们所淘汰。下面主要为了技术的温习，跟上小马哥一起再次复习下那些年我们使用过的WebService。  Web Services    定义：又称之为 Web Servic">
 <meta property="og:locale" content="Chinese">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fiqkb2bp47j305205ejrh.jpg">
+<meta property="og:updated_time" content="2017-08-21T14:55:53.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="strongant的个人博客">
-<meta name="twitter:description" content="strongant的个人博客，积累技术，记录自己的成长！">
+<meta name="twitter:title" content="Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记">
+<meta name="twitter:description" content="写在前面的话，之前曾在项目中使用过Webservices，记得当时使用过Apache的CXF，Apache CXF = Celtix + XFire。 随着RESTful服务的越来越流行，渐渐地WebService技术已经渐渐被人们所淘汰。下面主要为了技术的温习，跟上小马哥一起再次复习下那些年我们使用过的WebService。  Web Services    定义：又称之为 Web Servic">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fiqkb2bp47j305205ejrh.jpg">
   
     <link rel="alternative" href="/atom.xml" title="strongant的个人博客" type="application/atom+xml">
   
@@ -201,62 +205,189 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记" class="article article-type-post "
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/05/2017开工快乐/" class="archive-article-date">
-  	<time datetime="2017-02-05T13:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/05/2017开工快乐/">2017开工快乐</a>
+    <h1 class="article-title" itemprop="name">
+      Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
+          
+            <a href="/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/" class="archive-article-date">
+  	<time datetime="2017-08-21T14:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <p>写在前面的话，之前曾在项目中使用过Webservices，记得当时使用过Apache的CXF，Apache CXF = Celtix + XFire。 随着RESTful服务的越来越流行，渐渐地WebService技术已经渐渐被人们所淘汰。下面主要为了技术的温习，跟上小马哥一起再次复习下那些年我们使用过的WebService。</p>
+<ul>
+<li><p>Web Services    定义：<br>又称之为 Web Service，是一种设计通过网络来支持相互协作的机器间交互的软件系统。它拥有被机器可处理的格式所描述的接口（如：WSDL），规定使用 SOAP消息的方式与其他系统交互，典型地以HTTP传输、XML序列化以及联合其他Web 相关标准。<br>— W3C, Web Services Glossary</p>
+</li>
+<li><p>标准整合方式<br>&emsp;XML（可扩展标记语言）<br>&emsp;SOAP（对象访问）<br>&emsp;WSDL（网络服务描述语言）<br>&emsp;UDDI（通用描述、发现与集成服务）</p>
+</li>
+<li><p>什么是 SOAP？</p>
+<blockquote>
+<p>SOAP 指简易对象访问协议<br>SOAP 是一种通信协议<br>SOAP 用于应用程序之间的通信<br>SOAP 是一种用于发送消息的格式<br>SOAP 被设计用来通过因特网进行通信<br>SOAP 独立于平台<br>SOAP 独立于语言<br>SOAP 基于 XML<br>SOAP 很简单并可扩展<br>SOAP 允许您绕过防火墙<br>SOAP 将被作为 W3C 标准来发展</p>
+</blockquote>
+</li>
+<li><p>SOAP 数据封装</p>
+<blockquote>
+<p>SOAP 消息：在SOAP节点之间表达交换的信息<br>SOAP 信封：鉴定SOAP 消息的XML封装元素<br>SOAP 头块：SOAP 头的基本单元<br>SOAP 头：一个或多个SOAP 头块集合<br>SOAP 主体：交给接收端包含消息的主体<br>SOAP 故障：SOAP 节点故障时处理消息<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fiqkb2bp47j305205ejrh.jpg" alt=" SOAP 数据封装"></p>
+</blockquote>
+</li>
+<li><p>什么是WSDL?</p>
+<blockquote>
+<p>WSDL 指网络服务描述语言<br>WSDL 使用 XML 编写<br>WSDL 是一种 XML 文档<br>WSDL 用于描述网络服务<br>WSDL 也可用于定位网络服务<br>WSDL 还不是 W3C 标准</p>
+</blockquote>
+</li>
+<li><p>什么是 UDDI？</p>
+<blockquote>
+<p>UDDI 是一个独立于平台的框架，用于通过使用 Internet 来描述服务，发现企业，并对企业服务进行集成。<br>UDDI 指的是通用描述、发现与集成服务<br>UDDI 是一种用于存储有关 web services 的信息的目录。<br>UDDI 是一种由 WSDL 描述的 web services 界面的目录。<br>UDDI 经由 SOAP 进行通信<br>UDDI 被构建入了微软的 .NET 平台</p>
+</blockquote>
+</li>
+</ul>
+<p>以上概念定义解释来自<a href="http://www.w3school.com.cn/" target="_blank" rel="external">w3cschool</a></p>
+<p>其中需要注意的有使用Java6以后自带的xjc工具根据xsd生成webservices相关实体代码命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xjc -d src/main/java -p com.example.springbootwebservices.domain src/main/resources/META-INF/schemas/user.xsd</div></pre></td></tr></table></figure></p>
+<p>-d表示指定java包路径的相对目录</p>
+<p>具体SpringBoot中使用webservices案例请参考：<a href="https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14" target="_blank" rel="external">https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14</a></p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
           
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webservices</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+            
 
+              
+
+                  
+                    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                      
+                        <div class="clearfix"></div>
+    </div>
+    </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/08/13/HTTP状态码图示/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTTP状态码图示</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
     
 
+      
 
+            
+              
+                <!-- 畅言评论框 start -->
+<div id="SOHUCS" sid="Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记" style="padding: 0px 30px 0px 46px;"></div>
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysHzQGmj'; 
+var conf = 'prod_25363bfe21a9a09909208a01135582ea'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+                  
+                      
+
+                        
+                          <script>
+                            (function () {
+                              var bp = document.createElement('script');
+                              bp.src = '//push.zhanzhang.baidu.com/push.js';
+                              var s = document.getElementsByTagName("script")[0];
+                              s.parentNode.insertBefore(bp, s);
+                            })();
+
+                          </script>
+                          
+
+
+                            
           </div>
         </div>
       </div>
@@ -287,8 +418,8 @@ id="busuanzi_value_site_pv"></span>次</span>
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
