@@ -4,6 +4,108 @@
   
     
     <entry>
+      <title><![CDATA[官方Spring周报-20170905]]></title>
+      <url>http://baiwenhui.com/2017/09/07/%E5%AE%98%E6%96%B9Spring%E5%91%A8%E6%8A%A5-20170905/</url>
+      <content type="html"><![CDATA[<p>Spring的粉丝们，欢迎来到本周的另一期官方周报！这个星期我在香港看这个惊人的YOW！然后是新加坡的YOW。这些会议都是来自澳大利亚顶尖的会议，而且会议很新颖。如果你在这两个地方，我希望你会来。</p>
+<p><a href="http://www.yowconference.hk/" target="_blank" rel="external">http://www.yowconference.hk/</a></p>
+<p><a href="http://www.yowconference.sg/" target="_blank" rel="external">http://www.yowconference.sg/</a></p>
+<p>1.介绍下关于Spring Cloud Data Flow最重要的一个方面。 Spring Cloud Data Flow大牛Eric Bottard首先介绍了Spring Cloud Data Flow Shell本身。</p>
+<p><a href="https://spring.io/blog/2017/08" target="_blank" rel="external">https://spring.io/blog/2017/08</a> … shell</p>
+<p>2.Spring Cloud贡献者Ryan Baxter刚刚宣布了Spring Cloud Edgeware M1 的发布。新版本包括对各种项目的更新以及新的Spring Cloud Gateway项目。此版本基于Spring Boot 1.5.x。</p>
+<p><a href="https://spring.io/blog/2017/08" target="_blank" rel="external">https://spring.io/blog/2017/08</a> … lable</p>
+<p>3.Spring Cloud联合创始人Spencer Gibb刚刚宣布了Spring Cloud Finchely M2的发布。这个新版本基于Spring Boot 2.0.x，所以是基于Java 8。它还支持Spring Cloud Gateway中更多更酷的功能。在Spring Cloud Gateway和其他版本中，一个常见主题是反应性支持。</p>
+<p><a href="https://spring.io/blog/2017/08" target="_blank" rel="external">https://spring.io/blog/2017/08</a> … lable</p>
+<p>4.Spring Cloud Flow大牛Thomas Risberg在本文中介绍了针对Kubernetes的Spring Cloud Data Flow的Helm安装程序。 Helm是Kubernetes的包管理者。</p>
+<p><a href="https://spring.io/blog/2017/08" target="_blank" rel="external">https://spring.io/blog/2017/08</a> … -helm</p>
+<p>5.这个应用现代化的Pivotal和Apigee白皮书是一个很好的阅读题材。</p>
+<p><a href="https://content.pivotal.io/api" target="_blank" rel="external">https://content.pivotal.io/api</a> … 73ac4</p>
+<p>6.Matt McCandless称Spring Boot老而弥新，这是个很好的起步。</p>
+<p><a href="https://dzone.com/articles/spr" target="_blank" rel="external">https://dzone.com/articles/spr</a> … you-1</p>
+<p>7.这篇关于使用Spring Boot的Quartz Scheduler的文章是曾经看过的一篇文章。我喜欢。</p>
+<p><a href="http://www.opencodez.com/java/" target="_blank" rel="external">http://www.opencodez.com/java/</a> … t.htm</p>
+<p>8.看起来要想Java 9发布，这个新的Java版本将会有6个月的时间。我个人欢迎新版本。</p>
+<p><a href="https://jcp.org/aboutJava/comm" target="_blank" rel="external">https://jcp.org/aboutJava/comm</a> … .html</p>
+<p>9.我真的很喜欢这个俄语的帖子，介绍Spring Boot的应用程序开发。</p>
+<p><a href="https://alexkosarev.name/2017/" target="_blank" rel="external">https://alexkosarev.name/2017/</a> … rt-1/</p>
+<p>10.上周Pivotal与Google和VMWare合作，宣布了Pivotal Cloud Foundry生态系统 - Pivotal Container Service - 由BOSH管理的Kubernetes服务的下一步工作。我们从TechCrunch片中得到一些细节。</p>
+<p><a href="https://www.blog.google/topics" target="_blank" rel="external">https://www.blog.google/topics</a> … -gcp/</p>
+<p><a href="https://techcrunch.com/2017/08" target="_blank" rel="external">https://techcrunch.com/2017/08</a> … /amp/</p>
+<p>11.我喜欢这个Auth0在集成Spring Boot与SQL数据库（PostgreSQL），JPA和Liquibase。</p>
+<p><a href="https://auth0.com/blog/integra" target="_blank" rel="external">https://auth0.com/blog/integra</a> … base/</p>
+<p>12.来自JHipster的这篇关于“API优先开发”的文章很有趣。</p>
+<p><a href="http://www.jhipster.tech/doing" target="_blank" rel="external">http://www.jhipster.tech/doing</a> … ment/</p>
+<p>13.Spring Boot 2.0具有反应弹性框架5和Java 8基准线，肯定会令人印象深刻。新版本中我最喜欢的功能之一就是支持Spring Boot Actuator端点的REST-stack（响应式Spring WebFlux，Spring MVC或JAX-RS）。</p>
+<p><a href="https://www.infoq.com/news/201" target="_blank" rel="external">https://www.infoq.com/news/201</a> … oints</p>
+<p>14.看看这个优秀的网络研讨会，了解为什么IntelliJ IDEA是Grails应用程序的首选。我喜欢这个，因为Grails 3是基于Spring Boot的，因为Jeff Scott Brown是一个伟大的演讲者，因为IntelliJ做了一个漂亮的好IDE。</p>
+<p><a href="https://blog.jetbrains.com/ide" target="_blank" rel="external">https://blog.jetbrains.com/ide</a> … ls-3/</p>
+<p>15.严格来说，这与Spring不是很相关，但它是值得一读的。丹尼尔·布莱恩特（Daniel Bryant）在这篇文章中描述了测试微服务（以及您可能使用的所有组件）的全方位方法。</p>
+<p><a href="https://specto.io/blog/2016/8/" target="_blank" rel="external">https://specto.io/blog/2016/8/</a> … ices/</p>
+<p>16.我喜欢这个来自Spring Data的StackOverflow响应Oliver Gierke：如何在Spring Boot中选择性升级依赖项？</p>
+<p><a href="https://stackoverflow.com/ques" target="_blank" rel="external">https://stackoverflow.com/ques</a> … g-dat</p>
+<p>17.如果您想快速了解一下Cloud Foundry服务代理商，请阅读本文。</p>
+<p><a href="http://www.automate-it.today/a" target="_blank" rel="external">http://www.automate-it.today/a</a> … kers/</p>
+<p>18.这篇也不是严格来说与Spring有关，但对于构建云原生应用程序的一些Spring用户来说，这对于Java云主机服务的成本降低策略来说非常有用。</p>
+<p><a href="https://www.infoq.com/articles/java-cloud-cost-reduction" target="_blank" rel="external">https://www.infoq.com/articles/java-cloud-cost-reduction</a></p>
+<p>备注：希望大家能够积极参与我们的公益开源翻译项目，对于有些翻译不当的地方由于水平问题望见谅！我们的SpringBoot周报开源翻译项目地址：<a href="https://github.com/strongant/ThisWeekInSpringTranslate" target="_blank" rel="external">https://github.com/strongant/ThisWeekInSpringTranslate</a><br>欢迎各路大神加入我们的翻译计划，感谢！</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Spring官方周报 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记]]></title>
+      <url>http://baiwenhui.com/2017/08/21/Java-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%9E%E8%B7%B5-Spring-Boot-%E7%B3%BB%E5%88%97%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89WebService-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>写在前面的话，之前曾在项目中使用过Webservices，记得当时使用过Apache的CXF，Apache CXF = Celtix + XFire。 随着RESTful服务的越来越流行，渐渐地WebService技术已经渐渐被人们所淘汰。下面主要为了技术的温习，跟上小马哥一起再次复习下那些年我们使用过的WebService。</p>
+<ul>
+<li><p>Web Services    定义：<br>又称之为 Web Service，是一种设计通过网络来支持相互协作的机器间交互的软件系统。它拥有被机器可处理的格式所描述的接口（如：WSDL），规定使用 SOAP消息的方式与其他系统交互，典型地以HTTP传输、XML序列化以及联合其他Web 相关标准。<br>— W3C, Web Services Glossary</p>
+</li>
+<li><p>标准整合方式<br>&emsp;XML（可扩展标记语言）<br>&emsp;SOAP（对象访问）<br>&emsp;WSDL（网络服务描述语言）<br>&emsp;UDDI（通用描述、发现与集成服务）</p>
+</li>
+<li><p>什么是 SOAP？</p>
+<blockquote>
+<p>SOAP 指简易对象访问协议<br>SOAP 是一种通信协议<br>SOAP 用于应用程序之间的通信<br>SOAP 是一种用于发送消息的格式<br>SOAP 被设计用来通过因特网进行通信<br>SOAP 独立于平台<br>SOAP 独立于语言<br>SOAP 基于 XML<br>SOAP 很简单并可扩展<br>SOAP 允许您绕过防火墙<br>SOAP 将被作为 W3C 标准来发展</p>
+</blockquote>
+</li>
+<li><p>SOAP 数据封装</p>
+<blockquote>
+<p>SOAP 消息：在SOAP节点之间表达交换的信息<br>SOAP 信封：鉴定SOAP 消息的XML封装元素<br>SOAP 头块：SOAP 头的基本单元<br>SOAP 头：一个或多个SOAP 头块集合<br>SOAP 主体：交给接收端包含消息的主体<br>SOAP 故障：SOAP 节点故障时处理消息<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fiqkb2bp47j305205ejrh.jpg" alt=" SOAP 数据封装"></p>
+</blockquote>
+</li>
+<li><p>什么是WSDL?</p>
+<blockquote>
+<p>WSDL 指网络服务描述语言<br>WSDL 使用 XML 编写<br>WSDL 是一种 XML 文档<br>WSDL 用于描述网络服务<br>WSDL 也可用于定位网络服务<br>WSDL 还不是 W3C 标准</p>
+</blockquote>
+</li>
+<li><p>什么是 UDDI？</p>
+<blockquote>
+<p>UDDI 是一个独立于平台的框架，用于通过使用 Internet 来描述服务，发现企业，并对企业服务进行集成。<br>UDDI 指的是通用描述、发现与集成服务<br>UDDI 是一种用于存储有关 web services 的信息的目录。<br>UDDI 是一种由 WSDL 描述的 web services 界面的目录。<br>UDDI 经由 SOAP 进行通信<br>UDDI 被构建入了微软的 .NET 平台</p>
+</blockquote>
+</li>
+</ul>
+<p>以上概念定义解释来自<a href="http://www.w3school.com.cn/" target="_blank" rel="external">w3cschool</a></p>
+<p>其中需要注意的有使用Java6以后自带的xjc工具根据xsd生成webservices相关实体代码命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xjc -d src/main/java -p com.example.springbootwebservices.domain src/main/resources/META-INF/schemas/user.xsd</div></pre></td></tr></table></figure></p>
+<p>-d表示指定java包路径的相对目录</p>
+<p>具体SpringBoot中使用webservices案例请参考：<a href="https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14" target="_blank" rel="external">https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> springboot </tag>
+            
+            <tag> webservices </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[HTTP状态码图示]]></title>
       <url>http://baiwenhui.com/2017/08/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%9B%BE%E7%A4%BA/</url>
       <content type="html"><![CDATA[<p>这里总结下我们日常开发中常用的HTTP状态码，分享一个老外对HTTP状态码形象化用图片表示的网站：<a href="https://http.cat/" target="_blank" rel="external">https://http.cat/</a></p>
