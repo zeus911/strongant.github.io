@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title><![CDATA[使用Httpie来替代CURL]]></title>
+      <url>http://baiwenhui.com/2017/09/10/%E4%BD%BF%E7%94%A8Httpie%E6%9D%A5%E6%9B%BF%E4%BB%A3CURL-1/</url>
+      <content type="html"><![CDATA[<p>当下的一些比较人们的测试接口的客户端工具大概有以下几种：</p>
+<p>Postman（使用最多，一个基于Chrome的app）</p>
+<p>CURL（在终端下工作的文件传输工具）</p>
+<p>Httpie（终端下比较友好、简洁、特性更多，功能更强大）</p>
+<p>个人在终端下比较推荐使用Httpie，原因如下：</p>
+<p>举个例子，如果我们发起一个请求，获取一个JSON字符串，如果我们使用CURL进行获取的话，需要使用管道命令结合python自带的json.tool这个脚本才能完成，<code>curl  https://httpbin.org/get | python -m json.tool</code></p>
+<p>如果我们使用Httpie的话，只需要这样：<code>http  https://httpbin.org/get</code>,可以发现它不仅返回了body内容，也同时返回了header信息。当然如果我们只需要看body内容，此时只需要进行筛选即可，使用如下命令请求即可：<code>http  https://httpbin.org/get --body</code>,如果只需要header信息，可以这样：<code>http  https://httpbin.org/get --header</code>。更多特性，请参考：<a href="https://httpie.org/" target="_blank" rel="external">https://httpie.org/</a></p>
+<p>Httpie默认会将返回的JSON数据进行格式化，不再需要二次转换，并且它会使用颜色将一些不同类型的数据加以区分，这样也方便我们进行查看。</p>
+<p>这里介绍下Mac下的安装方式：<br>由于Httpie依赖Python，一般情况下Mac下已经自带了Python环境，只不过版本可能并不是最新的。使用brew安装即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install httpie</div></pre></td></tr></table></figure>
+<p>安装成功后我们进行测试是否可用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http ifconfig.me/all.json</div></pre></td></tr></table></figure></p>
+<p>正常情况下便可以得到带颜色的格式良好的JSON数据。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[官方Spring周报-20170905]]></title>
       <url>http://baiwenhui.com/2017/09/07/%E5%AE%98%E6%96%B9Spring%E5%91%A8%E6%8A%A5-20170905/</url>
       <content type="html"><![CDATA[<p>Spring的粉丝们，欢迎来到本周的另一期官方周报！这个星期我在香港看这个惊人的YOW！然后是新加坡的YOW。这些会议都是来自澳大利亚顶尖的会议，而且会议很新颖。如果你在这两个地方，我希望你会来。</p>
