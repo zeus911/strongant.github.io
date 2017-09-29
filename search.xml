@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title><![CDATA[Grails中序列化json出现异常数据.md]]></title>
+      <title><![CDATA[Grails中序列化json出现异常数据]]></title>
       <url>http://baiwenhui.com/2017/09/29/Grails%E4%B8%AD%E5%BA%8F%E5%88%97%E5%8C%96json%E5%87%BA%E7%8E%B0%E5%BC%82%E5%B8%B8%E6%95%B0%E6%8D%AE-md/</url>
       <content type="html"><![CDATA[<p><a href="https://github.com/jgritman/httpbuilder" target="_blank" rel="external">Httobuilder</a> 是一个基于groovy简单的HTTP客户端工具。它基本支持常用的几种HTTP请求方式(GET,PUT,POST,DELETE,HEAD,PATCH)。</p>
 <p>发生解析url值异常项目环境：<br>| Grails Version: 3.0.7<br>| Groovy Version: 2.4.4<br>| JVM Version: 1.8.0_121</p>
