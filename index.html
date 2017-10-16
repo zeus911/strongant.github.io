@@ -203,6 +203,120 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-阿里巴巴Java开发规约的IDEA插件使用" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/16/阿里巴巴Java开发规约的IDEA插件使用/">阿里巴巴Java开发规约的IDEA插件使用</a>
+    </h1>
+  
+
+          
+            <a href="/2017/10/16/阿里巴巴Java开发规约的IDEA插件使用/" class="archive-article-date">
+  	<time datetime="2017-10-16T01:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <blockquote>
+<p>作者：不想当码农的程序员</p>
+<p>原文：<a href="http://www.jianshu.com/p/2f271e6d675c编辑：Moon" target="_blank" rel="external">http://www.jianshu.com/p/2f271e6d675c编辑：Moon</a></p>
+</blockquote>
+<p>就在10月15日上午9：00，阿里巴巴在杭州云栖大会《研发效能峰会》上，正式发布《阿里巴巴Java开发手册》扫描插件，该插件在扫描代码后，将不符合《手册》的代码按 <code>Blocker</code>/ <code>Critical</code>/ <code>Major</code>三个等级显示在下方，甚至在IDEA上，还基于Inspection机制提供了实时检测功能，编写代码的同时也能快速发现问题所在。对于历史代码，部分规则实现了批量一键修复的功能。</p>
+<p>Git地址为：<a href="https://github.com/alibaba/p3c" target="_blank" rel="external">https://github.com/alibaba/p3c</a></p>
+<h1 id="IDea的安装方式："><a href="#IDea的安装方式：" class="headerlink" title="IDea的安装方式："></a>IDea的安装方式：</h1><p>IDEA版的插件发布到了IDEA官方仓库中(最低支持版本14.1.7，JDK1.7+)，只需打开</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Settings &gt;&gt; Plugins &gt;&gt; Browse repositories</div></pre></td></tr></table></figure>
+<p>输入 Alibaba 搜索一下便可以看到对应插件了，点击安装等待安装完成。</p>
+<p>如图:</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkGhoJb7iaWQumUzkaqD7EfucQlBLVlajIOpsRBVgS2zkt9vRmuq19ONe2iaQJZicNN4qbRBOJNl9hOjg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="img"></p>
+<p>这里写图片描述</p>
+<h1 id="Eclipse的安装方式："><a href="#Eclipse的安装方式：" class="headerlink" title="Eclipse的安装方式："></a>Eclipse的安装方式：</h1><p>Eclipse版插件支持4.2（Juno，JDK1.8+）及以上版本，提供Update Site，通过</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Help &gt;&gt; Install New Software</div></pre></td></tr></table></figure>
+<p>然后输入 <code>https://p3c.alibaba.com/plugin/eclipse/update</code>即可看到安装列表，安装即可。</p>
+<p>插件的更新，可以通过 <code>Help&gt;&gt;CheckforUdates</code> 进行新版本检测。</p>
+<h1 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h1><p>呵呵 右键，，看图 –</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="img"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="img"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="img"></p>
+<h2 id="还有自动提示的效果"><a href="#还有自动提示的效果" class="headerlink" title="还有自动提示的效果"></a>还有自动提示的效果</h2><p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="img"></p>
+<p>可以说是非常棒了</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkGhoJb7iaWQumUzkaqD7EfucAxVUicBBUX2WQvI9osBsh4uXOl4ibzlfT9j0M3zjOMDRWgZw9AKDub0w/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="img"></p>
+<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a><strong>推荐阅读</strong></h2><ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484377&amp;idx=1&amp;sn=1ad98afc78d5cc11a07410e9cf0a3c9c&amp;chksm=9bd0ae41aca72757e4599d71717ed817a77b4e9a10c2b40f54793f1d5b0a95fd144bb48ae21e&amp;scene=21#wechat_redirect" target="_blank" rel="external">程序员你为什么这么累【续】：如何应对需求变更</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484376&amp;idx=1&amp;sn=957c161c2a390347ba53c26f118475f1&amp;chksm=9bd0ae40aca72756a7ade252454a8658d082b331a191d980c24a7f40ce82eab0dbee020fb5b2&amp;scene=21#wechat_redirect" target="_blank" rel="external">Spring4All社区正式招募Spring Guides翻译小分队~</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484375&amp;idx=1&amp;sn=ac19066f568d57e27ac319a5e5ddbed4&amp;chksm=9bd0ae4faca72759f9c4af93cb083f68aceb4c9fee7388f42a41acd9e8d93e5a60a1e7c91f4f&amp;scene=21#wechat_redirect" target="_blank" rel="external">海外IT工程师工作福利揭秘</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484272&amp;idx=1&amp;sn=a2f30419fc8e2c1cce86c79e0c44b264&amp;chksm=9bd0aee8aca727fe3c78c9f9d2178f4b7e85bf0890d066fd9607091dcc36d8d8dbf647a3a379&amp;scene=21#wechat_redirect" target="_blank" rel="external">一个不可思议的MySQL慢查分析与解决</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484291&amp;idx=1&amp;sn=0794ce828d667fa5be8dc3494886282d&amp;chksm=9bd0ae1baca7270d1089a923f45e70408673a9efb3f8753fb3b3014ec097302bcf52251601fa&amp;scene=21#wechat_redirect" target="_blank" rel="external">都在说微服务，那么微服务的反模式和陷阱是什么</a></li>
+</ul>
+<p>长按指纹</p>
+<p>一键关注</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/R3InYSAIZkHCWVvIZUEa8CQWAStjKkNYbXIicURV5tx4GzRBepUWO9sq8nrkVHwvVylyERaKgQyKvUianyIjelicQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="img"></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/ich5amXrtqL2ZPTngbnFMYk4cXjia5JTX1Al0Q9NT8qfwAJoq3CWN1feicKU2VGUjiatLSXW2HDo73su4ZHxZoTABA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="img"></p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/工具/" class="article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/10/16/阿里巴巴Java开发规约的IDEA插件使用/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-Spring官方周报20171003" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1161,111 +1275,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Groovy入门" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/13/Groovy入门/">Groovy入门-安装</a>
-    </h1>
-  
-
-          
-            <a href="/2017/08/13/Groovy入门/" class="archive-article-date">
-  	<time datetime="2017-08-13T03:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <p><strong>使用groovy开发差不多已经四个多月了，这里分享一些自己在groovy方面的一些总结。</strong></p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>Groovy 是一种新兴的运行于 Java™ 平台之上的编程语言</li>
-<li>它提供与已有 Java 代码的无缝集成，并引入了一些强大的新特性，比如闭包和元编程</li>
-<li>简单来讲，Groovy 就是在 21 世纪 Java 语言的的效果</li>
-<li>Groovy是Java平台上脚本语言，抽象程度更高，可以更简单快速的开发，可以编写更少的代码</li>
-<li>与Java语言无缝集成，可以称为“超级Java”</li>
-<li>使用“类JAVA语法”，Java程序员可以快速过度</li>
-<li>Groovy与Java二进制兼容，都生成字节码，所以可以与使用Java语言所编写的框架和组件完美集成，并且效率安全方面比其他脚本语言要高</li>
-<li>Groovy对象就是Java对象，使用JDK相同的API</li>
-<li>可以保护整个Java产业在Java上巨大的投资</li>
-<li>在中小型项目中可以替代Java，在大型Java项目中可以嵌入Groovy应用</li>
-</ul>
-<h2 id="安装，使用官网推荐的安装方法"><a href="#安装，使用官网推荐的安装方法" class="headerlink" title="安装，使用官网推荐的安装方法"></a>安装，使用官网推荐的安装方法</h2><p>首先安装SDKMAN! (一个软件开发工具包管理工具)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -s get.sdkman.io | bash</div></pre></td></tr></table></figure></p>
-<p>使其SDKMAN工具生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ source &quot;$HOME/.sdkman/bin/sdkman-init.sh&quot;</div></pre></td></tr></table></figure></p>
-<ul>
-<li><p>安装最新版本的Groovy:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sdk install groovy</div></pre></td></tr></table></figure>
-</li>
-<li><p>等待一会儿之后，显示安装完毕，此时我们可以使用此命令验证groovy是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ groovy -version</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="安装2"><a href="#安装2" class="headerlink" title="安装2"></a>安装2</h2><ol>
-<li>在官网下载groovy sdk<br>下载地址:<br><a href="https://akamai.bintray.com/9a/9a20d8868edbbc82a8edd03b6ae6f7dfbe406e42a468f2c44d5285493f679676?__gda__=exp=1466580235~hmac=4c1a4086a45aca9a522aac513d022d04f90eec437163110a69a441bf823143a2&amp;response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-sdk-2.4.7.zip%22&amp;response-content-type=application%2Fx-www-form-urlencoded" target="_blank" rel="external">https://akamai.bintray.com/9a/9a20d8868edbbc82a8edd03b6ae6f7dfbe406e42a468f2c44d5285493f679676?__gda__=exp=1466580235~hmac=4c1a4086a45aca9a522aac513d022d04f90eec437163110a69a441bf823143a2&amp;response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-sdk-2.4.7.zip%22&amp;response-content-type=application%2Fx-www-form-urlencoded</a></li>
-<li><p>进行解压：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ unzip apache-groovy-sdk-2.4.7.zip</div></pre></td></tr></table></figure>
-</li>
-<li><p>配置到全局变量或者用户所在的变量环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/profile</div><div class="line">//添加groovy解压目录所在的位置</div><div class="line">//我当前安装目录为：/home/devbwh/groovy-2.4.7，在/etc/profile文件末尾添加一下配置：</div><div class="line">export GROOVY_HOME=/home/devbwh/groovy-2.4.7</div><div class="line">export PATH=GROOVY_HOME/bin:$PATH</div></pre></td></tr></table></figure>
-</li>
-<li><p>使其生效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="安装3-Mac安装"><a href="#安装3-Mac安装" class="headerlink" title="安装3(Mac安装)"></a>安装3(Mac安装)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install groovy</div></pre></td></tr></table></figure>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/08/13/Groovy入门/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1369,10 +1378,6 @@ id="busuanzi_value_site_pv"></span>次</span>
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -1422,6 +1427,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
