@@ -203,6 +203,97 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Mac下使用jenvs安装Java9" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/23/Mac下使用jenvs安装Java9/">Mac下使用jenvs安装Java9</a>
+    </h1>
+  
+
+          
+            <a href="/2017/10/23/Mac下使用jenvs安装Java9/" class="archive-article-date">
+  	<time datetime="2017-10-23T08:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <p>JDK9已经距离现在发布了好一段时间了，如果你还没有尝试一下，建议安装体验体验！一般情况下，我们的PC上基本都会安装多个版本的JDK，此时我们为了多个JDK版本的切换，这里，强烈推荐使用<a href="https://github.com/gcuisinier/jenv" target="_blank" rel="external">jenvs</a>,关于具体使用请参考作者的详细介绍。这里不多做介绍。</p>
+<p>已经安装了jenvs的同学，则跳过上面的内容，直接看下面内容–如何将JDK9添加到jenvs的管理中。</p>
+<p>1.<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html" target="_blank" rel="external">下载JDK9</a></p>
+<p>2.安装完毕后，只需要打开终端做如下操作即可（jdk9安装完毕后，默认在mac系统的/Library/Java/JavaVirtualMachines/）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jenv add /Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home</div></pre></td></tr></table></figure></p>
+<p>3.以上操作执行完毕后，会得到如下提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">oracle64-9.0.1 added</div><div class="line">9.0.1 added</div><div class="line">9.0 added</div></pre></td></tr></table></figure></p>
+<p>4.切换Java9<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jenv shell 9.0.1</div></pre></td></tr></table></figure></p>
+<p>5.此时我们便可以使用jenv进行切换，尝试使用java9的新特性了！</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jdk</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java/" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/10/23/Mac下使用jenvs安装Java9/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-阿里巴巴Java开发规约的IDEA插件使用" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1187,94 +1278,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Groovy入门-变量与变量类型" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/13/Groovy入门-变量与变量类型/">Groovy入门-变量与变量类型</a>
-    </h1>
-  
-
-          
-            <a href="/2017/08/13/Groovy入门-变量与变量类型/" class="archive-article-date">
-  	<time datetime="2017-08-13T06:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <h2 id="Groovy的变量与变量类型"><a href="#Groovy的变量与变量类型" class="headerlink" title="Groovy的变量与变量类型"></a>Groovy的变量与变量类型</h2><h3 id="变量与常量的定义，维基百科对其定义如下"><a href="#变量与常量的定义，维基百科对其定义如下" class="headerlink" title="变量与常量的定义，维基百科对其定义如下"></a>变量与常量的定义，维基百科对其定义如下</h3><p>变量：变量通常是可被修改的，即可以用来表示可变的状态。<br>常量：指一个数值固定不变的常量，例如圆周率、自然对数的底。与之相反的是变量。</p>
-<h3 id="动态变量与静态变量"><a href="#动态变量与静态变量" class="headerlink" title="动态变量与静态变量"></a>动态变量与静态变量</h3><p>动态变量：动态变量在程序执行过程中建立，随函数的调用需要动态的分配存储空间，调用结束释放所占用存储空间。<br>静态变量：静态变量（Static Variable）在计算机编程领域指在程序执行前系统就为之静态分配（也即在运行时中不再改变分配情况）存储空间的一类变量。</p>
-<h3 id="Groovy中的变量类型"><a href="#Groovy中的变量类型" class="headerlink" title="Groovy中的变量类型"></a>Groovy中的变量类型</h3><p>Groovy中可以使用的变量类型有数字（Number）类型、字符串（String）类型、布尔（Boolean）类型以及引用（Reference）类型。</p>
-<p>1.数字（Number）类型：包括整数类型和浮点数类型。</p>
-<ul>
-<li>其中，整数包含正数、负数和零，都是Integer类的实例，比如1、-1和0都属于整数类型。</li>
-<li>浮点数包含小数部分，都是BigDecimal类的实例，比如1.11、-3.11都属于常见的浮点数类型。在数字字面值加上可显示指定变量的类型，整数Long型（Long）、整数BigInteger型（BigInteger）、浮点型Float（Float）、浮点数Double（Double）。</li>
-</ul>
-<p>2.字符串（String）类型：通过使用引号将文本值组织起来，如’Hello’、”Hello”、”””Hello”””，其中使用单引号（‘）、双引号(“”)、三双引号（”””）都是允许的。</p>
-<p>3.布尔（Boolean）类型： 包含true和false。如def judge = true,def 在groovy中表示任意类型，在程序运行期动态推到其最终类型。</p>
-<p>4.引用（Reference）类型：用于表示指向一个对象。比如：def user = new User(name:”张三”)。其中user表示的就是User对象的实例。</p>
-<h3 id="Groovy中变量的声明和使用"><a href="#Groovy中变量的声明和使用" class="headerlink" title="Groovy中变量的声明和使用"></a>Groovy中变量的声明和使用</h3><p>  声明的变量名称通常被称为标识符。在Groovy中，标识符的命名规则如下：</p>
-<ul>
-<li>标识符必须由字母和数字组成，大小写敏感，标识符的首字符必须是字母。下划线(_)允许出现在标识符中，以字母看待。标识符绝对不允许是 Groovy关键词。<br>声明变量时需要引入变量名称，可以为变量指定初始值，也可以确定变量能被引用的作用域或者作用范围。当在程序中首次使用某个变量时，需要使用Groovy关键<code>def</code>关键字声明，不能在同一个作用域内声明两次相同的变量名。</li>
-</ul>
-<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Groovy中对不同类型变量的定义和使用</div><div class="line"> * @author strongant</div><div class="line"> * Contact me at &lt;a href=&quot;mailto:strongant1994@gmail.com&quot;&gt;strongant1994@gmail.com&lt;/a&gt;</div><div class="line"> * @see</div><div class="line"> * @since 2017/8/13</div><div class="line"> */</div><div class="line">class DefineUseVariable &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        // 声明一个值为admin，类型为String的变量</div><div class="line">        def name = &apos;admin&apos;</div><div class="line">        // 声明一个值为10的数字，类型为Integer</div><div class="line">        def age = 10</div><div class="line">        // 声明一个值为20.0的数字，类型为BigDecimal</div><div class="line">        def money = 20.0</div><div class="line">        // 声明一个值为true的布尔变量，类型为Boolean</div><div class="line">        def isMale = true</div><div class="line">        // 再次声明一个值为admin，类型为String的变量，下面代码将运行错误。</div><div class="line">        //def name = &quot;Bob&quot;</div><div class="line">        // 输出变量的值和类型。</div><div class="line">        //注意，在输出的时候，如果要使用&apos;$&apos;符号进行输出变量，则字符串必须使用双引号的三双引号的情况下，才可以正常输出变量值。</div><div class="line">        // 如果是单引号，则不会输出变量值，原样输出</div><div class="line">        println &quot;name is $&#123;name&#125;. I&apos;m $&#123;age&#125; years old. I hava $&#123;money&#125; dollars.&quot;</div><div class="line">        println &quot;name type: $&#123;name.class&#125;&quot;</div><div class="line">        println &quot;age type: $&#123;age.class&#125;&quot;</div><div class="line">        println &quot;money type: $&#123;money.class&#125;&quot;</div><div class="line">        println &quot;isMale type: $&#123;isMale.class&#125;&quot;</div><div class="line">        // 声明一个值为10.0的浮点型的变量，类型为Float</div><div class="line">        def floatTypeVariable = 10.0F</div><div class="line">        println &quot;floatTypeVariable type: $&#123;floatTypeVariable.class&#125;&quot;</div><div class="line">        // 声明一个值为10.0的浮点型的变量，类型为Double</div><div class="line">        def doubleTypeVariable = 10.0D</div><div class="line">        println &quot;doubleTypeVariable type: $&#123;doubleTypeVariable.class&#125;&quot;</div><div class="line">        // 声明一个值为10000的长整型的变量，类型为Long</div><div class="line">        def longTypeVariable = 10000L</div><div class="line">        println &quot;longTypeVariable type: $&#123;longTypeVariable.class&#125;&quot;</div><div class="line">        // 声明一个值为10000的长整型的变量，类型为大长整型BigInteger</div><div class="line">        def bigIntegerTypeVariable = 10000G</div><div class="line">        println &quot;bigIntegerTypeVariable type: $&#123;bigIntegerTypeVariable.class&#125;&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>示例的代码也可以在此地址找到：<a href="https://gist.github.com/strongant/22c489f5a51f416d1bf3e97d86f031dd" target="_blank" rel="external">https://gist.github.com/strongant/22c489f5a51f416d1bf3e97d86f031dd</a></p>
-<h3 id="Groovy变量自动转换和强制转换示意图"><a href="#Groovy变量自动转换和强制转换示意图" class="headerlink" title="Groovy变量自动转换和强制转换示意图"></a>Groovy变量自动转换和强制转换示意图</h3><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii2v2bh27j31by0y6wl6.jpg" alt="Groovy变量自动转换和强制转换示意图"></p>
-<h3 id="Groovy中关键字"><a href="#Groovy中关键字" class="headerlink" title="Groovy中关键字"></a>Groovy中关键字</h3><p><strong>abstract</strong> <strong>case</strong> <strong>do</strong> <strong>finally</strong> <strong>instanceof</strong> <strong>package</strong> <strong>strictfp</strong> <strong>throws</strong> <strong>with</strong> <strong>any</strong> <strong>catch</strong> <strong>double</strong> <strong>float</strong> <strong>int</strong> <strong>private</strong> <strong>super</strong> <strong>transient</strong> <strong>as</strong> <strong>assert</strong> <strong>char</strong> <strong>class</strong> <strong>else</strong> <strong>enum</strong> <strong>for</strong> <strong>if</strong> <strong>interface</strong> <strong>long</strong> <strong>protected</strong> <strong>public</strong> <strong>switch</strong> <strong>synchronized</strong> <strong>true</strong> <strong>try</strong> <strong>boolean</strong> <strong>continue</strong> <strong>extends</strong> <strong>implements</strong> <strong>native</strong> <strong>return</strong> <strong>this</strong> <strong>void</strong> <strong>break</strong> <strong>def</strong> <strong>false</strong> <strong>import</strong> <strong>new</strong> <strong>short</strong> <strong>threadsafe</strong> <strong>volatile</strong> <strong>byte</strong> <strong>default</strong> <strong>final</strong> <strong>in</strong> <strong>null</strong> <strong>static</strong> <strong>throw</strong> <strong>while</strong></p>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/08/13/Groovy入门-变量与变量类型/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1378,14 +1381,6 @@ id="busuanzi_value_site_pv"></span>次</span>
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -1439,6 +1434,14 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">

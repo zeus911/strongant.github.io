@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title><![CDATA[Mac下使用jenvs安装Java9]]></title>
+      <url>http://baiwenhui.com/2017/10/23/Mac%E4%B8%8B%E4%BD%BF%E7%94%A8jenvs%E5%AE%89%E8%A3%85Java9/</url>
+      <content type="html"><![CDATA[<p>JDK9已经距离现在发布了好一段时间了，如果你还没有尝试一下，建议安装体验体验！一般情况下，我们的PC上基本都会安装多个版本的JDK，此时我们为了多个JDK版本的切换，这里，强烈推荐使用<a href="https://github.com/gcuisinier/jenv" target="_blank" rel="external">jenvs</a>,关于具体使用请参考作者的详细介绍。这里不多做介绍。</p>
+<p>已经安装了jenvs的同学，则跳过上面的内容，直接看下面内容–如何将JDK9添加到jenvs的管理中。</p>
+<p>1.<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html" target="_blank" rel="external">下载JDK9</a></p>
+<p>2.安装完毕后，只需要打开终端做如下操作即可（jdk9安装完毕后，默认在mac系统的/Library/Java/JavaVirtualMachines/）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jenv add /Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home</div></pre></td></tr></table></figure></p>
+<p>3.以上操作执行完毕后，会得到如下提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">oracle64-9.0.1 added</div><div class="line">9.0.1 added</div><div class="line">9.0 added</div></pre></td></tr></table></figure></p>
+<p>4.切换Java9<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jenv shell 9.0.1</div></pre></td></tr></table></figure></p>
+<p>5.此时我们便可以使用jenv进行切换，尝试使用java9的新特性了！</p>
+]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> jdk </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[阿里巴巴Java开发规约的IDEA插件使用]]></title>
       <url>http://baiwenhui.com/2017/10/16/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4Java%E5%BC%80%E5%8F%91%E8%A7%84%E7%BA%A6%E7%9A%84IDEA%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<blockquote>

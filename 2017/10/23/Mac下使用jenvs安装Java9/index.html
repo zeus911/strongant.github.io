@@ -7,18 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://baiwenhui.com">
-  <title>Archives: 2017/3 | strongant的个人博客</title>
+  <title>Mac下使用jenvs安装Java9 | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="strongant的个人博客，积累技术，记录自己的成长！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="strongant的个人博客">
-<meta property="og:url" content="http://baiwenhui.com/archives/2017/03/index.html">
+  <meta name="description" content="JDK9已经距离现在发布了好一段时间了，如果你还没有尝试一下，建议安装体验体验！一般情况下，我们的PC上基本都会安装多个版本的JDK，此时我们为了多个JDK版本的切换，这里，强烈推荐使用jenvs,关于具体使用请参考作者的详细介绍。这里不多做介绍。 已经安装了jenvs的同学，则跳过上面的内容，直接看下面内容–如何将JDK9添加到jenvs的管理中。 1.下载JDK9 2.安装完毕后，只需要打开终">
+<meta name="keywords" content="java,jdk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac下使用jenvs安装Java9">
+<meta property="og:url" content="http://baiwenhui.com/2017/10/23/Mac下使用jenvs安装Java9/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
-<meta property="og:description" content="strongant的个人博客，积累技术，记录自己的成长！">
+<meta property="og:description" content="JDK9已经距离现在发布了好一段时间了，如果你还没有尝试一下，建议安装体验体验！一般情况下，我们的PC上基本都会安装多个版本的JDK，此时我们为了多个JDK版本的切换，这里，强烈推荐使用jenvs,关于具体使用请参考作者的详细介绍。这里不多做介绍。 已经安装了jenvs的同学，则跳过上面的内容，直接看下面内容–如何将JDK9添加到jenvs的管理中。 1.下载JDK9 2.安装完毕后，只需要打开终">
 <meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2017-10-23T09:04:08.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="strongant的个人博客">
-<meta name="twitter:description" content="strongant的个人博客，积累技术，记录自己的成长！">
+<meta name="twitter:title" content="Mac下使用jenvs安装Java9">
+<meta name="twitter:description" content="JDK9已经距离现在发布了好一段时间了，如果你还没有尝试一下，建议安装体验体验！一般情况下，我们的PC上基本都会安装多个版本的JDK，此时我们为了多个JDK版本的切换，这里，强烈推荐使用jenvs,关于具体使用请参考作者的详细介绍。这里不多做介绍。 已经安装了jenvs的同学，则跳过上面的内容，直接看下面内容–如何将JDK9添加到jenvs的管理中。 1.下载JDK9 2.安装完毕后，只需要打开终">
   
     <link rel="alternative" href="/atom.xml" title="strongant的个人博客" type="application/atom+xml">
   
@@ -201,100 +203,176 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
+            <article id="post-Mac下使用jenvs安装Java9" class="article article-type-post "
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mac下使用jenvs安装Java9
+    </h1>
+  
+
+          
+            <a href="/2017/10/23/Mac下使用jenvs安装Java9/" class="archive-article-date">
+  	<time datetime="2017-10-23T08:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <p>JDK9已经距离现在发布了好一段时间了，如果你还没有尝试一下，建议安装体验体验！一般情况下，我们的PC上基本都会安装多个版本的JDK，此时我们为了多个JDK版本的切换，这里，强烈推荐使用<a href="https://github.com/gcuisinier/jenv" target="_blank" rel="external">jenvs</a>,关于具体使用请参考作者的详细介绍。这里不多做介绍。</p>
+<p>已经安装了jenvs的同学，则跳过上面的内容，直接看下面内容–如何将JDK9添加到jenvs的管理中。</p>
+<p>1.<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html" target="_blank" rel="external">下载JDK9</a></p>
+<p>2.安装完毕后，只需要打开终端做如下操作即可（jdk9安装完毕后，默认在mac系统的/Library/Java/JavaVirtualMachines/）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jenv add /Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home</div></pre></td></tr></table></figure></p>
+<p>3.以上操作执行完毕后，会得到如下提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">oracle64-9.0.1 added</div><div class="line">9.0.1 added</div><div class="line">9.0 added</div></pre></td></tr></table></figure></p>
+<p>4.切换Java9<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jenv shell 9.0.1</div></pre></td></tr></table></figure></p>
+<p>5.此时我们便可以使用jenv进行切换，尝试使用java9的新特性了！</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jdk</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
             
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/12/SpringBoot学习一/" class="archive-article-date">
-  	<time datetime="2017-03-12T15:42:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/12/SpringBoot学习一/">SpringBoot学习一</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="/categories/java/" class="article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
 
+              
+
+                  
+                    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/10/23/Mac下使用jenvs安装Java9/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                      
+                        <div class="clearfix"></div>
+    </div>
+    </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/04/Java面试-一/" class="archive-article-date">
-  	<time datetime="2017-03-04T16:04:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/04/Java面试-一/">Java面试(一)</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/10/16/阿里巴巴Java开发规约的IDEA插件使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阿里巴巴Java开发规约的IDEA插件使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
     
 
+      
 
+            
+              
+                <!-- 畅言评论框 start -->
+<div id="SOHUCS" sid="Mac下使用jenvs安装Java9" style="padding: 0px 30px 0px 46px;"></div>
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysHzQGmj'; 
+var conf = 'prod_25363bfe21a9a09909208a01135582ea'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+                  
+                      
+
+                        
+                          <script>
+                            (function () {
+                              var bp = document.createElement('script');
+                              bp.src = '//push.zhanzhang.baidu.com/push.js';
+                              var s = document.getElementsByTagName("script")[0];
+                              s.parentNode.insertBefore(bp, s);
+                            })();
+
+                          </script>
+                          
+
+
+                            
           </div>
         </div>
       </div>
@@ -325,8 +403,8 @@ id="busuanzi_value_site_pv"></span>次</span>
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
