@@ -7,20 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://baiwenhui.com">
-  <title>官方Spring周报-20170905 | strongant的个人博客</title>
+  <title>groovy中的each坑小记 | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spring的粉丝们，欢迎来到本周的另一期官方周报！这个星期我在香港看这个惊人的YOW！然后是新加坡的YOW。这些会议都是来自澳大利亚顶尖的会议，而且会议很新颖。如果你在这两个地方，我希望你会来。 http://www.yowconference.hk/ http://www.yowconference.sg/ 1.介绍下关于Spring Cloud Data Flow最重要的一个方面。 Spri">
-<meta name="keywords" content="Spring官方周报">
+  <meta name="description" content="前言Java编程中，如果要跳出for循环，直接使用break即可。但是在groovy的each方法中，如果使用break，则程序在运行时就会报如下错误：the break statement is only allowed inside loops or switches。 如何跳出each循环呢？  groovy的each方法是一个闭包操作，如果想跳出当前项，则可以使用return true。">
+<meta name="keywords" content="groovy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="官方Spring周报-20170905">
-<meta property="og:url" content="http://baiwenhui.com/2017/09/07/官方Spring周报-20170905/index.html">
+<meta property="og:title" content="groovy中的each坑小记">
+<meta property="og:url" content="http://baiwenhui.com/2017/10/26/groovy中的each坑小记/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
-<meta property="og:description" content="Spring的粉丝们，欢迎来到本周的另一期官方周报！这个星期我在香港看这个惊人的YOW！然后是新加坡的YOW。这些会议都是来自澳大利亚顶尖的会议，而且会议很新颖。如果你在这两个地方，我希望你会来。 http://www.yowconference.hk/ http://www.yowconference.sg/ 1.介绍下关于Spring Cloud Data Flow最重要的一个方面。 Spri">
+<meta property="og:description" content="前言Java编程中，如果要跳出for循环，直接使用break即可。但是在groovy的each方法中，如果使用break，则程序在运行时就会报如下错误：the break statement is only allowed inside loops or switches。 如何跳出each循环呢？  groovy的each方法是一个闭包操作，如果想跳出当前项，则可以使用return true。">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2017-10-26T08:25:14.893Z">
+<meta property="og:updated_time" content="2017-10-26T08:25:14.889Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="官方Spring周报-20170905">
-<meta name="twitter:description" content="Spring的粉丝们，欢迎来到本周的另一期官方周报！这个星期我在香港看这个惊人的YOW！然后是新加坡的YOW。这些会议都是来自澳大利亚顶尖的会议，而且会议很新颖。如果你在这两个地方，我希望你会来。 http://www.yowconference.hk/ http://www.yowconference.sg/ 1.介绍下关于Spring Cloud Data Flow最重要的一个方面。 Spri">
+<meta name="twitter:title" content="groovy中的each坑小记">
+<meta name="twitter:description" content="前言Java编程中，如果要跳出for循环，直接使用break即可。但是在groovy的each方法中，如果使用break，则程序在运行时就会报如下错误：the break statement is only allowed inside loops or switches。 如何跳出each循环呢？  groovy的each方法是一个闭包操作，如果想跳出当前项，则可以使用return true。">
   
     <link rel="alternative" href="/atom.xml" title="strongant的个人博客" type="application/atom+xml">
   
@@ -203,7 +203,7 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-官方Spring周报-20170905" class="article article-type-post "
+            <article id="post-groovy中的each坑小记" class="article article-type-post "
   itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -211,13 +211,13 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      官方Spring周报-20170905
+      groovy中的each坑小记
     </h1>
   
 
           
-            <a href="/2017/09/07/官方Spring周报-20170905/" class="archive-article-date">
-  	<time datetime="2017-09-07T14:31:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
+            <a href="/2017/10/26/groovy中的each坑小记/" class="archive-article-date">
+  	<time datetime="2017-10-26T07:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
 </a>
               
                 <!-- 目录内容 -->
@@ -228,46 +228,12 @@ var _hmt = _hmt || [];
 
         <div class="article-entry" itemprop="articleBody">
           
-                    <p>Spring的粉丝们，欢迎来到本周的另一期官方周报！这个星期我在香港看这个惊人的YOW！然后是新加坡的YOW。这些会议都是来自澳大利亚顶尖的会议，而且会议很新颖。如果你在这两个地方，我希望你会来。</p>
-<p><a href="http://www.yowconference.hk/" target="_blank" rel="external">http://www.yowconference.hk/</a></p>
-<p><a href="http://www.yowconference.sg/" target="_blank" rel="external">http://www.yowconference.sg/</a></p>
-<p>1.介绍下关于Spring Cloud Data Flow最重要的一个方面。 Spring Cloud Data Flow大牛Eric Bottard首先介绍了Spring Cloud Data Flow Shell本身。</p>
-<p><a href="https://spring.io/blog/2017/08/29/spring-cloud-data-flow-tips-tricks-interacting-with-the-shell" target="_blank" rel="external">https://spring.io/blog/2017/08/29/spring-cloud-data-flow-tips-tricks-interacting-with-the-shell</a></p>
-<p>2.Spring Cloud贡献者Ryan Baxter刚刚宣布了Spring Cloud Edgeware M1 的发布。新版本包括对各种项目的更新以及新的Spring Cloud Gateway项目。此版本基于Spring Boot 1.5.x。</p>
-<p><a href="https://spring.io/blog/2017/08/29/spring-cloud-edgware-m1-is-now-available" target="_blank" rel="external">https://spring.io/blog/2017/08/29/spring-cloud-edgware-m1-is-now-available</a></p>
-<p>3.Spring Cloud联合创始人Spencer Gibb刚刚宣布了Spring Cloud Finchely M2的发布。这个新版本基于Spring Boot 2.0.x，所以是基于Java 8。它还支持Spring Cloud Gateway中更多更酷的功能。在Spring Cloud Gateway和其他版本中，一个常见主题是反应性支持。</p>
-<p><a href="https://spring.io/blog/2017/08/30/spring-cloud-finchley-m2-is-available" target="_blank" rel="external">https://spring.io/blog/2017/08/30/spring-cloud-finchley-m2-is-available</a></p>
-<p>4.Spring Cloud Flow大牛Thomas Risberg在本文中介绍了针对Kubernetes的Spring Cloud Data Flow的Helm安装程序。 Helm是Kubernetes的包管理者。</p>
-<p><a href="https://spring.io/blog/2017/08/31/simple-installation-of-data-flow-for-kubernetes-with-helm" target="_blank" rel="external">https://spring.io/blog/2017/08/31/simple-installation-of-data-flow-for-kubernetes-with-helm</a></p>
-<p>5.这个应用现代化的Pivotal和Apigee白皮书是一个很好的阅读题材。</p>
-<p><a href="https://content.pivotal.io/apigee/application-modernization?_lrsc=9d76ba9e-eb43-42fb-b85d-9e5b48373ac4" target="_blank" rel="external">https://content.pivotal.io/apigee/application-modernization?_lrsc=9d76ba9e-eb43-42fb-b85d-9e5b48373ac4</a></p>
-<p>6.Matt McCandless称Spring Boot老而弥新，这是个很好的起步。</p>
-<p><a href="https://dzone.com/articles/spring-boot-the-right-boot-for-you-1" target="_blank" rel="external">https://dzone.com/articles/spring-boot-the-right-boot-for-you-1</a></p>
-<p>7.这篇关于使用Spring Boot的Quartz Scheduler的文章是曾经看过的一篇文章。我喜欢。</p>
-<p><a href="http://www.opencodez.com/java/quartz-scheduler-with-spring-boot.htm" target="_blank" rel="external">http://www.opencodez.com/java/quartz-scheduler-with-spring-boot.htm</a></p>
-<p>8.看起来要想Java 9发布，这个新的Java版本将会有6个月的时间。我个人欢迎新版本。</p>
-<p><a href="https://jcp.org/aboutJava/communityprocess/ec-public/materials/2017-08-15/JCP-EC-Minutes-August-2017.html" target="_blank" rel="external">https://jcp.org/aboutJava/communityprocess/ec-public/materials/2017-08-15/JCP-EC-Minutes-August-2017.html</a></p>
-<p>9.我真的很喜欢这个俄语的帖子，介绍Spring Boot的应用程序开发。</p>
-<p><a href="https://alexkosarev.name/2017/08/08/application-development-with-spring-part-1/" target="_blank" rel="external">https://alexkosarev.name/2017/08/08/application-development-with-spring-part-1/</a></p>
-<p>10.上周Pivotal与Google和VMWare合作，宣布了Pivotal Cloud Foundry生态系统 - Pivotal Container Service - 由BOSH管理的Kubernetes服务的下一步工作。我们从TechCrunch片中得到一些细节。</p>
-<p><a href="https://www.blog.google/topics/google-cloud/vmware-and-pivotal-launch-new-hybrid-kubernetes-solution-optimized-gcp/" target="_blank" rel="external">https://www.blog.google/topics/google-cloud/vmware-and-pivotal-launch-new-hybrid-kubernetes-solution-optimized-gcp/</a></p>
-<p><a href="https://techcrunch.com/2017/08/29/seven-moves-that-led-to-the-vmware-pivotal-google-partnership/amp/" target="_blank" rel="external">https://techcrunch.com/2017/08/29/seven-moves-that-led-to-the-vmware-pivotal-google-partnership/amp/</a></p>
-<p>11.我喜欢这个Auth0在集成Spring Boot与SQL数据库（PostgreSQL），JPA和Liquibase。</p>
-<p><a href="https://auth0.com/blog/integrating-spring-data-jpa-postgresql-liquibase/" target="_blank" rel="external">https://auth0.com/blog/integrating-spring-data-jpa-postgresql-liquibase/</a></p>
-<p>12.来自JHipster的这篇关于“API优先开发”的文章很有趣。</p>
-<p><a href="http://www.jhipster.tech/doing-api-first-development/" target="_blank" rel="external">http://www.jhipster.tech/doing-api-first-development/</a></p>
-<p>13.Spring Boot 2.0具有反应弹性框架5和Java 8基准线，肯定会令人印象深刻。新版本中我最喜欢的功能之一就是支持Spring Boot Actuator端点的REST-stack（响应式Spring WebFlux，Spring MVC或JAX-RS）。</p>
-<p><a href="https://www.infoq.com/news/2017/08/spring-boot-2-actuator-endpoints" target="_blank" rel="external">https://www.infoq.com/news/2017/08/spring-boot-2-actuator-endpoints</a></p>
-<p>14.看看这个优秀的网络研讨会，了解为什么IntelliJ IDEA是Grails应用程序的首选。我喜欢这个，因为Grails 3是基于Spring Boot的，因为Jeff Scott Brown是一个伟大的演讲者，因为IntelliJ做了一个漂亮的好IDE。</p>
-<p><a href="https://blog.jetbrains.com/idea/2017/07/webinar-recording-why-intellij-idea-is-the-premier-ide-for-grails-3/" target="_blank" rel="external">https://blog.jetbrains.com/idea/2017/07/webinar-recording-why-intellij-idea-is-the-premier-ide-for-grails-3/</a></p>
-<p>15.严格来说，这与Spring不是很相关，但它是值得一读的。丹尼尔·布莱恩特（Daniel Bryant）在这篇文章中描述了测试微服务（以及您可能使用的所有组件）的全方位方法。</p>
-<p><a href="https://specto.io/blog/2016/8/16/recipe-for-designing-building-testing-microservices/" target="_blank" rel="external">https://specto.io/blog/2016/8/16/recipe-for-designing-building-testing-microservices/</a></p>
-<p>16.我喜欢这个来自Spring Data的StackOverflow响应Oliver Gierke：如何在Spring Boot中选择性升级依赖项？</p>
-<p><a href="https://stackoverflow.com/questions/45967464/how-to-selectively-upgrade-a-dependency-in-spring-boot-sample-case-spring-dat" target="_blank" rel="external">https://stackoverflow.com/questions/45967464/how-to-selectively-upgrade-a-dependency-in-spring-boot-sample-case-spring-dat</a></p>
-<p>17.如果您想快速了解一下Cloud Foundry服务代理商，请阅读本文。</p>
-<p><a href="http://www.automate-it.today/about-cloud-foundry-service-brokers/" target="_blank" rel="external">http://www.automate-it.today/about-cloud-foundry-service-brokers/</a></p>
-<p>18.这篇也不是严格来说与Spring有关，但对于构建云原生应用程序的一些Spring用户来说，这对于Java云主机服务的成本降低策略来说非常有用。</p>
-<p><a href="https://www.infoq.com/articles/java-cloud-cost-reduction" target="_blank" rel="external">https://www.infoq.com/articles/java-cloud-cost-reduction</a></p>
+                    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><code>Java</code>编程中，如果要跳出<code>for</code>循环，直接使用<code>break</code>即可。但是在<code>groovy</code>的<code>each</code>方法中，如果使用<code>break</code>，则程序在运行时就会报如下错误：<code>the break statement is only allowed inside loops or switches。</code></p>
+<h3 id="如何跳出each循环呢？"><a href="#如何跳出each循环呢？" class="headerlink" title="如何跳出each循环呢？"></a>如何跳出each循环呢？</h3><p>  <code>groovy</code>的<code>each</code>方法是一个闭包操作，如果想跳出当前项，则可以使用<code>return true</code>。 但是存在一个问题：就是这里的<code>return true</code>并不完全等价于<code>java</code> <code>for</code>循环中的<code>break</code>操作。它更像是<code>java</code> <code>for</code>循环中的<code>continue</code>操作，跳出当前循环，继续下一次循环。至于这里的原因，有待研究。</p>
+<h3 id="诡异的产生"><a href="#诡异的产生" class="headerlink" title="诡异的产生"></a>诡异的产生</h3><p>  当使用“==”操作符号进行比较时，<code>return true</code>等价于<code>java</code> <code>for</code>循环中的<code>continue</code>，但如果是“&gt;=” 操作符的话，等价于<code>java</code> <code>for</code>循环中的<code>break</code>操作。测试代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">def a = [1, 2, 3, 4]</div><div class="line"></div><div class="line">println &quot;each loop break use groovy&quot;</div><div class="line"></div><div class="line">a.each &#123;</div><div class="line">    // groovy each 循环中的return true类似于java for循环中的continue</div><div class="line">    // 当遍历的元素等于2时，跳过当前元素，继续执行, 如果写&gt;= 时，的确也等价于break</div><div class="line">    if (it &gt;= 2) return true // break</div><div class="line">    println it  // do the stuff that you wanted to before break</div><div class="line">&#125;</div><div class="line"></div><div class="line">println &quot;for loop break use java&quot;</div><div class="line"></div><div class="line">for (int i = 0; i &lt; a.size(); i++) &#123;</div><div class="line">    if (a[i] == 2) &#123;</div><div class="line">        // java for 循环中的break直接跳出当前循环</div><div class="line">        // 当遍历的元素等于2时，直接跳出循环</div><div class="line">        break</div><div class="line">    &#125;</div><div class="line">    println a[i]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这便是<code>groovy</code>中的<code>each</code>闭包方法的诡异之处，奇怪的是，如果你对集合元素使用<code>find</code>方法遍历，当比较操作符是“==”时，并不会发生以上的问题，测试代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def a = [1, 2, 3, 4, 5, 6, 7]</div><div class="line"></div><div class="line">a.find &#123;</div><div class="line">    if (it == 3) return true // break 此时的break等价于java for循环中的break</div><div class="line">    println it  </div><div class="line">    return false // 继续循环</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p>  当对遍历的元素进行迭代，并且在迭代的过程中需要跳出当前循环的，推荐使用<code>groovy</code>的<code>find</code>方法或者使用<code>java</code>的<code>for</code>循环，不要使用<code>groovy</code>的<code>each</code>方法，这样就可以保证流程控制没有错误。</p>
 
                       
 
@@ -281,7 +247,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring官方周报</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
         		</li>
       		
 		</ul>
@@ -337,7 +303,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/09/07/官方Spring周报-20170905/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/10/26/groovy中的each坑小记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -351,18 +317,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/09/10/使用Httpie来替代CURL-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用Httpie来替代CURL
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记</div>
+    <a href="/2017/10/23/Mac下使用jenvs安装Java9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac下使用jenvs安装Java9</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -375,7 +332,7 @@ var _hmt = _hmt || [];
             
               
                 <!-- 畅言评论框 start -->
-<div id="SOHUCS" sid="官方Spring周报-20170905" style="padding: 0px 30px 0px 46px;"></div>
+<div id="SOHUCS" sid="groovy中的each坑小记" style="padding: 0px 30px 0px 46px;"></div>
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cysHzQGmj'; 
