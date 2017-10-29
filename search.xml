@@ -4,6 +4,21 @@
   
     
     <entry>
+      <title><![CDATA[使用淘宝镜像加速electron的下载]]></title>
+      <url>http://baiwenhui.com/2017/10/29/%E4%BD%BF%E7%94%A8%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9Felectron%E7%9A%84%E4%B8%8B%E8%BD%BD/</url>
+      <content type="html"><![CDATA[<p>目前github开源的electron库被好多桌面端应用广泛使用，有时候我们安装这类应用时特别慢，原因就是卡在了下载electron压缩包这个阶段，速度奇慢。为了不浪费我们宝贵的时间，使用下面的脚本可以帮助你分分钟下载成功electron，感谢淘宝npm镜像。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> ELECTRON_MIRROR=<span class="string">"https://npm.taobao.org/mirrors/electron/"</span></div></pre></td></tr></table></figure>]]></content>
+      
+        
+        <tags>
+            
+            <tag> electron </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[groovy中的each坑小记]]></title>
       <url>http://baiwenhui.com/2017/10/26/groovy%E4%B8%AD%E7%9A%84each%E5%9D%91%E5%B0%8F%E8%AE%B0/</url>
       <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><code>Java</code>编程中，如果要跳出<code>for</code>循环，直接使用<code>break</code>即可。但是在<code>groovy</code>的<code>each</code>方法中，如果使用<code>break</code>，则程序在运行时就会报如下错误：<code>the break statement is only allowed inside loops or switches。</code></p>
