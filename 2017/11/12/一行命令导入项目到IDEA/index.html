@@ -7,18 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://baiwenhui.com">
-  <title>Tag: java | strongant的个人博客</title>
+  <title>一行命令导入项目到IDEA | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="strongant的个人博客，积累技术，记录自己的成长！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="strongant的个人博客">
-<meta property="og:url" content="http://baiwenhui.com/tags/java/index.html">
+  <meta name="description" content="如何使用一行命令打开一个zip文件并导入项目到IDEA方法如下首先你得有我上次分享的那个idea打开项目的shell脚本。 12345678910111213141516171819202122232425262728293031323334353637383940414243#!/bin/sh# check for where the latest version of IDEA is inst">
+<meta name="keywords" content="IDEA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一行命令导入项目到IDEA">
+<meta property="og:url" content="http://baiwenhui.com/2017/11/12/一行命令导入项目到IDEA/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
-<meta property="og:description" content="strongant的个人博客，积累技术，记录自己的成长！">
+<meta property="og:description" content="如何使用一行命令打开一个zip文件并导入项目到IDEA方法如下首先你得有我上次分享的那个idea打开项目的shell脚本。 12345678910111213141516171819202122232425262728293031323334353637383940414243#!/bin/sh# check for where the latest version of IDEA is inst">
 <meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2017-11-12T05:15:32.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="strongant的个人博客">
-<meta name="twitter:description" content="strongant的个人博客，积累技术，记录自己的成长！">
+<meta name="twitter:title" content="一行命令导入项目到IDEA">
+<meta name="twitter:description" content="如何使用一行命令打开一个zip文件并导入项目到IDEA方法如下首先你得有我上次分享的那个idea打开项目的shell脚本。 12345678910111213141516171819202122232425262728293031323334353637383940414243#!/bin/sh# check for where the latest version of IDEA is inst">
   
     <link rel="alternative" href="/atom.xml" title="strongant的个人博客" type="application/atom+xml">
   
@@ -201,77 +203,170 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-一行命令导入项目到IDEA" class="article article-type-post "
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/23/Mac下使用jenvs安装Java9/" class="archive-article-date">
-  	<time datetime="2017-10-23T08:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/23/Mac下使用jenvs安装Java9/">Mac下使用jenvs安装Java9</a>
+    <h1 class="article-title" itemprop="name">
+      一行命令导入项目到IDEA
     </h1>
   
 
-        <div class="article-info info-on-right">
+          
+            <a href="/2017/11/12/一行命令导入项目到IDEA/" class="archive-article-date">
+  	<time datetime="2017-11-12T05:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <h2 id="如何使用一行命令打开一个zip文件并导入项目到IDEA"><a href="#如何使用一行命令打开一个zip文件并导入项目到IDEA" class="headerlink" title="如何使用一行命令打开一个zip文件并导入项目到IDEA"></a>如何使用一行命令打开一个zip文件并导入项目到IDEA</h2><h3 id="方法如下"><a href="#方法如下" class="headerlink" title="方法如下"></a>方法如下</h3><p>首先你得有我上次分享的那个idea打开项目的shell脚本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line"># check for where the latest version of IDEA is installed</span><br><span class="line">IDEA=`ls -1d /Applications/IntelliJ\ * | tail -n1`</span><br><span class="line">wd=`pwd`</span><br><span class="line"></span><br><span class="line"># were we given a directory?</span><br><span class="line">if [ -d &quot;$1&quot; ]; then</span><br><span class="line">#  echo &quot;checking for things in the working dir given&quot;</span><br><span class="line">  wd=`ls -1d &quot;$1&quot; | head -n1`</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># were we given a file?</span><br><span class="line">if [ -f &quot;$1&quot; ]; then</span><br><span class="line">#  echo &quot;opening &apos;$1&apos;&quot;</span><br><span class="line">  open -a &quot;$IDEA&quot; &quot;$1&quot;</span><br><span class="line">else</span><br><span class="line">    # let&apos;s check for stuff in our working directory.</span><br><span class="line">    pushd $wd &gt; /dev/null</span><br><span class="line"></span><br><span class="line">    # does our working dir have an .idea directory?</span><br><span class="line">    if [ -d &quot;.idea&quot; ]; then</span><br><span class="line">#      echo &quot;opening via the .idea dir&quot;</span><br><span class="line">      open -a &quot;$IDEA&quot; .</span><br><span class="line"></span><br><span class="line">    # is there an IDEA project file?</span><br><span class="line">    elif [ -f *.ipr ]; then</span><br><span class="line">#      echo &quot;opening via the project file&quot;</span><br><span class="line">      open -a &quot;$IDEA&quot; `ls -1d *.ipr | head -n1`</span><br><span class="line"></span><br><span class="line">    # Is there a pom.xml?</span><br><span class="line">    elif [ -f pom.xml ]; then</span><br><span class="line">#      echo &quot;importing from pom&quot;</span><br><span class="line">      open -a &quot;$IDEA&quot; &quot;pom.xml&quot;</span><br><span class="line"></span><br><span class="line">    # can&apos;t do anything smart; just open IDEA</span><br><span class="line">    else</span><br><span class="line">#      echo &apos;cbf&apos;</span><br><span class="line">      open &quot;$IDEA&quot;</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    popd &gt; /dev/null</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>然后使用如下脚本即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fullFileName=$1</span><br><span class="line"></span><br><span class="line">suffix=$&#123;fullFileName#*.&#125;</span><br><span class="line"></span><br><span class="line">if [ &quot;$suffix&quot; != &quot;zip&quot; ];then</span><br><span class="line">  echo &quot;Must be a valid zip file&quot;</span><br><span class="line">else</span><br><span class="line">  filename=$&#123;fullFileName%.*&#125;</span><br><span class="line">  echo &quot;filename: $filename&quot;</span><br><span class="line">  echo &quot;now unzip $1 and use idea $1&quot;</span><br><span class="line">  unzip $1 &amp;&amp; idea $filename</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>将此脚本另存为uao.sh ， 放在合适的位置，然后建立一个软链，这里我把它放在此处<code>/usr/local/bin/uao.sh</code>，建立一个软链接<code>ln -sf /usr/local/bin/uao.sh /usr/local/bin/uao</code>。以后如果要将zip文件解压，打开idea，导入项目到idea这三个操作，直接使用这个脚本一行命令一步即可完成。赶快试试吧！</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
           
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jdk</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+            
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/java/" class="article-tag-list-link color5">java</a>
+        			<a href="/categories/工具/" class="article-tag-list-link color3">工具</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+              
+
+                  
+                    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/11/12/一行命令导入项目到IDEA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                      
+                        <div class="clearfix"></div>
+    </div>
+    </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/10/29/使用淘宝镜像加速electron的下载/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用淘宝镜像加速electron的下载</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
     
 
+      
 
+            
+              
+                <!-- 畅言评论框 start -->
+<div id="SOHUCS" sid="一行命令导入项目到IDEA" style="padding: 0px 30px 0px 46px;"></div>
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysHzQGmj'; 
+var conf = 'prod_25363bfe21a9a09909208a01135582ea'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+                  
+                      
+
+                        
+                          <script>
+                            (function () {
+                              var bp = document.createElement('script');
+                              bp.src = '//push.zhanzhang.baidu.com/push.js';
+                              var s = document.getElementsByTagName("script")[0];
+                              s.parentNode.insertBefore(bp, s);
+                            })();
+
+                          </script>
+                          
+
+
+                            
           </div>
         </div>
       </div>
@@ -302,9 +397,9 @@ id="busuanzi_value_site_pv"></span>次</span>
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

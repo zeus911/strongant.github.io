@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="strongant的个人博客">
 <meta property="og:description" content="需求 当用户不小心点击了鼠标或者离开了扩展的popup页面，此时需要对一些数据进行清空或者删除一些不必要的数据.  遇到的问题 然而chrome 扩展官方并没有对popup或者browserAction提供相关页面消失时的监听事件  解决办法 通过不断的查找资料和查阅chrome扩展开发文档，我们可以使用消息通信连接的方式解决了这个问题具体步骤: 首先在你需要监听页面消失事件的js文件中与back">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2017-10-29T15:19:04.878Z">
+<meta property="og:updated_time" content="2017-11-12T05:15:32.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="监听chrome extension popup页面消失">
 <meta name="twitter:description" content="需求 当用户不小心点击了鼠标或者离开了扩展的popup页面，此时需要对一些数据进行清空或者删除一些不必要的数据.  遇到的问题 然而chrome 扩展官方并没有对popup或者browserAction提供相关页面消失时的监听事件  解决办法 通过不断的查找资料和查阅chrome扩展开发文档，我们可以使用消息通信连接的方式解决了这个问题具体步骤: 首先在你需要监听页面消失事件的js文件中与back">
@@ -237,10 +237,10 @@ var _hmt = _hmt || [];
 <h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ul>
 <li>通过不断的查找资料和查阅chrome扩展开发文档，我们可以使用消息通信连接的方式解决了这个问题<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤:"></a>具体步骤:</h3></li>
 <li><p>首先在你需要监听页面消失事件的js文件中与background建立连接，相关代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//这里主要是为了与background建立连接，当页面关闭的时候连接就会断开，此时background中你注册的连接关闭函数此时会执行，因为background环境一直存在，除非你关闭了电脑</div><div class="line"> var port = chrome.runtime.connect();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//这里主要是为了与background建立连接，当页面关闭的时候连接就会断开，此时background中你注册的连接关闭函数此时会执行，因为background环境一直存在，除非你关闭了电脑</span><br><span class="line"> var port = chrome.runtime.connect();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在background环境注册断开连接时需要处理的方法，相关代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  chrome.runtime.onConnect.addListener(function (externalPort) &#123;</div><div class="line">        externalPort.onDisconnect.addListener(function() &#123;</div><div class="line">        var ignoreError = chrome.runtime.lastError;</div><div class="line">        console.log(&quot;onDisconnect&quot;);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  chrome.runtime.onConnect.addListener(function (externalPort) &#123;</span><br><span class="line">        externalPort.onDisconnect.addListener(function() &#123;</span><br><span class="line">        var ignoreError = chrome.runtime.lastError;</span><br><span class="line">        console.log(&quot;onDisconnect&quot;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
@@ -583,6 +583,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">rxjs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">

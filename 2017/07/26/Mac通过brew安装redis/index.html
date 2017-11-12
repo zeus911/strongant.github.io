@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="strongant的个人博客">
 <meta property="og:description" content="MacOS下通过brew安装redis安装redis:1brew install redis 安装后的地址为:/usr/local/Cellar/redis/3.2.9 链接redis的launch开机启动配置文件1ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents 使用launchctl启动redis，每次开机启动1launch">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2017-10-29T15:19:04.874Z">
+<meta property="og:updated_time" content="2017-11-12T05:15:32.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac通过brew安装redis">
 <meta name="twitter:description" content="MacOS下通过brew安装redis安装redis:1brew install redis 安装后的地址为:/usr/local/Cellar/redis/3.2.9 链接redis的launch开机启动配置文件1ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents 使用launchctl启动redis，每次开机启动1launch">
@@ -228,16 +228,16 @@ var _hmt = _hmt || [];
 
         <div class="article-entry" itemprop="articleBody">
           
-                    <h2 id="MacOS下通过brew安装redis"><a href="#MacOS下通过brew安装redis" class="headerlink" title="MacOS下通过brew安装redis"></a>MacOS下通过brew安装redis</h2><h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis:"></a>安装redis:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install redis</div></pre></td></tr></table></figure>
+                    <h2 id="MacOS下通过brew安装redis"><a href="#MacOS下通过brew安装redis" class="headerlink" title="MacOS下通过brew安装redis"></a>MacOS下通过brew安装redis</h2><h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis:"></a>安装redis:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install redis</span><br></pre></td></tr></table></figure>
 <p>安装后的地址为:/usr/local/Cellar/redis/3.2.9</p>
-<h3 id="链接redis的launch开机启动配置文件"><a href="#链接redis的launch开机启动配置文件" class="headerlink" title="链接redis的launch开机启动配置文件"></a>链接redis的launch开机启动配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents</div></pre></td></tr></table></figure>
-<h3 id="使用launchctl启动redis，每次开机启动"><a href="#使用launchctl启动redis，每次开机启动" class="headerlink" title="使用launchctl启动redis，每次开机启动"></a>使用launchctl启动redis，每次开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</div></pre></td></tr></table></figure>
-<h3 id="通过redis的配置文件进行启动"><a href="#通过redis的配置文件进行启动" class="headerlink" title="通过redis的配置文件进行启动"></a>通过redis的配置文件进行启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-server /usr/local/etc/redis.conf</div></pre></td></tr></table></figure>
-<h3 id="停止开机启动redis"><a href="#停止开机启动redis" class="headerlink" title="停止开机启动redis"></a>停止开机启动redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</div></pre></td></tr></table></figure>
-<h3 id="安装后的redis默认配置文件地址："><a href="#安装后的redis默认配置文件地址：" class="headerlink" title="安装后的redis默认配置文件地址："></a>安装后的redis默认配置文件地址：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/etc/redis.conf</div></pre></td></tr></table></figure>
-<h3 id="卸载redis"><a href="#卸载redis" class="headerlink" title="卸载redis"></a>卸载redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew uninstall redis</div><div class="line">rm ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</div></pre></td></tr></table></figure>
-<h3 id="获取redis的安装信息"><a href="#获取redis的安装信息" class="headerlink" title="获取redis的安装信息"></a>获取redis的安装信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew info redis</div></pre></td></tr></table></figure>
-<h3 id="测试redis是否启动"><a href="#测试redis是否启动" class="headerlink" title="测试redis是否启动"></a>测试redis是否启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli ping</div></pre></td></tr></table></figure>
+<h3 id="链接redis的launch开机启动配置文件"><a href="#链接redis的launch开机启动配置文件" class="headerlink" title="链接redis的launch开机启动配置文件"></a>链接redis的launch开机启动配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents</span><br></pre></td></tr></table></figure>
+<h3 id="使用launchctl启动redis，每次开机启动"><a href="#使用launchctl启动redis，每次开机启动" class="headerlink" title="使用launchctl启动redis，每次开机启动"></a>使用launchctl启动redis，每次开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</span><br></pre></td></tr></table></figure>
+<h3 id="通过redis的配置文件进行启动"><a href="#通过redis的配置文件进行启动" class="headerlink" title="通过redis的配置文件进行启动"></a>通过redis的配置文件进行启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server /usr/local/etc/redis.conf</span><br></pre></td></tr></table></figure>
+<h3 id="停止开机启动redis"><a href="#停止开机启动redis" class="headerlink" title="停止开机启动redis"></a>停止开机启动redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</span><br></pre></td></tr></table></figure>
+<h3 id="安装后的redis默认配置文件地址："><a href="#安装后的redis默认配置文件地址：" class="headerlink" title="安装后的redis默认配置文件地址："></a>安装后的redis默认配置文件地址：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/etc/redis.conf</span><br></pre></td></tr></table></figure>
+<h3 id="卸载redis"><a href="#卸载redis" class="headerlink" title="卸载redis"></a>卸载redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew uninstall redis</span><br><span class="line">rm ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</span><br></pre></td></tr></table></figure>
+<h3 id="获取redis的安装信息"><a href="#获取redis的安装信息" class="headerlink" title="获取redis的安装信息"></a>获取redis的安装信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info redis</span><br></pre></td></tr></table></figure>
+<h3 id="测试redis是否启动"><a href="#测试redis是否启动" class="headerlink" title="测试redis是否启动"></a>测试redis是否启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli ping</span><br></pre></td></tr></table></figure>
 <p>如果redis返回“PONG”，那么说明连接成功</p>
 
                       
@@ -580,6 +580,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">rxjs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
