@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="strongant的个人博客">
 <meta property="og:description" content="前言一般工作中，可能不会自己去实现元素反转的操作。因为目前的高级语言基本已经帮我们实现好了，我们要做的就是使用好相关的函数就可以了。但是对于知识的认知不能只停留在表面，有些时候更需要去寻求底层的实现原理，这样一来，对于我们自身能力的提高有很大帮助! 数组元素的反转有n个元素的数组，我们可以得到该数组的大小。需要做的就是把第一个元素和最后一个元素进行调换位置即可，对于奇数数组和偶数数组处理类似。只不">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2017-11-18T13:38:48.270Z">
+<meta property="og:updated_time" content="2018-01-08T15:14:50.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法中的反转">
 <meta name="twitter:description" content="前言一般工作中，可能不会自己去实现元素反转的操作。因为目前的高级语言基本已经帮我们实现好了，我们要做的就是使用好相关的函数就可以了。但是对于知识的认知不能只停留在表面，有些时候更需要去寻求底层的实现原理，这样一来，对于我们自身能力的提高有很大帮助! 数组元素的反转有n个元素的数组，我们可以得到该数组的大小。需要做的就是把第一个元素和最后一个元素进行调换位置即可，对于奇数数组和偶数数组处理类似。只不">
@@ -251,9 +251,9 @@ var _hmt = _hmt || [];
 <p>反转思路：这个实现的思路和数组元素的反转类似，只不过需要做一点稍微的变化，我们知道单链表的最后一个元素指向null,有1-10之间的元素链表,只需要将值为1的节点引用指向null,值为2的节点引用指向1，以此类推，根据以上分析可以得到以下方法，暂且将方法命名为 reverse ，方法实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static  ListNode reverse(ListNode head) &#123;</span><br><span class="line">        ListNode prev = null;</span><br><span class="line">        ListNode curr = head;</span><br><span class="line">        while (curr != null) &#123;</span><br><span class="line">            //save next node</span><br><span class="line">            ListNode nextTemp = curr.next;</span><br><span class="line">            //change</span><br><span class="line">            curr.next = prev;</span><br><span class="line">            //cache prev node</span><br><span class="line">            prev = curr;</span><br><span class="line">            curr = nextTemp;</span><br><span class="line">        &#125;</span><br><span class="line">        return prev;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <p>关于反转的详细思路结合reverse方法参考如下分析过程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">单链表反转分析过程：</span><br><span class="line">1-&gt;2-&gt;3-&gt;4</span><br><span class="line"></span><br><span class="line">prev = null</span><br><span class="line"></span><br><span class="line">curr  = head(值为1的节点)</span><br><span class="line"></span><br><span class="line">nextTemp -&gt; next (值为2的节点)</span><br><span class="line"></span><br><span class="line">curr.next  = prev(当curr的值为1时，它的next为null)</span><br><span class="line"></span><br><span class="line">设置完毕后，将当前节点(值为1的节点)缓存起来，供下一次循环到的节点进行使用</span><br><span class="line"></span><br><span class="line">prev -&gt; curr</span><br><span class="line"></span><br><span class="line">最后，将当前节点的引用指向 next (值为2的节点)</span><br><span class="line"></span><br><span class="line">第一次循环之后，可以得到如下数据：</span><br><span class="line"></span><br><span class="line">2--&gt;1--&gt;null</span><br><span class="line"></span><br><span class="line">第二次循环</span><br><span class="line"></span><br><span class="line">此时，curr是值为2的节点</span><br><span class="line"></span><br><span class="line">nextTemp -&gt; next (值为3的节点)</span><br><span class="line"></span><br><span class="line">curr.next  = prev(当curr的值为2时，它的next为prev，即：next指向上一次循环时缓存下来的值为1的节点)</span><br><span class="line"></span><br><span class="line">再讲prev引用指向当前遍历的值为2的节点，供下一次循环使用,即</span><br><span class="line">prev = curr (值为2的节点)</span><br><span class="line">接着将当前值为2的节点指向值为3的节点</span><br><span class="line"></span><br><span class="line">第二次循环之后，结果变为：</span><br><span class="line">3-&gt;2-&gt;1-&gt;null</span><br><span class="line"></span><br><span class="line">以此类推，当遍历到节点为4的值时，curr=null，循环结束，具体结果为：</span><br><span class="line">4-&gt;3-&gt;2-&gt;1-&gt;null</span><br><span class="line"></span><br><span class="line">通过以上的分析，可以深刻理解单链表的反转操作套路。</span><br><span class="line"></span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p>
 <p>Java实现数组元素的反转demo</p>
-<p><a href="https://gist.github.com/strongant/7e2baab6291a569586bab1b97b0b22c6" target="_blank" rel="external">https://gist.github.com/strongant/7e2baab6291a569586bab1b97b0b22c6</a></p>
+<p><a href="https://gist.github.com/strongant/7e2baab6291a569586bab1b97b0b22c6" target="_blank" rel="noopener">https://gist.github.com/strongant/7e2baab6291a569586bab1b97b0b22c6</a></p>
 <p>Java实现单链表的反转demo</p>
-<p><a href="https://gist.github.com/strongant/f31727433ce0af4d2f6afb14ff304a19" target="_blank" rel="external">https://gist.github.com/strongant/f31727433ce0af4d2f6afb14ff304a19</a></p>
+<p><a href="https://gist.github.com/strongant/f31727433ce0af4d2f6afb14ff304a19" target="_blank" rel="noopener">https://gist.github.com/strongant/f31727433ce0af4d2f6afb14ff304a19</a></p>
 
                       
 
@@ -393,7 +393,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 strongant
+    		&copy; 2018 strongant
     	</div>
      <script async
 src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -490,11 +490,15 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">groovy</a>
+                <a href="javascript:void(0)" class="js-tag color2">grails</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">grails</a>
+                <a href="javascript:void(0)" class="js-tag color1">grails mvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">groovy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,10 +526,6 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图床</a>
               </li>
              
@@ -543,6 +543,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,10 +575,6 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Spring周报</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring官方周报翻译</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,6 +611,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">electron</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring官方周报翻译</a>
               </li>
              
               <li class="article-tag-list-item">

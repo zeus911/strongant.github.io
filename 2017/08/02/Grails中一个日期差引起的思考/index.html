@@ -10,14 +10,14 @@
   <title>Grails中一个日期差引起的思考 | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="需求如下 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。  编码根据当前需求进行编码，代码如下：1234567891011121314151617181920class ExampleController &amp;#123;    def test() &amp;#123;        ...">
-<meta name="keywords" content="groovy,grails,gorm">
+<meta name="keywords" content="grails,groovy,gorm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Grails中一个日期差引起的思考">
 <meta property="og:url" content="http://baiwenhui.com/2017/08/02/Grails中一个日期差引起的思考/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
 <meta property="og:description" content="需求如下 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。  编码根据当前需求进行编码，代码如下：1234567891011121314151617181920class ExampleController &amp;#123;    def test() &amp;#123;        ...">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2017-11-18T13:38:48.270Z">
+<meta property="og:updated_time" content="2018-01-08T15:14:50.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Grails中一个日期差引起的思考">
 <meta name="twitter:description" content="需求如下 对某表中的数据进行查询限制，当根据某个条件进行查询表记录时，如果该记录的查询时间与当前服务器时间相差大于一周，则允许查询操作，否则不允许重复查询操作。  编码根据当前需求进行编码，代码如下：1234567891011121314151617181920class ExampleController &amp;#123;    def test() &amp;#123;        ...">
@@ -240,7 +240,7 @@ var _hmt = _hmt || [];
 <p>通过以上方式，我们便可以得到最后插入的记录，此时再使用时间差进行判断就不会出现匹配不正确问题。</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>当项目中遇到bug时应该找到问题的根源再进行解决。在测试的过程中数据应该保持和生产环境数据一致！</p>
 <h4 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h4><p>推荐两个不错的播客平台：</p>
-<p> <a href="https://ipn.li/kernelpanic/" target="_blank" rel="external">内核恐慌</a><br> <a href="http://banlan.show/bitvoice" target="_blank" rel="external">比特新声</a></p>
+<p> <a href="https://ipn.li/kernelpanic/" target="_blank" rel="noopener">内核恐慌</a><br> <a href="http://banlan.show/bitvoice" target="_blank" rel="noopener">比特新声</a></p>
 
                       
 
@@ -254,11 +254,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">grails</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">grails</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -388,7 +388,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 strongant
+    		&copy; 2018 strongant
     	</div>
      <script async
 src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -485,11 +485,15 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">groovy</a>
+                <a href="javascript:void(0)" class="js-tag color2">grails</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">grails</a>
+                <a href="javascript:void(0)" class="js-tag color1">grails mvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">groovy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,10 +521,6 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图床</a>
               </li>
              
@@ -538,6 +538,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,10 +570,6 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Spring周报</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring官方周报翻译</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,6 +606,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">electron</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring官方周报翻译</a>
               </li>
              
               <li class="article-tag-list-item">

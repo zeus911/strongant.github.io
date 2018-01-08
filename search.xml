@@ -4,6 +4,26 @@
   
     
     <entry>
+      <title><![CDATA[Grails-MVC示意图]]></title>
+      <url>http://baiwenhui.com/2018/01/08/Grails-%E6%9E%B6%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE/</url>
+      <content type="html"><![CDATA[<p>  使用 Grails 开发也有大半年了，现在对 Grails MVC 架构做个图示，加深理解记忆。Grails 使用 Spring MVC Web 应用程序作为底层框架来实现Web 应用程序基于模型-视图-控制器(MVC)模式。它包括三个核心的部分：控制器，Grails 域模型和Grails Servlet 页面。下面的图主要总结下这三个部分之间的关系。</p>
+<p>  <img src="http://on-img.com/chart_image/5a538029e4b010a6e7099870.png" alt="Grails MVC 示意图"></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> grails </tag>
+            
+            <tag> grails mvc </tag>
+            
+            <tag> groovy </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Spring Security哈希认证记住我例子]]></title>
       <url>http://baiwenhui.com/2017/11/16/Spring-Security%E5%93%88%E5%B8%8C%E8%AE%A4%E8%AF%81%E8%AE%B0%E4%BD%8F%E6%88%91%E4%BE%8B%E5%AD%90/</url>
       <content type="html"><![CDATA[<p>在本教程中，我们将演示如何使用Spring Security 创建通过哈希认证记住我的应用程序。请记住，身份验证是一项功能，它允许网站在会话之间记住用户的身份。Spring Security提供了两种记住我的实现。一种使用哈希来保存基于cookie的令牌的安全性，我们将在本教程中解决这个问题。第二种是使用数据库或其他永久存储机制来存储生成的令牌。</p>
@@ -39,13 +59,13 @@
 <p>当您删除<code>JSESSIONID</code>Cookie并刷新页面时，当”remember-me“Cookie未过期时，您将自动登录。</p>
 <p><img src="https://memorynotfound.com/wp-content/uploads/spring-security-remember-me-hashing-remove-app-cookie.png" alt="img"></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#remember-me-hash-token" target="_blank" rel="external">Spring Security Remember Me Documentation</a></li>
-<li><a href="https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.html" target="_blank" rel="external">WebSecurityConfigurerAdapter JavaDoc</a></li>
-<li><a href="https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/config/annotation/web/configurers/RememberMeConfigurer.html" target="_blank" rel="external">RememberMeConfigurer JavaDoc</a></li>
+<li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#remember-me-hash-token" target="_blank" rel="noopener">Spring Security Remember Me Documentation</a></li>
+<li><a href="https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.html" target="_blank" rel="noopener">WebSecurityConfigurerAdapter JavaDoc</a></li>
+<li><a href="https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/config/annotation/web/configurers/RememberMeConfigurer.html" target="_blank" rel="noopener">RememberMeConfigurer JavaDoc</a></li>
 </ul>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载它 - <a href="https://memorynotfound.com/wp-content/uploads/spring-security-remember-me-hashing-authentication-configuration-example.zip" target="_blank" rel="external">spring-security-remember-me-hashing-authentication-configuration-example</a></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载它 - <a href="https://memorynotfound.com/wp-content/uploads/spring-security-remember-me-hashing-authentication-configuration-example.zip" target="_blank" rel="noopener">spring-security-remember-me-hashing-authentication-configuration-example</a></p>
 <blockquote>
-<p>原文链接：<a href="https://memorynotfound.com/spring-security-remember-hashing-authentication-example/" target="_blank" rel="external">https://memorynotfound.com/spring-security-remember-hashing-authentication-example/</a></p>
+<p>原文链接：<a href="https://memorynotfound.com/spring-security-remember-hashing-authentication-example/" target="_blank" rel="noopener">https://memorynotfound.com/spring-security-remember-hashing-authentication-example/</a></p>
 </blockquote>
 ]]></content>
       
@@ -127,9 +147,9 @@
     <entry>
       <title><![CDATA[Mac下使用jenvs安装Java9]]></title>
       <url>http://baiwenhui.com/2017/10/23/Mac%E4%B8%8B%E4%BD%BF%E7%94%A8jenvs%E5%AE%89%E8%A3%85Java9/</url>
-      <content type="html"><![CDATA[<p>JDK9已经距离现在发布了好一段时间了，如果你还没有尝试一下，建议安装体验体验！一般情况下，我们的PC上基本都会安装多个版本的JDK，此时我们为了多个JDK版本的切换，这里，强烈推荐使用<a href="https://github.com/gcuisinier/jenv" target="_blank" rel="external">jenvs</a>,关于具体使用请参考作者的详细介绍。这里不多做介绍。</p>
+      <content type="html"><![CDATA[<p>JDK9已经距离现在发布了好一段时间了，如果你还没有尝试一下，建议安装体验体验！一般情况下，我们的PC上基本都会安装多个版本的JDK，此时我们为了多个JDK版本的切换，这里，强烈推荐使用<a href="https://github.com/gcuisinier/jenv" target="_blank" rel="noopener">jenvs</a>,关于具体使用请参考作者的详细介绍。这里不多做介绍。</p>
 <p>已经安装了jenvs的同学，则跳过上面的内容，直接看下面内容–如何将JDK9添加到jenvs的管理中。</p>
-<p>1.<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html" target="_blank" rel="external">下载JDK9</a></p>
+<p>1.<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html" target="_blank" rel="noopener">下载JDK9</a></p>
 <p>2.安装完毕后，只需要打开终端做如下操作即可（jdk9安装完毕后，默认在mac系统的/Library/Java/JavaVirtualMachines/）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jenv add /Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home</span><br></pre></td></tr></table></figure></p>
 <p>3.以上操作执行完毕后，会得到如下提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oracle64-9.0.1 added</span><br><span class="line">9.0.1 added</span><br><span class="line">9.0 added</span><br></pre></td></tr></table></figure></p>
 <p>4.切换Java9<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jenv shell 9.0.1</span><br></pre></td></tr></table></figure></p>
@@ -158,10 +178,10 @@
       <url>http://baiwenhui.com/2017/10/16/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4Java%E5%BC%80%E5%8F%91%E8%A7%84%E7%BA%A6%E7%9A%84IDEA%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>作者：不想当码农的程序员</p>
-<p>原文：<a href="http://www.jianshu.com/p/2f271e6d675c编辑：Moon" target="_blank" rel="external">http://www.jianshu.com/p/2f271e6d675c编辑：Moon</a></p>
+<p>原文：<a href="http://www.jianshu.com/p/2f271e6d675c编辑：Moon" target="_blank" rel="noopener">http://www.jianshu.com/p/2f271e6d675c编辑：Moon</a></p>
 </blockquote>
 <p>就在10月15日上午9：00，阿里巴巴在杭州云栖大会《研发效能峰会》上，正式发布《阿里巴巴Java开发手册》扫描插件，该插件在扫描代码后，将不符合《手册》的代码按 <code>Blocker</code>/ <code>Critical</code>/ <code>Major</code>三个等级显示在下方，甚至在IDEA上，还基于Inspection机制提供了实时检测功能，编写代码的同时也能快速发现问题所在。对于历史代码，部分规则实现了批量一键修复的功能。</p>
-<p>Git地址为：<a href="https://github.com/alibaba/p3c" target="_blank" rel="external">https://github.com/alibaba/p3c</a></p>
+<p>Git地址为：<a href="https://github.com/alibaba/p3c" target="_blank" rel="noopener">https://github.com/alibaba/p3c</a></p>
 <h1 id="IDea的安装方式："><a href="#IDea的安装方式：" class="headerlink" title="IDea的安装方式："></a>IDea的安装方式：</h1><p>IDEA版的插件发布到了IDEA官方仓库中(最低支持版本14.1.7，JDK1.7+)，只需打开</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Settings &gt;&gt; Plugins &gt;&gt; Browse repositories</span><br></pre></td></tr></table></figure>
 <p>输入 Alibaba 搜索一下便可以看到对应插件了，点击安装等待安装完成。</p>
@@ -180,11 +200,11 @@
 <p>可以说是非常棒了</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwh9h5qxj30yg0p0djz.jpg" alt=""></p>
 <h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a><strong>推荐阅读</strong></h2><ul>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484377&amp;idx=1&amp;sn=1ad98afc78d5cc11a07410e9cf0a3c9c&amp;chksm=9bd0ae41aca72757e4599d71717ed817a77b4e9a10c2b40f54793f1d5b0a95fd144bb48ae21e&amp;scene=21#wechat_redirect" target="_blank" rel="external">程序员你为什么这么累【续】：如何应对需求变更</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484376&amp;idx=1&amp;sn=957c161c2a390347ba53c26f118475f1&amp;chksm=9bd0ae40aca72756a7ade252454a8658d082b331a191d980c24a7f40ce82eab0dbee020fb5b2&amp;scene=21#wechat_redirect" target="_blank" rel="external">Spring4All社区正式招募Spring Guides翻译小分队~</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484375&amp;idx=1&amp;sn=ac19066f568d57e27ac319a5e5ddbed4&amp;chksm=9bd0ae4faca72759f9c4af93cb083f68aceb4c9fee7388f42a41acd9e8d93e5a60a1e7c91f4f&amp;scene=21#wechat_redirect" target="_blank" rel="external">海外IT工程师工作福利揭秘</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484272&amp;idx=1&amp;sn=a2f30419fc8e2c1cce86c79e0c44b264&amp;chksm=9bd0aee8aca727fe3c78c9f9d2178f4b7e85bf0890d066fd9607091dcc36d8d8dbf647a3a379&amp;scene=21#wechat_redirect" target="_blank" rel="external">一个不可思议的MySQL慢查分析与解决</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484291&amp;idx=1&amp;sn=0794ce828d667fa5be8dc3494886282d&amp;chksm=9bd0ae1baca7270d1089a923f45e70408673a9efb3f8753fb3b3014ec097302bcf52251601fa&amp;scene=21#wechat_redirect" target="_blank" rel="external">都在说微服务，那么微服务的反模式和陷阱是什么</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484377&amp;idx=1&amp;sn=1ad98afc78d5cc11a07410e9cf0a3c9c&amp;chksm=9bd0ae41aca72757e4599d71717ed817a77b4e9a10c2b40f54793f1d5b0a95fd144bb48ae21e&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">程序员你为什么这么累【续】：如何应对需求变更</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484376&amp;idx=1&amp;sn=957c161c2a390347ba53c26f118475f1&amp;chksm=9bd0ae40aca72756a7ade252454a8658d082b331a191d980c24a7f40ce82eab0dbee020fb5b2&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Spring4All社区正式招募Spring Guides翻译小分队~</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484375&amp;idx=1&amp;sn=ac19066f568d57e27ac319a5e5ddbed4&amp;chksm=9bd0ae4faca72759f9c4af93cb083f68aceb4c9fee7388f42a41acd9e8d93e5a60a1e7c91f4f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">海外IT工程师工作福利揭秘</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484272&amp;idx=1&amp;sn=a2f30419fc8e2c1cce86c79e0c44b264&amp;chksm=9bd0aee8aca727fe3c78c9f9d2178f4b7e85bf0890d066fd9607091dcc36d8d8dbf647a3a379&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">一个不可思议的MySQL慢查分析与解决</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484291&amp;idx=1&amp;sn=0794ce828d667fa5be8dc3494886282d&amp;chksm=9bd0ae1baca7270d1089a923f45e70408673a9efb3f8753fb3b3014ec097302bcf52251601fa&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">都在说微服务，那么微服务的反模式和陷阱是什么</a></li>
 </ul>
 <p>长按指纹</p>
 <p>一键关注</p>
@@ -212,27 +232,27 @@
       <url>http://baiwenhui.com/2017/10/09/Spring%E5%AE%98%E6%96%B9%E5%91%A8%E6%8A%A520171003/</url>
       <content type="html"><![CDATA[<p>@strongant &amp; @chenzhijun &amp; @maskwang 翻译</p>
 <p>欢迎收看新一期 《Spring 周报》！周报包含了上周的很多内容，可以了解非常多的干货。现在 Spring Framework 5.0 已推出！Spring Framework 5.0 同时也带来了许多发行版本，在本文中你会知道有哪些版本。另外，本周我(Josh Long)和其他来自Pivotal和Spring的团队成员，都会出席JavaOne大会，希望您能来我们的展位找我们或者和我们一起参与讨论。</p>
-<p><a href="https://spring.io/blog/2017/09/28/pivotal-and-spring-team-at-javaone-2017" target="_blank" rel="external">https://spring.io/blog/2017/09/28/pivotal-and-spring-team-at-javaone-2017</a></p>
+<p><a href="https://spring.io/blog/2017/09/28/pivotal-and-spring-team-at-javaone-2017" target="_blank" rel="noopener">https://spring.io/blog/2017/09/28/pivotal-and-spring-team-at-javaone-2017</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc00pqg10j305k05kq3e.jpg"><br></p>
 
 <p>以下是关于周报的内容：</p>
 <ol>
 <li>上周，我研究了一下怎么使用 Spring Framwork5 来构建基于 websocket 的响应式应用:</li>
 </ol>
-<p><a href="https://spring.io/blog/2017/09/27/spring-tips-reactive-websockets-with-spring-framework-5" target="_blank" rel="external">https://spring.io/blog/2017/09/27/spring-tips-reactive-websockets-with-spring-framework-5</a></p>
+<p><a href="https://spring.io/blog/2017/09/27/spring-tips-reactive-websockets-with-spring-framework-5" target="_blank" rel="noopener">https://spring.io/blog/2017/09/27/spring-tips-reactive-websockets-with-spring-framework-5</a></p>
 <p align="center"><br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fkc0herzdzj305k05k74s.jpg"><br></p>
 
 <ol>
 <li>Spring AMQP 和 Spring Integration 开发组领导 Gary Russell 宣布发布 Spring AMQP 2.0.RC2:</li>
 </ol>
-<p><a href="https://spring.io/blog/2017/09/27/spring-amqp-2-0-release-candidate-2-available" target="_blank" rel="external">https://spring.io/blog/2017/09/27/spring-amqp-2-0-release-candidate-2-available</a></p>
+<p><a href="https://spring.io/blog/2017/09/27/spring-amqp-2-0-release-candidate-2-available" target="_blank" rel="noopener">https://spring.io/blog/2017/09/27/spring-amqp-2-0-release-candidate-2-available</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc0jn30a3j305k05kjrw.jpg"><br></p>
 
 <ol>
 <li>经过一段长的时间，Spring Framework 5.0.GA现在终于发布了！新版本集成了 Reactor 项目，包括响应式 web 运行时环境，Kotlin 扩展，以及全面基于 Java EE 7 和 Java 8。<br>新的发行版包含了太多的新东西,如果想要知道更多的消息，查看版本说明，然后查看更新内容:</li>
 </ol>
-<p><a href="https://spring.io/blog/2017/09/28/spring-framework-5-0-goes-ga" target="_blank" rel="external">https://spring.io/blog/2017/09/28/spring-framework-5-0-goes-ga</a></p>
-<p><a href="https://github.com/spring-projects/spring-framework/wiki/What&#39;s-New-in-the-Spring-Framework#whats-new-in-spring-framework-5x" target="_blank" rel="external">https://github.com/spring-projects/spring-framework/wiki/What&#39;s-New-in-the-Spring-Framework#whats-new-in-spring-framework-5x</a></p>
+<p><a href="https://spring.io/blog/2017/09/28/spring-framework-5-0-goes-ga" target="_blank" rel="noopener">https://spring.io/blog/2017/09/28/spring-framework-5-0-goes-ga</a></p>
+<p><a href="https://github.com/spring-projects/spring-framework/wiki/What&#39;s-New-in-the-Spring-Framework#whats-new-in-spring-framework-5x" target="_blank" rel="noopener">https://github.com/spring-projects/spring-framework/wiki/What&#39;s-New-in-the-Spring-Framework#whats-new-in-spring-framework-5x</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc0o5oof9j305k05kjru.jpg"><br></p>
 
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc0ou0r54j305k05kq3i.jpg"><br></p>
@@ -241,79 +261,79 @@
 <ol>
 <li>Spring Reactor 团队成员 Simon Baslé 宣布发布 Spring 和 Reactor 集成的新版本Reactor Bismuth。这个版本为 Spring Framework 5.0 奠定了基础，它自己本身也包含了非常多的功能:</li>
 </ol>
-<p><a href="https://spring.io/blog/2017/09/28/reactor-bismuth-is-out" target="_blank" rel="external">https://spring.io/blog/2017/09/28/reactor-bismuth-is-out</a></p>
+<p><a href="https://spring.io/blog/2017/09/28/reactor-bismuth-is-out" target="_blank" rel="noopener">https://spring.io/blog/2017/09/28/reactor-bismuth-is-out</a></p>
 <p align="center"><br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fkc0qrajmyj305k05kmxn.jpg"><br></p>
 
 <ol>
 <li>Spring Framework 5.0 版本更新了一些其他的项目，其中包括发布了 Spring Data Kay。自从 Spring Data 于2009年成立以来，这是 Spring Data 更新的最大版本！该新版本以 Spring Framework 5.0 ，Java 8 和 Java EE 7 作为基准。它包括一个改进的仓储(repository) API（完整支持<code>Optional&lt;T&gt;</code>），支持响应式数据访问（Cassandra，Couchbase，MongoDB和Redis），新发布版本新增 Spring Data Geode，使用非空注解并且优化了运行时检查空注解，通过 Kotlin 构造方法，支持 Kotlin 的 null安全和不可变数据类，支持兼容 Java 9，如果想了解更多请看 Spring Data Kay 文档:</li>
 </ol>
-<p><a href="https://spring.io/blog/2017/10/02/spring-data-release-train-kay-goes-ga" target="_blank" rel="external">https://spring.io/blog/2017/10/02/spring-data-release-train-kay-goes-ga</a></p>
+<p><a href="https://spring.io/blog/2017/10/02/spring-data-release-train-kay-goes-ga" target="_blank" rel="noopener">https://spring.io/blog/2017/10/02/spring-data-release-train-kay-goes-ga</a></p>
 <p align="center"><br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fkc0vydg97j305k05kjrv.jpg"><br></p>
 
 <ol>
 <li>Spring 消息中间件团队成员 Artem Bilan 宣布发布 Spring for Apache Kafka 2.0.GA。新版本包括支持 <code>Apache Kafka</code>，支持事务，消息头匹配，Apache Kafka 的<code>Streams</code> 支持，新的 <code>KafkaAdmin</code>，增加 <code>@KafkaListener</code> 和 <code>Consumer</code> 错误处理和群组支持的方案。它还支持使用 <code>@EmbeddedKafka</code> 进行测试:</li>
 </ol>
-<p><a href="https://spring.io/blog/2017/10/02/spring-for-apache-kafka-2-0-ga-available" target="_blank" rel="external">https://spring.io/blog/2017/10/02/spring-for-apache-kafka-2-0-ga-available</a></p>
+<p><a href="https://spring.io/blog/2017/10/02/spring-for-apache-kafka-2-0-ga-available" target="_blank" rel="noopener">https://spring.io/blog/2017/10/02/spring-for-apache-kafka-2-0-ga-available</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc0xqsg4fj305k05kt96.jpg"><br></p>
 
 <ol>
 <li>Spring Cloud 团队成员 Ryan Baxter 宣布发布 Spring Cloud Dalston SR4。新版本更新了 <code>Spring Cloud Contract</code>，<code>Spring Cloud Config</code>，<code>Spring Cloud Commons</code>，<code>Spring Cloud Netflix</code>和<code>Spring Cloud Sleuth</code>:</li>
 </ol>
-<p><a href="https://spring.io/blog/2017/10/03/spring-cloud-dalston-sr4-is-now-available" target="_blank" rel="external">https://spring.io/blog/2017/10/03/spring-cloud-dalston-sr4-is-now-available</a></p>
+<p><a href="https://spring.io/blog/2017/10/03/spring-cloud-dalston-sr4-is-now-available" target="_blank" rel="noopener">https://spring.io/blog/2017/10/03/spring-cloud-dalston-sr4-is-now-available</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc0z0ocylj305k05kwez.jpg"><br></p>
 
 <ol>
 <li>Spring REST Docs 开发领导者 Andy Wilkinson 宣布发布 Spring REST Docs 1.2.2.RELEASE 。这个维护版本包括一些错误修复和文档的改进，推荐大家升级:</li>
 </ol>
-<p><a href="https://spring.io/blog/2017/09/28/spring-rest-docs-1-2-2-release" target="_blank" rel="external">https://spring.io/blog/2017/09/28/spring-rest-docs-1-2-2-release</a></p>
+<p><a href="https://spring.io/blog/2017/09/28/spring-rest-docs-1-2-2-release" target="_blank" rel="noopener">https://spring.io/blog/2017/09/28/spring-rest-docs-1-2-2-release</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc0zzayaoj305k05kmxn.jpg"><br></p>
 
 <ol>
 <li>查看 Spring Framework 5 的全新的通过构造方法实现注解的实现:</li>
 </ol>
-<p><a href="https://github.com/spring-projects/spring-framework/commit/23497a7ece7aac1591187b46f4b601d2f48764e0" target="_blank" rel="external">https://github.com/spring-projects/spring-framework/commit/23497a7ece7aac1591187b46f4b601d2f48764e0</a></p>
+<p><a href="https://github.com/spring-projects/spring-framework/commit/23497a7ece7aac1591187b46f4b601d2f48764e0" target="_blank" rel="noopener">https://github.com/spring-projects/spring-framework/commit/23497a7ece7aac1591187b46f4b601d2f48764e0</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc10ykgvnj305k05k0t8.jpg"><br></p>
 
 <ol>
 <li>德语访谈中 Andreas Falk 提到的 Spring Framework 5.0 和 Spring Security 5.0 中的新功能:</li>
 </ol>
-<p><a href="https://jaxenter.de/spring-security-interview-falk-62685" target="_blank" rel="external">https://jaxenter.de/spring-security-interview-falk-62685</a></p>
+<p><a href="https://jaxenter.de/spring-security-interview-falk-62685" target="_blank" rel="noopener">https://jaxenter.de/spring-security-interview-falk-62685</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc12codw3j305k05k0t7.jpg"><br></p>
 
 <ol>
 <li>由 Zoltan Altfatter 发表的这篇文章介绍了如何在 Spring Integration 流程中引入一个新的JMS消息来启动 Spring Batch 作业:</li>
 </ol>
-<p><a href="http://blog.mimacom.com/blog/2017/09/29/trigger-a-spring-batch-job-with-a-jms-message/" target="_blank" rel="external">http://blog.mimacom.com/blog/2017/09/29/trigger-a-spring-batch-job-with-a-jms-message/</a></p>
+<p><a href="http://blog.mimacom.com/blog/2017/09/29/trigger-a-spring-batch-job-with-a-jms-message/" target="_blank" rel="noopener">http://blog.mimacom.com/blog/2017/09/29/trigger-a-spring-batch-job-with-a-jms-message/</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc13cs9r1j305k05kq3g.jpg"><br></p>
 
 <ol>
 <li>Rohit Kelapure: 为什么 Pivotal 公司的 Cloud Foundry 是运行 Spring Boot 应用程序的最佳选择？</li>
 </ol>
-<p><a href="https://twitter.com/rkela/status/914924780373073920" target="_blank" rel="external">https://twitter.com/rkela/status/914924780373073920</a></p>
+<p><a href="https://twitter.com/rkela/status/914924780373073920" target="_blank" rel="noopener">https://twitter.com/rkela/status/914924780373073920</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc146vnlvj305k05kaah.jpg"><br></p>
 
 <ol>
 <li>在这篇文章中，Cristina Negrean 介绍了如何使用 Spring Cloud Data Flow 进行实时分析：</li>
 </ol>
-<p><a href="https://cristinanegrean.github.io/2017/10/01/spring-cloud-dataflow-for-real-time-analytics-with-twitter-api" target="_blank" rel="external">https://cristinanegrean.github.io/2017/10/01/spring-cloud-dataflow-for-real-time-analytics-with-twitter-api</a></p>
+<p><a href="https://cristinanegrean.github.io/2017/10/01/spring-cloud-dataflow-for-real-time-analytics-with-twitter-api" target="_blank" rel="noopener">https://cristinanegrean.github.io/2017/10/01/spring-cloud-dataflow-for-real-time-analytics-with-twitter-api</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc157vcrij305k05kgm6.jpg"><br></p>
 
 <ol>
 <li>Gabriela Motroc 在 JAXEnter 网上发布了一篇关于 Spring Framework 5 的新文章。非常多的功能都在文章包含了:</li>
 </ol>
-<p><a href="https://jaxenter.com/spring-framework-5-0-137677.html" target="_blank" rel="external">https://jaxenter.com/spring-framework-5-0-137677.html</a></p>
+<p><a href="https://jaxenter.com/spring-framework-5-0-137677.html" target="_blank" rel="noopener">https://jaxenter.com/spring-framework-5-0-137677.html</a></p>
 <p align="center"><br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkc16p331kj305k05kwew.jpg"><br></p>
 
 <ol>
 <li>Aboullaite Mohammed：使用 Elasticsearch 和 Kibana 和 Spring Boot 集合来监控一些指标:</li>
 </ol>
-<p><a href="https://aboullaite.me/spring-boot-elastic-kibana/" target="_blank" rel="external">https://aboullaite.me/spring-boot-elastic-kibana/</a></p>
+<p><a href="https://aboullaite.me/spring-boot-elastic-kibana/" target="_blank" rel="noopener">https://aboullaite.me/spring-boot-elastic-kibana/</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc17rvltdj305k05kmxl.jpg"><br></p>
 
 <ol>
 <li>Ordina JWorks：使用 Spring Cloud 来对微服务进行安全防护:</li>
 </ol>
-<p><a href="https://ordina-jworks.github.io/microservices/2017/09/26/Secure-your-architecture-part1.html" target="_blank" rel="external">https://ordina-jworks.github.io/microservices/2017/09/26/Secure-your-architecture-part1.html</a></p>
+<p><a href="https://ordina-jworks.github.io/microservices/2017/09/26/Secure-your-architecture-part1.html" target="_blank" rel="noopener">https://ordina-jworks.github.io/microservices/2017/09/26/Secure-your-architecture-part1.html</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc18inbctj305k05kaak.jpg"><br></p>
 ]]></content>
       
@@ -335,7 +355,7 @@
     <entry>
       <title><![CDATA[Grails中序列化json出现异常数据]]></title>
       <url>http://baiwenhui.com/2017/09/29/Grails%E4%B8%AD%E5%BA%8F%E5%88%97%E5%8C%96json%E5%87%BA%E7%8E%B0%E5%BC%82%E5%B8%B8%E6%95%B0%E6%8D%AE-md/</url>
-      <content type="html"><![CDATA[<p><a href="https://github.com/jgritman/httpbuilder" target="_blank" rel="external">Httpbuilder</a> 是一个基于groovy简单的HTTP客户端工具。它基本支持常用的几种HTTP请求方式(GET,PUT,POST,DELETE,HEAD,PATCH)。</p>
+      <content type="html"><![CDATA[<p><a href="https://github.com/jgritman/httpbuilder" target="_blank" rel="noopener">Httpbuilder</a> 是一个基于groovy简单的HTTP客户端工具。它基本支持常用的几种HTTP请求方式(GET,PUT,POST,DELETE,HEAD,PATCH)。</p>
 <p>发生解析url值异常项目环境：<br>| Grails Version: 3.0.7<br>| Groovy Version: 2.4.4<br>| JVM Version: 1.8.0_121</p>
 <p>由于是使用post方式给对方推送数据，所以我们先模拟一个请求服务，使用grails快速创建一个项目，然后编写一个方法，用于处理post请求，在后端输出接收到的具体数据是什么。步骤如下：</p>
 <p>1.进入我的目录<code>/Users/bwh/study/grails</code> 生成一个grails的项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/bwh/study/grails &amp;&amp; cd $_ &amp;&amp; grails create-app test111</span><br></pre></td></tr></table></figure></p>
@@ -371,51 +391,51 @@
       <title><![CDATA[Spring官方周报20170926]]></title>
       <url>http://baiwenhui.com/2017/09/27/Spring%E5%AE%98%E6%96%B9%E5%91%A8%E6%8A%A520170926/</url>
       <content type="html"><![CDATA[<h4 id="strongant-amp-maskwang-翻译"><a href="#strongant-amp-maskwang-翻译" class="headerlink" title="strongant &amp; maskwang 翻译"></a>strongant &amp; maskwang 翻译</h4><p>嗨,亲爱的Spring粉丝们！又是一个疯狂美妙的一周！我回到旧金山，与客户和当地合作伙伴谈论关于Pivotal相关的所有事情，同时在旧金山的阳光下享受玩Java 9的乐趣。我非常喜欢，并期待着这个新的版本，当然，Spring Framework 5是开箱即用的，它使用了Java 9。</p>
-<p><a href="https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-C23AFD78-C777-460B-8ACE-58BE5EA681F6" target="_blank" rel="external">https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-C23AFD78-C777-460B-8ACE-58BE5EA681F6</a></p>
+<p><a href="https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-C23AFD78-C777-460B-8ACE-58BE5EA681F6" target="_blank" rel="noopener">https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-C23AFD78-C777-460B-8ACE-58BE5EA681F6</a></p>
 <p>1: Spring IO平台领导Andy Wilkinson刚刚宣布了Spring IO Platform Brussels SR5。新版本包括Spring AMQP 1.7.4，Spring Boot 1.5.7，Spring Data Ingalls SR7，Spring Framework 4.3.11，Spring Integration 4.3.12，Spring Loaded 1.2.8和Spring Web Flow 2.4.6。在这个新版本中，很多东西是这样的，所以现在就开始吧！</p>
-<p><a href="https://spring.io/blog/2017/09/19/spring-io-platform-brussels-sr5" target="_blank" rel="external">https://spring.io/blog/2017/09/19/spring-io-platform-brussels-sr5</a></p>
+<p><a href="https://spring.io/blog/2017/09/19/spring-io-platform-brussels-sr5" target="_blank" rel="noopener">https://spring.io/blog/2017/09/19/spring-io-platform-brussels-sr5</a></p>
 <p>2: Spring工具套件主管Martin Lippert刚刚发布了在MacOS High Sierra 10.13上运行STS时如何避免一些问题。</p>
-<p><a href="https://spring.io/blog/2017/09/21/how-to-get-sts-eclipse-running-on-macos-high-sierra-10-13" target="_blank" rel="external">https://spring.io/blog/2017/09/21/how-to-get-sts-eclipse-running-on-macos-high-sierra-10-13</a></p>
+<p><a href="https://spring.io/blog/2017/09/21/how-to-get-sts-eclipse-running-on-macos-high-sierra-10-13" target="_blank" rel="noopener">https://spring.io/blog/2017/09/21/how-to-get-sts-eclipse-running-on-macos-high-sierra-10-13</a></p>
 <p>3: Spring Cloud Task 的领导 Michael Minella刚刚宣布了Spring Cloud Task 1.2.2.RELEASE。新版本增加了对Spring Framework最近对使用MySQL的序列表的除MYISAM之外的数据库引擎的支持。</p>
-<p><a href="https://spring.io/blog/2017/09/25/spring-cloud-task-1-2-2-release-is-now-available" target="_blank" rel="external">https://spring.io/blog/2017/09/25/spring-cloud-task-1-2-2-release-is-now-available</a></p>
+<p><a href="https://spring.io/blog/2017/09/25/spring-cloud-task-1-2-2-release-is-now-available" target="_blank" rel="noopener">https://spring.io/blog/2017/09/25/spring-cloud-task-1-2-2-release-is-now-available</a></p>
 <p>4: 经典的Spring PetClinic多年来发生了很大变化！该版本演示了与Spring和Kotlin的PetClinic。如果你曾经看过任何一个原始的PetClinics（其中许多早于Spring本身！），你会觉得这是一个非常简洁的小应用程序，</p>
-<p><a href="https://github.com/spring-petclinic/spring-petclinic-kotlin" target="_blank" rel="external">https://github.com/spring-petclinic/spring-petclinic-kotlin</a></p>
+<p><a href="https://github.com/spring-petclinic/spring-petclinic-kotlin" target="_blank" rel="noopener">https://github.com/spring-petclinic/spring-petclinic-kotlin</a></p>
 <p>5: 想了解Spring Boot的功能？这份分析报告可能是指南清单！</p>
-<p><a href="https://content.pivotal.io/analyst-reports/spring-boot-simplifies-end-to-end-development?_lrsc=7c3f3dc7-c1fa-4e7b-863f-615b5abb2c52" target="_blank" rel="external">https://content.pivotal.io/analyst-reports/spring-boot-simplifies-end-to-end-development?_lrsc=7c3f3dc7-c1fa-4e7b-863f-615b5abb2c52</a></p>
+<p><a href="https://content.pivotal.io/analyst-reports/spring-boot-simplifies-end-to-end-development?_lrsc=7c3f3dc7-c1fa-4e7b-863f-615b5abb2c52" target="_blank" rel="noopener">https://content.pivotal.io/analyst-reports/spring-boot-simplifies-end-to-end-development?_lrsc=7c3f3dc7-c1fa-4e7b-863f-615b5abb2c52</a></p>
 <p>6: Spring Cloud Pipelines 现在也支持Kubernetes</p>
-<p><a href="http://cloud.spring.io/spring-cloud-pipelines/multi/multi_jenkins-pipeline-k8s.html#_connecting_to_a_kubo_cluster" target="_blank" rel="external">http://cloud.spring.io/spring-cloud-pipelines/multi/multi_jenkins-pipeline-k8s.html#_connecting_to_a_kubo_cluster</a></p>
+<p><a href="http://cloud.spring.io/spring-cloud-pipelines/multi/multi_jenkins-pipeline-k8s.html#_connecting_to_a_kubo_cluster" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-pipelines/multi/multi_jenkins-pipeline-k8s.html#_connecting_to_a_kubo_cluster</a></p>
 <p>7: Oracle发布Java 9！这是一个很大的事情！在Java 9中有很多好处。如果不使用Java 9，请尝试一下Spring Framework 5，Spring Framework 5在Java 9（模块和类路径）上运行，没有任何问题。</p>
-<p><a href="https://www.infoq.com/news/2017/09/Java-9-release-sept-21" target="_blank" rel="external">https://www.infoq.com/news/2017/09/Java-9-release-sept-21</a></p>
-<p>8: Twitter上的Alex Falappa发表：“下一个牛逼的SpringBoot插件：用于检测和修复丢失的pom依赖关系的java编辑器提示<a href="https://t.co/n7w22q4sMK”" target="_blank" rel="external">https://t.co/n7w22q4sMK”</a></p>
-<p><a href="https://twitter.com/aless_falappa/status/912735050093010944" target="_blank" rel="external">https://twitter.com/aless_falappa/status/912735050093010944</a></p>
+<p><a href="https://www.infoq.com/news/2017/09/Java-9-release-sept-21" target="_blank" rel="noopener">https://www.infoq.com/news/2017/09/Java-9-release-sept-21</a></p>
+<p>8: Twitter上的Alex Falappa发表：“下一个牛逼的SpringBoot插件：用于检测和修复丢失的pom依赖关系的java编辑器提示<a href="https://t.co/n7w22q4sMK”" target="_blank" rel="noopener">https://t.co/n7w22q4sMK”</a></p>
+<p><a href="https://twitter.com/aless_falappa/status/912735050093010944" target="_blank" rel="noopener">https://twitter.com/aless_falappa/status/912735050093010944</a></p>
 <p>9: 最近有人询问有关在Cloud Foundry的Spring Boot应用程序中演示mTLS身份验证的示例。我不知道，所以 - 我经常这样做 - 我问Spring Security的主管Rob Winch，他分享了Java Cloud Foundry经验领导Ben Hale这个惊人的例子。很有意思！</p>
-<p><a href="https://github.com/nebhale/mtls-sample" target="_blank" rel="external">https://github.com/nebhale/mtls-sample</a></p>
+<p><a href="https://github.com/nebhale/mtls-sample" target="_blank" rel="noopener">https://github.com/nebhale/mtls-sample</a></p>
 <p>10: 我喜欢这个博客关于Pivotal领域的首席技术官Josh McKenty和他所在的云和云构建</p>
-<p><a href="https://www.youtube.com/watch?v=OfwDTYeqHcI" target="_blank" rel="external">https://www.youtube.com/watch?v=OfwDTYeqHcI</a></p>
+<p><a href="https://www.youtube.com/watch?v=OfwDTYeqHcI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=OfwDTYeqHcI</a></p>
 <p>11: 新的RebelLabs开发人员生产力报告已经出炉，并显示出Spring持续强劲增长。 Spring有众多用户，占46％，而Java EE则占33％。它也显示了Java 8的惊人增长，72％的用户使用它。哈哈，这两个好消息！</p>
-<p><a href="https://zeroturnaround.com/rebellabs/developer-productivity-report-2017-why-do-you-use-java-tools-you-use/" target="_blank" rel="external">https://zeroturnaround.com/rebellabs/developer-productivity-report-2017-why-do-you-use-java-tools-you-use/</a></p>
+<p><a href="https://zeroturnaround.com/rebellabs/developer-productivity-report-2017-why-do-you-use-java-tools-you-use/" target="_blank" rel="noopener">https://zeroturnaround.com/rebellabs/developer-productivity-report-2017-why-do-you-use-java-tools-you-use/</a></p>
 <p>12: 新的Microsoft和新的Microsoft SQL Server 2017版本在这里，它运行在Linux上！我从来没有想过我会看到这一天。这与Spring有什么关系？绝对没有。只是..它真的很酷！</p>
-<p><a href="https://arstechnica.com/gadgets/2017/09/microsoft-ignite-2017-azure-sql/?amp=1" target="_blank" rel="external">https://arstechnica.com/gadgets/2017/09/microsoft-ignite-2017-azure-sql/?amp=1</a></p>
+<p><a href="https://arstechnica.com/gadgets/2017/09/microsoft-ignite-2017-azure-sql/?amp=1" target="_blank" rel="noopener">https://arstechnica.com/gadgets/2017/09/microsoft-ignite-2017-azure-sql/?amp=1</a></p>
 <p>13: 您在Spring Framework 5的功能Web框架中看到了7月份的活动中Spring大牛Arjen Poutsma的网络研讨会的成果？</p>
-<p><a href="https://www.brighttalk.com/webcast/14893/263393?_lrsc=b02b5b66-1acb-44bc-8a09-1f23cdc47bf2" target="_blank" rel="external">https://www.brighttalk.com/webcast/14893/263393?_lrsc=b02b5b66-1acb-44bc-8a09-1f23cdc47bf2</a></p>
+<p><a href="https://www.brighttalk.com/webcast/14893/263393?_lrsc=b02b5b66-1acb-44bc-8a09-1f23cdc47bf2" target="_blank" rel="noopener">https://www.brighttalk.com/webcast/14893/263393?_lrsc=b02b5b66-1acb-44bc-8a09-1f23cdc47bf2</a></p>
 <p>14: 说到响应式，你也可以欣赏Evgeny Poberezkin关于响应式编程演变的这个演讲。</p>
-<p><a href="https://www.infoq.com/presentations/reactive-programming-evolution" target="_blank" rel="external">https://www.infoq.com/presentations/reactive-programming-evolution</a></p>
+<p><a href="https://www.infoq.com/presentations/reactive-programming-evolution" target="_blank" rel="noopener">https://www.infoq.com/presentations/reactive-programming-evolution</a></p>
 <p>15: Oracle有一个很好的选择了一些内容，引入了Java 9中的新功能。看看吧！</p>
-<p><a href="https://www.oracle.com/java/java9-screencasts.html" target="_blank" rel="external">https://www.oracle.com/java/java9-screencasts.html</a></p>
+<p><a href="https://www.oracle.com/java/java9-screencasts.html" target="_blank" rel="noopener">https://www.oracle.com/java/java9-screencasts.html</a></p>
 <p>16: Spring社区朋友迈克尔·西蒙斯（Michael Simons）介绍了Spring Boot的新版德语书籍。快去一探究竟！</p>
-<p><a href="https://www.amazon.de/dp/3864905257/ref=cm_sw_r_tw_api_1.zXzbGMMWCEC" target="_blank" rel="external">https://www.amazon.de/dp/3864905257/ref=cm_sw_r_tw_api_1.zXzbGMMWCEC</a></p>
+<p><a href="https://www.amazon.de/dp/3864905257/ref=cm_sw_r_tw_api_1.zXzbGMMWCEC" target="_blank" rel="noopener">https://www.amazon.de/dp/3864905257/ref=cm_sw_r_tw_api_1.zXzbGMMWCEC</a></p>
 <p>17: 最新版本的Camunda BPM系统具有Spring Boot集成功能。</p>
-<p><a href="https://github.com/camunda/camunda-bpm-spring-boot-starter/" target="_blank" rel="external">https://github.com/camunda/camunda-bpm-spring-boot-starter/</a></p>
+<p><a href="https://github.com/camunda/camunda-bpm-spring-boot-starter/" target="_blank" rel="noopener">https://github.com/camunda/camunda-bpm-spring-boot-starter/</a></p>
 <p>18: .NET大牛Richard Seroter表示，Java和Spring Cloud用户对如下会觉得无趣：学习如何使用Pivotal的Steeltoe框架将断路器集成到.NET应用程序中。</p>
-<p><a href="https://seroter.wordpress.com/2017/09/21/adding-circuit-breakers-to-your-net-applications/amp/" target="_blank" rel="external">https://seroter.wordpress.com/2017/09/21/adding-circuit-breakers-to-your-net-applications/amp/</a></p>
+<p><a href="https://seroter.wordpress.com/2017/09/21/adding-circuit-breakers-to-your-net-applications/amp/" target="_blank" rel="noopener">https://seroter.wordpress.com/2017/09/21/adding-circuit-breakers-to-your-net-applications/amp/</a></p>
 <p>19: 织机系统将Pivotal Cloud Foundry和Pivotal集装箱服务（基于Kubernetes）进行了环境化。</p>
-<p><a href="https://www.loomsystems.com/blog/everything-you-need-to-know-about-pks-in-3-acts?_lrsc=ae2c4d5a-294e-4484-8ea8-e6beccfc4caa" target="_blank" rel="external">https://www.loomsystems.com/blog/everything-you-need-to-know-about-pks-in-3-acts?_lrsc=ae2c4d5a-294e-4484-8ea8-e6beccfc4caa</a></p>
+<p><a href="https://www.loomsystems.com/blog/everything-you-need-to-know-about-pks-in-3-acts?_lrsc=ae2c4d5a-294e-4484-8ea8-e6beccfc4caa" target="_blank" rel="noopener">https://www.loomsystems.com/blog/everything-you-need-to-know-about-pks-in-3-acts?_lrsc=ae2c4d5a-294e-4484-8ea8-e6beccfc4caa</a></p>
 <p>20: Jenn Strater - 一个Spring REST文档的专家，除了许多其他内容之外，还汇集了一个介绍测试驱动文档的精彩演示文稿（根据Spring REST文档，natch）。</p>
-<p><a href="https://speakerdeck.com/jlstrater/test-driven-docs-apiconf-de-2017" target="_blank" rel="external">https://speakerdeck.com/jlstrater/test-driven-docs-apiconf-de-2017</a></p>
+<p><a href="https://speakerdeck.com/jlstrater/test-driven-docs-apiconf-de-2017" target="_blank" rel="noopener">https://speakerdeck.com/jlstrater/test-driven-docs-apiconf-de-2017</a></p>
 <p>21: IBM最近发布了他们的J9 JVM。这篇文章让你对J9这个名字背后的独特历史有一点了解。</p>
-<p><a href="https://medium.com/@rservant/how-did-the-j9-in-openj9-get-its-name-95a6416b4cb9?source=userActivityShare-a17df5ec14a4-1505939701" target="_blank" rel="external">https://medium.com/@rservant/how-did-the-j9-in-openj9-get-its-name-95a6416b4cb9?source=userActivityShare-a17df5ec14a4-1505939701</a></p>
+<p><a href="https://medium.com/@rservant/how-did-the-j9-in-openj9-get-its-name-95a6416b4cb9?source=userActivityShare-a17df5ec14a4-1505939701" target="_blank" rel="noopener">https://medium.com/@rservant/how-did-the-j9-in-openj9-get-its-name-95a6416b4cb9?source=userActivityShare-a17df5ec14a4-1505939701</a></p>
 <p>22: 这篇文章关于API文档的十个好主意与Spring并没有任何关系，但它似乎强调了这一点：Spring REST文档是一个好主意（TM）！</p>
-<p><a href="https://alistapart.com/article/the-ten-essentials-for-good-api-documentation" target="_blank" rel="external">https://alistapart.com/article/the-ten-essentials-for-good-api-documentation</a></p>
+<p><a href="https://alistapart.com/article/the-ten-essentials-for-good-api-documentation" target="_blank" rel="noopener">https://alistapart.com/article/the-ten-essentials-for-good-api-documentation</a></p>
 ]]></content>
       
         <categories>
@@ -461,9 +481,9 @@
 <p>反转思路：这个实现的思路和数组元素的反转类似，只不过需要做一点稍微的变化，我们知道单链表的最后一个元素指向null,有1-10之间的元素链表,只需要将值为1的节点引用指向null,值为2的节点引用指向1，以此类推，根据以上分析可以得到以下方法，暂且将方法命名为 reverse ，方法实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static  ListNode reverse(ListNode head) &#123;</span><br><span class="line">        ListNode prev = null;</span><br><span class="line">        ListNode curr = head;</span><br><span class="line">        while (curr != null) &#123;</span><br><span class="line">            //save next node</span><br><span class="line">            ListNode nextTemp = curr.next;</span><br><span class="line">            //change</span><br><span class="line">            curr.next = prev;</span><br><span class="line">            //cache prev node</span><br><span class="line">            prev = curr;</span><br><span class="line">            curr = nextTemp;</span><br><span class="line">        &#125;</span><br><span class="line">        return prev;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <p>关于反转的详细思路结合reverse方法参考如下分析过程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">单链表反转分析过程：</span><br><span class="line">1-&gt;2-&gt;3-&gt;4</span><br><span class="line"></span><br><span class="line">prev = null</span><br><span class="line"></span><br><span class="line">curr  = head(值为1的节点)</span><br><span class="line"></span><br><span class="line">nextTemp -&gt; next (值为2的节点)</span><br><span class="line"></span><br><span class="line">curr.next  = prev(当curr的值为1时，它的next为null)</span><br><span class="line"></span><br><span class="line">设置完毕后，将当前节点(值为1的节点)缓存起来，供下一次循环到的节点进行使用</span><br><span class="line"></span><br><span class="line">prev -&gt; curr</span><br><span class="line"></span><br><span class="line">最后，将当前节点的引用指向 next (值为2的节点)</span><br><span class="line"></span><br><span class="line">第一次循环之后，可以得到如下数据：</span><br><span class="line"></span><br><span class="line">2--&gt;1--&gt;null</span><br><span class="line"></span><br><span class="line">第二次循环</span><br><span class="line"></span><br><span class="line">此时，curr是值为2的节点</span><br><span class="line"></span><br><span class="line">nextTemp -&gt; next (值为3的节点)</span><br><span class="line"></span><br><span class="line">curr.next  = prev(当curr的值为2时，它的next为prev，即：next指向上一次循环时缓存下来的值为1的节点)</span><br><span class="line"></span><br><span class="line">再讲prev引用指向当前遍历的值为2的节点，供下一次循环使用,即</span><br><span class="line">prev = curr (值为2的节点)</span><br><span class="line">接着将当前值为2的节点指向值为3的节点</span><br><span class="line"></span><br><span class="line">第二次循环之后，结果变为：</span><br><span class="line">3-&gt;2-&gt;1-&gt;null</span><br><span class="line"></span><br><span class="line">以此类推，当遍历到节点为4的值时，curr=null，循环结束，具体结果为：</span><br><span class="line">4-&gt;3-&gt;2-&gt;1-&gt;null</span><br><span class="line"></span><br><span class="line">通过以上的分析，可以深刻理解单链表的反转操作套路。</span><br><span class="line"></span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p>
 <p>Java实现数组元素的反转demo</p>
-<p><a href="https://gist.github.com/strongant/7e2baab6291a569586bab1b97b0b22c6" target="_blank" rel="external">https://gist.github.com/strongant/7e2baab6291a569586bab1b97b0b22c6</a></p>
+<p><a href="https://gist.github.com/strongant/7e2baab6291a569586bab1b97b0b22c6" target="_blank" rel="noopener">https://gist.github.com/strongant/7e2baab6291a569586bab1b97b0b22c6</a></p>
 <p>Java实现单链表的反转demo</p>
-<p><a href="https://gist.github.com/strongant/f31727433ce0af4d2f6afb14ff304a19" target="_blank" rel="external">https://gist.github.com/strongant/f31727433ce0af4d2f6afb14ff304a19</a></p>
+<p><a href="https://gist.github.com/strongant/f31727433ce0af4d2f6afb14ff304a19" target="_blank" rel="noopener">https://gist.github.com/strongant/f31727433ce0af4d2f6afb14ff304a19</a></p>
 ]]></content>
       
         
@@ -484,7 +504,7 @@
 <p>Httpie（终端下比较友好、简洁、特性更多，功能更强大）</p>
 <p>个人在终端下比较推荐使用Httpie，原因如下：</p>
 <p>举个例子，如果我们发起一个请求，获取一个JSON字符串，如果我们使用CURL进行获取的话，需要使用管道命令结合python自带的json.tool这个脚本才能完成，<code>curl  https://httpbin.org/get | python -m json.tool</code></p>
-<p>如果我们使用Httpie的话，只需要这样：<code>http  https://httpbin.org/get</code>,可以发现它不仅返回了body内容，也同时返回了header信息。当然如果我们只需要看body内容，此时只需要进行筛选即可，使用如下命令请求即可：<code>http  https://httpbin.org/get --body</code>,如果只需要header信息，可以这样：<code>http  https://httpbin.org/get --header</code>。更多特性，请参考：<a href="https://httpie.org/" target="_blank" rel="external">https://httpie.org/</a></p>
+<p>如果我们使用Httpie的话，只需要这样：<code>http  https://httpbin.org/get</code>,可以发现它不仅返回了body内容，也同时返回了header信息。当然如果我们只需要看body内容，此时只需要进行筛选即可，使用如下命令请求即可：<code>http  https://httpbin.org/get --body</code>,如果只需要header信息，可以这样：<code>http  https://httpbin.org/get --header</code>。更多特性，请参考：<a href="https://httpie.org/" target="_blank" rel="noopener">https://httpie.org/</a></p>
 <p>Httpie默认会将返回的JSON数据进行格式化，不再需要二次转换，并且它会使用颜色将一些不同类型的数据加以区分，这样也方便我们进行查看。</p>
 <p>这里介绍下Mac下的安装方式：<br>由于Httpie依赖Python，一般情况下Mac下已经自带了Python环境，只不过版本可能并不是最新的。使用brew安装即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install httpie</span><br></pre></td></tr></table></figure>
@@ -505,45 +525,45 @@
       <title><![CDATA[官方Spring周报-20170905]]></title>
       <url>http://baiwenhui.com/2017/09/07/%E5%AE%98%E6%96%B9Spring%E5%91%A8%E6%8A%A5-20170905/</url>
       <content type="html"><![CDATA[<p>Spring的粉丝们，欢迎来到本周的另一期官方周报！这个星期我在香港看这个惊人的YOW！然后是新加坡的YOW。这些会议都是来自澳大利亚顶尖的会议，而且会议很新颖。如果你在这两个地方，我希望你会来。</p>
-<p><a href="http://www.yowconference.hk/" target="_blank" rel="external">http://www.yowconference.hk/</a></p>
-<p><a href="http://www.yowconference.sg/" target="_blank" rel="external">http://www.yowconference.sg/</a></p>
+<p><a href="http://www.yowconference.hk/" target="_blank" rel="noopener">http://www.yowconference.hk/</a></p>
+<p><a href="http://www.yowconference.sg/" target="_blank" rel="noopener">http://www.yowconference.sg/</a></p>
 <p>1.介绍下关于Spring Cloud Data Flow最重要的一个方面。 Spring Cloud Data Flow大牛Eric Bottard首先介绍了Spring Cloud Data Flow Shell本身。</p>
-<p><a href="https://spring.io/blog/2017/08/29/spring-cloud-data-flow-tips-tricks-interacting-with-the-shell" target="_blank" rel="external">https://spring.io/blog/2017/08/29/spring-cloud-data-flow-tips-tricks-interacting-with-the-shell</a></p>
+<p><a href="https://spring.io/blog/2017/08/29/spring-cloud-data-flow-tips-tricks-interacting-with-the-shell" target="_blank" rel="noopener">https://spring.io/blog/2017/08/29/spring-cloud-data-flow-tips-tricks-interacting-with-the-shell</a></p>
 <p>2.Spring Cloud贡献者Ryan Baxter刚刚宣布了Spring Cloud Edgeware M1 的发布。新版本包括对各种项目的更新以及新的Spring Cloud Gateway项目。此版本基于Spring Boot 1.5.x。</p>
-<p><a href="https://spring.io/blog/2017/08/29/spring-cloud-edgware-m1-is-now-available" target="_blank" rel="external">https://spring.io/blog/2017/08/29/spring-cloud-edgware-m1-is-now-available</a></p>
+<p><a href="https://spring.io/blog/2017/08/29/spring-cloud-edgware-m1-is-now-available" target="_blank" rel="noopener">https://spring.io/blog/2017/08/29/spring-cloud-edgware-m1-is-now-available</a></p>
 <p>3.Spring Cloud联合创始人Spencer Gibb刚刚宣布了Spring Cloud Finchely M2的发布。这个新版本基于Spring Boot 2.0.x，所以是基于Java 8。它还支持Spring Cloud Gateway中更多更酷的功能。在Spring Cloud Gateway和其他版本中，一个常见主题是反应性支持。</p>
-<p><a href="https://spring.io/blog/2017/08/30/spring-cloud-finchley-m2-is-available" target="_blank" rel="external">https://spring.io/blog/2017/08/30/spring-cloud-finchley-m2-is-available</a></p>
+<p><a href="https://spring.io/blog/2017/08/30/spring-cloud-finchley-m2-is-available" target="_blank" rel="noopener">https://spring.io/blog/2017/08/30/spring-cloud-finchley-m2-is-available</a></p>
 <p>4.Spring Cloud Flow大牛Thomas Risberg在本文中介绍了针对Kubernetes的Spring Cloud Data Flow的Helm安装程序。 Helm是Kubernetes的包管理者。</p>
-<p><a href="https://spring.io/blog/2017/08/31/simple-installation-of-data-flow-for-kubernetes-with-helm" target="_blank" rel="external">https://spring.io/blog/2017/08/31/simple-installation-of-data-flow-for-kubernetes-with-helm</a></p>
+<p><a href="https://spring.io/blog/2017/08/31/simple-installation-of-data-flow-for-kubernetes-with-helm" target="_blank" rel="noopener">https://spring.io/blog/2017/08/31/simple-installation-of-data-flow-for-kubernetes-with-helm</a></p>
 <p>5.这个应用现代化的Pivotal和Apigee白皮书是一个很好的阅读题材。</p>
-<p><a href="https://content.pivotal.io/apigee/application-modernization?_lrsc=9d76ba9e-eb43-42fb-b85d-9e5b48373ac4" target="_blank" rel="external">https://content.pivotal.io/apigee/application-modernization?_lrsc=9d76ba9e-eb43-42fb-b85d-9e5b48373ac4</a></p>
+<p><a href="https://content.pivotal.io/apigee/application-modernization?_lrsc=9d76ba9e-eb43-42fb-b85d-9e5b48373ac4" target="_blank" rel="noopener">https://content.pivotal.io/apigee/application-modernization?_lrsc=9d76ba9e-eb43-42fb-b85d-9e5b48373ac4</a></p>
 <p>6.Matt McCandless称Spring Boot老而弥新，这是个很好的起步。</p>
-<p><a href="https://dzone.com/articles/spring-boot-the-right-boot-for-you-1" target="_blank" rel="external">https://dzone.com/articles/spring-boot-the-right-boot-for-you-1</a></p>
+<p><a href="https://dzone.com/articles/spring-boot-the-right-boot-for-you-1" target="_blank" rel="noopener">https://dzone.com/articles/spring-boot-the-right-boot-for-you-1</a></p>
 <p>7.这篇关于使用Spring Boot的Quartz Scheduler的文章是曾经看过的一篇文章。我喜欢。</p>
-<p><a href="http://www.opencodez.com/java/quartz-scheduler-with-spring-boot.htm" target="_blank" rel="external">http://www.opencodez.com/java/quartz-scheduler-with-spring-boot.htm</a></p>
+<p><a href="http://www.opencodez.com/java/quartz-scheduler-with-spring-boot.htm" target="_blank" rel="noopener">http://www.opencodez.com/java/quartz-scheduler-with-spring-boot.htm</a></p>
 <p>8.看起来要想Java 9发布，这个新的Java版本将会有6个月的时间。我个人欢迎新版本。</p>
-<p><a href="https://jcp.org/aboutJava/communityprocess/ec-public/materials/2017-08-15/JCP-EC-Minutes-August-2017.html" target="_blank" rel="external">https://jcp.org/aboutJava/communityprocess/ec-public/materials/2017-08-15/JCP-EC-Minutes-August-2017.html</a></p>
+<p><a href="https://jcp.org/aboutJava/communityprocess/ec-public/materials/2017-08-15/JCP-EC-Minutes-August-2017.html" target="_blank" rel="noopener">https://jcp.org/aboutJava/communityprocess/ec-public/materials/2017-08-15/JCP-EC-Minutes-August-2017.html</a></p>
 <p>9.我真的很喜欢这个俄语的帖子，介绍Spring Boot的应用程序开发。</p>
-<p><a href="https://alexkosarev.name/2017/08/08/application-development-with-spring-part-1/" target="_blank" rel="external">https://alexkosarev.name/2017/08/08/application-development-with-spring-part-1/</a></p>
+<p><a href="https://alexkosarev.name/2017/08/08/application-development-with-spring-part-1/" target="_blank" rel="noopener">https://alexkosarev.name/2017/08/08/application-development-with-spring-part-1/</a></p>
 <p>10.上周Pivotal与Google和VMWare合作，宣布了Pivotal Cloud Foundry生态系统 - Pivotal Container Service - 由BOSH管理的Kubernetes服务的下一步工作。我们从TechCrunch片中得到一些细节。</p>
-<p><a href="https://www.blog.google/topics/google-cloud/vmware-and-pivotal-launch-new-hybrid-kubernetes-solution-optimized-gcp/" target="_blank" rel="external">https://www.blog.google/topics/google-cloud/vmware-and-pivotal-launch-new-hybrid-kubernetes-solution-optimized-gcp/</a></p>
-<p><a href="https://techcrunch.com/2017/08/29/seven-moves-that-led-to-the-vmware-pivotal-google-partnership/amp/" target="_blank" rel="external">https://techcrunch.com/2017/08/29/seven-moves-that-led-to-the-vmware-pivotal-google-partnership/amp/</a></p>
+<p><a href="https://www.blog.google/topics/google-cloud/vmware-and-pivotal-launch-new-hybrid-kubernetes-solution-optimized-gcp/" target="_blank" rel="noopener">https://www.blog.google/topics/google-cloud/vmware-and-pivotal-launch-new-hybrid-kubernetes-solution-optimized-gcp/</a></p>
+<p><a href="https://techcrunch.com/2017/08/29/seven-moves-that-led-to-the-vmware-pivotal-google-partnership/amp/" target="_blank" rel="noopener">https://techcrunch.com/2017/08/29/seven-moves-that-led-to-the-vmware-pivotal-google-partnership/amp/</a></p>
 <p>11.我喜欢这个Auth0在集成Spring Boot与SQL数据库（PostgreSQL），JPA和Liquibase。</p>
-<p><a href="https://auth0.com/blog/integrating-spring-data-jpa-postgresql-liquibase/" target="_blank" rel="external">https://auth0.com/blog/integrating-spring-data-jpa-postgresql-liquibase/</a></p>
+<p><a href="https://auth0.com/blog/integrating-spring-data-jpa-postgresql-liquibase/" target="_blank" rel="noopener">https://auth0.com/blog/integrating-spring-data-jpa-postgresql-liquibase/</a></p>
 <p>12.来自JHipster的这篇关于“API优先开发”的文章很有趣。</p>
-<p><a href="http://www.jhipster.tech/doing-api-first-development/" target="_blank" rel="external">http://www.jhipster.tech/doing-api-first-development/</a></p>
+<p><a href="http://www.jhipster.tech/doing-api-first-development/" target="_blank" rel="noopener">http://www.jhipster.tech/doing-api-first-development/</a></p>
 <p>13.Spring Boot 2.0具有反应弹性框架5和Java 8基准线，肯定会令人印象深刻。新版本中我最喜欢的功能之一就是支持Spring Boot Actuator端点的REST-stack（响应式Spring WebFlux，Spring MVC或JAX-RS）。</p>
-<p><a href="https://www.infoq.com/news/2017/08/spring-boot-2-actuator-endpoints" target="_blank" rel="external">https://www.infoq.com/news/2017/08/spring-boot-2-actuator-endpoints</a></p>
+<p><a href="https://www.infoq.com/news/2017/08/spring-boot-2-actuator-endpoints" target="_blank" rel="noopener">https://www.infoq.com/news/2017/08/spring-boot-2-actuator-endpoints</a></p>
 <p>14.看看这个优秀的网络研讨会，了解为什么IntelliJ IDEA是Grails应用程序的首选。我喜欢这个，因为Grails 3是基于Spring Boot的，因为Jeff Scott Brown是一个伟大的演讲者，因为IntelliJ做了一个漂亮的好IDE。</p>
-<p><a href="https://blog.jetbrains.com/idea/2017/07/webinar-recording-why-intellij-idea-is-the-premier-ide-for-grails-3/" target="_blank" rel="external">https://blog.jetbrains.com/idea/2017/07/webinar-recording-why-intellij-idea-is-the-premier-ide-for-grails-3/</a></p>
+<p><a href="https://blog.jetbrains.com/idea/2017/07/webinar-recording-why-intellij-idea-is-the-premier-ide-for-grails-3/" target="_blank" rel="noopener">https://blog.jetbrains.com/idea/2017/07/webinar-recording-why-intellij-idea-is-the-premier-ide-for-grails-3/</a></p>
 <p>15.严格来说，这与Spring不是很相关，但它是值得一读的。丹尼尔·布莱恩特（Daniel Bryant）在这篇文章中描述了测试微服务（以及您可能使用的所有组件）的全方位方法。</p>
-<p><a href="https://specto.io/blog/2016/8/16/recipe-for-designing-building-testing-microservices/" target="_blank" rel="external">https://specto.io/blog/2016/8/16/recipe-for-designing-building-testing-microservices/</a></p>
+<p><a href="https://specto.io/blog/2016/8/16/recipe-for-designing-building-testing-microservices/" target="_blank" rel="noopener">https://specto.io/blog/2016/8/16/recipe-for-designing-building-testing-microservices/</a></p>
 <p>16.我喜欢这个来自Spring Data的StackOverflow响应Oliver Gierke：如何在Spring Boot中选择性升级依赖项？</p>
-<p><a href="https://stackoverflow.com/questions/45967464/how-to-selectively-upgrade-a-dependency-in-spring-boot-sample-case-spring-dat" target="_blank" rel="external">https://stackoverflow.com/questions/45967464/how-to-selectively-upgrade-a-dependency-in-spring-boot-sample-case-spring-dat</a></p>
+<p><a href="https://stackoverflow.com/questions/45967464/how-to-selectively-upgrade-a-dependency-in-spring-boot-sample-case-spring-dat" target="_blank" rel="noopener">https://stackoverflow.com/questions/45967464/how-to-selectively-upgrade-a-dependency-in-spring-boot-sample-case-spring-dat</a></p>
 <p>17.如果您想快速了解一下Cloud Foundry服务代理商，请阅读本文。</p>
-<p><a href="http://www.automate-it.today/about-cloud-foundry-service-brokers/" target="_blank" rel="external">http://www.automate-it.today/about-cloud-foundry-service-brokers/</a></p>
+<p><a href="http://www.automate-it.today/about-cloud-foundry-service-brokers/" target="_blank" rel="noopener">http://www.automate-it.today/about-cloud-foundry-service-brokers/</a></p>
 <p>18.这篇也不是严格来说与Spring有关，但对于构建云原生应用程序的一些Spring用户来说，这对于Java云主机服务的成本降低策略来说非常有用。</p>
-<p><a href="https://www.infoq.com/articles/java-cloud-cost-reduction" target="_blank" rel="external">https://www.infoq.com/articles/java-cloud-cost-reduction</a></p>
+<p><a href="https://www.infoq.com/articles/java-cloud-cost-reduction" target="_blank" rel="noopener">https://www.infoq.com/articles/java-cloud-cost-reduction</a></p>
 ]]></content>
       
         
@@ -585,10 +605,10 @@
 </blockquote>
 </li>
 </ul>
-<p>以上概念定义解释来自<a href="http://www.w3school.com.cn/" target="_blank" rel="external">w3cschool</a></p>
+<p>以上概念定义解释来自<a href="http://www.w3school.com.cn/" target="_blank" rel="noopener">w3cschool</a></p>
 <p>其中需要注意的有使用Java6以后自带的xjc工具根据xsd生成webservices相关实体代码命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xjc -d src/main/java -p com.example.springbootwebservices.domain src/main/resources/META-INF/schemas/user.xsd</span><br></pre></td></tr></table></figure></p>
 <p>-d表示指定java包路径的相对目录</p>
-<p>具体SpringBoot中使用webservices案例请参考：<a href="https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14" target="_blank" rel="external">https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14</a></p>
+<p>具体SpringBoot中使用webservices案例请参考：<a href="https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14" target="_blank" rel="noopener">https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14</a></p>
 ]]></content>
       
         
@@ -605,7 +625,7 @@
     <entry>
       <title><![CDATA[HTTP状态码图示]]></title>
       <url>http://baiwenhui.com/2017/08/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%9B%BE%E7%A4%BA/</url>
-      <content type="html"><![CDATA[<p>这里总结下我们日常开发中常用的HTTP状态码，分享一个老外对HTTP状态码形象化用图片表示的网站：<a href="https://http.cat/" target="_blank" rel="external">https://http.cat/</a></p>
+      <content type="html"><![CDATA[<p>这里总结下我们日常开发中常用的HTTP状态码，分享一个老外对HTTP状态码形象化用图片表示的网站：<a href="https://http.cat/" target="_blank" rel="noopener">https://http.cat/</a></p>
 <p>总结如下：</p>
 <center><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a1juo9j30ee0bj3zw.jpg" alt=""><br><strong>表示服务器已经接收到了请求头，并且客户端应该继续发送请求体。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a0xeytj30dw0b40t4.jpg" alt=""><br><strong>表示请求方已经要求服务器切换协议，并且服务器已经接受并会进行处理。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii4a0l292j30dk0b4wfc.jpg" alt=""><br><strong>HTTP 请求成功的标准应答。实际的应答内容由请求使用的方法来决定。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a01i3rj30do0b4gmt.jpg" alt=""><br><strong>请求已经被接受，并且请求所对应的资源已经被创建。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49zt676j30dw0b4q3l.jpg" alt=""><br><strong>请求已被接受，尚未完成处理，也有可能会被拒绝。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49zmp71j30dw0b474u.jpg" alt=""><br><strong>在成功处理请求后服务器并没有返回任何实体内容。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49zfw3vj30dw0b4aak.jpg" alt=""><br><strong>依照子请求的数量的不同，消息体包含不同的响应代码。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49z28hnj30b40dwjs1.jpg" alt=""><br><strong>表示被请求的资源可以提供多种选项让客户端进行选择</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii49yvwcaj30dw0b4t9b.jpg" alt=""><br><strong>该请求应当被定向到给定的URI（统一资源定位符）</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49yrg7qj30dl0b40u3.jpg" alt=""><br><strong>这是一个工业实践和标准相互矛盾的例子。一些Web应用和框架会使用302状态码</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49yl9uuj30dw0b4q3h.jpg" alt=""><br><strong>对应当前请求的响应可以使用GET方法从另一个URI获取</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49yc066j30b40dwwfb.jpg" alt=""><br><strong>表示资源自上次请求以来没有被改变。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii49y6afmj30dw0b4mxp.jpg" alt=""><br><strong>（译注：被请求的资源必须通过指定的代理才能被访问） 大多数HTTP客户端不会正确响应这个状态码，主要是出于安全性的原因</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49y3ty9j30b40dwq3l.jpg" alt=""><br><strong>在这种情况下，请求会从另外的URI响应但是未来的请求仍会使用原始的URI</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45xt3cpj30dw0b43zb.jpg" alt=""><br><strong>因为错误的语法，请求不能完成</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45xk04fj30df0b43zy.jpg" alt=""><br><strong>当需要授权，但授权失败或还没有授权时返回的状态码</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45xd1i2j30dw0b4aav.jpg" alt=""><br><strong>该状态码是为了将来可能的需求而预留的。这个代码通常不使用，但是其最初的意图是可以被某种电子货币所使用。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45x75byj30dr0b4aaw.jpg" alt=""><br><strong>请求有效，但是服务器拒绝响应它。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45wzw3qj30dt0b4q4o.jpg" alt=""><br><strong>请求的资源不能找到，但是将来也许可用。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45wvyv0j30dm0b4aaz.jpg" alt=""><br><strong>请求某资源时使用的请求方法不能被该资源所支持。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45wlh8kj30de0b475n.jpg" alt=""><br><strong>被请求资源能够产生的内容不满足请求头中指定的类型。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45w9496j30dr0b4t9z.jpg" alt=""><br><strong>服务器等待请求超时</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45vuqk7j30dr0b4t9z.jpg" alt=""><br><strong>因为请求中存在冲突导致请求无法被处理</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45vcm96j30dw0b4mxq.jpg" alt=""><br><strong>被请求的资源已不可用，同时后续也不再可用。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45uwpztj30dw0b4gma.jpg" alt=""><br><strong>请求所对应的资源需要指明长度，但请求中并没有包含长度。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ug6rkj30dk0b40tl.jpg" alt=""><br><strong>其请求数据实体过大，超过服务器处理能力。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45u41r2j309h0dw0tq.jpg" alt=""><br><strong>URI过长，服务器不能处理</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45tomc8j30dw0b4dgb.jpg" alt=""><br><strong>客户端请求部分文件，但是服务器并不能提供这个范围值。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45tgczyj30di0b4jse.jpg" alt=""><br><strong>服务器不能满足请求头重指定的要求。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45t9fuzj30dw0b4t93.jpg" alt=""><br><strong>在实际HTTP服务器中不会实现该状态码</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45t5bqvj30b40dw0ta.jpg" alt=""><br><strong>请求格式正确但是因为存在语意错误无法响应。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45szla3j30dw0b4758.jpg" alt=""><br><strong>当前资源被上锁</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ssuddj30dw0b4mxx.jpg" alt=""><br><strong>因为之前的请求失败而导致了本次请求失败</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45sob45j30dw0b43za.jpg" alt=""><br><strong>在WebDav Advanced Collections 草案中定义</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45sg74yj30dk0b4wfm.jpg" alt=""><br><strong>客户端应该切换到不同的协议</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45s8zp7j30dh0b4gn4.jpg" alt=""><br><strong>用户在指定时间内发送的请求过多。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45s1jgbj30dm0b4jss.jpg" alt=""><br><strong>因为请求中的单个域过大、或者全部域全加起来过大。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45rv5zjj30ds0b4wfo.jpg" alt=""><br><strong>在Nginx记录中使用，表示服务器没有向客户端返回信息并且已经关闭了连接</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ropewj30dw0b4gm5.jpg" alt=""><br><strong>微软所扩展的一个状态码</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45ri7x7j30dd0b4abj.jpg" alt=""><br><strong>当没有其他更加确切的信息可以给出时，给出的一个一般性错误信息。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45rd75fj30da0b4wff.jpg" alt=""><br><strong>作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45r4qr0j30dw0b4mxs.jpg" alt=""><br><strong>服务器当前不可用。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45qt3zuj30dw0b40tg.jpg" alt=""><br><strong>请求的透明内容协商导致循环引用</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45qnic4j30da0b40tl.jpg" alt=""><br><strong>服务器无法存储完成请求所必须的内容。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45qi54qj30de0b43za.jpg" alt=""><br><strong>服务器在处理请求时发现一个无限循环</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45qbsaoj30b40dwgm6.jpg" alt=""><br><strong>尽管很多服务器使用该协议，但其并没有在任何RFC中说明</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45q4f5qj30df0b4t9r.jpg" alt=""><br><strong>这个状态码没有在任何RFC中说明，但微软公司在用。</strong><br></center>]]></content>
       
@@ -637,7 +657,7 @@
 <li>标识符必须由字母和数字组成，大小写敏感，标识符的首字符必须是字母。下划线(_)允许出现在标识符中，以字母看待。标识符绝对不允许是 Groovy关键词。<br>声明变量时需要引入变量名称，可以为变量指定初始值，也可以确定变量能被引用的作用域或者作用范围。当在程序中首次使用某个变量时，需要使用Groovy关键<code>def</code>关键字声明，不能在同一个作用域内声明两次相同的变量名。</li>
 </ul>
 <p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Groovy中对不同类型变量的定义和使用</span><br><span class="line"> * @author strongant</span><br><span class="line"> * Contact me at &lt;a href=&quot;mailto:strongant1994@gmail.com&quot;&gt;strongant1994@gmail.com&lt;/a&gt;</span><br><span class="line"> * @see</span><br><span class="line"> * @since 2017/8/13</span><br><span class="line"> */</span><br><span class="line">class DefineUseVariable &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // 声明一个值为admin，类型为String的变量</span><br><span class="line">        def name = &apos;admin&apos;</span><br><span class="line">        // 声明一个值为10的数字，类型为Integer</span><br><span class="line">        def age = 10</span><br><span class="line">        // 声明一个值为20.0的数字，类型为BigDecimal</span><br><span class="line">        def money = 20.0</span><br><span class="line">        // 声明一个值为true的布尔变量，类型为Boolean</span><br><span class="line">        def isMale = true</span><br><span class="line">        // 再次声明一个值为admin，类型为String的变量，下面代码将运行错误。</span><br><span class="line">        //def name = &quot;Bob&quot;</span><br><span class="line">        // 输出变量的值和类型。</span><br><span class="line">        //注意，在输出的时候，如果要使用&apos;$&apos;符号进行输出变量，则字符串必须使用双引号的三双引号的情况下，才可以正常输出变量值。</span><br><span class="line">        // 如果是单引号，则不会输出变量值，原样输出</span><br><span class="line">        println &quot;name is $&#123;name&#125;. I&apos;m $&#123;age&#125; years old. I hava $&#123;money&#125; dollars.&quot;</span><br><span class="line">        println &quot;name type: $&#123;name.class&#125;&quot;</span><br><span class="line">        println &quot;age type: $&#123;age.class&#125;&quot;</span><br><span class="line">        println &quot;money type: $&#123;money.class&#125;&quot;</span><br><span class="line">        println &quot;isMale type: $&#123;isMale.class&#125;&quot;</span><br><span class="line">        // 声明一个值为10.0的浮点型的变量，类型为Float</span><br><span class="line">        def floatTypeVariable = 10.0F</span><br><span class="line">        println &quot;floatTypeVariable type: $&#123;floatTypeVariable.class&#125;&quot;</span><br><span class="line">        // 声明一个值为10.0的浮点型的变量，类型为Double</span><br><span class="line">        def doubleTypeVariable = 10.0D</span><br><span class="line">        println &quot;doubleTypeVariable type: $&#123;doubleTypeVariable.class&#125;&quot;</span><br><span class="line">        // 声明一个值为10000的长整型的变量，类型为Long</span><br><span class="line">        def longTypeVariable = 10000L</span><br><span class="line">        println &quot;longTypeVariable type: $&#123;longTypeVariable.class&#125;&quot;</span><br><span class="line">        // 声明一个值为10000的长整型的变量，类型为大长整型BigInteger</span><br><span class="line">        def bigIntegerTypeVariable = 10000G</span><br><span class="line">        println &quot;bigIntegerTypeVariable type: $&#123;bigIntegerTypeVariable.class&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>示例的代码也可以在此地址找到：<a href="https://gist.github.com/strongant/22c489f5a51f416d1bf3e97d86f031dd" target="_blank" rel="external">https://gist.github.com/strongant/22c489f5a51f416d1bf3e97d86f031dd</a></p>
+<p>示例的代码也可以在此地址找到：<a href="https://gist.github.com/strongant/22c489f5a51f416d1bf3e97d86f031dd" target="_blank" rel="noopener">https://gist.github.com/strongant/22c489f5a51f416d1bf3e97d86f031dd</a></p>
 <h3 id="Groovy变量自动转换和强制转换示意图"><a href="#Groovy变量自动转换和强制转换示意图" class="headerlink" title="Groovy变量自动转换和强制转换示意图"></a>Groovy变量自动转换和强制转换示意图</h3><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii2v2bh27j31by0y6wl6.jpg" alt="Groovy变量自动转换和强制转换示意图"></p>
 <h3 id="Groovy中关键字"><a href="#Groovy中关键字" class="headerlink" title="Groovy中关键字"></a>Groovy中关键字</h3><p><strong>abstract</strong> <strong>case</strong> <strong>do</strong> <strong>finally</strong> <strong>instanceof</strong> <strong>package</strong> <strong>strictfp</strong> <strong>throws</strong> <strong>with</strong> <strong>any</strong> <strong>catch</strong> <strong>double</strong> <strong>float</strong> <strong>int</strong> <strong>private</strong> <strong>super</strong> <strong>transient</strong> <strong>as</strong> <strong>assert</strong> <strong>char</strong> <strong>class</strong> <strong>else</strong> <strong>enum</strong> <strong>for</strong> <strong>if</strong> <strong>interface</strong> <strong>long</strong> <strong>protected</strong> <strong>public</strong> <strong>switch</strong> <strong>synchronized</strong> <strong>true</strong> <strong>try</strong> <strong>boolean</strong> <strong>continue</strong> <strong>extends</strong> <strong>implements</strong> <strong>native</strong> <strong>return</strong> <strong>this</strong> <strong>void</strong> <strong>break</strong> <strong>def</strong> <strong>false</strong> <strong>import</strong> <strong>new</strong> <strong>short</strong> <strong>threadsafe</strong> <strong>volatile</strong> <strong>byte</strong> <strong>default</strong> <strong>final</strong> <strong>in</strong> <strong>null</strong> <strong>static</strong> <strong>throw</strong> <strong>while</strong></p>
 ]]></content>
@@ -678,7 +698,7 @@
 </li>
 </ul>
 <h2 id="安装2"><a href="#安装2" class="headerlink" title="安装2"></a>安装2</h2><ol>
-<li>在官网下载groovy sdk<br>下载地址:<br><a href="https://akamai.bintray.com/9a/9a20d8868edbbc82a8edd03b6ae6f7dfbe406e42a468f2c44d5285493f679676?__gda__=exp=1466580235~hmac=4c1a4086a45aca9a522aac513d022d04f90eec437163110a69a441bf823143a2&amp;response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-sdk-2.4.7.zip%22&amp;response-content-type=application%2Fx-www-form-urlencoded" target="_blank" rel="external">https://akamai.bintray.com/9a/9a20d8868edbbc82a8edd03b6ae6f7dfbe406e42a468f2c44d5285493f679676?__gda__=exp=1466580235~hmac=4c1a4086a45aca9a522aac513d022d04f90eec437163110a69a441bf823143a2&amp;response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-sdk-2.4.7.zip%22&amp;response-content-type=application%2Fx-www-form-urlencoded</a></li>
+<li>在官网下载groovy sdk<br>下载地址:<br><a href="https://akamai.bintray.com/9a/9a20d8868edbbc82a8edd03b6ae6f7dfbe406e42a468f2c44d5285493f679676?__gda__=exp=1466580235~hmac=4c1a4086a45aca9a522aac513d022d04f90eec437163110a69a441bf823143a2&amp;response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-sdk-2.4.7.zip%22&amp;response-content-type=application%2Fx-www-form-urlencoded" target="_blank" rel="noopener">https://akamai.bintray.com/9a/9a20d8868edbbc82a8edd03b6ae6f7dfbe406e42a468f2c44d5285493f679676?__gda__=exp=1466580235~hmac=4c1a4086a45aca9a522aac513d022d04f90eec437163110a69a441bf823143a2&amp;response-content-disposition=attachment%3Bfilename%3D%22apache-groovy-sdk-2.4.7.zip%22&amp;response-content-type=application%2Fx-www-form-urlencoded</a></li>
 <li><p>进行解压：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip apache-groovy-sdk-2.4.7.zip</span><br></pre></td></tr></table></figure>
 </li>
@@ -710,28 +730,28 @@
 </blockquote>
 <p><strong>讲座大纲</strong></p>
 <ul>
-<li><a href="https://segmentfault.com/l/1500000009515571?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（一）初体验</a></li>
-<li><a href="https://segmentfault.com/l/1500000009659111?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（二） Web篇（上）</a></li>
-<li><a href="https://segmentfault.com/l/1500000009767025?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（三）Web篇（中）</a></li>
-<li><a href="https://segmentfault.com/l/1500000009830944?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（四）Web篇（下）</a></li>
-<li><a href="https://segmentfault.com/l/1500000009844304?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（五）嵌入式Web容器</a></li>
-<li><a href="https://segmentfault.com/l/1500000009904190?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（六）数据库 JDBC</a></li>
-<li><a href="https://segmentfault.com/l/1500000009952220?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（七）MyBatis</a></li>
-<li><a href="https://segmentfault.com/l/1500000009952527?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（八）JPA</a></li>
-<li><a href="https://segmentfault.com/l/1500000009957330?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（九）NoSQL</a></li>
-<li><a href="https://segmentfault.com/l/1500000009970812?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（十）缓存</a></li>
-<li><a href="https://segmentfault.com/l/1500000009971600?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（十一）消息</a></li>
-<li><a href="https://segmentfault.com/l/1500000009971716?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（十二）验证</a></li>
-<li><a href="https://segmentfault.com/l/1500000009971764?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（十三）WebSocket</a></li>
-<li><a href="https://segmentfault.com/l/1500000009978309?r=bPp4Li" target="_blank" rel="external">Java 微服务实践- Spring Boot 系列（十四）WebService</a></li>
-<li><a href="https://segmentfault.com/l/1500000009978481?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（十五）安全</a></li>
-<li><a href="https://segmentfault.com/l/1500000009978585?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（十六）日志</a></li>
-<li><a href="https://segmentfault.com/l/1500000009978661?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（十七）监管</a></li>
-<li><a href="https://segmentfault.com/l/1500000009978729?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（十八）配置</a></li>
-<li><a href="https://segmentfault.com/l/1500000009978826?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（十九）测试</a></li>
-<li><a href="https://segmentfault.com/l/1500000009978904?r=bPp4Li" target="_blank" rel="external">Java 微服务实践 - Spring Boot 系列（二十）自定义启动器</a></li>
+<li><a href="https://segmentfault.com/l/1500000009515571?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（一）初体验</a></li>
+<li><a href="https://segmentfault.com/l/1500000009659111?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（二） Web篇（上）</a></li>
+<li><a href="https://segmentfault.com/l/1500000009767025?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（三）Web篇（中）</a></li>
+<li><a href="https://segmentfault.com/l/1500000009830944?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（四）Web篇（下）</a></li>
+<li><a href="https://segmentfault.com/l/1500000009844304?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（五）嵌入式Web容器</a></li>
+<li><a href="https://segmentfault.com/l/1500000009904190?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（六）数据库 JDBC</a></li>
+<li><a href="https://segmentfault.com/l/1500000009952220?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（七）MyBatis</a></li>
+<li><a href="https://segmentfault.com/l/1500000009952527?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（八）JPA</a></li>
+<li><a href="https://segmentfault.com/l/1500000009957330?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（九）NoSQL</a></li>
+<li><a href="https://segmentfault.com/l/1500000009970812?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（十）缓存</a></li>
+<li><a href="https://segmentfault.com/l/1500000009971600?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（十一）消息</a></li>
+<li><a href="https://segmentfault.com/l/1500000009971716?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（十二）验证</a></li>
+<li><a href="https://segmentfault.com/l/1500000009971764?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（十三）WebSocket</a></li>
+<li><a href="https://segmentfault.com/l/1500000009978309?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践- Spring Boot 系列（十四）WebService</a></li>
+<li><a href="https://segmentfault.com/l/1500000009978481?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（十五）安全</a></li>
+<li><a href="https://segmentfault.com/l/1500000009978585?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（十六）日志</a></li>
+<li><a href="https://segmentfault.com/l/1500000009978661?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（十七）监管</a></li>
+<li><a href="https://segmentfault.com/l/1500000009978729?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（十八）配置</a></li>
+<li><a href="https://segmentfault.com/l/1500000009978826?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（十九）测试</a></li>
+<li><a href="https://segmentfault.com/l/1500000009978904?r=bPp4Li" target="_blank" rel="noopener">Java 微服务实践 - Spring Boot 系列（二十）自定义启动器</a></li>
 </ul>
-<p>原文链接：<a href="https://segmentfault.com/u/mercyblitz/lives?type=started" target="_blank" rel="external">https://segmentfault.com/u/mercyblitz/lives?type=started</a><br>本文作者：小马哥</p>
+<p>原文链接：<a href="https://segmentfault.com/u/mercyblitz/lives?type=started" target="_blank" rel="noopener">https://segmentfault.com/u/mercyblitz/lives?type=started</a><br>本文作者：小马哥</p>
 ]]></content>
       
         
@@ -740,7 +760,7 @@
     <entry>
       <title><![CDATA[Mac上传图片至图床神器]]></title>
       <url>http://baiwenhui.com/2017/08/12/Mac%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E8%87%B3%E5%9B%BE%E5%BA%8A%E7%A5%9E%E5%99%A8/</url>
-      <content type="html"><![CDATA[<h4 id="推荐一款Mac上上传图片到图床的神器：IPic"><a href="#推荐一款Mac上上传图片到图床的神器：IPic" class="headerlink" title="推荐一款Mac上上传图片到图床的神器：IPic"></a>推荐一款Mac上上传图片到图床的神器：IPic</h4><h5 id="具体的下载和使用方法可以戳这儿"><a href="#具体的下载和使用方法可以戳这儿" class="headerlink" title="具体的下载和使用方法可以戳这儿"></a>具体的下载和使用方法可以戳这儿</h5><p><a href="https://toolinbox.net/iPic/" target="_blank" rel="external">https://toolinbox.net/iPic/</a></p>
+      <content type="html"><![CDATA[<h4 id="推荐一款Mac上上传图片到图床的神器：IPic"><a href="#推荐一款Mac上上传图片到图床的神器：IPic" class="headerlink" title="推荐一款Mac上上传图片到图床的神器：IPic"></a>推荐一款Mac上上传图片到图床的神器：IPic</h4><h5 id="具体的下载和使用方法可以戳这儿"><a href="#具体的下载和使用方法可以戳这儿" class="headerlink" title="具体的下载和使用方法可以戳这儿"></a>具体的下载和使用方法可以戳这儿</h5><p><a href="https://toolinbox.net/iPic/" target="_blank" rel="noopener">https://toolinbox.net/iPic/</a></p>
 ]]></content>
       
         
@@ -798,7 +818,7 @@
 <p>10.这样我们完成了对数据进行强化，此时我们如果直接在controller调用service的enhance 方法，将服务端返回的json数据进行加强，为他们添加的相应的属性和方法，然后在页面进行展示调用就可以了，但是这样感觉比较脏，不干净，我们不在contrller直接调用service里面的enhance 方法，我们可以创建一个过滤器来对数据进行添加过滤的功能，接下来我们开始编辑filter/index.client.filter.js:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">angular.module(&apos;myApp&apos;).filter(&apos;tree&apos;,function(tree)&#123;</span><br><span class="line">    return function(items,childrenName)&#123;</span><br><span class="line">        tree.enhance(items,childrenName);</span><br><span class="line">        return items;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>11.接下来编写html文件，开始对主题树进行展现并且引入相关文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;ThreedTreeCtrl as vm&quot;&gt;</span><br><span class="line">        &lt;ul ng-if=&quot;vm.items&quot;&gt;</span><br><span class="line">            &lt;li ng-repeat=&quot;item1 in vm.items | tree&quot;&gt;</span><br><span class="line">                &lt;div ng-click=&quot;item1.$foldToggle()&quot;&gt;</span><br><span class="line">                    &lt;span ng-if=&quot;item1.$hasChildren()&quot;&gt;</span><br><span class="line">                    &lt;span ng-if=&quot;!item1.$isFolded()&quot;&gt;-&lt;/span&gt;</span><br><span class="line">                    &lt;span ng-if=&quot;item1.$isFolded()&quot;&gt;+&lt;/span&gt;</span><br><span class="line">                    &lt;/span&gt;</span><br><span class="line">                    &#123;&#123; item1.title &#125;&#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                &lt;ul ng-if=&quot;item1.$hasChildren() &amp;&amp; !item1.$isFolded()&quot;&gt;</span><br><span class="line">                    &lt;li ng-repeat=&quot;item2 in item1.items&quot;&gt;</span><br><span class="line">                        &lt;div ng-click=&quot;item2.$foldToggle()&quot;&gt;</span><br><span class="line">                            &lt;span ng-if=&quot;item2.$hasChildren()&quot;&gt;</span><br><span class="line">                    &lt;span ng-if=&quot;!item2.$isFolded()&quot;&gt;-&lt;/span&gt;</span><br><span class="line">                            &lt;span ng-if=&quot;item2.$isFolded()&quot;&gt;+&lt;/span&gt;</span><br><span class="line">                            &lt;/span&gt;</span><br><span class="line">                            &#123;&#123; item2.title &#125;&#125;</span><br><span class="line">                        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;ul ng-if=&quot;item2.$hasChildren() &amp;&amp; !item2.$isFolded()&quot;&gt;</span><br><span class="line">                            &lt;li ng-repeat=&quot;item3 in item2.items&quot;&gt;</span><br><span class="line">                                &#123;&#123; item3.title &#125;&#125;</span><br><span class="line">                            &lt;/li&gt;</span><br><span class="line">                        &lt;/ul&gt;</span><br><span class="line">                    &lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;bower_components/angular/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/app.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">     &lt;script src=&quot;js/controller/index.client.controller.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/service/index.client.service.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/filters/index.client.filter.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>此时我们便完成了对主题树功能的实现，在index.html文件中，我们只展示了两层嵌套关系以作为示例，根据自己的业务场景进行扩展。<br>以上实现还不够优雅，等待以后需要将主题递归树封装为指令，最后附上github地址:<br><a href="https://github.com/strongant/angularjs" target="_blank" rel="external">https://github.com/strongant/angularjs</a><br>源码位于此仓库下的angular-tree目录，欢迎提出issue。</p>
+<p>此时我们便完成了对主题树功能的实现，在index.html文件中，我们只展示了两层嵌套关系以作为示例，根据自己的业务场景进行扩展。<br>以上实现还不够优雅，等待以后需要将主题递归树封装为指令，最后附上github地址:<br><a href="https://github.com/strongant/angularjs" target="_blank" rel="noopener">https://github.com/strongant/angularjs</a><br>源码位于此仓库下的angular-tree目录，欢迎提出issue。</p>
 ]]></content>
       
         
@@ -850,7 +870,7 @@
       <content type="html"><![CDATA[<h3 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h3><p>  骑着电动车上班也有4个月了，总体感觉还是很不错的！由之前坐地铁上班花费1个半小时减少到现在的半个小时，还是很不错的一笔投资！其实后悔电瓶车买的有点迟了，如果早点买的话起码可以在出行方面带来很多方便，虽然现在有很多的共享单车可以骑，但是对于上海这么大的地方和上班距离遥远的情况，对于骑自行车来上班肯定是来不及的，速度也跟不上，根本无法满足自己的需求！可就在昨天下午2017年8月5号18点20分左右，当我插上电动车钥匙，死活就是启动不了电瓶车，而且电瓶车很明显没有一丁点儿电了，大灯不亮，喇叭不响，心里一下难过了，到底什么鬼导致这个问题的发生呢？然后想了想，我靠，中午的时候貌似下很大的雨，不会是雨漏到电瓶或者控制器里面，导致短路了吧？这个只是当时的猜测，后面接着开始用百度进行搜索一下，看网上有没有类似的网友遇到此问题，网上扫了一圈，基本上都说是可能是电瓶进水了，把电瓶晾干就可以骑了，其实当时想给卖车的师傅打电话的，又相信了网上的答案，于是便将车放到车棚里面坐地铁回家了，晚上可是要看《战狼2》的，不然时间来不及了，于是便放下电动车，匆忙往电影院赶！</p>
 <h3 id="事件经过"><a href="#事件经过" class="headerlink" title="事件经过"></a>事件经过</h3><p>  晚上看完电影，天气湿热湿热，难受至极，晚上浑浑噩噩的睡了一晚上。大清早9点多就起来了，起来便开始准备去公司看看电瓶车是不是像网上说的那样，等到电瓶晾干了，就可以骑了！于是乎开始骑单车、等公交、坐公交、等地铁、坐地铁，从出发到到达公司，大概花费了我2个小时，在这里我不得不吐槽交通问题，其实住的地方离公司只有20公里，有一次我起迟了害怕迟到，就打了个车到公司，花了40块钱。但是花费时间让我很惊讶，只用了10分钟，我就纳闷了，为什么这么快呢？原来是因为坐地铁比较绕，而且也没有直达的公交，如果坐公交的话也是特别绕，所以就浪费了不应该浪费的2个小时时间。这一点可能是因为个人住的地方偏远原因吧，不过我想很多人应该也有类似的愤怒，明明不是很远，却要绕很多路花很多时间才能到目的地。抱怨没用，只能自己想办法解决！到了公司之后去找到电瓶车，幸亏公司的安保措施做得不错，车子没有被偷，谢天谢地！当我插上钥匙，和昨天下午一个样，还是没有电，顿时想：糟糕，肯定是电瓶进水太严重，导致车子彻底没电了，这时候我想打电话找个修车师傅帮我看看，可卖车的地方离公司太远了，就想着要不要找个距离我比较近的修车师傅过来看看，又顾虑这是新车，如果让别人拆开修，人家不给我保修了怎么办，买下车骑了也没有多长时间，不划算！还是打电话问一下原卖车的师傅，我把情况给人家说了一下：昨天中午下了会大雨，车子没有用雨衣盖住，昨天下班后钥匙插上之后，启动不了，纯粹没电！然后又经验的师傅说了下：你检查一下座子下面那个开关是不是把电瓶的电源关闭了。于是我便按照他说的，打开后座，把开关切换了一些，然后用钥匙插上，发现奇迹产生了，电动车一切正常，心里窃喜，不用修了，感谢有经验的老司机！</p>
 <h3 id="又出波折"><a href="#又出波折" class="headerlink" title="又出波折"></a>又出波折</h3><p>  由于又可以正常骑行了，不用挤地铁，一切恢复正常，心里比较窃喜，骑行的过程中一不小心就撞到了马路边的一个栏杆桩上面，这一撞直接把电瓶车的单撑撞断了，于是骑到卖车的地方花了40块钱焊接了一下，唉，这半天的时间又浪费过去了！无奈！</p>
-<h3 id="事件总结"><a href="#事件总结" class="headerlink" title="事件总结"></a>事件总结</h3><p>  在平时用车的时候，应该特别小心，注意安全！最后分享一个CCTV7的对电动车电池修复技术的介绍视频，本人觉得讲解的很好，很细致！<a href="http://tv.cntv.cn/video/C10391/258219f0a78b491c452527b41bb3088c" target="_blank" rel="external">http://tv.cntv.cn/video/C10391/258219f0a78b491c452527b41bb3088c</a></p>
+<h3 id="事件总结"><a href="#事件总结" class="headerlink" title="事件总结"></a>事件总结</h3><p>  在平时用车的时候，应该特别小心，注意安全！最后分享一个CCTV7的对电动车电池修复技术的介绍视频，本人觉得讲解的很好，很细致！<a href="http://tv.cntv.cn/video/C10391/258219f0a78b491c452527b41bb3088c" target="_blank" rel="noopener">http://tv.cntv.cn/video/C10391/258219f0a78b491c452527b41bb3088c</a></p>
 ]]></content>
       
         
@@ -877,15 +897,15 @@
 <p>通过以上方式，我们便可以得到最后插入的记录，此时再使用时间差进行判断就不会出现匹配不正确问题。</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>当项目中遇到bug时应该找到问题的根源再进行解决。在测试的过程中数据应该保持和生产环境数据一致！</p>
 <h4 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h4><p>推荐两个不错的播客平台：</p>
-<p> <a href="https://ipn.li/kernelpanic/" target="_blank" rel="external">内核恐慌</a><br> <a href="http://banlan.show/bitvoice" target="_blank" rel="external">比特新声</a></p>
+<p> <a href="https://ipn.li/kernelpanic/" target="_blank" rel="noopener">内核恐慌</a><br> <a href="http://banlan.show/bitvoice" target="_blank" rel="noopener">比特新声</a></p>
 ]]></content>
       
         
         <tags>
             
-            <tag> groovy </tag>
-            
             <tag> grails </tag>
+            
+            <tag> groovy </tag>
             
             <tag> gorm </tag>
             
@@ -929,7 +949,7 @@
 <p>2.更新系统<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p>
 <p>3.开始安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install oracle-java8-installer -y</span><br></pre></td></tr></table></figure></p>
 <p>4.验证是否安装成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure></p>
-<p>5.安装脚本gist地址(执行脚本时记得回车继续，其中弹出确认安装提示选择是即可，脚本执行完毕后就已经成功安装Java8了，安装大约得等待一段时间，请耐心等待！):<br><a href="https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95" target="_blank" rel="external">https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95</a></p>
+<p>5.安装脚本gist地址(执行脚本时记得回车继续，其中弹出确认安装提示选择是即可，脚本执行完毕后就已经成功安装Java8了，安装大约得等待一段时间，请耐心等待！):<br><a href="https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95" target="_blank" rel="noopener">https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95</a></p>
 ]]></content>
       
         
@@ -969,7 +989,7 @@
 <li><p>当你脚本录入完毕后，此时便可以使用<code>exit</code>命令结束本次录制。此时你会得到以下类似提示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">showterm recording finished.</span><br><span class="line">Uploading...</span><br><span class="line">http://showterm.io/44c650714d8a45b265064</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>此时打开<a href="http://showterm.io/44c650714d8a45b265064" target="_blank" rel="external">http://showterm.io/44c650714d8a45b265064</a> 链接便可以对刚才的脚本操作进行显示！</p>
+<li><p>此时打开<a href="http://showterm.io/44c650714d8a45b265064" target="_blank" rel="noopener">http://showterm.io/44c650714d8a45b265064</a> 链接便可以对刚才的脚本操作进行显示！</p>
 </li>
 </ol>
 ]]></content>
@@ -1022,7 +1042,7 @@
 <li>对bool参数值进行转换，则可以对定义的bool变量选中然后使用<em>control+T</em>，输入<em>invert</em>，找到<em>invert boolean</em>，便可以对变量的值进行反转；</li>
 <li>如果想对项目进行版本控制管理，使用<em>Command+K</em>或者使用<em>Ctrl+V</em>；</li>
 <li>使用<em>control+tab</em>可以进行对不同的文件进行选择显示打开；</li>
-<li>如果你想查看你目前使用快捷键的情况，则可以在idea的<em>help</em>菜单找到<em>Poductivity Guide</em>查看；<br><strong>注意：以上快捷键主要是Mac系统下的操作，如果你使用的是非Mac系统，那么你只需要安装Presentation Assistant便可以显示Linux和Windows上的快捷键</strong><br>如果想深入学习，可以参考该视频链接：<br><a href="https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2" target="_blank" rel="external">https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2</a></li>
+<li>如果你想查看你目前使用快捷键的情况，则可以在idea的<em>help</em>菜单找到<em>Poductivity Guide</em>查看；<br><strong>注意：以上快捷键主要是Mac系统下的操作，如果你使用的是非Mac系统，那么你只需要安装Presentation Assistant便可以显示Linux和Windows上的快捷键</strong><br>如果想深入学习，可以参考该视频链接：<br><a href="https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2" target="_blank" rel="noopener">https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2</a></li>
 </ul>
 ]]></content>
       
@@ -1068,7 +1088,7 @@
       <url>http://baiwenhui.com/2017/05/30/hexo%E5%B0%86%E5%A4%9A%E8%AF%B4%E6%9B%BF%E6%8D%A2%E4%B8%BA%E7%95%85%E8%A8%80/</url>
       <content type="html"><![CDATA[<p><strong> 由于多说团队在2017年6月1号停止了对多说的运营，因此需要将博客中使用的多说替换为畅言。 </strong></p>
 <h3 id="具体替换办法如下："><a href="#具体替换办法如下：" class="headerlink" title="具体替换办法如下："></a>具体替换办法如下：</h3><ol>
-<li>如果你没有畅言的账号，则首先去畅言的官网进行注册账号：<br>畅言网址: <a href="http://changyan.kuaizhan.com/" target="_blank" rel="external">http://changyan.kuaizhan.com/</a></li>
+<li>如果你没有畅言的账号，则首先去畅言的官网进行注册账号：<br>畅言网址: <a href="http://changyan.kuaizhan.com/" target="_blank" rel="noopener">http://changyan.kuaizhan.com/</a></li>
 </ol>
 <p><img src="/images/reg_changyan.png" alt=""></p>
 <ol>
@@ -1086,7 +1106,7 @@
 </li>
 <li><p>然后就可以使用畅言了</p>
 </li>
-<li>由于我的域名已经备案，没有遇到网上说的不能正常加载畅言的方式，如果你的域名没有备案，具体Hacker方法，请参考：<a href="http://ev1l.cn/2017/05/13/changyancrack/" target="_blank" rel="external">http://ev1l.cn/2017/05/13/changyancrack/</a></li>
+<li>由于我的域名已经备案，没有遇到网上说的不能正常加载畅言的方式，如果你的域名没有备案，具体Hacker方法，请参考：<a href="http://ev1l.cn/2017/05/13/changyancrack/" target="_blank" rel="noopener">http://ev1l.cn/2017/05/13/changyancrack/</a></li>
 </ol>
 <p><strong> 注意： </strong> 如果你在配置中还有其他问题，欢迎打赏提问，我收到之后会快速帮你解决！</p>
 ]]></content>
@@ -1169,17 +1189,17 @@
 <li>提供生产就绪的功能，如指标，运行状况检查和外部化配置</li>
 <li>绝对没有代码生成和不需要XML配置</li>
 </ul>
-<p>The reference guide includes detailed descriptions of all the features, plus an extensive howto for common use cases.<br>该<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle" target="_blank" rel="external">参考指南</a>包含所有功能的详细说明，以及广泛的<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto" target="_blank" rel="external">如何使用</a>共同使用情况。</p>
+<p>The reference guide includes detailed descriptions of all the features, plus an extensive howto for common use cases.<br>该<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle" target="_blank" rel="noopener">参考指南</a>包含所有功能的详细说明，以及广泛的<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto" target="_blank" rel="noopener">如何使用</a>共同使用情况。</p>
 <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>If you are Java developer you can use start.spring.io to generate a basic project, follow the “Quick Start” example below, or read the reference documentation getting started guide.</p>
-<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><p>如果你是一名Java程序员，你可以通过<a href="https://start.spring.io/" target="_blank" rel="external">start.spring.io</a>生成基本项目，按照下面的“快速开始”示例或者阅读参考文档的<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started" target="_blank" rel="external">入门指南</a>。</p>
+<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><p>如果你是一名Java程序员，你可以通过<a href="https://start.spring.io/" target="_blank" rel="noopener">start.spring.io</a>生成基本项目，按照下面的“快速开始”示例或者阅读参考文档的<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started" target="_blank" rel="noopener">入门指南</a>。</p>
 <p>The recommended way to get started using spring-boot in your project is with a dependency management system – the snippet below can be copied and pasted into your build. Need help? See our getting started guides on building with Maven and Gradle.</p>
-<p>spring-boot在项目中开始使用的推荐方法是使用依赖关系管理系统 - 下面的代码段可以复制并粘贴到您的构建中。需要帮忙？请参阅我们使用<a href="https://spring.io/guides/gs/maven/" target="_blank" rel="external">Maven</a>和 <a href="https://spring.io/guides/gs/gradle/" target="_blank" rel="external">Gradle</a>构建的入门指南。</p>
+<p>spring-boot在项目中开始使用的推荐方法是使用依赖关系管理系统 - 下面的代码段可以复制并粘贴到您的构建中。需要帮忙？请参阅我们使用<a href="https://spring.io/guides/gs/maven/" target="_blank" rel="noopener">Maven</a>和 <a href="https://spring.io/guides/gs/gradle/" target="_blank" rel="noopener">Gradle</a>构建的入门指南。</p>
 <p>Maven<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/parent&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure></p>
 <p>Gradle<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile(&quot;org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello/SampleController.java</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package hello;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.*;</span><br><span class="line">import org.springframework.boot.autoconfigure.*;</span><br><span class="line">import org.springframework.stereotype.*;</span><br><span class="line">import org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line">@Controller</span><br><span class="line">@EnableAutoConfiguration</span><br><span class="line">public class SampleController &#123;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    String home() &#123;</span><br><span class="line">        return &quot;Hello World!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        SpringApplication.run(SampleController.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Spring-Boot-CLI"><a href="#Spring-Boot-CLI" class="headerlink" title="Spring Boot CLI"></a>Spring Boot CLI</h3><p>Spring Boot ships with a command line tool that can be used if you want to quickly prototype with Spring. It allows you to run Groovy scripts, which means that you have a familiar Java-like syntax, without so much boilerplate code. Follow the instructions in our main documentation if you want to install the Spring Boot CLI.</p>
-<h3 id="Spring-Boot-命令行工具"><a href="#Spring-Boot-命令行工具" class="headerlink" title="Spring Boot 命令行工具"></a>Spring Boot 命令行工具</h3><p>Spring Boot附带一个命令行工具，如果你想快速使用Spring原型，可以使用它。它允许你运行Groovy脚本，这意味着你有一个熟悉的类似Java的语法，没有那么多的样板代码。如果要<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="external">安装Spring Boot CLI</a>，请按照我们的主要文档中的说明进行<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="external">操作</a>。</p>
+<h3 id="Spring-Boot-命令行工具"><a href="#Spring-Boot-命令行工具" class="headerlink" title="Spring Boot 命令行工具"></a>Spring Boot 命令行工具</h3><p>Spring Boot附带一个命令行工具，如果你想快速使用Spring原型，可以使用它。它允许你运行Groovy脚本，这意味着你有一个熟悉的类似Java的语法，没有那么多的样板代码。如果要<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="noopener">安装Spring Boot CLI</a>，请按照我们的主要文档中的说明进行<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="noopener">操作</a>。</p>
 ]]></content>
       
         
@@ -1243,8 +1263,8 @@
       <url>http://baiwenhui.com/2017/02/05/2017%E5%BC%80%E5%B7%A5%E5%BF%AB%E4%B9%90/</url>
       <content type="html"><![CDATA[<center><img src="http://i1.piimg.com/4851/ce0a3e1ef63844b1.jpg" alt="2017开工快乐"></center>
 
-<p>春节已经结束了，祝愿大家在新的一年多挣钱！在这里给大家分享一份简历模板：<br><a href="http://resume.f-tm.net/" target="_blank" rel="external">http://resume.f-tm.net/</a></p>
-<p>简历开源地址:<br><a href="https://github.com/googlerobot/resume" target="_blank" rel="external">https://github.com/googlerobot/resume</a></p>
+<p>春节已经结束了，祝愿大家在新的一年多挣钱！在这里给大家分享一份简历模板：<br><a href="http://resume.f-tm.net/" target="_blank" rel="noopener">http://resume.f-tm.net/</a></p>
+<p>简历开源地址:<br><a href="https://github.com/googlerobot/resume" target="_blank" rel="noopener">https://github.com/googlerobot/resume</a></p>
 ]]></content>
       
         
@@ -1281,9 +1301,9 @@
     <entry>
       <title><![CDATA[rxjs翻译-rxjs介绍]]></title>
       <url>http://baiwenhui.com/2017/01/22/rxjs%E7%BF%BB%E8%AF%91-rxjs%E4%BB%8B%E7%BB%8D/</url>
-      <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，<a href="&#39;./overview.html#observable&#39;">Observable</a> ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.6" target="_blank" rel="external">Array#extras</a> (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。</p>
+      <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>RxJS是一个基于可观察对象(Observable)序列，用于异步或者事件编程的库。它提供一个核心类型，<a href="&#39;./overview.html#observable&#39;">Observable</a> ，几个卫星类型（Observer, Schedulers, Subjects）以及一些由<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.6" target="_blank" rel="noopener">Array#extras</a> (map, filter, reduce, every等)激发的，让异步事件可以以集合的方式被处理的运算子(Operators)。</p>
 <p><span class="informal">可以将RxJS想象成是用于处理事件的Lodash.</span></p>
-<p>ReactiveX将<a href="https://en.wikipedia.org/wiki/Observer_pattern" target="_blank" rel="external">Observer模式</a>和<a href="https://en.wikipedia.org/wiki/Iterator_pattern" target="_blank" rel="external">Iterator模式</a>和对集合进行函数式编程结合起来，从而满足了对事件序列进行管理的需求。</p>
+<p>ReactiveX将<a href="https://en.wikipedia.org/wiki/Observer_pattern" target="_blank" rel="noopener">Observer模式</a>和<a href="https://en.wikipedia.org/wiki/Iterator_pattern" target="_blank" rel="noopener">Iterator模式</a>和对集合进行函数式编程结合起来，从而满足了对事件序列进行管理的需求。</p>
 <p>RxJS用于解决异步事件的管理问题，它的核心概念如下：</p>
 <ul>
 <li><strong>Observable:</strong> 代表数据与事件的集合，这个集合可以被调用，从而可以生成数据和事件。</li>
@@ -1338,7 +1358,7 @@
       <title><![CDATA[修正browser-sync公众号文章的错误]]></title>
       <url>http://baiwenhui.com/2017/01/21/%E4%BF%AE%E6%AD%A3browser-sync%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0%E7%9A%84%E9%94%99%E8%AF%AF/</url>
       <content type="html"><![CDATA[<p>首先说说声对不起，在上一篇的公众号文章：《放弃F5，拥抱browser-sync》中存在几个错误点。链接地址:</p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z</a></p>
 <p>几个错误点修改如下：</p>
 <ol>
 <li>文章中的：<br><em>……更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试…</em><br>将“进项调试”修改为“进行调试”<br>2.　最后的代码有一个目录错误，因为我的粗心，给大家带来的不变，请见谅！在以后的文章中我会更加小心<br>发表文章，力求保证没有错误！<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var gulp        = require(&apos;gulp&apos;);</span><br><span class="line">var browserSync = require(&apos;browser-sync&apos;).create();</span><br><span class="line">var browserify = require(&apos;gulp-browserify&apos;);</span><br><span class="line">var sass        = require(&apos;gulp-sass&apos;);</span><br><span class="line">var uglify = require(&apos;gulp-uglify&apos;);</span><br><span class="line">// Compile sass into CSS &amp; auto-inject into browsers</span><br><span class="line">gulp.task(&apos;sass&apos;, function() &#123;</span><br><span class="line">    return gulp.src(&quot;app/scss/*.scss&quot;)</span><br><span class="line">        .pipe(sass())</span><br><span class="line">        .pipe(gulp.dest(&quot;dist/css&quot;))</span><br><span class="line">        .pipe(browserSync.stream());</span><br><span class="line">&#125;);</span><br><span class="line">// process JS files and return the stream.</span><br><span class="line">gulp.task(&apos;js&apos;, function () &#123;</span><br><span class="line">    return gulp.src(&apos;app/js/*.js&apos;)</span><br><span class="line">        .pipe(browserify())</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(&apos;dist/js&apos;));</span><br><span class="line">&#125;);</span><br><span class="line">// Static Server + watching scss/js/html files</span><br><span class="line">gulp.task(&apos;serve&apos;, [&apos;sass&apos;,&apos;js&apos;], function() &#123;</span><br><span class="line">    browserSync.init(&#123;</span><br><span class="line">        server: &quot;./app&quot;</span><br><span class="line">    &#125;);</span><br><span class="line">    gulp.watch(&quot;app/scss/*.scss&quot;, [&apos;sass&apos;]);</span><br><span class="line">        gulp.watch(&quot;app/js/*.js&quot;, [&apos;js&apos;]);</span><br><span class="line">    gulp.watch(&quot;app/*.html&quot;).on(&apos;change&apos;, browserSync.reload);</span><br><span class="line">&#125;);</span><br><span class="line">gulp.task(&apos;default&apos;, [&apos;serve&apos;]);</span><br></pre></td></tr></table></figure>
@@ -1346,7 +1366,7 @@
 </ol>
 <p>修改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var gulp        = require(&apos;gulp&apos;);</span><br><span class="line">var browserSync = require(&apos;browser-sync&apos;).create();</span><br><span class="line">var browserify = require(&apos;gulp-browserify&apos;);</span><br><span class="line">var sass        = require(&apos;gulp-sass&apos;);</span><br><span class="line">var uglify = require(&apos;gulp-uglify&apos;);</span><br><span class="line">// Compile sass into CSS &amp; auto-inject into browsers</span><br><span class="line">gulp.task(&apos;sass&apos;, function() &#123;</span><br><span class="line">    return gulp.src(&quot;app/scss/*.scss&quot;)</span><br><span class="line">        .pipe(sass())</span><br><span class="line">        .pipe(gulp.dest(&quot;.app/dist/css&quot;))</span><br><span class="line">        .pipe(browserSync.stream());</span><br><span class="line">&#125;);</span><br><span class="line">// process JS files and return the stream.</span><br><span class="line">gulp.task(&apos;js&apos;, function () &#123;</span><br><span class="line">    return gulp.src(&apos;app/js/*.js&apos;)</span><br><span class="line">        .pipe(browserify())</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(&apos;.app/dist/js&apos;));</span><br><span class="line">&#125;);</span><br><span class="line">// Static Server + watching scss/js/html files</span><br><span class="line">gulp.task(&apos;serve&apos;, [&apos;sass&apos;,&apos;js&apos;], function() &#123;</span><br><span class="line">    browserSync.init(&#123;</span><br><span class="line">        server: &quot;./app&quot;</span><br><span class="line">    &#125;);</span><br><span class="line">    gulp.watch(&quot;app/scss/*.scss&quot;, [&apos;sass&apos;]);</span><br><span class="line">        gulp.watch(&quot;app/js/*.js&quot;, [&apos;js&apos;]);</span><br><span class="line">    gulp.watch(&quot;app/*.html&quot;).on(&apos;change&apos;, browserSync.reload);</span><br><span class="line">&#125;);</span><br><span class="line">gulp.task(&apos;default&apos;, [&apos;serve&apos;]);</span><br></pre></td></tr></table></figure></p>
 <p>参照对比原文地址：</p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzAxMDgyOTgwOQ==&amp;mid=2247483709&amp;idx=1&amp;sn=9939c3029c12ef1f716111cd0c9e9ffc&amp;chksm=9b4b2ba3ac3ca2b5dea5496d6f9d87d7a0218ed85e4f807d4da2374957dd1b64cea234d5074c&amp;mpshare=1&amp;scene=1&amp;srcid=0228DCwqHbO5bJNRzdNcoQaJ&amp;key=1ffbac7579ea006ba638f1c527ceb6fccc5cd60675bb72cb4ac4e1669f8844ac48f5c811613c0700f5b5a5d0758631cddccd09a62852836bbe7ea0a2f3b6519205a05d50a53e595fa3c414a39a8f507f&amp;ascene=0&amp;uin=MTkwMTU1MzgyMw%3D%3D&amp;devicetype=iMac+Macmini7%2C1+OSX+OSX+10.12.3+build(16D32)&amp;version=12020010&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iTAw5XKKAiEh5rRG8zKg5HPSatL3GYf2%2FVDBxyBOTnbVmCeOf%2FgW%2FmhS5DctS64z</a></p>
 <p>目前内容已经修改！欢迎反馈，欢迎交流：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/bLPd4tHRLu6MfYBKkZ6Rkk5E2H92YaZN1JO92ub5SEVFEPxCHY8PCRHTLUHXiaghl4p7hRnxT8yySSdl7ZV7epA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="strongant公众号二维码"></p>
 ]]></content>

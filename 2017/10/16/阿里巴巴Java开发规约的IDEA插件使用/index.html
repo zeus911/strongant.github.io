@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwh9h5qxj30yg0p0djz.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fkjwge7mvqj307607674v.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fkjwgjluxlj304603saa9.jpg">
-<meta property="og:updated_time" content="2017-11-18T13:38:48.270Z">
+<meta property="og:updated_time" content="2018-01-08T15:14:50.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里巴巴Java开发规约的IDEA插件使用">
 <meta name="twitter:description" content="作者：不想当码农的程序员 原文：http://www.jianshu.com/p/2f271e6d675c编辑：Moon  就在10月15日上午9：00，阿里巴巴在杭州云栖大会《研发效能峰会》上，正式发布《阿里巴巴Java开发手册》扫描插件，该插件在扫描代码后，将不符合《手册》的代码按 Blocker/ Critical/ Major三个等级显示在下方，甚至在IDEA上，还基于Inspectio">
@@ -239,10 +239,10 @@ var _hmt = _hmt || [];
           
                     <blockquote>
 <p>作者：不想当码农的程序员</p>
-<p>原文：<a href="http://www.jianshu.com/p/2f271e6d675c编辑：Moon" target="_blank" rel="external">http://www.jianshu.com/p/2f271e6d675c编辑：Moon</a></p>
+<p>原文：<a href="http://www.jianshu.com/p/2f271e6d675c编辑：Moon" target="_blank" rel="noopener">http://www.jianshu.com/p/2f271e6d675c编辑：Moon</a></p>
 </blockquote>
 <p>就在10月15日上午9：00，阿里巴巴在杭州云栖大会《研发效能峰会》上，正式发布《阿里巴巴Java开发手册》扫描插件，该插件在扫描代码后，将不符合《手册》的代码按 <code>Blocker</code>/ <code>Critical</code>/ <code>Major</code>三个等级显示在下方，甚至在IDEA上，还基于Inspection机制提供了实时检测功能，编写代码的同时也能快速发现问题所在。对于历史代码，部分规则实现了批量一键修复的功能。</p>
-<p>Git地址为：<a href="https://github.com/alibaba/p3c" target="_blank" rel="external">https://github.com/alibaba/p3c</a></p>
+<p>Git地址为：<a href="https://github.com/alibaba/p3c" target="_blank" rel="noopener">https://github.com/alibaba/p3c</a></p>
 <h1 id="IDea的安装方式："><a href="#IDea的安装方式：" class="headerlink" title="IDea的安装方式："></a>IDea的安装方式：</h1><p>IDEA版的插件发布到了IDEA官方仓库中(最低支持版本14.1.7，JDK1.7+)，只需打开</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Settings &gt;&gt; Plugins &gt;&gt; Browse repositories</span><br></pre></td></tr></table></figure>
 <p>输入 Alibaba 搜索一下便可以看到对应插件了，点击安装等待安装完成。</p>
@@ -261,11 +261,11 @@ var _hmt = _hmt || [];
 <p>可以说是非常棒了</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwh9h5qxj30yg0p0djz.jpg" alt=""></p>
 <h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a><strong>推荐阅读</strong></h2><ul>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484377&amp;idx=1&amp;sn=1ad98afc78d5cc11a07410e9cf0a3c9c&amp;chksm=9bd0ae41aca72757e4599d71717ed817a77b4e9a10c2b40f54793f1d5b0a95fd144bb48ae21e&amp;scene=21#wechat_redirect" target="_blank" rel="external">程序员你为什么这么累【续】：如何应对需求变更</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484376&amp;idx=1&amp;sn=957c161c2a390347ba53c26f118475f1&amp;chksm=9bd0ae40aca72756a7ade252454a8658d082b331a191d980c24a7f40ce82eab0dbee020fb5b2&amp;scene=21#wechat_redirect" target="_blank" rel="external">Spring4All社区正式招募Spring Guides翻译小分队~</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484375&amp;idx=1&amp;sn=ac19066f568d57e27ac319a5e5ddbed4&amp;chksm=9bd0ae4faca72759f9c4af93cb083f68aceb4c9fee7388f42a41acd9e8d93e5a60a1e7c91f4f&amp;scene=21#wechat_redirect" target="_blank" rel="external">海外IT工程师工作福利揭秘</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484272&amp;idx=1&amp;sn=a2f30419fc8e2c1cce86c79e0c44b264&amp;chksm=9bd0aee8aca727fe3c78c9f9d2178f4b7e85bf0890d066fd9607091dcc36d8d8dbf647a3a379&amp;scene=21#wechat_redirect" target="_blank" rel="external">一个不可思议的MySQL慢查分析与解决</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484291&amp;idx=1&amp;sn=0794ce828d667fa5be8dc3494886282d&amp;chksm=9bd0ae1baca7270d1089a923f45e70408673a9efb3f8753fb3b3014ec097302bcf52251601fa&amp;scene=21#wechat_redirect" target="_blank" rel="external">都在说微服务，那么微服务的反模式和陷阱是什么</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484377&amp;idx=1&amp;sn=1ad98afc78d5cc11a07410e9cf0a3c9c&amp;chksm=9bd0ae41aca72757e4599d71717ed817a77b4e9a10c2b40f54793f1d5b0a95fd144bb48ae21e&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">程序员你为什么这么累【续】：如何应对需求变更</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484376&amp;idx=1&amp;sn=957c161c2a390347ba53c26f118475f1&amp;chksm=9bd0ae40aca72756a7ade252454a8658d082b331a191d980c24a7f40ce82eab0dbee020fb5b2&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Spring4All社区正式招募Spring Guides翻译小分队~</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484375&amp;idx=1&amp;sn=ac19066f568d57e27ac319a5e5ddbed4&amp;chksm=9bd0ae4faca72759f9c4af93cb083f68aceb4c9fee7388f42a41acd9e8d93e5a60a1e7c91f4f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">海外IT工程师工作福利揭秘</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484272&amp;idx=1&amp;sn=a2f30419fc8e2c1cce86c79e0c44b264&amp;chksm=9bd0aee8aca727fe3c78c9f9d2178f4b7e85bf0890d066fd9607091dcc36d8d8dbf647a3a379&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">一个不可思议的MySQL慢查分析与解决</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484291&amp;idx=1&amp;sn=0794ce828d667fa5be8dc3494886282d&amp;chksm=9bd0ae1baca7270d1089a923f45e70408673a9efb3f8753fb3b3014ec097302bcf52251601fa&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">都在说微服务，那么微服务的反模式和陷阱是什么</a></li>
 </ul>
 <p>长按指纹</p>
 <p>一键关注</p>
@@ -421,7 +421,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 strongant
+    		&copy; 2018 strongant
     	</div>
      <script async
 src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -518,11 +518,15 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">groovy</a>
+                <a href="javascript:void(0)" class="js-tag color2">grails</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">grails</a>
+                <a href="javascript:void(0)" class="js-tag color1">grails mvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">groovy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,10 +554,6 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图床</a>
               </li>
              
@@ -571,6 +571,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,10 +603,6 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Spring周报</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring官方周报翻译</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,6 +639,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">electron</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring官方周报翻译</a>
               </li>
              
               <li class="article-tag-list-item">

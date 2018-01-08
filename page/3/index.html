@@ -203,6 +203,100 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用angular中的service和filter编写组件树" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/05/使用angular中的service和filter编写组件树/">使用angular中的service和filter编写组件树</a>
+    </h1>
+  
+
+          
+            <a href="/2017/08/05/使用angular中的service和filter编写组件树/" class="archive-article-date">
+  	<time datetime="2017-08-05T08:49:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <blockquote>
+<p>学习《AngularJS深度剖析与实践》总结</p>
+<ul>
+<li>在我们平时的开发中，需要对某些数据进行以树的形式进行展现，比如：权限角色、菜单、嵌套评论等。这个时候我们需要使用angular进行对数据抽象，构造我们自己的组件树：</li>
+<li>例子：我们就拿主题树作为一个例子，然后一步一步去优雅的实现它:</li>
+</ul>
+</blockquote>
+<ol>
+<li>首先我们准备好angular的库文件，建立好相应的目录及文件，按照angular遵循的风格：约定优于配置。首先我们创建一个用于展示的目录，theme-tree<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir theme-tree &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.创建需要展示的html页面文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch index.html</span><br></pre></td></tr></table></figure></p>
+<p>3.创建存放项目js文件的目录:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir js</span><br></pre></td></tr></table></figure></p>
+<p>4.创建存放angular项目的controller目录、service目录和filter目录:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir controller &amp;&amp; mkdir service &amp;&amp; mkdir filter</span><br></pre></td></tr></table></figure></p>
+<p>5.创建angular项目的入口文件，app.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd js &amp;&amp; touch app.js</span><br></pre></td></tr></table></figure></p>
+<p>6.目前先不考虑UI效果部分，主要以实现功能为主，我们使用bower来安装和管理相应的js第三方库文件，如果没有安装bower工具，可以借助npm进行安装-npm install -g bower ,在我们创建的theme-tree目录下，键入如下命令安装angular库的依赖：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower install angular --save</span><br></pre></td></tr></table></figure></p>
+<p>以上命令实行完毕后我们的目录结构如下：<br><img src="http://upload-images.jianshu.io/upload_images/1310396-c3be8338ba3a864d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="目录文件显示"></p>
+<p>7.接下来我们开始编辑js/app.js入口文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.module(&apos;myApp&apos;, []);</span><br></pre></td></tr></table></figure></p>
+<p>8.接下来我们开始编写控制器文件js/controller/index.client.controller.js:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">angular.module(&apos;myApp&apos;).controller(&quot;ThreedTreeCtrl&quot;,function ThreedTreeCtrl(tree) &#123;</span><br><span class="line">        var vm = this;</span><br><span class="line">        vm.items = [&#123;</span><br><span class="line">                id: 1,</span><br><span class="line">                title: &quot;Java&quot;,</span><br><span class="line">                poster: &quot;Messi&quot;,</span><br><span class="line">                dateCreated: &quot;2012-02-19T00:00:00&quot;,</span><br><span class="line">                items: [&#123;</span><br><span class="line">                        id: 11,</span><br><span class="line">                        title: &apos;Spring&apos;,</span><br><span class="line">                        poster: &apos;John&apos;,</span><br><span class="line">                        dateCreated: &quot;2012-02-19T00:00:00&quot;,</span><br><span class="line">                        items: [</span><br><span class="line">                                &#123;</span><br><span class="line">                                        id: 111,</span><br><span class="line">                                        title: &apos;AOP&apos;,</span><br><span class="line">                                        poster: &apos;Mike&apos;,</span><br><span class="line">                                        dateCreated: &quot;2016-02-19T00:00:00&quot;,</span><br><span class="line">                                         items: [</span><br><span class="line">                                &#123;</span><br><span class="line">                                        id: 1111,</span><br><span class="line">                                        title: &apos;IOC&apos;,</span><br><span class="line">                                        poster: &apos;Jack&apos;]</span><br><span class="line">                                &#125;</span><br><span class="line">                        ]</span><br><span class="line">                &#125;, &#123;</span><br><span class="line"></span><br><span class="line">                                id: 2,</span><br><span class="line">                                title: &quot;SpringBoot&quot;,</span><br><span class="line">                                poster: &quot;Lucy&quot;,</span><br><span class="line">                                dateCreated: &quot;2011-02-19T00:00:00&quot;</span><br><span class="line">                        &#125;</span><br><span class="line">                ]</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">                        id: 2,</span><br><span class="line">                        title: &quot;JavaScript&quot;,</span><br><span class="line">                        poster: &quot;Jack&quot;,</span><br><span class="line">                        dateCreated: &quot;2012-02-19T00:00:00&quot;,</span><br><span class="line">                &#125;</span><br><span class="line">        ];</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>以上内容很简单，构建了一个ThreedTreeCtrl控制器，里面嵌套了一些随意的数据，主要是为了模拟父子关系；</p>
+<p>9.接下来我们编辑js/service/index.client.service.js文件，用于对数据进行附加相应的行为。思考一下，当我们有了这样一组数据后，我们要为它添加什么方法和属性，首先应该添加父节点是否折叠，此属性主要是为了在界面显示的时候展开或折叠子节点数据。当展开的时候我们使用“-”表示，折叠的时候我们使用”+”表示，当折叠时单击节点应该展开子节点，当展开的时候，单击子节点应该折叠父节点；将新增的属性和方法为了减小和原始数据冲突，并且这些数据通过$http或者$resource提交给服务器，它们所调用的angular.toJso()函数会忽略所有以$开头的属性，这样我们扩展的属性就不会被提交到服务端了。还有一个方便的是，当我们看到数据上有”$”开头的属性就是扩展的属性。接下来我们实现它：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">angular.module(&apos;myApp&apos;).service(&apos;tree&apos;,function Tree()&#123;</span><br><span class="line">    var self = this;</span><br><span class="line">    //为每一项节点添加属性和方法</span><br><span class="line">    var enhanceItem = function(item,childrenName)&#123;</span><br><span class="line">        item.$hasChildren = function()&#123;</span><br><span class="line">            var subItems = this[childrenName];</span><br><span class="line">            return angular.isArray(subItems) &amp;&amp; subItems.length;</span><br><span class="line">        &#125;;</span><br><span class="line">        item.$foldToggle = function()&#123;</span><br><span class="line">            this.$folded = !this.$folded;</span><br><span class="line">        &#125;;</span><br><span class="line">        item.$isFolded = function()&#123;</span><br><span class="line">            return this.$folded;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    //对传进来的数据进行强化</span><br><span class="line">    this.enhance = function(items,childrenName)&#123;</span><br><span class="line">        if(angular.isUndefined(childrenName))&#123;</span><br><span class="line">            childrenName = &quot;items&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        angular.forEach(items,function(item)&#123;</span><br><span class="line">            enhanceItem(item,childrenName);</span><br><span class="line">            //如果有子节点则递归处理</span><br><span class="line">            self.enhance(item[childrenName],childrenName);</span><br><span class="line">        &#125;);</span><br><span class="line">        console.log(items);</span><br><span class="line">        return items;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>10.这样我们完成了对数据进行强化，此时我们如果直接在controller调用service的enhance 方法，将服务端返回的json数据进行加强，为他们添加的相应的属性和方法，然后在页面进行展示调用就可以了，但是这样感觉比较脏，不干净，我们不在contrller直接调用service里面的enhance 方法，我们可以创建一个过滤器来对数据进行添加过滤的功能，接下来我们开始编辑filter/index.client.filter.js:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">angular.module(&apos;myApp&apos;).filter(&apos;tree&apos;,function(tree)&#123;</span><br><span class="line">    return function(items,childrenName)&#123;</span><br><span class="line">        tree.enhance(items,childrenName);</span><br><span class="line">        return items;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>11.接下来编写html文件，开始对主题树进行展现并且引入相关文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;ThreedTreeCtrl as vm&quot;&gt;</span><br><span class="line">        &lt;ul ng-if=&quot;vm.items&quot;&gt;</span><br><span class="line">            &lt;li ng-repeat=&quot;item1 in vm.items | tree&quot;&gt;</span><br><span class="line">                &lt;div ng-click=&quot;item1.$foldToggle()&quot;&gt;</span><br><span class="line">                    &lt;span ng-if=&quot;item1.$hasChildren()&quot;&gt;</span><br><span class="line">                    &lt;span ng-if=&quot;!item1.$isFolded()&quot;&gt;-&lt;/span&gt;</span><br><span class="line">                    &lt;span ng-if=&quot;item1.$isFolded()&quot;&gt;+&lt;/span&gt;</span><br><span class="line">                    &lt;/span&gt;</span><br><span class="line">                    &#123;&#123; item1.title &#125;&#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                &lt;ul ng-if=&quot;item1.$hasChildren() &amp;&amp; !item1.$isFolded()&quot;&gt;</span><br><span class="line">                    &lt;li ng-repeat=&quot;item2 in item1.items&quot;&gt;</span><br><span class="line">                        &lt;div ng-click=&quot;item2.$foldToggle()&quot;&gt;</span><br><span class="line">                            &lt;span ng-if=&quot;item2.$hasChildren()&quot;&gt;</span><br><span class="line">                    &lt;span ng-if=&quot;!item2.$isFolded()&quot;&gt;-&lt;/span&gt;</span><br><span class="line">                            &lt;span ng-if=&quot;item2.$isFolded()&quot;&gt;+&lt;/span&gt;</span><br><span class="line">                            &lt;/span&gt;</span><br><span class="line">                            &#123;&#123; item2.title &#125;&#125;</span><br><span class="line">                        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;ul ng-if=&quot;item2.$hasChildren() &amp;&amp; !item2.$isFolded()&quot;&gt;</span><br><span class="line">                            &lt;li ng-repeat=&quot;item3 in item2.items&quot;&gt;</span><br><span class="line">                                &#123;&#123; item3.title &#125;&#125;</span><br><span class="line">                            &lt;/li&gt;</span><br><span class="line">                        &lt;/ul&gt;</span><br><span class="line">                    &lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;bower_components/angular/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/app.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">     &lt;script src=&quot;js/controller/index.client.controller.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/service/index.client.service.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/filters/index.client.filter.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>此时我们便完成了对主题树功能的实现，在index.html文件中，我们只展示了两层嵌套关系以作为示例，根据自己的业务场景进行扩展。<br>以上实现还不够优雅，等待以后需要将主题递归树封装为指令，最后附上github地址:<br><a href="https://github.com/strongant/angularjs" target="_blank" rel="noopener">https://github.com/strongant/angularjs</a><br>源码位于此仓库下的angular-tree目录，欢迎提出issue。</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">angularjs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/08/05/使用angular中的service和filter编写组件树/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-监听chrome-extension-popup页面消失" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -322,7 +416,7 @@ var _hmt = _hmt || [];
                     <h3 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h3><p>  骑着电动车上班也有4个月了，总体感觉还是很不错的！由之前坐地铁上班花费1个半小时减少到现在的半个小时，还是很不错的一笔投资！其实后悔电瓶车买的有点迟了，如果早点买的话起码可以在出行方面带来很多方便，虽然现在有很多的共享单车可以骑，但是对于上海这么大的地方和上班距离遥远的情况，对于骑自行车来上班肯定是来不及的，速度也跟不上，根本无法满足自己的需求！可就在昨天下午2017年8月5号18点20分左右，当我插上电动车钥匙，死活就是启动不了电瓶车，而且电瓶车很明显没有一丁点儿电了，大灯不亮，喇叭不响，心里一下难过了，到底什么鬼导致这个问题的发生呢？然后想了想，我靠，中午的时候貌似下很大的雨，不会是雨漏到电瓶或者控制器里面，导致短路了吧？这个只是当时的猜测，后面接着开始用百度进行搜索一下，看网上有没有类似的网友遇到此问题，网上扫了一圈，基本上都说是可能是电瓶进水了，把电瓶晾干就可以骑了，其实当时想给卖车的师傅打电话的，又相信了网上的答案，于是便将车放到车棚里面坐地铁回家了，晚上可是要看《战狼2》的，不然时间来不及了，于是便放下电动车，匆忙往电影院赶！</p>
 <h3 id="事件经过"><a href="#事件经过" class="headerlink" title="事件经过"></a>事件经过</h3><p>  晚上看完电影，天气湿热湿热，难受至极，晚上浑浑噩噩的睡了一晚上。大清早9点多就起来了，起来便开始准备去公司看看电瓶车是不是像网上说的那样，等到电瓶晾干了，就可以骑了！于是乎开始骑单车、等公交、坐公交、等地铁、坐地铁，从出发到到达公司，大概花费了我2个小时，在这里我不得不吐槽交通问题，其实住的地方离公司只有20公里，有一次我起迟了害怕迟到，就打了个车到公司，花了40块钱。但是花费时间让我很惊讶，只用了10分钟，我就纳闷了，为什么这么快呢？原来是因为坐地铁比较绕，而且也没有直达的公交，如果坐公交的话也是特别绕，所以就浪费了不应该浪费的2个小时时间。这一点可能是因为个人住的地方偏远原因吧，不过我想很多人应该也有类似的愤怒，明明不是很远，却要绕很多路花很多时间才能到目的地。抱怨没用，只能自己想办法解决！到了公司之后去找到电瓶车，幸亏公司的安保措施做得不错，车子没有被偷，谢天谢地！当我插上钥匙，和昨天下午一个样，还是没有电，顿时想：糟糕，肯定是电瓶进水太严重，导致车子彻底没电了，这时候我想打电话找个修车师傅帮我看看，可卖车的地方离公司太远了，就想着要不要找个距离我比较近的修车师傅过来看看，又顾虑这是新车，如果让别人拆开修，人家不给我保修了怎么办，买下车骑了也没有多长时间，不划算！还是打电话问一下原卖车的师傅，我把情况给人家说了一下：昨天中午下了会大雨，车子没有用雨衣盖住，昨天下班后钥匙插上之后，启动不了，纯粹没电！然后又经验的师傅说了下：你检查一下座子下面那个开关是不是把电瓶的电源关闭了。于是我便按照他说的，打开后座，把开关切换了一些，然后用钥匙插上，发现奇迹产生了，电动车一切正常，心里窃喜，不用修了，感谢有经验的老司机！</p>
 <h3 id="又出波折"><a href="#又出波折" class="headerlink" title="又出波折"></a>又出波折</h3><p>  由于又可以正常骑行了，不用挤地铁，一切恢复正常，心里比较窃喜，骑行的过程中一不小心就撞到了马路边的一个栏杆桩上面，这一撞直接把电瓶车的单撑撞断了，于是骑到卖车的地方花了40块钱焊接了一下，唉，这半天的时间又浪费过去了！无奈！</p>
-<h3 id="事件总结"><a href="#事件总结" class="headerlink" title="事件总结"></a>事件总结</h3><p>  在平时用车的时候，应该特别小心，注意安全！最后分享一个CCTV7的对电动车电池修复技术的介绍视频，本人觉得讲解的很好，很细致！<a href="http://tv.cntv.cn/video/C10391/258219f0a78b491c452527b41bb3088c" target="_blank" rel="external">http://tv.cntv.cn/video/C10391/258219f0a78b491c452527b41bb3088c</a></p>
+<h3 id="事件总结"><a href="#事件总结" class="headerlink" title="事件总结"></a>事件总结</h3><p>  在平时用车的时候，应该特别小心，注意安全！最后分享一个CCTV7的对电动车电池修复技术的介绍视频，本人觉得讲解的很好，很细致！<a href="http://tv.cntv.cn/video/C10391/258219f0a78b491c452527b41bb3088c" target="_blank" rel="noopener">http://tv.cntv.cn/video/C10391/258219f0a78b491c452527b41bb3088c</a></p>
 
                       
 
@@ -404,7 +498,7 @@ var _hmt = _hmt || [];
 <p>通过以上方式，我们便可以得到最后插入的记录，此时再使用时间差进行判断就不会出现匹配不正确问题。</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>当项目中遇到bug时应该找到问题的根源再进行解决。在测试的过程中数据应该保持和生产环境数据一致！</p>
 <h4 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h4><p>推荐两个不错的播客平台：</p>
-<p> <a href="https://ipn.li/kernelpanic/" target="_blank" rel="external">内核恐慌</a><br> <a href="http://banlan.show/bitvoice" target="_blank" rel="external">比特新声</a></p>
+<p> <a href="https://ipn.li/kernelpanic/" target="_blank" rel="noopener">内核恐慌</a><br> <a href="http://banlan.show/bitvoice" target="_blank" rel="noopener">比特新声</a></p>
 
                       
 
@@ -418,11 +512,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">grails</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">grails</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -574,7 +668,7 @@ var _hmt = _hmt || [];
 <p>2.更新系统<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p>
 <p>3.开始安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install oracle-java8-installer -y</span><br></pre></td></tr></table></figure></p>
 <p>4.验证是否安装成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure></p>
-<p>5.安装脚本gist地址(执行脚本时记得回车继续，其中弹出确认安装提示选择是即可，脚本执行完毕后就已经成功安装Java8了，安装大约得等待一段时间，请耐心等待！):<br><a href="https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95" target="_blank" rel="external">https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95</a></p>
+<p>5.安装脚本gist地址(执行脚本时记得回车继续，其中弹出确认安装提示选择是即可，脚本执行完毕后就已经成功安装Java8了，安装大约得等待一段时间，请耐心等待！):<br><a href="https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95" target="_blank" rel="noopener">https://gist.github.com/strongant/740f58dd6f116a4ff4d156805340bb95</a></p>
 
                       
 
@@ -673,7 +767,7 @@ var _hmt = _hmt || [];
 <li><p>当你脚本录入完毕后，此时便可以使用<code>exit</code>命令结束本次录制。此时你会得到以下类似提示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">showterm recording finished.</span><br><span class="line">Uploading...</span><br><span class="line">http://showterm.io/44c650714d8a45b265064</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>此时打开<a href="http://showterm.io/44c650714d8a45b265064" target="_blank" rel="external">http://showterm.io/44c650714d8a45b265064</a> 链接便可以对刚才的脚本操作进行显示！</p>
+<li><p>此时打开<a href="http://showterm.io/44c650714d8a45b265064" target="_blank" rel="noopener">http://showterm.io/44c650714d8a45b265064</a> 链接便可以对刚才的脚本操作进行显示！</p>
 </li>
 </ol>
 
@@ -785,7 +879,7 @@ var _hmt = _hmt || [];
 <li>对bool参数值进行转换，则可以对定义的bool变量选中然后使用<em>control+T</em>，输入<em>invert</em>，找到<em>invert boolean</em>，便可以对变量的值进行反转；</li>
 <li>如果想对项目进行版本控制管理，使用<em>Command+K</em>或者使用<em>Ctrl+V</em>；</li>
 <li>使用<em>control+tab</em>可以进行对不同的文件进行选择显示打开；</li>
-<li>如果你想查看你目前使用快捷键的情况，则可以在idea的<em>help</em>菜单找到<em>Poductivity Guide</em>查看；<br><strong>注意：以上快捷键主要是Mac系统下的操作，如果你使用的是非Mac系统，那么你只需要安装Presentation Assistant便可以显示Linux和Windows上的快捷键</strong><br>如果想深入学习，可以参考该视频链接：<br><a href="https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2" target="_blank" rel="external">https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2</a></li>
+<li>如果你想查看你目前使用快捷键的情况，则可以在idea的<em>help</em>菜单找到<em>Poductivity Guide</em>查看；<br><strong>注意：以上快捷键主要是Mac系统下的操作，如果你使用的是非Mac系统，那么你只需要安装Presentation Assistant便可以显示Linux和Windows上的快捷键</strong><br>如果想深入学习，可以参考该视频链接：<br><a href="https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2" target="_blank" rel="noopener">https://www.youtube.com/watch?v=M2eL5YuqecQ&amp;list=PLQ176FUIyIUYUuSwE--flZWw2hfI21SjF&amp;index=2</a></li>
 </ul>
 
                       
@@ -948,7 +1042,7 @@ var _hmt = _hmt || [];
           
                     <p><strong> 由于多说团队在2017年6月1号停止了对多说的运营，因此需要将博客中使用的多说替换为畅言。 </strong></p>
 <h3 id="具体替换办法如下："><a href="#具体替换办法如下：" class="headerlink" title="具体替换办法如下："></a>具体替换办法如下：</h3><ol>
-<li>如果你没有畅言的账号，则首先去畅言的官网进行注册账号：<br>畅言网址: <a href="http://changyan.kuaizhan.com/" target="_blank" rel="external">http://changyan.kuaizhan.com/</a></li>
+<li>如果你没有畅言的账号，则首先去畅言的官网进行注册账号：<br>畅言网址: <a href="http://changyan.kuaizhan.com/" target="_blank" rel="noopener">http://changyan.kuaizhan.com/</a></li>
 </ol>
 <p><img src="/images/reg_changyan.png" alt=""></p>
 <ol>
@@ -966,7 +1060,7 @@ var _hmt = _hmt || [];
 </li>
 <li><p>然后就可以使用畅言了</p>
 </li>
-<li>由于我的域名已经备案，没有遇到网上说的不能正常加载畅言的方式，如果你的域名没有备案，具体Hacker方法，请参考：<a href="http://ev1l.cn/2017/05/13/changyancrack/" target="_blank" rel="external">http://ev1l.cn/2017/05/13/changyancrack/</a></li>
+<li>由于我的域名已经备案，没有遇到网上说的不能正常加载畅言的方式，如果你的域名没有备案，具体Hacker方法，请参考：<a href="http://ev1l.cn/2017/05/13/changyancrack/" target="_blank" rel="noopener">http://ev1l.cn/2017/05/13/changyancrack/</a></li>
 </ol>
 <p><strong> 注意： </strong> 如果你在配置中还有其他问题，欢迎打赏提问，我收到之后会快速帮你解决！</p>
 
@@ -1024,102 +1118,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-递归原理解析" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/29/递归原理解析/">递归的执行原理浅析</a>
-    </h1>
-  
-
-          
-            <a href="/2017/05/29/递归原理解析/" class="archive-article-date">
-  	<time datetime="2017-05-29T15:48:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-29</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <ol>
-<li>首先使用递归输出经典的阶乘，描述如下：</li>
-</ol>
-<ul>
-<li>1! =1</li>
-<li>2! = 2</li>
-<li>3! = 6<br>…</li>
-</ul>
-<p>接下来使用常规的递归方式实现（Java），则可以得到以下程序：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Java普通递归实现阶乘</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 传递的大于0的正整数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 该数字的阶乘    如：传递3 则计算 1 * 2 * 3 =  6</span></span><br><span class="line"><span class="comment">     * 递归的核心思想自我理解： 先入栈计算直到递归终止   然后出栈 对每个栈中的值进行计算  最后得到结果</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> n * factorial(n - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p><center><img src="/images/Java递归调用示意图.png" alt=""></center></p>
-<p><center>递归调用示意图</center><br>此递归的计算原理主要是先申请栈幁1到栈幁n，直到找到递归终止的条件，然后开始汇总结果，最后出栈，返回结果，这种递归算法方式有一个弊端，就是在计算的过程中当n很大的情况下会出现栈溢出的错误（java.lang.StackOverflowError），可以使用尾递归的方式进行优化，比如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 使用尾递归进行计算阶乘</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> n      需要计算的n的阶乘</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> result 返回n的阶乘结果  如： 传递3  则计算 1 * 2 *3 = 6</span></span><br><span class="line"><span class="comment">    *               计算过程如下： tailFactorial(3,1)</span></span><br><span class="line"><span class="comment">    *               = tailFactorial(2,3*1)</span></span><br><span class="line"><span class="comment">    *               = tailFactorial(1,2*3*1)</span></span><br><span class="line"><span class="comment">    *               = tailFactorial(1,6)</span></span><br><span class="line"><span class="comment">    *               = 6</span></span><br><span class="line"><span class="comment">    *               揭秘：只使用一个栈幁就可以搞定计算</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> 返回n的阶乘</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">tailFactorial</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> result)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> result;</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> tailFactorial(n - <span class="number">1</span>, n * result);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>计算a,b（a,b为非负整数）的最大公约数？<br>此题目可以使用欧几里得算法进行解答，实现代码如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 欧几里得算法计算两个数的最大公约数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> p 需要计算的数a</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> q 需要计算的数b</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回a，b的最大公约数  a,b 是大于0 的正整数</span></span><br><span class="line"><span class="comment">     * 算法描述： 计算两个非负整数的最大公约数： 若q是0，则最大公约数为p。否则，将p除以q得到余数r，p和q的最大公约数则为q和r的最大公约数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">greatestCommonDivisors</span><span class="params">(<span class="keyword">int</span> p , <span class="keyword">int</span> q)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(q==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> r = p % q;</span><br><span class="line">        <span class="keyword">return</span> greatestCommonDivisors(q,r);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>最后我们开始使用递归遍历某个目录下的所有子目录和文件进行加深理解和运用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printDirectoriesAndFilesByPath</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            File file = <span class="keyword">new</span> File(path);</span><br><span class="line">            <span class="keyword">if</span> (file.exists()) &#123;</span><br><span class="line">                File[] files = file.listFiles();</span><br><span class="line">                <span class="keyword">for</span> (File f :</span><br><span class="line">                        files) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (f.isDirectory() &amp;&amp; f.listFiles().length &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (f.isDirectory()) &#123;</span><br><span class="line">                            String directory = f.getAbsolutePath();</span><br><span class="line">                            System.out.println(<span class="string">"-------目录名称:"</span> + f.getAbsolutePath());</span><br><span class="line">                            printDirectoriesAndFilesByPath(directory);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        System.out.println(<span class="string">"-------目录名称:"</span>+f.getParent()+<span class="string">"---&gt;文件名称："</span> + f.getAbsolutePath());</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"对不起，文件路径不存在"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">DataStructureAndAlgorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/DataStructureAndAlgorithm/" class="article-tag-list-link color1">DataStructureAndAlgorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/05/29/递归原理解析/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1134,7 +1132,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 strongant
+    		&copy; 2018 strongant
     	</div>
      <script async
 src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -1231,11 +1229,15 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">groovy</a>
+                <a href="javascript:void(0)" class="js-tag color2">grails</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">grails</a>
+                <a href="javascript:void(0)" class="js-tag color1">grails mvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">groovy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1263,10 +1265,6 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图床</a>
               </li>
              
@@ -1284,6 +1282,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1312,10 +1314,6 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Spring周报</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring官方周报翻译</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1352,6 +1350,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">electron</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring官方周报翻译</a>
               </li>
              
               <li class="article-tag-list-item">
