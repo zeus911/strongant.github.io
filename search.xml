@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title><![CDATA[Grails中神奇的HibernateCriteriaBuilder]]></title>
+      <url>http://baiwenhui.com/2018/01/28/Grails%E4%B8%AD%E7%A5%9E%E5%A5%87%E7%9A%84HibernateCriteriaBuilder/</url>
+      <content type="html"><![CDATA[<p>Grails 中 HibernateCriteriaBuilder 用于动态为类构建一些常用的查询方法。</p>
+<p>通过 metaClass 绑定方法，也就是 groovy 的 MOP 特性进行动态绑定方法。</p>
+<p>HibernateCriteriaBuilder 派生于  AbstractHibernateCriteriaBuilder，AbstractHibernateCriteriaBuilder派生于GroovyObjectSupport。</p>
+<p>其中 GroovyObjectSupport 实现了 GroovyObject 接口。</p>
+<p>其中动态支持分页列表的实现在AbstractHibernateCriteriaBuilder中的invokeMethod有详细的说明。平时我们使用的时候只需要 键入 find 然后就会根据当前类的属性进行自动补全，你是要查询一条还是要查询多条记录，至于它的转化操作也定义在此，如图：</p>
+<p><img src="/images/pasted-0.png" alt="upload successful"></p>
+<p>grails.properties   = params 绑定属性存在恶意风险，比如用户会伪造一些属性，从而导致类的一些属性修改被自动注入，影响到数据库中对应的表的具体记录。</p>
+<p>具体的类图：</p>
+<p><img src="/images/pasted-1.png" alt="upload successful"></p>
+<p>其中常用的方法接口定义在此：org.grails.orm.hibernate.IHibernateTemplate</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Grails </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Grails </tag>
+            
+            <tag> Hibernate </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Grails-MVC示意图]]></title>
       <url>http://baiwenhui.com/2018/01/08/Grails-%E6%9E%B6%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE/</url>
       <content type="html"><![CDATA[<p>  使用 Grails 开发也有大半年了，现在对 Grails MVC 架构做个图示，加深理解记忆。Grails 使用 Spring MVC Web 应用程序作为底层框架来实现Web 应用程序基于模型-视图-控制器(MVC)模式。它包括三个核心的部分：控制器，Grails 域模型和Grails Servlet 页面。下面的图主要总结下这三个部分之间的关系。</p>
