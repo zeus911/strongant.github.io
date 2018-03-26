@@ -203,6 +203,129 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-《深入理解Java虚拟机》-走近-Java-读书笔记" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/26/《深入理解Java虚拟机》-走近-Java-读书笔记/">《深入理解Java虚拟机》-第一章-走近 Java 读书笔记</a>
+    </h1>
+  
+
+          
+            <a href="/2018/03/26/《深入理解Java虚拟机》-走近-Java-读书笔记/" class="archive-article-date">
+  	<time datetime="2018-03-26T14:48:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-26</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <h2 id="走进Java"><a href="#走进Java" class="headerlink" title="走进Java"></a>走进Java</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h4 id="Java-的优点"><a href="#Java-的优点" class="headerlink" title="Java 的优点"></a>Java 的优点</h4><ul>
+<li>结构严谨</li>
+<li>平台无关性，一次编写到处运行</li>
+<li>提供安全的内存管理和访问机制，避免大部分的内存泄漏和指针越界</li>
+<li>热点代码检测和运行时编译优化，使得 Java 应用随运行时间的增加而获得更高的性能</li>
+<li>具有一套完善的应用程序接口，丰富的第三方库</li>
+</ul>
+<h4 id="Java-技术体系"><a href="#Java-技术体系" class="headerlink" title="Java 技术体系"></a>Java 技术体系</h4><ul>
+<li>Java 程序设计语言</li>
+<li>各种硬件平台上的 Java 虚拟机 </li>
+<li>Java API 类库</li>
+<li>Class 文件格式</li>
+<li>来自商业机构和开源的第三方 Java 类库</li>
+</ul>
+<h5 id="JDK组成"><a href="#JDK组成" class="headerlink" title="JDK组成"></a>JDK组成</h5><p>Java 程序设计语言 + Java 虚拟机 + Java API 类库</p>
+<h5 id="JRE-组成"><a href="#JRE-组成" class="headerlink" title="JRE 组成"></a>JRE 组成</h5><p>Java SE API 子集 + Java 虚拟机</p>
+<h5 id="Java-技术体系所包含的内容"><a href="#Java-技术体系所包含的内容" class="headerlink" title="Java 技术体系所包含的内容"></a>Java 技术体系所包含的内容</h5><p><img src="http://p67ct12ik.bkt.clouddn.com/jvm%E6%8A%80%E6%9C%AF%E4%BD%93%E7%B3%BB.png" alt=" Java 技术体系所包含的内容"></p>
+<h5 id="Java-体系划分的-4-个平台"><a href="#Java-体系划分的-4-个平台" class="headerlink" title="Java  体系划分的 4 个平台"></a>Java  体系划分的 4 个平台</h5><ul>
+<li>Java Card</li>
+<li>Java ME</li>
+<li>Java SE</li>
+<li>Java EE</li>
+</ul>
+<h4 id="Java-发展史"><a href="#Java-发展史" class="headerlink" title="Java 发展史"></a>Java 发展史</h4><p><img src="http://p67ct12ik.bkt.clouddn.com/java_timeline.png" alt=""></p>
+<ul>
+<li>JDK 1.0: Java虚拟机、Applet、AWT等；</li>
+<li>JDK 1.1：JAR文件格式、JDBC、JavaBeans、RMI、内部类、反射；</li>
+<li>JDK 1.2：拆分为J2SE/J2EE/J2ME、内置JIT编译器、一系列Collections集合类；</li>
+<li>JDK 1.3：JNDI服务、使用CORBA IIOP实现RMI通信协议、Java 2D改进；</li>
+<li>JDK 1.4：正则表达式、异常链、NIO、日志类、XML解析器和XSLT转换器；</li>
+<li>JDK 1.5：自动装箱、泛型、动态注解、枚举、可变参数、遍历循环、改进了Java内存模型、提供了java.util.concurrent并发包；</li>
+<li>JDK 1.6：提供动态语言支持、提供编译API和微型HTTP服务器API、虚拟机优化（锁与同步、垃圾收集、类加载等）；</li>
+<li>JDK 1.7：G1收集器、加强对Java语言的调用支持、升级类加载架构；</li>
+<li>JDK 1.8：Lambda表达式等；</li>
+</ul>
+<h4 id="Java-虚拟机发展史"><a href="#Java-虚拟机发展史" class="headerlink" title="Java 虚拟机发展史"></a>Java 虚拟机发展史</h4><p><img src="http://on-img.com/chart_image/5ab90628e4b0a248b0e637d5.png" alt=""></p>
+<h4 id="展望-Java-技术的未来"><a href="#展望-Java-技术的未来" class="headerlink" title="展望 Java 技术的未来"></a>展望 Java 技术的未来</h4><ul>
+<li>模块化</li>
+<li>混合语言</li>
+<li>多核并行</li>
+<li>进一步丰富的语法</li>
+<li>64 位虚拟机</li>
+</ul>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JVM/" class="article-tag-list-link color4">JVM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2018/03/26/《深入理解Java虚拟机》-走近-Java-读书笔记/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-Grails中神奇的HibernateCriteriaBuilder" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -969,13 +1092,13 @@ var _hmt = _hmt || [];
 <p><a href="https://spring.io/blog/2017/09/27/spring-tips-reactive-websockets-with-spring-framework-5" target="_blank" rel="noopener">https://spring.io/blog/2017/09/27/spring-tips-reactive-websockets-with-spring-framework-5</a></p>
 <p align="center"><br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fkc0herzdzj305k05k74s.jpg"><br></p>
 
-<ol>
+<ol start="2">
 <li>Spring AMQP 和 Spring Integration 开发组领导 Gary Russell 宣布发布 Spring AMQP 2.0.RC2:</li>
 </ol>
 <p><a href="https://spring.io/blog/2017/09/27/spring-amqp-2-0-release-candidate-2-available" target="_blank" rel="noopener">https://spring.io/blog/2017/09/27/spring-amqp-2-0-release-candidate-2-available</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc0jn30a3j305k05kjrw.jpg"><br></p>
 
-<ol>
+<ol start="3">
 <li>经过一段长的时间，Spring Framework 5.0.GA现在终于发布了！新版本集成了 Reactor 项目，包括响应式 web 运行时环境，Kotlin 扩展，以及全面基于 Java EE 7 和 Java 8。<br>新的发行版包含了太多的新东西,如果想要知道更多的消息，查看版本说明，然后查看更新内容:</li>
 </ol>
 <p><a href="https://spring.io/blog/2017/09/28/spring-framework-5-0-goes-ga" target="_blank" rel="noopener">https://spring.io/blog/2017/09/28/spring-framework-5-0-goes-ga</a></p>
@@ -985,79 +1108,79 @@ var _hmt = _hmt || [];
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc0ou0r54j305k05kq3i.jpg"><br></p>
 
 
-<ol>
+<ol start="4">
 <li>Spring Reactor 团队成员 Simon Baslé 宣布发布 Spring 和 Reactor 集成的新版本Reactor Bismuth。这个版本为 Spring Framework 5.0 奠定了基础，它自己本身也包含了非常多的功能:</li>
 </ol>
 <p><a href="https://spring.io/blog/2017/09/28/reactor-bismuth-is-out" target="_blank" rel="noopener">https://spring.io/blog/2017/09/28/reactor-bismuth-is-out</a></p>
 <p align="center"><br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fkc0qrajmyj305k05kmxn.jpg"><br></p>
 
-<ol>
+<ol start="5">
 <li>Spring Framework 5.0 版本更新了一些其他的项目，其中包括发布了 Spring Data Kay。自从 Spring Data 于2009年成立以来，这是 Spring Data 更新的最大版本！该新版本以 Spring Framework 5.0 ，Java 8 和 Java EE 7 作为基准。它包括一个改进的仓储(repository) API（完整支持<code>Optional&lt;T&gt;</code>），支持响应式数据访问（Cassandra，Couchbase，MongoDB和Redis），新发布版本新增 Spring Data Geode，使用非空注解并且优化了运行时检查空注解，通过 Kotlin 构造方法，支持 Kotlin 的 null安全和不可变数据类，支持兼容 Java 9，如果想了解更多请看 Spring Data Kay 文档:</li>
 </ol>
 <p><a href="https://spring.io/blog/2017/10/02/spring-data-release-train-kay-goes-ga" target="_blank" rel="noopener">https://spring.io/blog/2017/10/02/spring-data-release-train-kay-goes-ga</a></p>
 <p align="center"><br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fkc0vydg97j305k05kjrv.jpg"><br></p>
 
-<ol>
+<ol start="6">
 <li>Spring 消息中间件团队成员 Artem Bilan 宣布发布 Spring for Apache Kafka 2.0.GA。新版本包括支持 <code>Apache Kafka</code>，支持事务，消息头匹配，Apache Kafka 的<code>Streams</code> 支持，新的 <code>KafkaAdmin</code>，增加 <code>@KafkaListener</code> 和 <code>Consumer</code> 错误处理和群组支持的方案。它还支持使用 <code>@EmbeddedKafka</code> 进行测试:</li>
 </ol>
 <p><a href="https://spring.io/blog/2017/10/02/spring-for-apache-kafka-2-0-ga-available" target="_blank" rel="noopener">https://spring.io/blog/2017/10/02/spring-for-apache-kafka-2-0-ga-available</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc0xqsg4fj305k05kt96.jpg"><br></p>
 
-<ol>
+<ol start="7">
 <li>Spring Cloud 团队成员 Ryan Baxter 宣布发布 Spring Cloud Dalston SR4。新版本更新了 <code>Spring Cloud Contract</code>，<code>Spring Cloud Config</code>，<code>Spring Cloud Commons</code>，<code>Spring Cloud Netflix</code>和<code>Spring Cloud Sleuth</code>:</li>
 </ol>
 <p><a href="https://spring.io/blog/2017/10/03/spring-cloud-dalston-sr4-is-now-available" target="_blank" rel="noopener">https://spring.io/blog/2017/10/03/spring-cloud-dalston-sr4-is-now-available</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc0z0ocylj305k05kwez.jpg"><br></p>
 
-<ol>
+<ol start="8">
 <li>Spring REST Docs 开发领导者 Andy Wilkinson 宣布发布 Spring REST Docs 1.2.2.RELEASE 。这个维护版本包括一些错误修复和文档的改进，推荐大家升级:</li>
 </ol>
 <p><a href="https://spring.io/blog/2017/09/28/spring-rest-docs-1-2-2-release" target="_blank" rel="noopener">https://spring.io/blog/2017/09/28/spring-rest-docs-1-2-2-release</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc0zzayaoj305k05kmxn.jpg"><br></p>
 
-<ol>
+<ol start="9">
 <li>查看 Spring Framework 5 的全新的通过构造方法实现注解的实现:</li>
 </ol>
 <p><a href="https://github.com/spring-projects/spring-framework/commit/23497a7ece7aac1591187b46f4b601d2f48764e0" target="_blank" rel="noopener">https://github.com/spring-projects/spring-framework/commit/23497a7ece7aac1591187b46f4b601d2f48764e0</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc10ykgvnj305k05k0t8.jpg"><br></p>
 
-<ol>
+<ol start="10">
 <li>德语访谈中 Andreas Falk 提到的 Spring Framework 5.0 和 Spring Security 5.0 中的新功能:</li>
 </ol>
 <p><a href="https://jaxenter.de/spring-security-interview-falk-62685" target="_blank" rel="noopener">https://jaxenter.de/spring-security-interview-falk-62685</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc12codw3j305k05k0t7.jpg"><br></p>
 
-<ol>
+<ol start="11">
 <li>由 Zoltan Altfatter 发表的这篇文章介绍了如何在 Spring Integration 流程中引入一个新的JMS消息来启动 Spring Batch 作业:</li>
 </ol>
 <p><a href="http://blog.mimacom.com/blog/2017/09/29/trigger-a-spring-batch-job-with-a-jms-message/" target="_blank" rel="noopener">http://blog.mimacom.com/blog/2017/09/29/trigger-a-spring-batch-job-with-a-jms-message/</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc13cs9r1j305k05kq3g.jpg"><br></p>
 
-<ol>
+<ol start="12">
 <li>Rohit Kelapure: 为什么 Pivotal 公司的 Cloud Foundry 是运行 Spring Boot 应用程序的最佳选择？</li>
 </ol>
 <p><a href="https://twitter.com/rkela/status/914924780373073920" target="_blank" rel="noopener">https://twitter.com/rkela/status/914924780373073920</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc146vnlvj305k05kaah.jpg"><br></p>
 
-<ol>
+<ol start="13">
 <li>在这篇文章中，Cristina Negrean 介绍了如何使用 Spring Cloud Data Flow 进行实时分析：</li>
 </ol>
 <p><a href="https://cristinanegrean.github.io/2017/10/01/spring-cloud-dataflow-for-real-time-analytics-with-twitter-api" target="_blank" rel="noopener">https://cristinanegrean.github.io/2017/10/01/spring-cloud-dataflow-for-real-time-analytics-with-twitter-api</a></p>
 <p align="center"><br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkc157vcrij305k05kgm6.jpg"><br></p>
 
-<ol>
+<ol start="14">
 <li>Gabriela Motroc 在 JAXEnter 网上发布了一篇关于 Spring Framework 5 的新文章。非常多的功能都在文章包含了:</li>
 </ol>
 <p><a href="https://jaxenter.com/spring-framework-5-0-137677.html" target="_blank" rel="noopener">https://jaxenter.com/spring-framework-5-0-137677.html</a></p>
 <p align="center"><br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkc16p331kj305k05kwew.jpg"><br></p>
 
-<ol>
+<ol start="15">
 <li>Aboullaite Mohammed：使用 Elasticsearch 和 Kibana 和 Spring Boot 集合来监控一些指标:</li>
 </ol>
 <p><a href="https://aboullaite.me/spring-boot-elastic-kibana/" target="_blank" rel="noopener">https://aboullaite.me/spring-boot-elastic-kibana/</a></p>
 <p align="center"><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkc17rvltdj305k05kmxl.jpg"><br></p>
 
-<ol>
+<ol start="16">
 <li>Ordina JWorks：使用 Spring Cloud 来对微服务进行安全防护:</li>
 </ol>
 <p><a href="https://ordina-jworks.github.io/microservices/2017/09/26/Secure-your-architecture-part1.html" target="_blank" rel="noopener">https://ordina-jworks.github.io/microservices/2017/09/26/Secure-your-architecture-part1.html</a></p>
@@ -1097,101 +1220,6 @@ var _hmt = _hmt || [];
               
                 <p class="article-more-link">
                   <a class="article-more-a" href="/2017/10/09/Spring官方周报20171003/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
-    <article id="post-Grails中序列化json出现异常数据-md" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/29/Grails中序列化json出现异常数据-md/">Grails中序列化json出现异常数据</a>
-    </h1>
-  
-
-          
-            <a href="/2017/09/29/Grails中序列化json出现异常数据-md/" class="archive-article-date">
-  	<time datetime="2017-09-29T09:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <p><a href="https://github.com/jgritman/httpbuilder" target="_blank" rel="noopener">Httpbuilder</a> 是一个基于groovy简单的HTTP客户端工具。它基本支持常用的几种HTTP请求方式(GET,PUT,POST,DELETE,HEAD,PATCH)。</p>
-<p>发生解析url值异常项目环境：<br>| Grails Version: 3.0.7<br>| Groovy Version: 2.4.4<br>| JVM Version: 1.8.0_121</p>
-<p>由于是使用post方式给对方推送数据，所以我们先模拟一个请求服务，使用grails快速创建一个项目，然后编写一个方法，用于处理post请求，在后端输出接收到的具体数据是什么。步骤如下：</p>
-<p>1.进入我的目录<code>/Users/bwh/study/grails</code> 生成一个grails的项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/bwh/study/grails &amp;&amp; cd $_ &amp;&amp; grails create-app test111</span><br></pre></td></tr></table></figure></p>
-<p>使用grails脚手架生成项目，如果没有产生其他异常，一般情况下我们会得到如下提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">| Application created at /Users/bwh/study/grails/test111</span><br></pre></td></tr></table></figure></p>
-<p>2.进入刚才生成的项目中，由于本地已经使用了8080端口，修改grails项目的默认端口：<br>在<code>/Users/bwh/study/grails/test111/grails-app/conf/application.yml</code> 修改默认的8080端口，修改如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">...</span><br><span class="line"># 修改项目默认端口8080为7070</span><br><span class="line">server:</span><br><span class="line">  port: 7799</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>3.打开项目，在当前项目的controllers目录下新建一个测试Controller，暂时叫做TestController，使用如下脚本进行生成相应的Controller文件，其当前目录结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">├── grails-app</span><br><span class="line">│   ├── assets</span><br><span class="line">│   │   ├── images</span><br><span class="line">│   │   ├── javascripts</span><br><span class="line">│   │   └── stylesheets</span><br><span class="line">│   ├── conf</span><br><span class="line">│   │   ├── application.yml</span><br><span class="line">│   │   ├── logback.groovy</span><br><span class="line">│   │   └── spring</span><br><span class="line">│   ├── controllers</span><br><span class="line">│   │   ├── TestController.groovy</span><br><span class="line">│   │   └── UrlMappings.groovy</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>4.还原现场,在刚才新建的TestController中添加此方法，用于接收对方传递过来的数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def postReport() &#123;</span><br><span class="line">        println params</span><br><span class="line">        def jsonObject = request.JSON</span><br><span class="line">        println &quot;jsonObject: $&#123;jsonObject&#125;&quot;</span><br><span class="line">        println &quot;jsonObject String: $&#123;jsonObject as JSON&#125;&quot;</span><br><span class="line">        render([code: 10000, msg: &quot;测试获取数据!&quot;, data: params] as grails.converters.JSON)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>5.启动项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grails run-app</span><br></pre></td></tr></table></figure></p>
-<p>用于接收post请求的测试服务已经启动完毕，接下来修改响应的推送地址进行发送数据即可。<br>相关测试代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#Test.groovyimport groovyx.net.http.ContentType</span><br><span class="line">import groovyx.net.http.HTTPBuilder</span><br><span class="line">import static groovyx.net.http.Method.POST</span><br><span class="line">def baseURL = &quot;http://localhost:7799/test/postReport&quot;</span><br><span class="line">def data = [&quot;url&quot;: &quot;http://$&#123;baseURL&#125;/test/postReport&quot;]</span><br><span class="line">def client = new HTTPBuilder(baseURL)</span><br><span class="line">client.request(POST, ContentType.JSON) &#123;</span><br><span class="line">    body = data</span><br><span class="line">    response.success = &#123; resp, json -&gt;</span><br><span class="line">        println &quot;resp: $&#123;resp&#125;&quot;</span><br><span class="line">        println &quot;success data: $&#123;json&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    response.failure = &#123; resp, json -&gt;</span><br><span class="line">        println &quot;resp:$&#123;resp&#125;&quot;</span><br><span class="line">        println &quot;failure data: $&#123;json&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>运行测试代码后，发现测试服务端收到如下结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jsonObject String: &#123;&quot;url&quot;:&#123;&quot;valueCount&quot;:1,&quot;strings&quot;:[&quot;http://&quot;,&quot;/test/postReport&quot;],&quot;bytes&quot;:[104,116,116,112,58,47,47,104,116,116,112,58,47,47,108,111,99,97,108,104,111,115,116,58,55,55,57,57,47,116,101,115,116,47,112,111,115,116,82,101,112,111,114,116,47,116,101,115,116,47,112,111,115,116,82,101,112,111,114,116],&quot;values&quot;:[&quot;http://localhost:7799/test/postReport&quot;]&#125;&#125;</span><br></pre></td></tr></table></figure>
-<p>可以发现url是被转换成一个字符数组了，为什么呢？<br>通过跟踪源码，发现它的body数据构造位于此方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">protected Object doRequest( URI uri, Method method, Object contentType, Closure configClosure )</span><br><span class="line">            throws ClientProtocolException, IOException &#123;</span><br><span class="line">        HttpRequestBase reqMethod;</span><br><span class="line">        try &#123; reqMethod = method.getRequestType().newInstance();</span><br><span class="line">        // this exception should reasonably never occur:</span><br><span class="line">        &#125; catch ( Exception e ) &#123; throw new RuntimeException( e ); &#125;</span><br><span class="line">        reqMethod.setURI( uri );</span><br><span class="line">        RequestConfigDelegate delegate = new RequestConfigDelegate( reqMethod, contentType,</span><br><span class="line">                this.defaultRequestHeaders,</span><br><span class="line">                this.defaultResponseHandlers );</span><br><span class="line">        configClosure.setDelegate( delegate );</span><br><span class="line">        configClosure.setResolveStrategy( Closure.DELEGATE_FIRST );</span><br><span class="line">        configClosure.call( reqMethod );</span><br><span class="line">        return this.doRequest( delegate );</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>其中函数执行到configClosure.call( reqMethod )方法时，其代理对象的body值为GStringImpl对象。由此可以判断，对map中的对象类型数据没有进行转换，因此出现了以上问题。</p>
-<p>解决办法，使用groovy自带的json序列化类JsonBuilder进行将map对象先序列化成字符串然后再传递即可。<br>修改后测试代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import groovy.json.JsonBuilder</span><br><span class="line">import groovyx.net.http.ContentType</span><br><span class="line">import groovyx.net.http.HTTPBuilder</span><br><span class="line">import static groovyx.net.http.Method.POST</span><br><span class="line">def baseURL = &quot;http://localhost:7799/test/postReport&quot;</span><br><span class="line">def data = [&quot;link&quot;: &quot;http://$&#123;baseURL&#125;/test/postReport&quot;]</span><br><span class="line">def dataString = new JsonBuilder(data).toString()</span><br><span class="line">def client = new HTTPBuilder(baseURL)</span><br><span class="line">client.request(POST, ContentType.JSON) &#123;</span><br><span class="line">    body = dataString</span><br><span class="line">    response.success = &#123; resp, json -&gt;</span><br><span class="line">        println &quot;resp: $&#123;resp&#125;&quot;</span><br><span class="line">        println &quot;success data: $&#123;json&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    response.failure = &#123; resp, json -&gt;</span><br><span class="line">        println &quot;resp:$&#123;resp&#125;&quot;</span><br><span class="line">        println &quot;failure data: $&#123;json&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">grails, JsonBuilder</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/grails/" class="article-tag-list-link color2">grails</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/09/29/Grails中序列化json出现异常数据-md/">
                     展开全文 >></a>
                 </p>
                 
@@ -1436,6 +1464,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">rxjs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">

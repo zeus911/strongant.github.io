@@ -203,6 +203,96 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用springdata操作es出错org-elasticsearch-client-transport-NoNodeAvailableException" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/21/使用springdata操作es出错org-elasticsearch-client-transport-NoNodeAvailableException/">使用springdata操作es出错org.elasticsearch.client.transport.NoNodeAvailableException</a>
+    </h1>
+  
+
+          
+            <a href="/2017/07/21/使用springdata操作es出错org-elasticsearch-client-transport-NoNodeAvailableException/" class="archive-article-date">
+  	<time datetime="2017-07-21T01:48:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <p>  之前的项目中使用的是http-client操作es，比较轻量级。目前为了学习下springdata，使用Java API 的方式来操作ES，但是在引入SpringData的es模块依赖后，操作es并未成功，出现以下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [&#123;#transport#-1&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125;]</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：</strong>如果你下载elasticsearch的压缩包安装的话，可能不会出现该问题！因为es默认的配置文件cluster.name是elasticsearch。但是奇葩的是使用brew安装es之后，默认的elasticsearch.yml的配置项成了这样：cluster.name: elasticsearch_bwh，就是这个原因导致了这个问题的产生，项目启动后控制台一直抛这个错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transport#-1&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125; not part of the cluster Cluster [Assassin], ignoring...</span><br></pre></td></tr></table></figure></p>
+<p>当执行添加操作时，提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [&#123;#transport#-1&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125;]</span><br></pre></td></tr></table></figure></p>
+<p>最后需要注意的是，如果你修改了es默认的集群名称，则需要在src/main/resources/application.properties配置文件中进行指定：</p>
+<p>spring.data.elasticsearch.clusterName=elasticsearch_bwh<br>通过源码org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchProperties可以看到，默认的<br>clusterName为elasticsearch。</p>
+<p>希望可以帮助遇到此类问题的同学。</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringData</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Elasticsearch</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/SpringData/" class="article-tag-list-link color1">SpringData</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/07/21/使用springdata操作es出错org-elasticsearch-client-transport-NoNodeAvailableException/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-hexo将多说替换为畅言" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -233,16 +323,16 @@ var _hmt = _hmt || [];
 <li>如果你没有畅言的账号，则首先去畅言的官网进行注册账号：<br>畅言网址: <a href="http://changyan.kuaizhan.com/" target="_blank" rel="noopener">http://changyan.kuaizhan.com/</a></li>
 </ol>
 <p><img src="/images/reg_changyan.png" alt=""></p>
-<ol>
+<ol start="2">
 <li>如果你已经注册过畅言的账号了，那么请直接登录即可；</li>
 <li>注册登录成功之后，点击进入后台，如图,可以看到已经有APP ID和APP KEY，这两个字符串，等会在配置的时候需要：</li>
 </ol>
 <p><img src="/images/login-changyan.png" alt=""></p>
-<ol>
+<ol start="4">
 <li>由于我使用的是hexo的Yilia主题，这里以Yilia主题为主，进行下面的配置，其他主题类似。<br>在畅言后台找到<strong> 安装畅言 </strong> 点击展开之后，点击 <strong> 通用代码安装 </strong>，然后点击右边的复制代码，如图：</li>
 </ol>
 <p><img src="/images/copy-config.png" alt=""></p>
-<ol>
+<ol start="5">
 <li><p>然后编辑你hexo目录下的themes/yilia/layout/_partial/post/duoshuo.ejs文件，将duoshuo.ejs中原来的内容全部删除，使用刚才拷贝的代码替换，替换后的样例如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 畅言评论框 start --&gt;</span><br><span class="line">&lt;div id=&quot;SOHUCS&quot; sid=&quot;&lt;%=title %&gt;&quot; style=&quot;padding: 0px 30px 0px 46px;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;!-- 畅言评论框 end --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">(function()&#123; </span><br><span class="line">var appid = &apos;你的appid&apos;; </span><br><span class="line">var conf = &apos;你的app key&apos;; </span><br><span class="line">var width = window.innerWidth || document.documentElement.clientWidth; </span><br><span class="line">if (width &lt; 960) &#123; </span><br><span class="line">window.document.write(&apos;&lt;script id=&quot;changyan_mobile_js&quot; charset=&quot;utf-8&quot; type=&quot;text/javascript&quot; src=&quot;https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=&apos; + appid + &apos;&amp;conf=&apos; + conf + &apos;&quot;&gt;&lt;\/script&gt;&apos;); &#125; else &#123; var loadJs=function(d,a)&#123;var c=document.getElementsByTagName(&quot;head&quot;)[0]||document.head||document.documentElement;var b=document.createElement(&quot;script&quot;);b.setAttribute(&quot;type&quot;,&quot;text/javascript&quot;);b.setAttribute(&quot;charset&quot;,&quot;UTF-8&quot;);b.setAttribute(&quot;src&quot;,d);if(typeof a===&quot;function&quot;)&#123;if(window.attachEvent)&#123;b.onreadystatechange=function()&#123;var e=b.readyState;if(e===&quot;loaded&quot;||e===&quot;complete&quot;)&#123;b.onreadystatechange=null;a()&#125;&#125;&#125;else&#123;b.onload=a&#125;&#125;c.appendChild(b)&#125;;loadJs(&quot;https://changyan.sohu.com/upload/changyan.js&quot;,function()&#123;window.changyan.api.config(&#123;appid:appid,conf:conf&#125;)&#125;); &#125; &#125;)(); &lt;/script&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -342,7 +432,7 @@ var _hmt = _hmt || [];
 <p>接下来使用常规的递归方式实现（Java），则可以得到以下程序：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Java普通递归实现阶乘</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 传递的大于0的正整数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 该数字的阶乘    如：传递3 则计算 1 * 2 * 3 =  6</span></span><br><span class="line"><span class="comment">     * 递归的核心思想自我理解： 先入栈计算直到递归终止   然后出栈 对每个栈中的值进行计算  最后得到结果</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> n * factorial(n - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <p><center><img src="/images/Java递归调用示意图.png" alt=""></center></p>
 <p><center>递归调用示意图</center><br>此递归的计算原理主要是先申请栈幁1到栈幁n，直到找到递归终止的条件，然后开始汇总结果，最后出栈，返回结果，这种递归算法方式有一个弊端，就是在计算的过程中当n很大的情况下会出现栈溢出的错误（java.lang.StackOverflowError），可以使用尾递归的方式进行优化，比如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 使用尾递归进行计算阶乘</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> n      需要计算的n的阶乘</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> result 返回n的阶乘结果  如： 传递3  则计算 1 * 2 *3 = 6</span></span><br><span class="line"><span class="comment">    *               计算过程如下： tailFactorial(3,1)</span></span><br><span class="line"><span class="comment">    *               = tailFactorial(2,3*1)</span></span><br><span class="line"><span class="comment">    *               = tailFactorial(1,2*3*1)</span></span><br><span class="line"><span class="comment">    *               = tailFactorial(1,6)</span></span><br><span class="line"><span class="comment">    *               = 6</span></span><br><span class="line"><span class="comment">    *               揭秘：只使用一个栈幁就可以搞定计算</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> 返回n的阶乘</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">tailFactorial</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> result)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> result;</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> tailFactorial(n - <span class="number">1</span>, n * result);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<ol>
+<ol start="2">
 <li>计算a,b（a,b为非负整数）的最大公约数？<br>此题目可以使用欧几里得算法进行解答，实现代码如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 欧几里得算法计算两个数的最大公约数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> p 需要计算的数a</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> q 需要计算的数b</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回a，b的最大公约数  a,b 是大于0 的正整数</span></span><br><span class="line"><span class="comment">     * 算法描述： 计算两个非负整数的最大公约数： 若q是0，则最大公约数为p。否则，将p除以q得到余数r，p和q的最大公约数则为q和r的最大公约数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">greatestCommonDivisors</span><span class="params">(<span class="keyword">int</span> p , <span class="keyword">int</span> q)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(q==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> r = p % q;</span><br><span class="line">        <span class="keyword">return</span> greatestCommonDivisors(q,r);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -1222,6 +1312,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">rxjs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
