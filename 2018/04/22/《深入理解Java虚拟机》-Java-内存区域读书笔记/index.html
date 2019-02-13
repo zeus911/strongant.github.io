@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <meta name="baidu-site-verification" content="fuAHxSTCv4" />
+  <meta name="baidu-site-verification" content="fuAHxSTCv4">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://baiwenhui.com">
   <title>《深入理解Java虚拟机》- Java 内存区域读书笔记 | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://on-img.com/chart_image/5ab5164fe4b02cee4ce8d3bd.png">
 <meta property="og:image" content="http://p67ct12ik.bkt.clouddn.com/JVM-runtime-data-area.jpg">
 <meta property="og:image" content="http://p67ct12ik.bkt.clouddn.com/JVM-Heap.gif">
-<meta property="og:updated_time" content="2018-07-10T14:32:54.177Z">
+<meta property="og:updated_time" content="2019-02-13T01:49:15.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《深入理解Java虚拟机》- Java 内存区域读书笔记">
 <meta name="twitter:description" content="概述  对于 Java 程序员来说，在我们平时的编码过程中，并不会手动的去分配内存和回收内存，因为对于内存这块的处理都是依赖于 JVM 的，这样会导致一个问题：就是如果我们对 JVM 的内存管理机制不是特别熟悉的前提下，如果程序在内存这块出现了莫名的问题，此时处理这些问题就是一个灾难，因此，对于 Java 内存区域这块需要我们有一个清晰的认知，这样才可以在出现问题是根据 JVM 内存管理这块有好的">
@@ -68,7 +68,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -209,8 +209,7 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-《深入理解Java虚拟机》-Java-内存区域读书笔记" class="article article-type-post "
-  itemscope itemprop="blogPost">
+            <article id="post-《深入理解Java虚拟机》-Java-内存区域读书笔记" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -402,12 +401,10 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 strongant
+    		&copy; 2019 strongant
     	</div>
-     <script async
-src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span
-id="busuanzi_value_site_pv"></span>次</span>
+     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
     <span id="busuanzi_container_page_pv">
   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
 </span>
@@ -489,6 +486,10 @@ id="busuanzi_value_site_pv"></span>次</span>
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JDK,JAVA,OpenJDK,OracleJDK</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
@@ -683,7 +684,7 @@ id="busuanzi_value_site_pv"></span>次</span>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             2、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
