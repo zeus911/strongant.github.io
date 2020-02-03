@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="fuAHxSTCv4">
   
@@ -203,7 +203,83 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Mac下使用jenvs安装Java9" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-groovy中的each坑小记" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/26/groovy中的each坑小记/">groovy中的each坑小记</a>
+    </h1>
+  
+
+          
+            <a href="/2017/10/26/groovy中的each坑小记/" class="archive-article-date">
+  	<time datetime="2017-10-26T07:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><code>Java</code>编程中，如果要跳出<code>for</code>循环，直接使用<code>break</code>即可。但是在<code>groovy</code>的<code>each</code>方法中，如果使用<code>break</code>，则程序在运行时就会报如下错误：<code>the break statement is only allowed inside loops or switches。</code></p>
+<h3 id="如何跳出each循环呢？"><a href="#如何跳出each循环呢？" class="headerlink" title="如何跳出each循环呢？"></a>如何跳出each循环呢？</h3><p>  <code>groovy</code>的<code>each</code>方法是一个闭包操作，如果想跳出循环，则可以使用<code>return true</code>。 但是存在一个问题：就是这里的<code>return true</code>并不完全等价于<code>java</code> <code>for</code>循环中的<code>break</code>操作。它更像是<code>java</code> <code>for</code>循环中的<code>continue</code>操作，跳出当前循环，继续下一次循环。至于这里的原因，有待研究。</p>
+<h3 id="诡异的产生"><a href="#诡异的产生" class="headerlink" title="诡异的产生"></a>诡异的产生</h3><p>  当使用“==”操作符号进行比较时，<code>return true</code>等价于<code>java</code> <code>for</code>循环中的<code>continue</code>，但如果是“&gt;=” 操作符的话，等价于<code>java</code> <code>for</code>循环中的<code>break</code>操作。测试代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">def a = [1, 2, 3, 4]</span><br><span class="line"></span><br><span class="line">println &quot;each loop break use groovy&quot;</span><br><span class="line"></span><br><span class="line">a.each &#123;</span><br><span class="line">    // groovy each 循环中的return true类似于java for循环中的continue</span><br><span class="line">    // 当遍历的元素等于2时，跳过当前元素，继续执行, 如果写&gt;= 时，的确也等价于break</span><br><span class="line">    if (it &gt;= 2) return true // break</span><br><span class="line">    println it  // do the stuff that you wanted to before break</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">println &quot;for loop break use java&quot;</span><br><span class="line"></span><br><span class="line">for (int i = 0; i &lt; a.size(); i++) &#123;</span><br><span class="line">    if (a[i] == 2) &#123;</span><br><span class="line">        // java for 循环中的break直接跳出当前循环</span><br><span class="line">        // 当遍历的元素等于2时，直接跳出循环</span><br><span class="line">        break</span><br><span class="line">    &#125;</span><br><span class="line">    println a[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这便是<code>groovy</code>中的<code>each</code>闭包方法的诡异之处，奇怪的是，如果你对集合元素使用<code>find</code>方法遍历，当比较操作符是“==”时，并不会发生以上的问题，测试代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def a = [1, 2, 3, 4, 5, 6, 7]</span><br><span class="line"></span><br><span class="line">a.find &#123;</span><br><span class="line">    if (it == 3) return true // break 此时的break等价于java for循环中的break</span><br><span class="line">    println it  </span><br><span class="line">    return false // 继续循环</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p>  当对遍历的元素进行迭代，并且在迭代的过程中需要跳出当前循环的，推荐使用<code>groovy</code>的<code>find</code>方法或者使用<code>java</code>的<code>for</code>循环，不要使用<code>groovy</code>的<code>each</code>方法，这样就可以保证流程控制没有错误。</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/10/26/groovy中的each坑小记/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
+    <article id="post-Mac下使用jenvs安装Java9" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -293,7 +369,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-阿里巴巴Java开发规约的IDEA插件使用" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-阿里巴巴Java开发规约的IDEA插件使用" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -327,19 +404,19 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Settings &gt;&gt; Plugins &gt;&gt; Browse repositories</span><br></pre></td></tr></table></figure>
 <p>输入 Alibaba 搜索一下便可以看到对应插件了，点击安装等待安装完成。</p>
 <p>如图:</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwg4vasij30qf0nqq4t.jpg" alt=""></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwg4vasij30qf0nqq4t.jpg" alt></p>
 <p>这里写图片描述</p>
 <h1 id="Eclipse的安装方式："><a href="#Eclipse的安装方式：" class="headerlink" title="Eclipse的安装方式："></a>Eclipse的安装方式：</h1><p>Eclipse版插件支持4.2（Juno，JDK1.8+）及以上版本，提供Update Site，通过</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Help &gt;&gt; Install New Software</span><br></pre></td></tr></table></figure>
 <p>然后输入 <code>https://p3c.alibaba.com/plugin/eclipse/update</code>即可看到安装列表，安装即可。</p>
 <p>插件的更新，可以通过 <code>Help&gt;&gt;CheckforUdates</code> 进行新版本检测。</p>
 <h1 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h1><p>呵呵 右键，，看图 –</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkju0ntjhtj30lz0i3wgp.jpg" alt=""></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkju13tgw5j30yg0hoaco.jpg" alt=""></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkju1kc4h3j30jg0segpw.jpg" alt=""></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkju0ntjhtj30lz0i3wgp.jpg" alt></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkju13tgw5j30yg0hoaco.jpg" alt></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkju1kc4h3j30jg0segpw.jpg" alt></p>
 <h2 id="还有自动提示的效果"><a href="#还有自动提示的效果" class="headerlink" title="还有自动提示的效果"></a>还有自动提示的效果</h2><p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="img"></p>
 <p>可以说是非常棒了</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwh9h5qxj30yg0p0djz.jpg" alt=""></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwh9h5qxj30yg0p0djz.jpg" alt></p>
 <h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a><strong>推荐阅读</strong></h2><ul>
 <li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484377&amp;idx=1&amp;sn=1ad98afc78d5cc11a07410e9cf0a3c9c&amp;chksm=9bd0ae41aca72757e4599d71717ed817a77b4e9a10c2b40f54793f1d5b0a95fd144bb48ae21e&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">程序员你为什么这么累【续】：如何应对需求变更</a></li>
 <li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484376&amp;idx=1&amp;sn=957c161c2a390347ba53c26f118475f1&amp;chksm=9bd0ae40aca72756a7ade252454a8658d082b331a191d980c24a7f40ce82eab0dbee020fb5b2&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Spring4All社区正式招募Spring Guides翻译小分队~</a></li>
@@ -349,8 +426,8 @@ var _hmt = _hmt || [];
 </ul>
 <p>长按指纹</p>
 <p>一键关注</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkjwge7mvqj307607674v.jpg" alt=""></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkjwgjluxlj304603saa9.jpg" alt=""></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkjwge7mvqj307607674v.jpg" alt></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkjwgjluxlj304603saa9.jpg" alt></p>
 
                       
 
@@ -406,7 +483,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Spring官方周报20171003" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Spring官方周报20171003" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -590,7 +668,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Grails中序列化json出现异常数据-md" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Grails中序列化json出现异常数据-md" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -684,7 +763,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Spring官方周报20170926" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Spring官方周报20170926" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -813,7 +893,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-算法中的反转" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-算法中的反转" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -907,7 +988,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-使用Httpie来替代CURL-1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-使用Httpie来替代CURL-1" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -987,7 +1069,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-官方Spring周报-20170905" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-官方Spring周报-20170905" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -1095,7 +1178,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -1198,76 +1282,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-HTTP状态码图示" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/13/HTTP状态码图示/">HTTP状态码图示</a>
-    </h1>
-  
-
-          
-            <a href="/2017/08/13/HTTP状态码图示/" class="archive-article-date">
-  	<time datetime="2017-08-13T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <p>这里总结下我们日常开发中常用的HTTP状态码，分享一个老外对HTTP状态码形象化用图片表示的网站：<a href="https://http.cat/" target="_blank" rel="noopener">https://http.cat/</a></p>
-<p>总结如下：</p>
-<center><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a1juo9j30ee0bj3zw.jpg" alt=""><br><strong>表示服务器已经接收到了请求头，并且客户端应该继续发送请求体。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a0xeytj30dw0b40t4.jpg" alt=""><br><strong>表示请求方已经要求服务器切换协议，并且服务器已经接受并会进行处理。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii4a0l292j30dk0b4wfc.jpg" alt=""><br><strong>HTTP 请求成功的标准应答。实际的应答内容由请求使用的方法来决定。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii4a01i3rj30do0b4gmt.jpg" alt=""><br><strong>请求已经被接受，并且请求所对应的资源已经被创建。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49zt676j30dw0b4q3l.jpg" alt=""><br><strong>请求已被接受，尚未完成处理，也有可能会被拒绝。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49zmp71j30dw0b474u.jpg" alt=""><br><strong>在成功处理请求后服务器并没有返回任何实体内容。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49zfw3vj30dw0b4aak.jpg" alt=""><br><strong>依照子请求的数量的不同，消息体包含不同的响应代码。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49z28hnj30b40dwjs1.jpg" alt=""><br><strong>表示被请求的资源可以提供多种选项让客户端进行选择</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii49yvwcaj30dw0b4t9b.jpg" alt=""><br><strong>该请求应当被定向到给定的URI（统一资源定位符）</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49yrg7qj30dl0b40u3.jpg" alt=""><br><strong>这是一个工业实践和标准相互矛盾的例子。一些Web应用和框架会使用302状态码</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii49yl9uuj30dw0b4q3h.jpg" alt=""><br><strong>对应当前请求的响应可以使用GET方法从另一个URI获取</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49yc066j30b40dwwfb.jpg" alt=""><br><strong>表示资源自上次请求以来没有被改变。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii49y6afmj30dw0b4mxp.jpg" alt=""><br><strong>（译注：被请求的资源必须通过指定的代理才能被访问） 大多数HTTP客户端不会正确响应这个状态码，主要是出于安全性的原因</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii49y3ty9j30b40dwq3l.jpg" alt=""><br><strong>在这种情况下，请求会从另外的URI响应但是未来的请求仍会使用原始的URI</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45xt3cpj30dw0b43zb.jpg" alt=""><br><strong>因为错误的语法，请求不能完成</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45xk04fj30df0b43zy.jpg" alt=""><br><strong>当需要授权，但授权失败或还没有授权时返回的状态码</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45xd1i2j30dw0b4aav.jpg" alt=""><br><strong>该状态码是为了将来可能的需求而预留的。这个代码通常不使用，但是其最初的意图是可以被某种电子货币所使用。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45x75byj30dr0b4aaw.jpg" alt=""><br><strong>请求有效，但是服务器拒绝响应它。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45wzw3qj30dt0b4q4o.jpg" alt=""><br><strong>请求的资源不能找到，但是将来也许可用。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45wvyv0j30dm0b4aaz.jpg" alt=""><br><strong>请求某资源时使用的请求方法不能被该资源所支持。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45wlh8kj30de0b475n.jpg" alt=""><br><strong>被请求资源能够产生的内容不满足请求头中指定的类型。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45w9496j30dr0b4t9z.jpg" alt=""><br><strong>服务器等待请求超时</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45vuqk7j30dr0b4t9z.jpg" alt=""><br><strong>因为请求中存在冲突导致请求无法被处理</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45vcm96j30dw0b4mxq.jpg" alt=""><br><strong>被请求的资源已不可用，同时后续也不再可用。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45uwpztj30dw0b4gma.jpg" alt=""><br><strong>请求所对应的资源需要指明长度，但请求中并没有包含长度。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ug6rkj30dk0b40tl.jpg" alt=""><br><strong>其请求数据实体过大，超过服务器处理能力。</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fii45u41r2j309h0dw0tq.jpg" alt=""><br><strong>URI过长，服务器不能处理</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45tomc8j30dw0b4dgb.jpg" alt=""><br><strong>客户端请求部分文件，但是服务器并不能提供这个范围值。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45tgczyj30di0b4jse.jpg" alt=""><br><strong>服务器不能满足请求头重指定的要求。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45t9fuzj30dw0b4t93.jpg" alt=""><br><strong>在实际HTTP服务器中不会实现该状态码</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45t5bqvj30b40dw0ta.jpg" alt=""><br><strong>请求格式正确但是因为存在语意错误无法响应。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45szla3j30dw0b4758.jpg" alt=""><br><strong>当前资源被上锁</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ssuddj30dw0b4mxx.jpg" alt=""><br><strong>因为之前的请求失败而导致了本次请求失败</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45sob45j30dw0b43za.jpg" alt=""><br><strong>在WebDav Advanced Collections 草案中定义</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45sg74yj30dk0b4wfm.jpg" alt=""><br><strong>客户端应该切换到不同的协议</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45s8zp7j30dh0b4gn4.jpg" alt=""><br><strong>用户在指定时间内发送的请求过多。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45s1jgbj30dm0b4jss.jpg" alt=""><br><strong>因为请求中的单个域过大、或者全部域全加起来过大。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45rv5zjj30ds0b4wfo.jpg" alt=""><br><strong>在Nginx记录中使用，表示服务器没有向客户端返回信息并且已经关闭了连接</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45ropewj30dw0b4gm5.jpg" alt=""><br><strong>微软所扩展的一个状态码</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45ri7x7j30dd0b4abj.jpg" alt=""><br><strong>当没有其他更加确切的信息可以给出时，给出的一个一般性错误信息。</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45rd75fj30da0b4wff.jpg" alt=""><br><strong>作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45r4qr0j30dw0b4mxs.jpg" alt=""><br><strong>服务器当前不可用。</strong><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fii45qt3zuj30dw0b40tg.jpg" alt=""><br><strong>请求的透明内容协商导致循环引用</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45qnic4j30da0b40tl.jpg" alt=""><br><strong>服务器无法存储完成请求所必须的内容。</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45qi54qj30de0b43za.jpg" alt=""><br><strong>服务器在处理请求时发现一个无限循环</strong><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fii45qbsaoj30b40dwgm6.jpg" alt=""><br><strong>尽管很多服务器使用该协议，但其并没有在任何RFC中说明</strong><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fii45q4f5qj30df0b4t9r.jpg" alt=""><br><strong>这个状态码没有在任何RFC中说明，但微软公司在用。</strong><br></center>
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/08/13/HTTP状态码图示/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1282,10 +1296,12 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 strongant
+    		&copy; 2020 strongant
     	</div>
-     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+     <script async
+src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span
+id="busuanzi_value_site_pv"></span>次</span>
     <span id="busuanzi_container_page_pv">
   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
 </span>
@@ -1378,6 +1394,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分布式，CAP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java,ES,大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1565,7 +1585,7 @@ var _hmt = _hmt || [];
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             2、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

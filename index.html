@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="fuAHxSTCv4">
   
@@ -203,7 +203,86 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Oracle-JDK-和-OpenJDK-之间的区别" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-ES数十亿数据量级的场景下如何优化查询性能" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/03/ES数十亿数据量级的场景下如何优化查询性能/">ES数十亿数据量级的场景下如何优化查询性能</a>
+    </h1>
+  
+
+          
+            <a href="/2020/02/03/ES数十亿数据量级的场景下如何优化查询性能/" class="archive-article-date">
+  	<time datetime="2020-02-03T01:57:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <h2 id="ES-客户端读取数据的流程"><a href="#ES-客户端读取数据的流程" class="headerlink" title="ES 客户端读取数据的流程"></a>ES 客户端读取数据的流程</h2><p>客户端 -&gt; shard -&gt; filesystem cache -&gt; 磁盘文件</p>
+<h2 id="海量数据检索查询性能优化思路"><a href="#海量数据检索查询性能优化思路" class="headerlink" title="海量数据检索查询性能优化思路"></a>海量数据检索查询性能优化思路</h2><p>如果内存足够大， filesystem cache 会缓存，如果查询走filesystem cache 则速度耗时在毫秒级别，如果查询请求走磁盘文件，则最少查询耗时都在秒级别。</p>
+<p>如果整个磁盘上索引数据文件在3台机器上，一共占用了1T的磁盘容量，ES数据量是1T，每台机器的数据量是300G。ES性能最佳情况，你的机器内存至少可以容纳总数据量的一半。</p>
+<p>生产环境试验，最好用ES存储少量的数据，用来搜索的那些索引，内存留给filesystem cache ， 100G。数据量控制在100G以内，相当于查询的数据几乎全部走内存来搜索，性能非常高，几乎搜索结果在1秒以内就可以出结果。</p>
+<p>另外还有注意的一点，就是在ES中真正存储的记录字段都应该是你需要查询的字段，不应该把整条记录中的所有字段都放在ES中，如果全部字段都放到ES中，则会导致你机器的filesystem chche 占据空间很大，很多记录其实查询都要走硬盘文件，这样会导致查询性能会很低。</p>
+<h2 id="数据预热"><a href="#数据预热" class="headerlink" title="数据预热"></a>数据预热</h2><p>后台系统自动搜索一下热数据，提前让数据加载到filesystem cache 中，当客户端查询时，直接从 filesystem cache中找到，性能非常高。</p>
+<h2 id="冷热分离"><a href="#冷热分离" class="headerlink" title="冷热分离"></a>冷热分离</h2><p>类似于MySQL的冷热分离，将大量访问不频繁的数据放到单独的一个索引。将查询频繁的放到一个索引，提高查询的性能。</p>
+<h2 id="模型设计"><a href="#模型设计" class="headerlink" title="模型设计"></a>模型设计</h2><p>写入索引的时候，就将关联的数据直接写入进去，不要在搜索的时候进行join，因为ES中的复杂查询都很耗费性能。</p>
+<h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><p>分布式的，查100页的10条数据，必须从每个shard，都查询一批数据过来，然后拿过来在内存里面分页，页翻得越深，基本查询性能很差。优化策略：1.不允许深度分页 2.类似于下拉分页的话，可以使用 scroll api 进行查询。它的分页原理，会一次性生成快照，然后通过游标一次一次往下翻，无论翻多少页，性能就是毫秒级的，scroll 智能一页一页往后翻，天然适合微博，往下拉的时候。</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java,ES,大数据</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2020/02/03/ES数十亿数据量级的场景下如何优化查询性能/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
+    <article id="post-Oracle-JDK-和-OpenJDK-之间的区别" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -380,7 +459,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-CAP-理论" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-CAP-理论" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -404,7 +484,7 @@ var _hmt = _hmt || [];
 
         <div class="article-entry" itemprop="articleBody">
           
-                    <center><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1ft41hpg5zoj306s05rwee.jpg" alt=""><br></center>
+                    <center><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1ft41hpg5zoj306s05rwee.jpg" alt><br></center>
 
 <blockquote>
 <p>2000年7月，加州大学伯克利分校的Eric Brewer教授在ACM PODC会议上提出CAP猜想。2年后，麻省理工学院的Seth Gilbert和Nancy Lynch从理论上证明了CAP。之后，CAP理论正式成为分布式计算领域的公认定理。</p>
@@ -478,7 +558,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-《深入理解Java虚拟机》-Java-内存区域读书笔记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-《深入理解Java虚拟机》-Java-内存区域读书笔记" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -502,10 +583,10 @@ var _hmt = _hmt || [];
 
         <div class="article-entry" itemprop="articleBody">
           
-                    <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>  对于 Java 程序员来说，在我们平时的编码过程中，并不会手动的去分配内存和回收内存，因为对于内存这块的处理都是依赖于 JVM 的，这样会导致一个问题：就是如果我们对 JVM 的内存管理机制不是特别熟悉的前提下，如果程序在内存这块出现了莫名的问题，此时处理这些问题就是一个灾难，因此，对于 Java 内存区域这块需要我们有一个清晰的认知，这样才可以在出现问题是根据 JVM 内存管理这块有好的解决方案。<br>在我们学习 运行时数据区域之前，我们先概览一下 JVM 的整体架构，这样对于我们下面内容的理解是有很大的帮助的，先将 JVM 整体的架构图展示如下：<br>简版的图如下：<br><img src="http://p67ct12ik.bkt.clouddn.com/jvm-architecture-992x1024.png" alt=""><br>详细点儿的图如下：<br><img src="http://p67ct12ik.bkt.clouddn.com/JVM-Architecture.png" alt=""></p>
-<h2 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h2><p>  一般情况下，运行时数据区域主要包含：<strong>程序计数器</strong> 、<strong>Java 虚拟机栈</strong>、<strong>本地方法栈</strong>、<strong>Java 堆</strong>、<strong>方法区</strong>这几个大的部分。对于此结构，通过图的方式进行如下展示：<br><img src="http://on-img.com/chart_image/5ab5164fe4b02cee4ce8d3bd.png" alt=""><br>由图示意可知：其中<strong>Method Area (方法区) </strong>和 <strong>Heap(堆)</strong> 是线程共享的，<strong>VM Stack (虚拟机栈)</strong>、<strong>Native Method Area （本地方法栈)</strong>、<strong>Programmer Computer Register(程序计数器)</strong> 是线程私有的。当我们分析到这边之后，会有一个疑问？为什么 JVM 要将内存划分为线程共享和非线程共享呢？</p>
+                    <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>  对于 Java 程序员来说，在我们平时的编码过程中，并不会手动的去分配内存和回收内存，因为对于内存这块的处理都是依赖于 JVM 的，这样会导致一个问题：就是如果我们对 JVM 的内存管理机制不是特别熟悉的前提下，如果程序在内存这块出现了莫名的问题，此时处理这些问题就是一个灾难，因此，对于 Java 内存区域这块需要我们有一个清晰的认知，这样才可以在出现问题是根据 JVM 内存管理这块有好的解决方案。<br>在我们学习 运行时数据区域之前，我们先概览一下 JVM 的整体架构，这样对于我们下面内容的理解是有很大的帮助的，先将 JVM 整体的架构图展示如下：<br>简版的图如下：<br><img src="http://p67ct12ik.bkt.clouddn.com/jvm-architecture-992x1024.png" alt><br>详细点儿的图如下：<br><img src="http://p67ct12ik.bkt.clouddn.com/JVM-Architecture.png" alt></p>
+<h2 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h2><p>  一般情况下，运行时数据区域主要包含：<strong>程序计数器</strong> 、<strong>Java 虚拟机栈</strong>、<strong>本地方法栈</strong>、<strong>Java 堆</strong>、<strong>方法区</strong>这几个大的部分。对于此结构，通过图的方式进行如下展示：<br><img src="http://on-img.com/chart_image/5ab5164fe4b02cee4ce8d3bd.png" alt><br>由图示意可知：其中<strong>Method Area (方法区) </strong>和 <strong>Heap(堆)</strong> 是线程共享的，<strong>VM Stack (虚拟机栈)</strong>、<strong>Native Method Area （本地方法栈)</strong>、<strong>Programmer Computer Register(程序计数器)</strong> 是线程私有的。当我们分析到这边之后，会有一个疑问？为什么 JVM 要将内存划分为线程共享和非线程共享呢？</p>
 <p>  我们可以回顾下 Java 程序执行的流程。Java 源文件 – 字节码文件(使用 Javac 编译为 *.class) – 每个 Java 程序都需要运行在 自己的 JVM 之上，JVM 会找到程序运行的入口，JVM 通过字节码解释器加载字节码运行。程序运行后JVM 如何对内存进行划分呢？其实 JVM 在初始化的时候，会分配好方法区（Method Area） 和 堆（Heap），当 JVM 遇到一个线程的时候，便会为其分配一个<strong>程序计数器(Programmer Register)</strong>、<strong>JVM虚拟机栈（VM Stack）</strong> 和 <strong>本地方法栈(Native Method Stack)</strong>，当线程死亡的时候，<strong>虚拟机栈</strong>、<strong>本地方法栈</strong>、<strong>程序计数器</strong>所占用的内存会被释放掉。通过这里的分析，便可以了解到，JVM 将内存区域分为线程共享和非线程共享两个部分，非线程共享的区域与所属的线程的生命周期相同，而线程共享的区域与 JVM  虚拟机的生命周期相同。这样也可以说明，其实 JVM 大多数的垃圾回收是发生在线程共享的区域（实际上更多位于堆上）。</p>
-<p>  对于运行时数据区域总体的理解，可以参考下图：<br><img src="http://p67ct12ik.bkt.clouddn.com/JVM-runtime-data-area.jpg" alt=""></p>
+<p>  对于运行时数据区域总体的理解，可以参考下图：<br><img src="http://p67ct12ik.bkt.clouddn.com/JVM-runtime-data-area.jpg" alt></p>
 <h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>  程序计数器（Program Counter Register）是一块较小的内存空间，可看做是当前线程所执行字节码行号的指示器。Java 虚拟机中多线程的执行原理是通过线程轮流切换并分配执行时间的方式来实现的，一般情况下在单核的处理器中，处理器在某一时刻只能处理一条线程中的指令。为了线程切换后能恢复到上次执行的位置，每个线程需要一个独立的计数器，每个线程之间的计数器是互不影响的。因此计程序计数器区域为“线程私有” 的内存。</p>
 <p>  如果线程执行的是一个 Java 方法，则程序计数器记录的是正在执行的虚拟机字节码指令的地址，如果执行的是 Native 方法，则计数器为Undefined。</p>
 <h3 id="Java-虚拟机栈"><a href="#Java-虚拟机栈" class="headerlink" title="Java 虚拟机栈"></a>Java 虚拟机栈</h3><p>  Java 虚拟机栈和程序计数器一样属于线程私有。虚拟机栈主要描述 Java 执行时的内存模型：每个方法在执行的同时会创建一个栈帧（Stack Frame） 用于存储变量表、操作数栈、动态链接、方法出口等信息。每个方法从调用到执行完成，对应着一个栈帧在虚拟机栈中入栈到出栈的过程。</p>
@@ -513,10 +594,10 @@ var _hmt = _hmt || [];
 <p>  其中 64 位长度的 long 和 double 会占用 2 个局部变量空间，其它的只占用 1 个局部变量空间。一般局部变量所需在帧中分配多大的局部变量空间在程序编译期间完成分配，程序运行期间不会改变局部变量表的大小。</p>
 <p>  Java 虚拟机规范中指出，当线程请求的栈深度大于虚拟机所允许的深度时，会抛出 StackOverflowError 异常。</p>
 <h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><p>  本地方法栈（Native Method Stack）与虚拟机栈所发挥的作用非常相似，它们之间的区别在于虚拟机栈为虚拟机执行 Java 方法（执行字节码）服务，而 本地方法栈为虚拟机使用的 Native 方法服务。虚拟机规范中没有对本地方法栈做强制的规定，由具体的虚拟机自己实现，Sun HotSpot 虚拟机字节将本地房发展和虚拟机栈合二为一。通虚拟机栈类似，本地房发展也会抛出 StackOverflowError 和 OutOfMemoryError 异常。</p>
-<h3 id="Java-堆"><a href="#Java-堆" class="headerlink" title="Java 堆"></a>Java 堆</h3><p>  Java 堆是Java 虚拟机所管理内存中最大的一块。Java 堆被所有线程共享，此区域的唯一目的便是存放对象的实例。 Java 虚拟机规范规定：所有的对象实例以及数组都要在堆上进行分配，随着 JIT 编译器的发展与<a href="https://zh.wikipedia.org/wiki/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%9" title="内存逃逸" target="_blank" rel="noopener">内存逃逸</a>技术的成熟，栈上分配、<a href="">标量替换优化</a>技术使所有对象分配在堆上的结论不是那么“绝对”。</p>
+<h3 id="Java-堆"><a href="#Java-堆" class="headerlink" title="Java 堆"></a>Java 堆</h3><p>  Java 堆是Java 虚拟机所管理内存中最大的一块。Java 堆被所有线程共享，此区域的唯一目的便是存放对象的实例。 Java 虚拟机规范规定：所有的对象实例以及数组都要在堆上进行分配，随着 JIT 编译器的发展与<a href="https://zh.wikipedia.org/wiki/%E9%80%83%E9%80%B8%E5%88%86%E6%9E%9" title="内存逃逸" target="_blank" rel="noopener">内存逃逸</a>技术的成熟，栈上分配、<a href>标量替换优化</a>技术使所有对象分配在堆上的结论不是那么“绝对”。</p>
 <p>  Java 堆是垃圾回收的主要区域，可将 Java 堆划分为：新生代和老年代；更细的划分新生代包含 Eden 空间、From Survivor、To Survivor 空间等。</p>
 <p>  Java 虚拟机规范规定，Java 堆可以处于物理机器上不连续的内存空间中。当堆空间无法分配扩展时，将会抛出 OutOfMemoryError 异常。</p>
-<p>  对于堆的加深理解可以参考此图：<br><img src="http://p67ct12ik.bkt.clouddn.com/JVM-Heap.gif" alt=""></p>
+<p>  对于堆的加深理解可以参考此图：<br><img src="http://p67ct12ik.bkt.clouddn.com/JVM-Heap.gif" alt></p>
 <h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>  方法去（Method Area）和 Java 堆类似，也属于各个线程共享的内存区域，主要用来存放被 JVM 虚拟机加载的类信息、常量、静态变量。即时编译器编译后的代码等数据。方法区又称为非堆。方法区本质上与“永久代”（Permanent Generation）不等价，主要原因是 HotSpot 虚拟机的设计团队把 GC 分代收集扩展到了方法区，换句话说就是使用永久代实现了方法区。在 JDK1.7 的 HotSpot中，由于永久代区域是一个类的静态区域，主要存储类的加载信息，常量池，方法代码等内容，默认大小只有 4 m，如果在常量池中大量的比如使用 String.intern() 方法会直接导致发生 <code>java.lang.OutOfMemoryError: PermGen space</code>，所以在 jdk7 的版本中，字符串常量池已经从 Perm 区移动到 Java Heap 区域了。主要是原因是：Perm 区域太小，在 Java 8 中已经取消了永久代进而代替的是元区域（Meta Space）。根据 Java 虚拟机规范规定，当方法区无法满足内存分配需求时，会产生 OutOfMemoryError 异常，也称为 OOM 。</p>
 <h3 id="运行时常量池"><a href="#运行时常量池" class="headerlink" title="运行时常量池"></a>运行时常量池</h3><p>  运行时常量池（Runtime Constant Pool） 属于方法区的一部分。Class 文件中除了有类的版本、字段、方法、接口等描述信息外，还有一项便是常量池（Runtime Constant Pool），常量池主要作用为：存放编译期间生成的各种字面量和符号引用，这些内容将在 Java 类被加载后进入方法区的运行时常量池中存放。运行时常量另外一个重要特征便是具备动态性，具体的案例便是使用 String 的 intern 方法，不要求常量只在类编译期间才能产生，在运行期间也可以将新的常量放入池中。运行时常量池属于方法区的一部分，当常量池无法进行内存分配时，也会抛出 OutOfMemoryError 异常。</p>
 <h3 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h3><p>  直接内存（Direct Memory） 不是虚拟机运行时数据区域的一部分，也不是 Java 虚拟机规范中定义的内存区域。这部分的内存也会被频繁使用，当内存分配空间不足时，也会抛出 OutOfMemoryError 异常。对于直接内存使用的典型案例便是，在 JDK 1.4 之后，新加入了 NIO（New Input/Output） 类，其核心原理是基于通道 （Channel） 与 缓冲区 （Buffer） 的 I/O 方式，可以通过 Native 函数库直接分配堆外内存，然后通过存储在 Java 堆中的 DirectByteBuffer 对象作为内存的引用进行操作。 这样的优点就是在一些场景中提高性能，避免了 Java 堆和 Native 来回赋值数据的开销。<br>  本地内存的分配不会受到 JVM 堆大小的限制，但是会受到系统本身内存大小的限制，当系统本身内存空间不够用时，也会出现 OutOfMemory 异常。</p>
@@ -575,7 +656,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-《深入理解Java虚拟机》-走近-Java-读书笔记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-《深入理解Java虚拟机》-走近-Java-读书笔记" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -622,7 +704,7 @@ var _hmt = _hmt || [];
 <li>Java SE</li>
 <li>Java EE</li>
 </ul>
-<h4 id="Java-发展史"><a href="#Java-发展史" class="headerlink" title="Java 发展史"></a>Java 发展史</h4><p><img src="http://p67ct12ik.bkt.clouddn.com/java_timeline.png" alt=""></p>
+<h4 id="Java-发展史"><a href="#Java-发展史" class="headerlink" title="Java 发展史"></a>Java 发展史</h4><p><img src="http://p67ct12ik.bkt.clouddn.com/java_timeline.png" alt></p>
 <ul>
 <li>JDK 1.0: Java虚拟机、Applet、AWT等；</li>
 <li>JDK 1.1：JAR文件格式、JDBC、JavaBeans、RMI、内部类、反射；</li>
@@ -634,7 +716,7 @@ var _hmt = _hmt || [];
 <li>JDK 1.7：G1收集器、加强对Java语言的调用支持、升级类加载架构；</li>
 <li>JDK 1.8：Lambda表达式等；</li>
 </ul>
-<h4 id="Java-虚拟机发展史"><a href="#Java-虚拟机发展史" class="headerlink" title="Java 虚拟机发展史"></a>Java 虚拟机发展史</h4><p><img src="http://on-img.com/chart_image/5ab90628e4b0a248b0e637d5.png" alt=""></p>
+<h4 id="Java-虚拟机发展史"><a href="#Java-虚拟机发展史" class="headerlink" title="Java 虚拟机发展史"></a>Java 虚拟机发展史</h4><p><img src="http://on-img.com/chart_image/5ab90628e4b0a248b0e637d5.png" alt></p>
 <h4 id="展望-Java-技术的未来"><a href="#展望-Java-技术的未来" class="headerlink" title="展望 Java 技术的未来"></a>展望 Java 技术的未来</h4><ul>
 <li>模块化</li>
 <li>混合语言</li>
@@ -697,7 +779,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Grails中神奇的HibernateCriteriaBuilder" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Grails中神奇的HibernateCriteriaBuilder" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -790,7 +873,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Grails-架构示意图" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Grails-架构示意图" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -868,7 +952,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Spring-Security哈希认证记住我例子" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Spring-Security哈希认证记住我例子" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -988,7 +1073,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-一行命令导入项目到IDEA" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-一行命令导入项目到IDEA" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -1072,7 +1158,8 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-使用淘宝镜像加速electron的下载" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-使用淘宝镜像加速electron的下载" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -1141,80 +1228,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-groovy中的each坑小记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/26/groovy中的each坑小记/">groovy中的each坑小记</a>
-    </h1>
-  
-
-          
-            <a href="/2017/10/26/groovy中的each坑小记/" class="archive-article-date">
-  	<time datetime="2017-10-26T07:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><code>Java</code>编程中，如果要跳出<code>for</code>循环，直接使用<code>break</code>即可。但是在<code>groovy</code>的<code>each</code>方法中，如果使用<code>break</code>，则程序在运行时就会报如下错误：<code>the break statement is only allowed inside loops or switches。</code></p>
-<h3 id="如何跳出each循环呢？"><a href="#如何跳出each循环呢？" class="headerlink" title="如何跳出each循环呢？"></a>如何跳出each循环呢？</h3><p>  <code>groovy</code>的<code>each</code>方法是一个闭包操作，如果想跳出循环，则可以使用<code>return true</code>。 但是存在一个问题：就是这里的<code>return true</code>并不完全等价于<code>java</code> <code>for</code>循环中的<code>break</code>操作。它更像是<code>java</code> <code>for</code>循环中的<code>continue</code>操作，跳出当前循环，继续下一次循环。至于这里的原因，有待研究。</p>
-<h3 id="诡异的产生"><a href="#诡异的产生" class="headerlink" title="诡异的产生"></a>诡异的产生</h3><p>  当使用“==”操作符号进行比较时，<code>return true</code>等价于<code>java</code> <code>for</code>循环中的<code>continue</code>，但如果是“&gt;=” 操作符的话，等价于<code>java</code> <code>for</code>循环中的<code>break</code>操作。测试代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">def a = [1, 2, 3, 4]</span><br><span class="line"></span><br><span class="line">println &quot;each loop break use groovy&quot;</span><br><span class="line"></span><br><span class="line">a.each &#123;</span><br><span class="line">    // groovy each 循环中的return true类似于java for循环中的continue</span><br><span class="line">    // 当遍历的元素等于2时，跳过当前元素，继续执行, 如果写&gt;= 时，的确也等价于break</span><br><span class="line">    if (it &gt;= 2) return true // break</span><br><span class="line">    println it  // do the stuff that you wanted to before break</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">println &quot;for loop break use java&quot;</span><br><span class="line"></span><br><span class="line">for (int i = 0; i &lt; a.size(); i++) &#123;</span><br><span class="line">    if (a[i] == 2) &#123;</span><br><span class="line">        // java for 循环中的break直接跳出当前循环</span><br><span class="line">        // 当遍历的元素等于2时，直接跳出循环</span><br><span class="line">        break</span><br><span class="line">    &#125;</span><br><span class="line">    println a[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这便是<code>groovy</code>中的<code>each</code>闭包方法的诡异之处，奇怪的是，如果你对集合元素使用<code>find</code>方法遍历，当比较操作符是“==”时，并不会发生以上的问题，测试代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def a = [1, 2, 3, 4, 5, 6, 7]</span><br><span class="line"></span><br><span class="line">a.find &#123;</span><br><span class="line">    if (it == 3) return true // break 此时的break等价于java for循环中的break</span><br><span class="line">    println it  </span><br><span class="line">    return false // 继续循环</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p>  当对遍历的元素进行迭代，并且在迭代的过程中需要跳出当前循环的，推荐使用<code>groovy</code>的<code>find</code>方法或者使用<code>java</code>的<code>for</code>循环，不要使用<code>groovy</code>的<code>each</code>方法，这样就可以保证流程控制没有错误。</p>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">groovy</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/10/26/groovy中的each坑小记/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1229,10 +1242,12 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 strongant
+    		&copy; 2020 strongant
     	</div>
-     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+     <script async
+src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span
+id="busuanzi_value_site_pv"></span>次</span>
     <span id="busuanzi_container_page_pv">
   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
 </span>
@@ -1325,6 +1340,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分布式，CAP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java,ES,大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1512,7 +1531,7 @@ var _hmt = _hmt || [];
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             2、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
