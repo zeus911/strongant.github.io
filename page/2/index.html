@@ -203,6 +203,76 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用淘宝镜像加速electron的下载" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/29/使用淘宝镜像加速electron的下载/">使用淘宝镜像加速electron的下载</a>
+    </h1>
+  
+
+          
+            <a href="/2017/10/29/使用淘宝镜像加速electron的下载/" class="archive-article-date">
+  	<time datetime="2017-10-29T15:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-29</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <p>目前github开源的electron库被好多桌面端应用广泛使用，有时候我们安装这类应用时特别慢，原因就是卡在了下载electron压缩包这个阶段，速度奇慢。为了不浪费我们宝贵的时间，使用下面的脚本可以帮助你分分钟下载成功electron，感谢淘宝npm镜像。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ELECTRON_MIRROR=<span class="string">"https://npm.taobao.org/mirrors/electron/"</span></span><br></pre></td></tr></table></figure>
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">electron</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/10/29/使用淘宝镜像加速electron的下载/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-groovy中的each坑小记" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1178,110 +1248,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/">Java 微服务实践- Spring Boot 系列（十四）WebService-学习笔记</a>
-    </h1>
-  
-
-          
-            <a href="/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/" class="archive-article-date">
-  	<time datetime="2017-08-21T14:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <p>写在前面的话，之前曾在项目中使用过Webservices，记得当时使用过Apache的CXF，Apache CXF = Celtix + XFire。 随着RESTful服务的越来越流行，渐渐地WebService技术已经渐渐被人们所淘汰。下面主要为了技术的温习，跟上小马哥一起再次复习下那些年我们使用过的WebService。</p>
-<ul>
-<li><p>Web Services    定义：<br>又称之为 Web Service，是一种设计通过网络来支持相互协作的机器间交互的软件系统。它拥有被机器可处理的格式所描述的接口（如：WSDL），规定使用 SOAP消息的方式与其他系统交互，典型地以HTTP传输、XML序列化以及联合其他Web 相关标准。<br>— W3C, Web Services Glossary</p>
-</li>
-<li><p>标准整合方式<br>&emsp;XML（可扩展标记语言）<br>&emsp;SOAP（对象访问）<br>&emsp;WSDL（网络服务描述语言）<br>&emsp;UDDI（通用描述、发现与集成服务）</p>
-</li>
-<li><p>什么是 SOAP？</p>
-<blockquote>
-<p>SOAP 指简易对象访问协议<br>SOAP 是一种通信协议<br>SOAP 用于应用程序之间的通信<br>SOAP 是一种用于发送消息的格式<br>SOAP 被设计用来通过因特网进行通信<br>SOAP 独立于平台<br>SOAP 独立于语言<br>SOAP 基于 XML<br>SOAP 很简单并可扩展<br>SOAP 允许您绕过防火墙<br>SOAP 将被作为 W3C 标准来发展</p>
-</blockquote>
-</li>
-<li><p>SOAP 数据封装</p>
-<blockquote>
-<p>SOAP 消息：在SOAP节点之间表达交换的信息<br>SOAP 信封：鉴定SOAP 消息的XML封装元素<br>SOAP 头块：SOAP 头的基本单元<br>SOAP 头：一个或多个SOAP 头块集合<br>SOAP 主体：交给接收端包含消息的主体<br>SOAP 故障：SOAP 节点故障时处理消息<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fiqkb2bp47j305205ejrh.jpg" alt=" SOAP 数据封装"></p>
-</blockquote>
-</li>
-<li><p>什么是WSDL?</p>
-<blockquote>
-<p>WSDL 指网络服务描述语言<br>WSDL 使用 XML 编写<br>WSDL 是一种 XML 文档<br>WSDL 用于描述网络服务<br>WSDL 也可用于定位网络服务<br>WSDL 还不是 W3C 标准</p>
-</blockquote>
-</li>
-<li><p>什么是 UDDI？</p>
-<blockquote>
-<p>UDDI 是一个独立于平台的框架，用于通过使用 Internet 来描述服务，发现企业，并对企业服务进行集成。<br>UDDI 指的是通用描述、发现与集成服务<br>UDDI 是一种用于存储有关 web services 的信息的目录。<br>UDDI 是一种由 WSDL 描述的 web services 界面的目录。<br>UDDI 经由 SOAP 进行通信<br>UDDI 被构建入了微软的 .NET 平台</p>
-</blockquote>
-</li>
-</ul>
-<p>以上概念定义解释来自<a href="http://www.w3school.com.cn/" target="_blank" rel="noopener">w3cschool</a></p>
-<p>其中需要注意的有使用Java6以后自带的xjc工具根据xsd生成webservices相关实体代码命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xjc -d src/main/java -p com.example.springbootwebservices.domain src/main/resources/META-INF/schemas/user.xsd</span><br></pre></td></tr></table></figure></p>
-<p>-d表示指定java包路径的相对目录</p>
-<p>具体SpringBoot中使用webservices案例请参考：<a href="https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14" target="_blank" rel="noopener">https://github.com/mercyblitz/segmentfault-lessons/tree/master/spring-boot/lesson-14/spring-boot-lesson-14</a></p>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webservices</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/08/21/Java-微服务实践-Spring-Boot-系列（十四）WebService-学习笔记/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1557,15 +1523,15 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">chrome扩展</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1578,6 +1544,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">DataStructureAndAlgorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java,中间件,MyCAT</a>
               </li>
             
             <div class="clearfix"></div>
