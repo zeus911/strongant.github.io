@@ -203,6 +203,164 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java14带来了许多新功能" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/04/Java14带来了许多新功能/">Java14带来了许多新功能</a>
+    </h1>
+  
+
+          
+            <a href="/2020/03/04/Java14带来了许多新功能/" class="archive-article-date">
+  	<time datetime="2020-03-04T14:17:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <p>Java 14包含比前两个发行版更多的新功能-其中大多数旨在简化编码。</p>
+<p>劳尔·加布里埃尔·乌尔玛（Raoul-Gabriel Urma）</p>
+<p>2020年2月27日</p>
+<blockquote>
+<p><a href="https://app.compendium.com/api/post_attachments/07a7a6fa-9588-4206-aa38-cf507df7a1ed/view" target="_blank" rel="noopener">下载本文的PDF</a></p>
+</blockquote>
+<p><a href="https://app.compendium.com/api/post_attachments/07a7a6fa-9588-4206-aa38-cf507df7a1ed/view" target="_blank" rel="noopener">https://app.compendium.com/api/post_attachments/07a7a6fa-9588-4206-aa38-cf507df7a1ed/view</a></p>
+<p>Java 14计划于3月17日发布。版本14包含的<a href="https://openjdk.java.net/projects/jdk/14/" target="_blank" rel="noopener">JEP</a>（Java增强建议）比Java 12和13的总和还多。那么，对于每天编写和维护代码的Java开发人员来说，最重要的是什么呢？</p>
+<p><a href="https://openjdk.java.net/projects/jdk/14/" target="_blank" rel="noopener">https://openjdk.java.net/projects/jdk/14/</a></p>
+<p>在本文中，我研究了以下主要方面：</p>
+<ul>
+<li>改进的 switch 表达式，该表达式最初在Java 12和Java 13中作为预览出现，现在已完全成为Java 14的一部分</li>
+<li>模式匹配<code>instanceof</code>（一种语言功能）</li>
+<li>有用<code>NullPointerException</code>的（JVM功能）</li>
+</ul>
+<p>如果您阅读本文并尝试在代码库中使用其中的某些功能，建议您通过向<a href="mailto:amber-dev@openjdk.java.net" target="_blank" rel="noopener">Java团队</a>提供<a href="mailto:amber-dev@openjdk.java.net" target="_blank" rel="noopener">反馈来</a>分享您的经验。这样，您就有机会为Java的发展做出贡献。</p>
+<h2 id="switch表达式"><a href="#switch表达式" class="headerlink" title="switch表达式"></a>switch表达式</h2><p>在Java 14中，switch表达式变为永久性的。如果您需要回顾一下什么是switch表达式，那么<a href="https://blogs.oracle.com/javamagazine/new-switch-expressions-in-java-12" target="_blank" rel="noopener">在前</a> <a href="https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api" target="_blank" rel="noopener">两篇文章</a>中已广泛讨论了它们。</p>
+<p><a href="https://blogs.oracle.com/javamagazine/new-switch-expressions-in-java-12" target="_blank" rel="noopener">https://blogs.oracle.com/javamagazine/new-switch-expressions-in-java-12</a></p>
+<p><a href="https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api" target="_blank" rel="noopener">https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api</a></p>
+<p>在早期版本中，switch 表达式是“预览”功能。提醒一下，将指定为“预览”版本以收集反馈，并且根据反馈可能会更改甚至删除这些功能。但预计大多数最终将在Java中永久化。</p>
+<p>新的switch表达式的优点包括由于没有中断行为，穷举以及由于表达式和复合形式而易于编写，从而减小了错误的范围。作为一个示例，switch表达式现在可以利用箭头语法，例如在以下示例中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var log = switch (event) &#123;</span><br><span class="line">    case PLAY -&gt; &quot;User has triggered the play button&quot;;</span><br><span class="line">    case STOP, PAUSE -&gt; &quot;User needs a break&quot;;</span><br><span class="line">    default -&gt; &#123;</span><br><span class="line">        String message = event.toString();</span><br><span class="line">        LocalDateTime now = LocalDateTime.now();</span><br><span class="line">        yield &quot;Unknown event &quot; + message + </span><br><span class="line">              &quot; logged on &quot; + now;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="文本块"><a href="#文本块" class="headerlink" title="文本块"></a>文本块</h2><p>Java 13引入了文本块作为预览功能。文本块使使用多行字符串文字更加容易。此功能将通过Java 14进行第二轮预览，并进行了一些调整。作为编写带有许多字符串连接和转义序列的代码以提供适当的多行文本格式非常普遍。下面的代码显示了HTML格式的示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String html = &quot;&lt;HTML&gt;&quot; +</span><br><span class="line">&quot;\n\t&quot; + &quot;&lt;BODY&gt;&quot; +</span><br><span class="line">&quot;\n\t\t&quot; + &quot;&lt;H1&gt;\&quot;Java 14 is here!\&quot;&lt;/H1&gt;&quot; +</span><br><span class="line">&quot;\n\t&quot; + &quot;&lt;/BODY&gt;&quot; +</span><br><span class="line">&quot;\n&quot; + &quot;&lt;/HTML&gt;&quot;;</span><br></pre></td></tr></table></figure>
+<p>使用文本块，您可以简化此过程并使用界定文本块开头和结尾的三个引号来编写更优雅的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String html = &quot;&quot;&quot;</span><br><span class="line">&lt;HTML&gt;</span><br><span class="line">  &lt;BODY&gt;</span><br><span class="line">    &lt;H1&gt;&quot;Java 14 is here!&quot;&lt;/H1&gt;</span><br><span class="line">  &lt;/BODY&gt;</span><br><span class="line">&lt;/HTML&gt;&quot;&quot;&quot;;</span><br></pre></td></tr></table></figure>
+<p>与普通字符串文字相比，文本块还提供了更高的表达能力。您可以在较早的<a href="https://blogs.oracle.com/javamagazine/text-blocks-come-to-java" target="_blank" rel="noopener">文章中</a>了解有关此内容的更多信息。</p>
+<p><a href="https://blogs.oracle.com/javamagazine/text-blocks-come-to-java" target="_blank" rel="noopener">https://blogs.oracle.com/javamagazine/text-blocks-come-to-java</a></p>
+<p>Java 14中添加了两个新的转义序列。首先，您可以使用新的<code>\s</code>转义序列表示单个空格。其次，您可以使用反斜线<code>\</code>来禁止在行尾插入新行字符。当您想分隔很长的行以简化文本块内的可读性时，这很有用。</p>
+<p>例如，当前处理多行字符串的方法是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String literal = </span><br><span class="line">         &quot;Lorem ipsum dolor sit amet, consectetur adipiscing &quot; +</span><br><span class="line">         &quot;elit, sed do eiusmod tempor incididunt ut labore &quot; +</span><br><span class="line">         &quot;et dolore magna aliqua.&quot;;</span><br></pre></td></tr></table></figure>
+<p>使用<code>\</code>文本块中的转义序列，可以将其表示为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String text = &quot;&quot;&quot;</span><br><span class="line">                Lorem ipsum dolor sit amet, consectetur adipiscing \</span><br><span class="line">                elit, sed do eiusmod tempor incididunt ut labore \</span><br><span class="line">                et dolore magna aliqua.\</span><br><span class="line">                &quot;&quot;&quot;;</span><br></pre></td></tr></table></figure>
+<h2 id="instanceof的模式匹配"><a href="#instanceof的模式匹配" class="headerlink" title="instanceof的模式匹配"></a>instanceof的模式匹配</h2><p>Java 14引入了预览功能，该功能有助于消除对在进行条件<code>instanceof</code>检查之前进行显式强制转换的需求。例如，考虑以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (obj instanceof Group) &#123;</span><br><span class="line">  Group group = (Group) obj;</span><br><span class="line"></span><br><span class="line">  // use group specific methods</span><br><span class="line">  var entries = group.getEntries();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以使用预览功能将其重构为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (obj instanceof Group group) &#123;</span><br><span class="line">  var entries = group.getEntries();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为条件检查断言<code>obj</code>是type <code>Group</code>，所以为什么要在第一个代码段中用条件块再次说该<code>obj</code>类型<code>Group</code>？这种需求可能会增加错误的范围。</p>
+<p>较短的语法将删除典型Java程序中的许多强制转换。（A <a href="http://www.cs.williams.edu/FTfJP2011/6-Winther.pdf" target="_blank" rel="noopener">研究论文</a>从2011年提出了一个相关的语言特性报告说，所有铸件约24％遵循<code>instanceof</code>的条件语句。）</p>
+<p><a href="http://www.cs.williams.edu/FTfJP2011/6-Winther.pdf" target="_blank" rel="noopener">http://www.cs.williams.edu/FTfJP2011/6-Winther.pdf</a></p>
+<p><a href="https://openjdk.java.net/jeps/305" target="_blank" rel="noopener">JEP 305</a>涵盖了此更改，并从Joshua Bloch 的<em>Effective Java</em>书中指出了一个示例，该示例通过以下相等方法进行说明：</p>
+<p><a href="https://openjdk.java.net/jeps/305" target="_blank" rel="noopener">https://openjdk.java.net/jeps/305</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Override public boolean equals(Object o) &#123; </span><br><span class="line">    return (o instanceof CaseInsensitiveString) &amp;&amp; </span><br><span class="line">            ((CaseInsensitiveString) o).s.equalsIgnoreCase(s); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过删除冗余的显式强制转换为，可以将前面的代码简化为以下形式<code>CaseInsensitiveString</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Override public boolean equals(Object o) &#123; </span><br><span class="line">    return (o instanceof CaseInsensitiveString cis) &amp;&amp;</span><br><span class="line">            cis.s.equalsIgnoreCase(s); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个有趣的预览功能，因为它为更广泛的模式匹配打开了大门。模式匹配的思想是为语言功能提供方便的语法，以便根据某些条件提取对象的成分。<code>instanceof</code>运算符就是这种情况，因为条件是类型检查，并且提取操作正在调用适当的方法或访问特定字段。</p>
+<p>换句话说，此预览功能仅仅是个开始，您可以期待一种语言功能，它可以帮助进一步减少冗长性，从而减少错误的可能性。</p>
+<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>还有另一种预览语言功能：records。像到目前为止提出的其他想法一样，此功能遵循减少Java冗长并帮助开发人员编写更简洁的代码的趋势。记录集中在某些域类上，这些类仅用于将数据存储在字段中，并且不声明任何自定义行为。</p>
+<p>为了直接解决该问题，请使用一个简单的域类，该类<code>BankTransaction</code>通过三个字段对交易进行建模：日期，金额和描述。声明类时，您需要担心多个组件：</p>
+<ul>
+<li>构造函数</li>
+<li>equals方法</li>
+<li><code>toString()</code></li>
+<li><code>hashCode()</code> 和 <code>equals()</code></li>
+</ul>
+<p>此类组件的代码通常由IDE自动生成，并占用大量空间。这是<code>BankTransaction</code>该类的完整生成的实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">public class BankTransaction &#123;</span><br><span class="line">    private final LocalDate date;</span><br><span class="line">    private final double amount;</span><br><span class="line">    private final String description;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public BankTransaction(final LocalDate date, </span><br><span class="line">                           final double amount, </span><br><span class="line">                           final String description) &#123;</span><br><span class="line">        this.date = date;</span><br><span class="line">        this.amount = amount;</span><br><span class="line">        this.description = description;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public LocalDate date() &#123;</span><br><span class="line">        return date;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public double amount() &#123;</span><br><span class="line">        return amount;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String description() &#123;</span><br><span class="line">        return description;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;BankTransaction&#123;&quot; +</span><br><span class="line">                &quot;date=&quot; + date +</span><br><span class="line">                &quot;, amount=&quot; + amount +</span><br><span class="line">                &quot;, description=&apos;&quot; + description + &apos;\&apos;&apos; +</span><br><span class="line">                &apos;&#125;&apos;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean equals(Object o) &#123;</span><br><span class="line">        if (this == o) return true;</span><br><span class="line">        if (o == null || getClass() != o.getClass()) return false;</span><br><span class="line">        BankTransaction that = (BankTransaction) o;</span><br><span class="line">        return Double.compare(that.amount, amount) == 0 &amp;&amp;</span><br><span class="line">                date.equals(that.date) &amp;&amp;</span><br><span class="line">                description.equals(that.description);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public int hashCode() &#123;</span><br><span class="line">        return Objects.hash(date, amount, description);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Java的14提供了一种方法来去除冗长，使意图明确指出，所有你想要的是，只有拥有的实现数据聚合在一起的一类<code>equals</code>，<code>hashCode</code>和<code>toString</code>方法。您可以<code>BankTransaction</code>按以下方式重构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public record BankTransaction(Date date,</span><br><span class="line">                              double amount,</span><br><span class="line">                              String description) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>有了记录，你“自动”得到的实现<code>equals</code>，<code>hashCode</code>以及<code>toString</code>除了构造函数和getter。</p>
+<p>要尝试该示例，请记住您需要使用预览标志来编译文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac --enable-preview --release 14 BankTransaction.java</span><br></pre></td></tr></table></figure>
+<p>记录的字段是隐式的<code>final</code>。这意味着您无法重新分配它们。但是请注意，这并不意味着整个记录都是不变的。存储在字段中的对象本身可以是可变的。</p>
+<p>如果您对有关记录的更详细的文章感兴趣，请参阅<a href="https://blogs.oracle.com/javamagazine/records-come-to-java" target="_blank" rel="noopener"><em>Java杂志上</em></a> Ben Evans的最新<a href="https://blogs.oracle.com/javamagazine/records-come-to-java" target="_blank" rel="noopener">文章</a>。</p>
+<p><a href="https://blogs.oracle.com/javamagazine/records-come-to-java" target="_blank" rel="noopener">https://blogs.oracle.com/javamagazine/records-come-to-java</a></p>
+<p>敬请关注。从教育的角度来看，唱片还为下一代Java开发人员提出了有趣的问题。例如，如果您指导初级开发人员，那么什么时候应该在课程中引入记录：在引入OOP和类之前还是之后？</p>
+<h2 id="有用的NullPointerExceptions"><a href="#有用的NullPointerExceptions" class="headerlink" title="有用的NullPointerExceptions"></a>有用的NullPointerExceptions</h2><p>有人说throw <code>NullPointerException</code>应该是Java中新的“ Hello world”，因为您无法逃避它们。除了笑话，它们还导致挫败感，因为当代码在生产环境中运行时，它们经常出现在应用程序日志中，这可能使调试变得困难，因为原始代码不容易获得。例如，考虑以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var name = user.getLocation().getCity().getName();</span><br></pre></td></tr></table></figure>
+<p>在Java 14之前，您可能会收到以下错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</span><br><span class="line">    at NullPointerExample.main(NullPointerExample.java:5)</span><br></pre></td></tr></table></figure>
+<p>不幸的是，如果在第5行，则有一个具有多个方法调用的赋值- <code>getLocation()</code>和- <code>getCity()</code>两者都可能返回null。实际上，变量<code>user</code>也可以为null。因此，目前尚不清楚是什么原因引起的<code>NullPointerException</code>。</p>
+<p>现在，使用Java 14，有一个新的JVM功能，通过它您可以收到更多信息的诊断信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException: Cannot invoke &quot;Location.getCity()&quot; because the return value of &quot;User.getLocation()&quot; is null</span><br><span class="line">    at NullPointerExample.main(NullPointerExample.java:5)</span><br></pre></td></tr></table></figure>
+<p>该消息现在具有两个明确的组成部分：</p>
+<ul>
+<li><strong>结果：</strong> <code>Location.getCity()</code>无法调用。</li>
+<li><strong>原因：</strong>的返回值为<code>User.getLocation()</code>null。</li>
+</ul>
+<p>仅当您使用以下标志运行Java时，增强型诊断才有效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:+ShowCodeDetailsInExceptionMessages</span><br></pre></td></tr></table></figure>
+<p>这是一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -XX:+ShowCodeDetailsInExceptionMessages NullPointerExample</span><br></pre></td></tr></table></figure>
+<p>在Java的未来版本中，这项功能可能会被默认启用，据报道<a href="https://bugs.openjdk.java.net/browse/JDK-8233014" target="_blank" rel="noopener">在这里</a>。</p>
+<p><a href="https://bugs.openjdk.java.net/browse/JDK-8233014" target="_blank" rel="noopener">https://bugs.openjdk.java.net/browse/JDK-8233014</a></p>
+<p>此增强功能不仅可用于方法调用，而且还可在可能导致的其他地方使用<code>NullPointerException</code>，包括字段访问，数组访问和赋值。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>在Java 14中，有新的预览语言功能和更新可帮助开发人员进行日常工作。例如，Java 14引入了<code>instanceof</code>模式匹配，这是减少显式转换的一种方法。而且，Java 14引入了记录，这是一种新的结构，用于简洁地声明仅用于聚合数据的类。此外，<code>NullPointerException</code>消息已通过更好的诊断得到了增强，并且开关表达式现在已成为Java 14的一部分。文本块是一种可帮助您处理多行字符串值的功能，在引入了两个新的转义序列后，将进行另一轮预览。Java操作的一部分技术人员可能会感兴趣的另一项更改是<a href="https://openjdk.java.net/jeps/349" target="_blank" rel="noopener">JDK Flight Recorder中的事件流</a>。该选项在<a href="https://blogs.oracle.com/javamagazine/java-flight-recorder-and-jfr-event-streaming-in-java-14" target="_blank" rel="noopener">本埃文斯的这篇文章</a>。</p>
+<p><a href="https://openjdk.java.net/jeps/349" target="_blank" rel="noopener">https://openjdk.java.net/jeps/349</a></p>
+<p><a href="https://blogs.oracle.com/javamagazine/java-flight-recorder-and-jfr-event-streaming-in-java-14" target="_blank" rel="noopener">https://blogs.oracle.com/javamagazine/java-flight-recorder-and-jfr-event-streaming-in-java-14</a></p>
+<p>如您所见，Java 14带来了很多创新。您绝对应该使用一下，并将有关预览功能的反馈发送给Java团队。</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">java,java14,java语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2020/03/04/Java14带来了许多新功能/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-那些年非常火的MyCAT是什么？" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1232,91 +1390,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-一行命令导入项目到IDEA" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/12/一行命令导入项目到IDEA/">一行命令导入项目到IDEA</a>
-    </h1>
-  
-
-          
-            <a href="/2017/11/12/一行命令导入项目到IDEA/" class="archive-article-date">
-  	<time datetime="2017-11-12T05:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <h2 id="如何使用一行命令打开一个zip文件并导入项目到IDEA"><a href="#如何使用一行命令打开一个zip文件并导入项目到IDEA" class="headerlink" title="如何使用一行命令打开一个zip文件并导入项目到IDEA"></a>如何使用一行命令打开一个zip文件并导入项目到IDEA</h2><h3 id="方法如下"><a href="#方法如下" class="headerlink" title="方法如下"></a>方法如下</h3><p>首先你得有我上次分享的那个idea打开项目的shell脚本。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line"># check for where the latest version of IDEA is installed</span><br><span class="line">IDEA=`ls -1d /Applications/IntelliJ\ * | tail -n1`</span><br><span class="line">wd=`pwd`</span><br><span class="line"></span><br><span class="line"># were we given a directory?</span><br><span class="line">if [ -d &quot;$1&quot; ]; then</span><br><span class="line">#  echo &quot;checking for things in the working dir given&quot;</span><br><span class="line">  wd=`ls -1d &quot;$1&quot; | head -n1`</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># were we given a file?</span><br><span class="line">if [ -f &quot;$1&quot; ]; then</span><br><span class="line">#  echo &quot;opening &apos;$1&apos;&quot;</span><br><span class="line">  open -a &quot;$IDEA&quot; &quot;$1&quot;</span><br><span class="line">else</span><br><span class="line">    # let&apos;s check for stuff in our working directory.</span><br><span class="line">    pushd $wd &gt; /dev/null</span><br><span class="line"></span><br><span class="line">    # does our working dir have an .idea directory?</span><br><span class="line">    if [ -d &quot;.idea&quot; ]; then</span><br><span class="line">#      echo &quot;opening via the .idea dir&quot;</span><br><span class="line">      open -a &quot;$IDEA&quot; .</span><br><span class="line"></span><br><span class="line">    # is there an IDEA project file?</span><br><span class="line">    elif [ -f *.ipr ]; then</span><br><span class="line">#      echo &quot;opening via the project file&quot;</span><br><span class="line">      open -a &quot;$IDEA&quot; `ls -1d *.ipr | head -n1`</span><br><span class="line"></span><br><span class="line">    # Is there a pom.xml?</span><br><span class="line">    elif [ -f pom.xml ]; then</span><br><span class="line">#      echo &quot;importing from pom&quot;</span><br><span class="line">      open -a &quot;$IDEA&quot; &quot;pom.xml&quot;</span><br><span class="line"></span><br><span class="line">    # can&apos;t do anything smart; just open IDEA</span><br><span class="line">    else</span><br><span class="line">#      echo &apos;cbf&apos;</span><br><span class="line">      open &quot;$IDEA&quot;</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    popd &gt; /dev/null</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-<p>然后使用如下脚本即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fullFileName=$1</span><br><span class="line"></span><br><span class="line">suffix=$&#123;fullFileName#*.&#125;</span><br><span class="line"></span><br><span class="line">if [ &quot;$suffix&quot; != &quot;zip&quot; ];then</span><br><span class="line">  echo &quot;Must be a valid zip file&quot;</span><br><span class="line">else</span><br><span class="line">  filename=$&#123;fullFileName%.*&#125;</span><br><span class="line">  echo &quot;filename: $filename&quot;</span><br><span class="line">  echo &quot;now unzip $1 and use idea $1&quot;</span><br><span class="line">  unzip $1 &amp;&amp; idea $filename</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-<p>将此脚本另存为uao.sh ， 放在合适的位置，然后建立一个软链，这里我把它放在此处<code>/usr/local/bin/uao.sh</code>，建立一个软链接<code>ln -sf /usr/local/bin/uao.sh /usr/local/bin/uao</code>。以后如果要将zip文件解压，打开idea，导入项目到idea这三个操作，直接使用这个脚本一行命令一步即可完成。赶快试试吧！</p>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具/" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/11/12/一行命令导入项目到IDEA/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1484,6 +1557,10 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">java,java14,java语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java面试</a>
               </li>
              
@@ -1592,15 +1669,15 @@ id="busuanzi_value_site_pv"></span>次</span>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">chrome扩展</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
