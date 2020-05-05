@@ -203,6 +203,87 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用Httpie来替代CURL-1" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/10/使用Httpie来替代CURL-1/">使用Httpie来替代CURL</a>
+    </h1>
+  
+
+          
+            <a href="/2017/09/10/使用Httpie来替代CURL-1/" class="archive-article-date">
+  	<time datetime="2017-09-10T13:51:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-10</time>
+</a>
+              
+                <!-- 目录内容 -->
+                
+                    <!-- 目录内容结束 -->
+      </header>
+      
+
+        <div class="article-entry" itemprop="articleBody">
+          
+                    <p>当下的一些比较人们的测试接口的客户端工具大概有以下几种：</p>
+<p>Postman（使用最多，一个基于Chrome的app）</p>
+<p>CURL（在终端下工作的文件传输工具）</p>
+<p>Httpie（终端下比较友好、简洁、特性更多，功能更强大）</p>
+<p>个人在终端下比较推荐使用Httpie，原因如下：</p>
+<p>举个例子，如果我们发起一个请求，获取一个JSON字符串，如果我们使用CURL进行获取的话，需要使用管道命令结合python自带的json.tool这个脚本才能完成，<code>curl  https://httpbin.org/get | python -m json.tool</code></p>
+<p>如果我们使用Httpie的话，只需要这样：<code>http  https://httpbin.org/get</code>,可以发现它不仅返回了body内容，也同时返回了header信息。当然如果我们只需要看body内容，此时只需要进行筛选即可，使用如下命令请求即可：<code>http  https://httpbin.org/get --body</code>,如果只需要header信息，可以这样：<code>http  https://httpbin.org/get --header</code>。更多特性，请参考：<a href="https://httpie.org/" target="_blank" rel="noopener">https://httpie.org/</a></p>
+<p>Httpie默认会将返回的JSON数据进行格式化，不再需要二次转换，并且它会使用颜色将一些不同类型的数据加以区分，这样也方便我们进行查看。</p>
+<p>这里介绍下Mac下的安装方式：<br>由于Httpie依赖Python，一般情况下Mac下已经自带了Python环境，只不过版本可能并不是最新的。使用brew安装即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install httpie</span><br></pre></td></tr></table></figure>
+<p>安装成功后我们进行测试是否可用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http ifconfig.me/all.json</span><br></pre></td></tr></table></figure></p>
+<p>正常情况下便可以得到带颜色的格式良好的JSON数据。</p>
+
+                      
+
+                        
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2017/09/10/使用Httpie来替代CURL-1/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                        
+
+
+                            
+  
     <article id="post-官方Spring周报-20170905" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1008,97 +1089,6 @@ var _hmt = _hmt || [];
 
                             
   
-    <article id="post-监听chrome-extension-popup页面消失" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/05/监听chrome-extension-popup页面消失/">监听chrome extension popup页面消失</a>
-    </h1>
-  
-
-          
-            <a href="/2017/08/05/监听chrome-extension-popup页面消失/" class="archive-article-date">
-  	<time datetime="2017-08-05T08:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
-<li>当用户不小心点击了鼠标或者离开了扩展的popup页面，此时需要对一些数据进行清空或者删除一些不必要的数据.</li>
-</ul>
-<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ul>
-<li>然而chrome 扩展官方并没有对popup或者browserAction提供相关页面消失时的监听事件</li>
-</ul>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ul>
-<li>通过不断的查找资料和查阅chrome扩展开发文档，我们可以使用消息通信连接的方式解决了这个问题<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤:"></a>具体步骤:</h3></li>
-<li><p>首先在你需要监听页面消失事件的js文件中与background建立连接，相关代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//这里主要是为了与background建立连接，当页面关闭的时候连接就会断开，此时background中你注册的连接关闭函数此时会执行，因为background环境一直存在，除非你关闭了电脑</span><br><span class="line"> var port = chrome.runtime.connect();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在background环境注册断开连接时需要处理的方法，相关代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  chrome.runtime.onConnect.addListener(function (externalPort) &#123;</span><br><span class="line">        externalPort.onDisconnect.addListener(function() &#123;</span><br><span class="line">        var ignoreError = chrome.runtime.lastError;</span><br><span class="line">        console.log(&quot;onDisconnect&quot;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>通过以上的方式便实现了类似对popup页面消失时做一些事情的需求。感谢StackOverFlow，神一样的解决问题社区，致敬！</li>
-</ul>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">chrome扩展</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-            
-
-              
-                <p class="article-more-link">
-                  <a class="article-more-a" href="/2017/08/05/监听chrome-extension-popup页面消失/">
-                    展开全文 >></a>
-                </p>
-                
-
-                  
-                        <div class="clearfix"></div>
-    </div>
-    </div>
-</article>
-
-
-      
-
-            
-
-                        
-
-
-                            
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1351,6 +1341,10 @@ id="busuanzi_value_site_pv"></span>次</span>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OSS，Java,云存储</a>
               </li>
              
               <li class="article-tag-list-item">
