@@ -7,23 +7,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://baiwenhui.com">
-  <title>Grails中神奇的HibernateCriteriaBuilder | strongant的个人博客</title>
+  <title>Tag: docker,镜像,harbor | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Grails 中 HibernateCriteriaBuilder 用于动态为类构建一些常用的查询方法。 通过 metaClass 绑定方法，也就是 groovy 的 MOP 特性进行动态绑定方法。 HibernateCriteriaBuilder 派生于  AbstractHibernateCriteriaBuilder，AbstractHibernateCriteriaBuilder派生于Gr">
-<meta name="keywords" content="Grails,Hibernate">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Grails中神奇的HibernateCriteriaBuilder">
-<meta property="og:url" content="http://baiwenhui.com/2018/01/28/Grails中神奇的HibernateCriteriaBuilder/index.html">
+  <meta name="description" content="strongant的个人博客，积累技术，记录自己的成长！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="strongant的个人博客">
+<meta property="og:url" content="http://baiwenhui.com/tags/docker-镜像-harbor/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
-<meta property="og:description" content="Grails 中 HibernateCriteriaBuilder 用于动态为类构建一些常用的查询方法。 通过 metaClass 绑定方法，也就是 groovy 的 MOP 特性进行动态绑定方法。 HibernateCriteriaBuilder 派生于  AbstractHibernateCriteriaBuilder，AbstractHibernateCriteriaBuilder派生于Gr">
+<meta property="og:description" content="strongant的个人博客，积累技术，记录自己的成长！">
 <meta property="og:locale" content="Chinese">
-<meta property="og:image" content="http://baiwenhui.com/images/pasted-0.png">
-<meta property="og:image" content="http://baiwenhui.com/images/pasted-1.png">
-<meta property="og:updated_time" content="2020-05-19T14:21:19.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grails中神奇的HibernateCriteriaBuilder">
-<meta name="twitter:description" content="Grails 中 HibernateCriteriaBuilder 用于动态为类构建一些常用的查询方法。 通过 metaClass 绑定方法，也就是 groovy 的 MOP 特性进行动态绑定方法。 HibernateCriteriaBuilder 派生于  AbstractHibernateCriteriaBuilder，AbstractHibernateCriteriaBuilder派生于Gr">
-<meta name="twitter:image" content="http://baiwenhui.com/images/pasted-0.png">
+<meta name="twitter:title" content="strongant的个人博客">
+<meta name="twitter:description" content="strongant的个人博客，积累技术，记录自己的成长！">
   
     <link rel="alternative" href="/atom.xml" title="strongant的个人博客" type="application/atom+xml">
   
@@ -206,188 +201,62 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Grails中神奇的HibernateCriteriaBuilder" class="article article-type-post "
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Grails中神奇的HibernateCriteriaBuilder
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/05/19/使用Docker构建企业级自定义镜像/" class="archive-article-date">
+  	<time datetime="2020-05-19T14:19:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-19</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/05/19/使用Docker构建企业级自定义镜像/">使用Docker构建企业级自定义镜像</a>
     </h1>
   
 
-          
-            <a href="/2018/01/28/Grails中神奇的HibernateCriteriaBuilder/" class="archive-article-date">
-  	<time datetime="2018-01-28T02:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-28</time>
-</a>
-              
-                <!-- 目录内容 -->
-                
-                    <!-- 目录内容结束 -->
-      </header>
-      
-
-        <div class="article-entry" itemprop="articleBody">
-          
-                    <p>Grails 中 HibernateCriteriaBuilder 用于动态为类构建一些常用的查询方法。</p>
-<p>通过 metaClass 绑定方法，也就是 groovy 的 MOP 特性进行动态绑定方法。</p>
-<p>HibernateCriteriaBuilder 派生于  AbstractHibernateCriteriaBuilder，AbstractHibernateCriteriaBuilder派生于GroovyObjectSupport。</p>
-<p>其中 GroovyObjectSupport 实现了 GroovyObject 接口。</p>
-<p>其中动态支持分页列表的实现在AbstractHibernateCriteriaBuilder中的invokeMethod有详细的说明。平时我们使用的时候只需要 键入 find 然后就会根据当前类的属性进行自动补全，你是要查询一条还是要查询多条记录，至于它的转化操作也定义在此，如图：</p>
-<p><img src="/images/pasted-0.png" alt="upload successful"></p>
-<p>grails.properties   = params 绑定属性存在恶意风险，比如用户会伪造一些属性，从而导致类的一些属性修改被自动注入，影响到数据库中对应的表的具体记录。</p>
-<p>具体的类图：</p>
-<p><img src="/images/pasted-1.png" alt="upload successful"></p>
-<p>其中常用的方法接口定义在此：org.grails.orm.hibernate.IHibernateTemplate</p>
-
-                      
-
-                        
-    </div>
-    <div class="article-info article-info-index">
-      
+        <div class="article-info info-on-right">
           
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Grails</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker,镜像,harbor</a>
         		</li>
       		
 		</ul>
 	</div>
 
-            
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Grails/" class="article-tag-list-link color2">Grails</a>
-        		</li>
-      		
-		</ul>
-	</div>
+          
 
-
-              
-
-                  
-                    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
+        <div class="clearfix"></div>
+    </header>
   </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2018/01/28/Grails中神奇的HibernateCriteriaBuilder/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-                      
-                        <div class="clearfix"></div>
-    </div>
-    </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/03/26/《深入理解Java虚拟机》-走近-Java-读书笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          《深入理解Java虚拟机》-走近 Java 读书笔记
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/01/08/Grails-架构示意图/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Grails-MVC示意图</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
     
 
-      
 
-            
-              
-                <!-- 畅言评论框 start -->
-<div id="SOHUCS" sid="Grails中神奇的HibernateCriteriaBuilder" style="padding: 0px 30px 0px 46px;"></div>
-<script type="text/javascript"> 
-(function(){ 
-var appid = 'cysHzQGmj'; 
-var conf = 'prod_25363bfe21a9a09909208a01135582ea'; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-                  
-                      
-
-                        
-                          <script>
-                            (function () {
-                              var bp = document.createElement('script');
-                              bp.src = '//push.zhanzhang.baidu.com/push.js';
-                              var s = document.getElementsByTagName("script")[0];
-                              s.parentNode.insertBefore(bp, s);
-                            })();
-
-                          </script>
-                          
-
-
-                            
           </div>
         </div>
       </div>
@@ -418,9 +287,9 @@ id="busuanzi_value_site_pv"></span>次</span>
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
