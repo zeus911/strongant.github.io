@@ -7,29 +7,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://baiwenhui.com">
-  <title>阿里巴巴Java开发规约的IDEA插件使用 | strongant的个人博客</title>
+  <title>分布式定时任务XXL-JOB在我司的选型 | strongant的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作者：不想当码农的程序员 原文：http://www.jianshu.com/p/2f271e6d675c编辑：Moon  就在10月15日上午9：00，阿里巴巴在杭州云栖大会《研发效能峰会》上，正式发布《阿里巴巴Java开发手册》扫描插件，该插件在扫描代码后，将不符合《手册》的代码按 Blocker/ Critical/ Major三个等级显示在下方，甚至在IDEA上，还基于Inspectio">
-<meta name="keywords" content="工具">
+  <meta name="description" content="任务系统任务 什么时间 什么地点 做什么事  一个简单的任务 cron 早期的 cronV7，1979  在Version 7 Unix里是一个系统服务 只用 root 运行任务 算法简单直接  更多详情请参考: https://en.wikipedia.org/wiki/Cron 早期的 cron 运行逻辑 读 /usr/lib/crontab 文件 如果有命令要在当前时间执行，就用 root">
+<meta name="keywords" content="分布式任务调度,xxl-job">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里巴巴Java开发规约的IDEA插件使用">
-<meta property="og:url" content="http://baiwenhui.com/2017/10/16/阿里巴巴Java开发规约的IDEA插件使用/index.html">
+<meta property="og:title" content="分布式定时任务XXL-JOB在我司的选型">
+<meta property="og:url" content="http://baiwenhui.com/2020/09/16/分布式定时任务XXL-JOB在我司的选型/index.html">
 <meta property="og:site_name" content="strongant的个人博客">
-<meta property="og:description" content="作者：不想当码农的程序员 原文：http://www.jianshu.com/p/2f271e6d675c编辑：Moon  就在10月15日上午9：00，阿里巴巴在杭州云栖大会《研发效能峰会》上，正式发布《阿里巴巴Java开发手册》扫描插件，该插件在扫描代码后，将不符合《手册》的代码按 Blocker/ Critical/ Major三个等级显示在下方，甚至在IDEA上，还基于Inspectio">
+<meta property="og:description" content="任务系统任务 什么时间 什么地点 做什么事  一个简单的任务 cron 早期的 cronV7，1979  在Version 7 Unix里是一个系统服务 只用 root 运行任务 算法简单直接  更多详情请参考: https://en.wikipedia.org/wiki/Cron 早期的 cron 运行逻辑 读 /usr/lib/crontab 文件 如果有命令要在当前时间执行，就用 root">
 <meta property="og:locale" content="Chinese">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwg4vasij30qf0nqq4t.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fkju0ntjhtj30lz0i3wgp.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fkju13tgw5j30yg0hoaco.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fkju1kc4h3j30jg0segpw.jpg">
-<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwh9h5qxj30yg0p0djz.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fkjwge7mvqj307607674v.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fkjwgjluxlj304603saa9.jpg">
-<meta property="og:updated_time" content="2020-09-16T15:41:32.484Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyeiy1ooj20ya0retab.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyf1m8qnj21ck0kajsc.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyft8mxsj21700hmdgr.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyg82m1vj20z00koqjv.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimygpwsirj217s0naafe.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyh8kl4vj219i0m8al6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gin0cq0n2xj21s40ui4hv.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gin009ca4mj21nq0siwv3.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gin08gqqvgj21dc0nk0zb.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gin0dtlklbj21ik0p8afd.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyn5o76ij215i0p0tmi.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimynngodnj21ii0qm43e.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyo6rz8vj21fg0oaqam.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyoojunwj21o00ts7jz.jpg">
+<meta property="og:updated_time" content="2020-09-16T15:41:32.480Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里巴巴Java开发规约的IDEA插件使用">
-<meta name="twitter:description" content="作者：不想当码农的程序员 原文：http://www.jianshu.com/p/2f271e6d675c编辑：Moon  就在10月15日上午9：00，阿里巴巴在杭州云栖大会《研发效能峰会》上，正式发布《阿里巴巴Java开发手册》扫描插件，该插件在扫描代码后，将不符合《手册》的代码按 Blocker/ Critical/ Major三个等级显示在下方，甚至在IDEA上，还基于Inspectio">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwg4vasij30qf0nqq4t.jpg">
+<meta name="twitter:title" content="分布式定时任务XXL-JOB在我司的选型">
+<meta name="twitter:description" content="任务系统任务 什么时间 什么地点 做什么事  一个简单的任务 cron 早期的 cronV7，1979  在Version 7 Unix里是一个系统服务 只用 root 运行任务 算法简单直接  更多详情请参考: https://en.wikipedia.org/wiki/Cron 早期的 cron 运行逻辑 读 /usr/lib/crontab 文件 如果有命令要在当前时间执行，就用 root">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyeiy1ooj20ya0retab.jpg">
   
     <link rel="alternative" href="/atom.xml" title="strongant的个人博客" type="application/atom+xml">
   
@@ -212,7 +218,7 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-阿里巴巴Java开发规约的IDEA插件使用" class="article article-type-post "
+            <article id="post-分布式定时任务XXL-JOB在我司的选型" class="article article-type-post "
   itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -220,13 +226,13 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      阿里巴巴Java开发规约的IDEA插件使用
+      分布式定时任务XXL-JOB在我司的选型
     </h1>
   
 
           
-            <a href="/2017/10/16/阿里巴巴Java开发规约的IDEA插件使用/" class="archive-article-date">
-  	<time datetime="2017-10-16T01:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+            <a href="/2020/09/16/分布式定时任务XXL-JOB在我司的选型/" class="archive-article-date">
+  	<time datetime="2020-09-16T15:39:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
 </a>
               
                 <!-- 目录内容 -->
@@ -237,40 +243,95 @@ var _hmt = _hmt || [];
 
         <div class="article-entry" itemprop="articleBody">
           
-                    <blockquote>
-<p>作者：不想当码农的程序员</p>
-<p>原文：<a href="http://www.jianshu.com/p/2f271e6d675c编辑：Moon" target="_blank" rel="noopener">http://www.jianshu.com/p/2f271e6d675c编辑：Moon</a></p>
+                    <h2 id="任务系统"><a href="#任务系统" class="headerlink" title="任务系统"></a>任务系统</h2><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><ol>
+<li><strong>什么时间</strong></li>
+<li><strong>什么地点</strong></li>
+<li><strong>做什么事</strong></li>
+</ol>
+<h3 id="一个简单的任务"><a href="#一个简单的任务" class="headerlink" title="一个简单的任务"></a>一个简单的任务</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyeiy1ooj20ya0retab.jpg" alt></p>
+<h3 id="cron"><a href="#cron" class="headerlink" title="cron"></a>cron</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyf1m8qnj21ck0kajsc.jpg" alt></p>
+<h3 id="早期的-cron"><a href="#早期的-cron" class="headerlink" title="早期的 cron"></a>早期的 cron</h3><p>V7，1979</p>
+<ol>
+<li>在Version 7 Unix里是一个系统服务</li>
+<li>只用 root 运行任务</li>
+<li>算法简单直接</li>
+</ol>
+<p>更多详情请参考: <a href="https://en.wikipedia.org/wiki/Cron" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Cron</a></p>
+<h3 id="早期的-cron-运行逻辑"><a href="#早期的-cron-运行逻辑" class="headerlink" title="早期的 cron 运行逻辑"></a>早期的 cron 运行逻辑</h3><ol>
+<li>读 /usr/lib/crontab 文件</li>
+<li>如果有命令要在当前时间执行，就用 root 用户去执行命令</li>
+<li>Sleep 1 minute</li>
+<li>重新从步骤 1 开始</li>
+</ol>
+<h3 id="支持多用户的-cron"><a href="#支持多用户的-cron" class="headerlink" title="支持多用户的 cron"></a>支持多用户的 cron</h3><p>Unix System V，1983</p>
+<ol>
+<li>启动的时候读取所有用户下的 .crontab 文件</li>
+<li>计算出每个 crontab 文件里需要执行的命令的下一次执行时间</li>
+<li>把这些命令按下一次执行时间排序后放入队列里</li>
+<li>进入主循环<br>① 计算队列里第一个任务的执行时间与当前的时间差<br>② Sleep 直到第一个任务执行时间<br>③ 后台执行任务<br>④ 计算这个任务的下一次执行时间，放回队列，排序</li>
+</ol>
+<h3 id="近代的-cron"><a href="#近代的-cron" class="headerlink" title="近代的 cron"></a>近代的 cron</h3><p>Linux，1991</p>
+<ol>
+<li>Vixie cron(Paul Vixie 1987)</li>
+<li>Version 3 Vixie cron(1993)</li>
+<li>Version 4.1 ISC Cron(2004)</li>
+<li>anacron, dcron, fcron</li>
+</ol>
+<h3 id="cron-的局限性"><a href="#cron-的局限性" class="headerlink" title="cron 的局限性"></a>cron 的局限性</h3><ol>
+<li>单机</li>
+<li>无界面</li>
+<li>功能比较简单</li>
+<li>多机器的情况下任务维护成本较高</li>
+</ol>
+<h2 id="分布式任务系统"><a href="#分布式任务系统" class="headerlink" title="分布式任务系统"></a>分布式任务系统</h2><h3 id="分布式系统的特点"><a href="#分布式系统的特点" class="headerlink" title="分布式系统的特点"></a>分布式系统的特点</h3><ol>
+<li>分布性</li>
+<li>对等性(没有控制系统的主机, 也没有被控制的从机)</li>
+<li>并发性</li>
+<li>缺乏全局时钟(缺乏全局时钟序列控制)</li>
+<li>故障总是会发生</li>
+</ol>
+<h3 id="分布式-cron"><a href="#分布式-cron" class="headerlink" title="分布式 cron"></a>分布式 cron</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyft8mxsj21700hmdgr.jpg" alt></p>
+<h3 id="我只是不爱动，不是懒"><a href="#我只是不爱动，不是懒" class="headerlink" title="我只是不爱动，不是懒"></a>我只是不爱动，不是懒</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyg82m1vj20z00koqjv.jpg" alt></p>
+<h3 id="分布式系统对任务调度的几点要求"><a href="#分布式系统对任务调度的几点要求" class="headerlink" title="分布式系统对任务调度的几点要求"></a>分布式系统对任务调度的几点要求</h3><p>1、平台：快速开发、业务复用、自维护和扩展；<br>2、HA/集群：避免单点故障，发挥集群优势<br>3、弹性扩缩：适应业务快速发展<br>4、故障处理：Failover、失败告警<br>5、阻塞处理：耗时任务阻塞<br>5、⾼性能：调度和任务解耦，全异步化<br>6、自运维：自助维护、实时监控、快速了解任务进展</p>
+<h3 id="我眼里的“西施”"><a href="#我眼里的“西施”" class="headerlink" title="我眼里的“西施”"></a>我眼里的“西施”</h3><ol>
+<li>可替代 cron</li>
+<li>分布式、高可用</li>
+<li>支持多种任务属性</li>
+<li>易用</li>
+<li>易部署</li>
+</ol>
+<h2 id="为什么选择使用-XXL-JOB"><a href="#为什么选择使用-XXL-JOB" class="headerlink" title="为什么选择使用 XXL-JOB"></a>为什么选择使用 XXL-JOB</h2><p>  项目中有这样的需求：需要使用定时器从 A 和 B 系统中同步不同的表中的数据，并且对数据进行一定的加工处理，最后将最终的数据写入到数据仓库DB，需要实现针对不同的数据源进行配置（这块也就是多数据源的支持），任务配置可以根据任务量的大小使用不同的资源。对数据同步的时效性和性能要求非常高，并且这些定时任务可以通过页面配置的方式做到灵活，可控制。</p>
+<p>  通过以上的这些需求，我们对目前业界比较流行的任务调度框架进行了技术选型，通过研究发现，目前使用比较广泛的任务调度框架有 XXL-JOB 和 Elastic-JOB ，因此，参考 XXL-JOB 官方对不同任务调度平台的比对，如下图所示：</p>
+<p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimygpwsirj217s0naafe.jpg" alt>    </p>
+<p>针对以上对比，我们选择了 XXL-JOB 任务调度框架，因为它相比于其他任务调度框架来说，具有更好的用户体验、有良好的运维支持、任务依赖、任务路由原生支持，通过调研发现，框架自带的任务路由策略已经满足我们的业务场景，并且支持分片任务，当任务延迟较高时，可以利用分片的方案加速任务的处理。</p>
+<h2 id="XXL-JOB-介绍"><a href="#XXL-JOB-介绍" class="headerlink" title="XXL-JOB 介绍"></a>XXL-JOB 介绍</h2><blockquote>
+<p>XXL-JOB是⼀个轻量级分布式任务调度框架。拥有“HA、弹性扩缩、故障处理、阻塞处<br>理、⾼性能、自运维”等特点。<br>其核⼼部分包括：<br>1、调度模块（调度中⼼）：负责管理任务信息，触发任务执⾏，自身不承担业务逻辑；<br>同时提供“日志、报表、告警、GLUE、注册中⼼”等功能；<br>2、执⾏模块（执⾏器）： 负责接收调度中⼼请求，进⾏任务逻辑执⾏、终⽌、日志加载<br>等操作；专注于任务执⾏相关操作；</p>
 </blockquote>
-<p>就在10月15日上午9：00，阿里巴巴在杭州云栖大会《研发效能峰会》上，正式发布《阿里巴巴Java开发手册》扫描插件，该插件在扫描代码后，将不符合《手册》的代码按 <code>Blocker</code>/ <code>Critical</code>/ <code>Major</code>三个等级显示在下方，甚至在IDEA上，还基于Inspection机制提供了实时检测功能，编写代码的同时也能快速发现问题所在。对于历史代码，部分规则实现了批量一键修复的功能。</p>
-<p>Git地址为：<a href="https://github.com/alibaba/p3c" target="_blank" rel="noopener">https://github.com/alibaba/p3c</a></p>
-<h1 id="IDea的安装方式："><a href="#IDea的安装方式：" class="headerlink" title="IDea的安装方式："></a>IDea的安装方式：</h1><p>IDEA版的插件发布到了IDEA官方仓库中(最低支持版本14.1.7，JDK1.7+)，只需打开</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Settings &gt;&gt; Plugins &gt;&gt; Browse repositories</span><br></pre></td></tr></table></figure>
-<p>输入 Alibaba 搜索一下便可以看到对应插件了，点击安装等待安装完成。</p>
-<p>如图:</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwg4vasij30qf0nqq4t.jpg" alt></p>
-<p>这里写图片描述</p>
-<h1 id="Eclipse的安装方式："><a href="#Eclipse的安装方式：" class="headerlink" title="Eclipse的安装方式："></a>Eclipse的安装方式：</h1><p>Eclipse版插件支持4.2（Juno，JDK1.8+）及以上版本，提供Update Site，通过</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Help &gt;&gt; Install New Software</span><br></pre></td></tr></table></figure>
-<p>然后输入 <code>https://p3c.alibaba.com/plugin/eclipse/update</code>即可看到安装列表，安装即可。</p>
-<p>插件的更新，可以通过 <code>Help&gt;&gt;CheckforUdates</code> 进行新版本检测。</p>
-<h1 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h1><p>呵呵 右键，，看图 –</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkju0ntjhtj30lz0i3wgp.jpg" alt></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkju13tgw5j30yg0hoaco.jpg" alt></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkju1kc4h3j30jg0segpw.jpg" alt></p>
-<h2 id="还有自动提示的效果"><a href="#还有自动提示的效果" class="headerlink" title="还有自动提示的效果"></a>还有自动提示的效果</h2><p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="img"></p>
-<p>可以说是非常棒了</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fkjwh9h5qxj30yg0p0djz.jpg" alt></p>
-<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a><strong>推荐阅读</strong></h2><ul>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484377&amp;idx=1&amp;sn=1ad98afc78d5cc11a07410e9cf0a3c9c&amp;chksm=9bd0ae41aca72757e4599d71717ed817a77b4e9a10c2b40f54793f1d5b0a95fd144bb48ae21e&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">程序员你为什么这么累【续】：如何应对需求变更</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484376&amp;idx=1&amp;sn=957c161c2a390347ba53c26f118475f1&amp;chksm=9bd0ae40aca72756a7ade252454a8658d082b331a191d980c24a7f40ce82eab0dbee020fb5b2&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Spring4All社区正式招募Spring Guides翻译小分队~</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484375&amp;idx=1&amp;sn=ac19066f568d57e27ac319a5e5ddbed4&amp;chksm=9bd0ae4faca72759f9c4af93cb083f68aceb4c9fee7388f42a41acd9e8d93e5a60a1e7c91f4f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">海外IT工程师工作福利揭秘</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484272&amp;idx=1&amp;sn=a2f30419fc8e2c1cce86c79e0c44b264&amp;chksm=9bd0aee8aca727fe3c78c9f9d2178f4b7e85bf0890d066fd9607091dcc36d8d8dbf647a3a379&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">一个不可思议的MySQL慢查分析与解决</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&amp;mid=2247484291&amp;idx=1&amp;sn=0794ce828d667fa5be8dc3494886282d&amp;chksm=9bd0ae1baca7270d1089a923f45e70408673a9efb3f8753fb3b3014ec097302bcf52251601fa&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">都在说微服务，那么微服务的反模式和陷阱是什么</a></li>
+<h3 id="XXL-JOB-发展"><a href="#XXL-JOB-发展" class="headerlink" title="XXL-JOB 发展"></a>XXL-JOB 发展</h3><p>• 2015年中，着⼿设计XXL-JOB，提交第⼀个Commit<br>• 2015-11月，发布首个Release版本，同期当选为开源中国月度热门项目<br>• 2016-01月，我司展开定制和接⼊，⾄今调度近百万次<br>• 2017-05-03，应邀参加“第62期开源中国源创会”现场分享XXL-JOB<br>• 2017-10月，当选为开源中国首批GVP项目<br>• ……<br>• ⾄今，XXL-JOB登记接⼊公司50+（点评、移动、平安、海尔、优信），<br>社区群8个，群成员约3000 ⼈</p>
+<h3 id="XXL-JOB-架构图"><a href="#XXL-JOB-架构图" class="headerlink" title="XXL-JOB 架构图"></a>XXL-JOB 架构图</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyh8kl4vj219i0m8al6.jpg" alt></p>
+<h3 id="XXL-JOB-特性全览"><a href="#XXL-JOB-特性全览" class="headerlink" title="XXL-JOB 特性全览"></a>XXL-JOB 特性全览</h3><p>1、简单<br>2、动态<br>3、调度中心HA（中心式）<br>4、执行器HA（分布式）<br>5、任务Failover<br>6、一致性<br>7、自定义任务参数<br>8、调度线程池<br>9、弹性扩容缩容<br>10、邮件报警<br>11、状态监控<br>12、Rolling执行日志<br>13、GLUE：提供Web IDE<br>14、数据加密<br>15、任务依赖<br>16、推送maven中央仓库<br>17、任务注册<br>18、路由策略<br>19、运行报表<br>20、脚本任务<br>21、阻塞处理策略<br>22、失败处理策略<br>23、分片广播任务<br>24、动态分片<br>25、事件触发</p>
+<h3 id="HA-集群"><a href="#HA-集群" class="headerlink" title="HA/集群"></a>HA/集群</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gin0cq0n2xj21s40ui4hv.jpg" alt></p>
+<h3 id="弹性扩缩"><a href="#弹性扩缩" class="headerlink" title="弹性扩缩"></a>弹性扩缩</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gin009ca4mj21nq0siwv3.jpg" alt></p>
+<h3 id="执行器路由策略"><a href="#执行器路由策略" class="headerlink" title="执行器路由策略"></a>执行器路由策略</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gin08gqqvgj21dc0nk0zb.jpg" alt></p>
+<h3 id="故障转移-amp-忙碌转移"><a href="#故障转移-amp-忙碌转移" class="headerlink" title="故障转移 &amp; 忙碌转移"></a>故障转移 &amp; 忙碌转移</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gin0dtlklbj21ik0p8afd.jpg" alt></p>
+<h3 id="分片任务-amp-动态分片"><a href="#分片任务-amp-动态分片" class="headerlink" title="分片任务 &amp; 动态分片"></a>分片任务 &amp; 动态分片</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyn5o76ij215i0p0tmi.jpg" alt></p>
+<h3 id="阻塞策略-amp-失败处理策略"><a href="#阻塞策略-amp-失败处理策略" class="headerlink" title="阻塞策略 &amp; 失败处理策略"></a>阻塞策略 &amp; 失败处理策略</h3><p> <img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimynngodnj21ii0qm43e.jpg" alt></p>
+<p>###触发规则</p>
+<ul>
+<li>Cron 表达式<br>如：每日凌晨 2 点，进行“PV 数据计算”的任务</li>
+<li>任务依赖触发<br>如：父任务“PV 数据计算”执行结束后，触发多业务线的“PV 报表生成”的多个子任务</li>
+<li>事件触发/API 服务<br>如：类 MQ 场景，短信验证码、订单创建等。</li>
 </ul>
-<p>长按指纹</p>
-<p>一键关注</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fkjwge7mvqj307607674v.jpg" alt></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fkjwgjluxlj304603saa9.jpg" alt></p>
+<h3 id="任务模式"><a href="#任务模式" class="headerlink" title="任务模式"></a>任务模式</h3><p>1、BEAN 模式：JobHandler、Spring Bean<br>2、GLUE 模式(Java )：Web IDE、在线开发、版本回溯、Java 语言、动态编译（IOC）、实时生效、Rolling</p>
+<p>Log<br>3、GLUE 模式(Shell)：Web IDE、在线开发、版本回溯、实时生效、Rolling Log<br>4、GLUE 模式(Python)<br>5、GLUE 模式(NodeJS)</p>
+<p>（其中“GLUE 模式(NodeJS)”来源于 “icyblazek@github”同学提交的 PR，XXL-JOB 理论上支持任何类型脚本</p>
+<p>语言的任务模式扩展）</p>
+<h3 id="GLUE-模式"><a href="#GLUE-模式" class="headerlink" title="GLUE 模式"></a>GLUE 模式</h3><p><img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyo6rz8vj21fg0oaqam.jpg" alt></p>
+<h3 id="执行日志-amp-Rolling-Log"><a href="#执行日志-amp-Rolling-Log" class="headerlink" title="执行日志 &amp; Rolling Log"></a>执行日志 &amp; Rolling Log</h3><p> <img src="http://ww1.sinaimg.cn/large/bc9918a2gy1gimyoojunwj21o00ts7jz.jpg" alt></p>
+<h2 id="XXL-JOB-搭建"><a href="#XXL-JOB-搭建" class="headerlink" title="XXL-JOB 搭建"></a>XXL-JOB 搭建</h2><p>1、安装 Mysql，初始化 XXL-JOB 底层库表</p>
+<p>• 2、编译部署“调度中心”</p>
+<p>• 3、编译部署“执行器”（参考多个 Sample 项目）</p>
+<p>》》》开发第一个 JobHandler<br>入门文档 （可参考文档 “快速入门”章节：）： <a href="http://www.xuxueli.com/xxl-job/" target="_blank" rel="noopener">http://www.xuxueli.com/xxl-job/</a></p>
 
                       
 
@@ -284,24 +345,13 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">分布式任务调度,xxl-job</a>
         		</li>
       		
 		</ul>
 	</div>
 
             
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具/" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
               
 
@@ -351,7 +401,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2017/10/16/阿里巴巴Java开发规约的IDEA插件使用/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://baiwenhui.com/2020/09/16/分布式定时任务XXL-JOB在我司的选型/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -365,18 +415,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/10/23/Mac下使用jenvs安装Java9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Mac下使用jenvs安装Java9
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/09/Spring官方周报20171003/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Spring官方周报20171003</div>
+    <a href="/2020/09/14/ELK日志迁移技术分享/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ELK日志迁移技术分享</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -389,7 +430,7 @@ var _hmt = _hmt || [];
             
               
                 <!-- 畅言评论框 start -->
-<div id="SOHUCS" sid="阿里巴巴Java开发规约的IDEA插件使用" style="padding: 0px 30px 0px 46px;"></div>
+<div id="SOHUCS" sid="分布式定时任务XXL-JOB在我司的选型" style="padding: 0px 30px 0px 46px;"></div>
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cysHzQGmj'; 
